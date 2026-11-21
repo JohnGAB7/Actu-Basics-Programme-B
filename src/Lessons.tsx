@@ -173,7 +173,7 @@ const courses: Course[] = [
  {code:'S02',title:'Chaînes de Markov à temps discret et matrices de transition',version:'1.0.0',description:'Propriété de Markov, transitions et Chapman–Kolmogorov',duration:'5–6 h',content:s02},
  {code:'S03',title:'Classification des états : communication, récurrence et périodicité',version:'1.0.0',description:'Classes de communication, récurrence et période',duration:'5–6 h',content:s03},
  {code:'S04',title:'Distributions stationnaires, convergence et réversibilité',version:'1.0.0',description:'Régimes invariants, convergence et équilibre détaillé',duration:'5–6 h',content:s04},
- {code:'S05',title:'Chaînes absorbantes, probabilités d’atteinte et temps d’absorption',version:'1.0.0',description:'Matrice fondamentale et temps moyen d'absorption',duration:'4–5 h',content:s05},
+ {code:'S05',title:'Chaînes absorbantes, probabilités d’atteinte et temps d’absorption',version:'1.0.0',description:'Matrice fondamentale et temps moyen d’absorption',duration:'4–5 h',content:s05},
  {code:'S06',title:'Processus de Poisson et temps d’attente exponentiels',version:'1.0.0',description:'Comptage, temps inter-arrivées, superposition et amincissement',duration:'5–6 h',content:s06},
  {code:'S07',title:'Processus de renouvellement et théorèmes de renouvellement',version:'1.0.0',description:'Durées, taux de renouvellement et récompenses',duration:'4–5 h',content:s07},
  {code:'S08',title:'Martingales, filtrations et temps d’arrêt',version:'1.0.0',description:'Information, martingales et arrêt optionnel',duration:'5–6 h',content:s08},
