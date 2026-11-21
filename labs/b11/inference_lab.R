@@ -58,7 +58,7 @@ beta_predictive <- function(k,m,a,b) {
 stopifnot(abs(mean(sample_means("normal",40,3000)))<.04)
 risk<-bernoulli_risk(.3,10);stopifnot(abs(risk["sample_mean","mse"]-.021)<1e-12)
 stopifnot(abs(poisson_mle(c(2,3,5))-10/3)<1e-12)
-stopifnot(coverage_simulation(.05,20)["wilson"]>coverage_simulation(.05,20)["wald"])
+coverage<-coverage_simulation(.05,20)\nstopifnot(coverage["wilson"]>coverage["wald"])
 stopifnot(required_n_mean(10,3)==88)
 stopifnot(binomial_tests(12,20,.5)["lr"]>0)
 stopifnot(bootstrap_interval(c(1,2,2,3,10),B=500)[1]<bootstrap_interval(c(1,2,2,3,10),B=500)[2])
