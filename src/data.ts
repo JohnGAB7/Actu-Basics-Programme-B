@@ -64,7 +64,7 @@ export const blocks = [
   { code: 'B02', title: 'Logique, preuves et mathématiques discrètes', subtitle: 'Logique, démonstrations, combinatoire et graphes', progress: 0, lessons: 8, tone: 'blue', status: '8 unités en draft · 0 publiée' },
   { code: 'B03', title: 'Algèbre linéaire et géométrie vectorielle', subtitle: 'Espaces, matrices, projections et décompositions', progress: 0, lessons: 10, tone: 'violet', status: '10 unités en revue interne' },
   { code: 'B04', title: 'Analyse réelle et calcul à une variable', subtitle: 'Suites, limites, continuité, dérivation et intégration', progress: 0, lessons: 10, tone: 'amber', status: '10 unités en revue interne' },
-  { code: 'B05', title: 'Calcul multivarié et équations différentielles', subtitle: 'Gradient, hessienne, intégrales multiples et EDO', progress: 0, lessons: 0, tone: 'blue', status: 'Planifié' },
+  { code: 'B05', title: 'Calcul multivarié et équations différentielles', subtitle: 'Gradient, hessienne, intégrales multiples et EDO', progress: 0, lessons: 10, tone: 'blue', status: '10 unités en revue interne' },
   { code: 'B06', title: 'Optimisation et recherche opérationnelle', subtitle: 'Convexité, dualité, optimisation et décision', progress: 0, lessons: 0, tone: 'mint', status: 'Planifié' },
   { code: 'B07', title: 'Analyse numérique et calcul scientifique', subtitle: 'Stabilité, erreurs, algorithmes et simulation', progress: 0, lessons: 0, tone: 'violet', status: 'Planifié' },
   { code: 'B08', title: 'Probabilités', subtitle: 'Variables aléatoires, lois et convergence', progress: 0, lessons: 0, tone: 'amber', status: 'Planifié' },
