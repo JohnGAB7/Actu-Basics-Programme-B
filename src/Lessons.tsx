@@ -436,7 +436,6 @@ export function LessonLibrary({query,setQuery}:{query:string;setQuery:(value:str
   (selectedStatus==='all' || course.status===selectedStatus)
  ),[summaries,query,selectedBlock,selectedStatus])
  const selectedBlockCode=selected ? getBlockCode(selected.code) : 'B01'
- const selectedStatusCategory=getCourseStatus(selectedBlockCode)
  const selectedStatusLabel=getStatusLabel()
  const resetFilters=()=>{setQuery('');setSelectedBlock('all');setSelectedStatus('all')}
  if(selected) return <div className="content-wrap lesson-reader">
