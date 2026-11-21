@@ -93,7 +93,7 @@ const courses: Course[] = [
  {code:'M02',title:'Dérivées partielles et différentiabilité',version:'1.0.0',description:'Dérivées partielles, différentiabilité et approximation affine',duration:'4–5 h',content:m02},
  {code:'M03',title:'Gradient, règle de chaîne, Jacobien et dérivées directionnelles',version:'1.0.0',description:'Calcul différentiel vectoriel et propagation locale',duration:'4–5 h',content:m03},
  {code:'M04',title:'Hessienne, Taylor multivarié et extrema libres',version:'1.0.0',description:'Courbure et classification des points critiques',duration:'4–5 h',content:m04},
- {code:'M05',title:'Optimisation sous contraintes et multiplicateurs de Lagrange',version:'1.0.0',description:'Optimisation avec contraintes d'égalité et introduction aux KKT',duration:'4–5 h',content:m05},
+ {code:'M05',title:'Optimisation sous contraintes et multiplicateurs de Lagrange',version:'1.0.0',description:'Optimisation avec contraintes d’égalité et introduction aux KKT',duration:'4–5 h',content:m05},
  {code:'M06',title:'Intégrales doubles et triples, Fubini et changements de variables',version:'1.0.0',description:'Intégration multidimensionnelle et Jacobien',duration:'5–6 h',content:m06},
  {code:'M07',title:'Champs vectoriels, intégrales curvilignes et théorèmes intégraux',version:'1.0.0',description:'Circulation, flux, Green, Stokes et Gauss',duration:'5–6 h',content:m07},
  {code:'M08',title:'Équations différentielles du premier ordre et modèles dynamiques',version:'1.0.0',description:'Équations séparables, linéaires et stabilité élémentaire',duration:'4–5 h',content:m08},
