@@ -1,6 +1,6 @@
 # B14 — Carte pédagogique : Plans d'expérience et inférence causale
 
-**Version :** 1.1.0 · **Statut :** seconde passe interne approfondie · laboratoire Python/R en validation CI  
+**Version :** 1.1.0 · **Statut :** seconde passe interne approfondie · laboratoire Python/R publié sur GitHub Pages  
 **Charge indicative :** 54–64 heures  
 **Niveau :** L1–L3, ouverture L4 introductive  
 **Prérequis :** B11 inférence, B12 régression ; B08 probabilités, B10 exploration et B16 séries temporelles recommandés.
