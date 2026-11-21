@@ -2,7 +2,7 @@ import math
 import random
 import unittest
 
-from stochastic_lab import (
+from labs.b09.stochastic_lab import (
     absorption_one_transient,
     poisson_pmf,
     propagate_markov,
