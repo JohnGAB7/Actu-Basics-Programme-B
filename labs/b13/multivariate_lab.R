@@ -70,6 +70,7 @@ roy_f_bound <- function(theta, p, q, v) {
       length(p)!=1 || length(q)!=1 || length(v)!=1 ||
       any(!is.finite(c(p,q,v))) || any(c(p,q,v)!=as.integer(c(p,q,v))) ||
       p<1 || q<1 || v<1) stop("theta must be finite/non-negative and p, q, v positive integers")
+  if (v<p) stop("residual degrees of freedom must be at least p for E to be invertible")
   d <- max(p,q)
   df2 <- v-d+q
   if (df2<=0) stop("denominator degrees of freedom must be positive")
