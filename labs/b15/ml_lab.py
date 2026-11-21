@@ -126,6 +126,12 @@ def gaussian_mixture_1d_em(x, n_components=2, max_iter=300, tolerance=1e-8, vari
             converged=True
             break
         previous=log_likelihood
+    # Report the observed-data log-likelihood for the parameters actually returned.
+    log_likelihood=sum(_logsumexp([
+        math.log(weights[j])-0.5*math.log(2*math.pi*variances[j])
+        -(v-means[j])**2/(2*variances[j])
+        for j in range(k)
+    ]) for v in values)
     order=sorted(range(k),key=lambda j:means[j])
     return {"weights":[weights[j] for j in order],"means":[means[j] for j in order],
             "variances":[variances[j] for j in order],"log_likelihood":log_likelihood,
