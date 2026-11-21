@@ -1,6 +1,6 @@
-# B13 — Première revue interne de contenu
+# B13 — Seconde revue interne mathématique et pédagogique
 
-**Version examinée :** 0.1 · **Statut :** revue assistée par IA, non indépendante  
+**Version examinée :** 1.1 · **Statut :** seconde passe assistée par IA, non indépendante  
 **Périmètre :** M01–M10, carte pédagogique et évaluation formative.
 
 ## Contrôles de cohérence réalisés
@@ -11,7 +11,7 @@
 - Risques de standardisation, valeurs extrêmes, multiplicité, fuite d'information et singularité de covariance signalés.
 - Articulation avec B12, B15, B17 et B20 rendue explicite.
 
-## Points à approfondir avant statut reviewed
+## Checklist initiale de la première passe (traçabilité)
 1. Développer les preuves de la loi de T² et des transformations F, avec notation rigoureuse des degrés de liberté.
 2. Détailler les matrices H et E en MANOVA et les distributions/approximations des critères multivariés.
 3. Donner des exemples chiffrés complets d'ACP (valeurs propres, scores, charges, reconstruction et choix d'échelle).
@@ -32,3 +32,28 @@
 
 ## Limites et statut
 Cette revue est une vérification interne de cohérence et de couverture. Elle ne remplace pas une relecture humaine indépendante par un spécialiste de statistique multivariée, ni des tests par apprenants. Les leçons sont des premières versions de travail : elles ne doivent pas être étiquetées comme cours finalisés ou validés académiquement.
+
+
+## Résultats de la seconde passe
+
+1. M01 : rang $\operatorname{rang}(S)\leq\min(p,n-1)$ et précautions relatives aux covariances pairwise.
+2. M02 : distinction du cas paramètres connus/estimés et rappel de la sensibilité aux atypies.
+3. M03 : hypothèses de la loi F de Hotelling T² explicitées via normalité multivariée, indépendance et Wishart ; intervalles marginaux distingués des régions simultanées.
+4. M04 : matrices H/E, degrés de liberté et critères multivariés formalisés.
+5. M05 : lien SVD/eigen, scores et convention des charges précisés ; exemple spectral recalculé.
+6. M06 : modèle général avec matrice de corrélation factorielle Φ et transformation de rotation donnant la même covariance.
+7. M07 : problème de valeurs propres généralisées et limites de singularité explicités.
+8. M08 : risque conditionnel avec matrice de coûts et calibration ajoutés.
+9. M09 : méthode DBSCAN et concentration des distances en grande dimension ajoutées.
+10. M10 : matrice de précision et corrélation partielle sous normalité, shrinkage et validation après sélection développés.
+11. Évaluation : 18 questions, 100 points, somme vérifiée.
+12. Laboratoire : Python/R standard, tests de covariance, spectre, ACP, Mahalanobis, T², shrinkage et k-means.
+
+## Limites restant ouvertes
+
+- Les transformations F exactes des quatre critères MANOVA ne sont pas toutes dérivées ; leur approximation doit être sélectionnée selon dimensions et plan.
+- L'estimation complète par maximum de vraisemblance des modèles factoriels, l'analyse parallèle automatisée, les tests d'inférence canonique, LDA/QDA génériques, DBSCAN/HDBSCAN et les modèles graphiques creux ne sont pas implémentés dans le laboratoire.
+- Le laboratoire de calcul matriciel est volontairement limité aux petites dimensions ; la décomposition Jacobi ne remplace pas les bibliothèques numériques optimisées.
+- La validation humaine indépendante, les tests apprenants et l'audit d'accessibilité restent à effectuer.
+
+Cette revue est interne et assistée par IA ; elle ne constitue pas une certification académique.
