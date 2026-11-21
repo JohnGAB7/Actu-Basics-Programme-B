@@ -113,3 +113,8 @@ Dix unités originales (I01–I10) couvrent les lois d’échantillonnage, l’e
 
 
 - B12 : R01 à R10 intégrées dans le lecteur comme premières versions de travail. Carte pédagogique, évaluation formative initiale et revue interne de périmètre disponibles ; revue mathématique approfondie, notebooks, tests apprenants et validation indépendante restent à conduire.
+
+
+## Bloc B13 — Statistique multivariée et grande dimension
+
+Dix unités originales (MV01–MV10) sont intégrées au lecteur : covariance multivariée, loi normale et distance de Mahalanobis, inférence T², MANOVA, ACP, analyse factorielle, corrélation canonique, analyse discriminante, clustering et méthodes de grande dimension. La carte pédagogique, l'évaluation formative et la première revue interne sont disponibles dans `docs/B13-UNIT-MAP.md`, `docs/B13-EVALUATION.md` et `docs/reviews/B13-internal-review.md`. Les unités restent des premières versions de travail : démonstrations approfondies, exemples chiffrés complets, notebooks, tests apprenants et revue humaine indépendante restent à conduire.
