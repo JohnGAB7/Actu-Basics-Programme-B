@@ -85,6 +85,8 @@ class MultivariateLabTests(unittest.TestCase):
             roy_f_bound(0.4, p=0, q=2, v=30)
         with self.assertRaises(ValueError):
             roy_f_bound(0.4, p=3, q=1, v=2)
+        with self.assertRaises(ValueError):
+            roy_f_bound(0.4, p=3, q=2, v=2)
 
     def test_invalid_inputs(self):
         with self.assertRaises(ValueError):
