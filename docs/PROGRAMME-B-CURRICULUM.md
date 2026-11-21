@@ -1,6 +1,6 @@
 # Programme B — Architecture académique de référence
 
-**Version : 2.0 · 21 novembre 2026**  
+**Version : 2.1 · 21 novembre 2026**  
 **Statut : architecture-cible de travail · non accréditée · non validée par les institutions citées**
 
 ## 1. Mission et principes
@@ -66,13 +66,13 @@ B01 à B17 constituent le socle mathématique, probabiliste, statistique et comp
 
 | Code | Bloc | Périmètre principal | Prérequis structurants |
 |---|---|---|---|
-| B18 | Actuariat, assurance et modélisation du risque | Fréquence-sévérité, tarification, crédibilité, survie, mortalité, provisionnement, réassurance, agrégation, ruine, capital et solvabilité | B08, B09, B11, B12, B16 |
-| B19 | Économétrie et statistiques financières | Régression économétrique, séries financières, volatilité, données de panel, endogénéité, risque, prévision et évaluation empirique | B11, B12, B14, B16 |
-| B20 | Théorie statistique avancée et méthodes de recherche | Probabilité mesurée, convergence avancée, asymptotique, processus empiriques, concentration, décision, semi-paramétrique, lecture et reproduction d'articles | B02, B04, B08, B11, B12 ; L3 recommandé |
+| B18 | Actuariat, assurance et modélisation du risque | Exposition, fréquence-sévérité, tarification, crédibilité, survie/mortalité, assurance vie/rentes, provisionnement, réassurance, capital, agrégation et solvabilité | B08, B11, B12, B13, B16 ; B14 et B17 recommandés |
+| B19 | Économétrie et statistiques financières | Identification, régression robuste, panels, IV/GMM, choix discret, rendements, facteurs, CAPM, VaR/ES, backtesting et microstructure | B11, B12, B14, B16, B17 ; B13 recommandé |
+| B20 | Théorie statistique avancée et méthodes de recherche | Probabilité mesurée, convergence, asymptotique, processus empiriques, concentration, efficacité semi-paramétrique, Bayes et décision, martingales, grande dimension, calcul et recherche reproductible | B02, B03, B04, B08, B09, B11, B12, B13, B15, B16, B17 ; L3 recommandé |
 
 ## 4. Décomposition indicative des blocs
 
-Cette décomposition fixe les domaines à couvrir. Elle ne constitue pas encore une liste définitive de leçons : le découpage final sera décidé après l'analyse des prérequis, des objectifs et des redondances.
+Le registre synthétique `docs/PROGRAMME-B-IMPLEMENTED-UNIT-REGISTER.md` et les cartes pédagogiques `docs/B01-UNIT-MAP.md` à `docs/B20-UNIT-MAP.md` définissent les codes et titres des unités actuellement implémentées. Les listes ci-dessous décrivent le périmètre de référence ; lorsqu'une rubrique n'apparaît pas dans la carte ou les unités du bloc, elle reste une extension à développer et ne doit pas être considérée comme déjà enseignée.
 
 ### B01 — Fondations mathématiques et raisonnement quantitatif
 1. Nombres, ensembles numériques et ordre.
@@ -274,52 +274,57 @@ Cette décomposition fixe les domaines à couvrir. Elle ne constitue pas encore 
 10. Documentation, traçabilité, confidentialité et gouvernance.
 
 ### B18 — Actuariat, assurance et modélisation du risque
-1. Exposition, fréquence, sévérité et mesure de sinistralité.
-2. Modèles de fréquence et de sévérité.
-3. Modèles collectifs et agrégation des pertes.
-4. Tarification, GLM, segmentation et crédibilité.
-5. Assurance vie, mortalité et tables de survie.
-6. Analyse de survie et risques concurrents.
-7. Provisionnement non-vie et triangles de développement.
-8. Réassurance et transfert de risque.
-9. Théorie de la ruine et risque extrême.
-10. Capital, solvabilité, dépendance et allocation du risque.
-11. Validation, gouvernance et suivi des modèles actuariels.
+1. AR01 — Fondements actuariels, expositions et mesure du risque.
+2. AR02 — Modélisation de la fréquence et de la sévérité des sinistres.
+3. AR03 — Tarification, GLM, relativités et contraintes tarifaires.
+4. AR04 — Crédibilité actuarielle et mutualisation de l'information.
+5. AR05 — Survie, mortalité et tables de vie.
+6. AR06 — Assurance vie, rentes et valeurs actuelles actuarielles.
+7. AR07 — Provisionnement non-vie et triangles de développement.
+8. AR08 — Réassurance, transfert de risque et structures de couverture.
+9. AR09 — Capital économique, agrégation, dépendance, Expected Shortfall et solvabilité.
+10. AR10 — Gouvernance actuarielle, validation et projet de risque.
+
+La théorie de la ruine et les modèles extrêmes approfondis restent des prolongements spécialisés ; ils ne sont pas présentés comme des unités autonomes du découpage actuel.
 
 ### B19 — Économétrie et statistiques financières
-1. Modèle économétrique et identification.
-2. Régression avec données transversales.
-3. Données de panel et effets fixes/aléatoires.
-4. Endogénéité, instruments et variables omises.
-5. Séries macroéconomiques et modèles dynamiques.
-6. Volatilité et dépendance des rendements.
-7. Modèles de risque de marché et de crédit.
-8. Évaluation empirique, prévision et backtesting.
-9. Reproductibilité, robustesse et interprétation économique.
+1. EF01 — Fondements de l'économétrie et identification des relations.
+2. EF02 — Régression économétrique, endogénéité et inférence robuste.
+3. EF03 — Données de panel : effets fixes, aléatoires et différences.
+4. EF04 — Variables instrumentales et méthodes des moments.
+5. EF05 — Modèles de choix discret et données censurées.
+6. EF06 — Rendements financiers, dépendance et propriétés empiriques.
+7. EF07 — Modèles de facteurs, CAPM et évaluation des actifs.
+8. EF08 — Volatilité financière, Value-at-Risk et backtesting.
+9. EF09 — Microstructure des marchés et économétrie haute fréquence.
+10. EF10 — Projet économétrique et financier : estimation, robustesse et communication.
+
+La macroéconométrie structurelle et le risque de crédit approfondi ne sont pas des unités autonomes du découpage actuel ; ils relèvent de prolongements spécialisés.
 
 ### B20 — Théorie statistique avancée et méthodes de recherche
-1. Mesure, intégration et probabilités sur espaces mesurés.
-2. Espérance conditionnelle et convergence avancée.
-3. Théorie asymptotique et méthodes delta.
-4. Efficacité, information et bornes d'estimation.
-5. Processus empiriques et convergence uniforme.
-6. Inégalités de concentration et probabilités en grande dimension.
-7. Statistique non paramétrique et semi-paramétrique.
-8. Théorie bayésienne avancée et calcul MCMC.
-9. Théorie de la décision et robustesse.
-10. Lecture critique, reproduction et synthèse d'articles.
-11. Question de recherche, protocole et rapport scientifique.
+1. AT01 — Fondements mesurés de la probabilité et convergence.
+2. AT02 — Théorie asymptotique des estimateurs et méthodes delta.
+3. AT03 — Processus empiriques, convergence faible, bootstrap et concentration.
+4. AT04 — Vraisemblance avancée, modèles semi-paramétriques et information.
+5. AT05 — Inférence bayésienne avancée, calcul Monte-Carlo et théorie de la décision.
+6. AT06 — Processus stochastiques, martingales et temps d'arrêt.
+7. AT07 — Statistique en grande dimension et inférence après sélection.
+8. AT08 — Optimisation numérique et algorithmes statistiques.
+9. AT09 — Méthodes de recherche, simulation et science reproductible.
+10. AT10 — Projet de recherche avancée et mémoire reproductible.
+
+Les cours de théorie de la mesure, d'analyse fonctionnelle et de statistique non paramétrique infinidimensionnelle au-delà des thèmes traités restent des prolongements de niveau doctoral.
 
 ## 5. Parcours recommandés
 
 Les parcours sont des itinéraires dans une bibliothèque commune. Une unité peut appartenir à plusieurs parcours.
 
-- **Mathématiques et statistique fondamentales :** B01 → B02 → B03/B04 → B05 → B08 → B10 → B11, puis approfondissements B03/B04/B08 et B20.
+- **Mathématiques et statistique fondamentales :** B01 → B02 → B03/B04 → B05 → B08 → B10 → B11, puis approfondissements B03/B04/B08 ; B20 relève du parcours recherche avancé.
 - **Data analyst / statisticien appliqué :** B01 → B03 → B04 → B08 → B10 → B11 → B12 → B17 ; B13, B14 et B16 selon le domaine.
 - **Data science / machine learning :** B01 → B02 → B03 → B04 → B05 → B06 → B08 → B11 → B12 → B13 → B15 → B17 ; B07 fortement recommandé.
-- **Statistique théorique / recherche :** B02 → B03 → B04 → B05 → B08 → B11 → B20, puis B09, B13, B14 ou B15 selon le sujet.
-- **Actuariat et risque :** B01 → B03 → B04 → B05 → B08 → B09 → B10 → B11 → B12 → B16 → B18 ; B06, B13, B14, B19 et B20 en approfondissement.
-- **Économétrie et statistique financière :** B01 → B03 → B04 → B05 → B08 → B11 → B12 → B14 → B16 → B19.
+- **Statistique théorique / recherche :** B02 → B03 → B04 → B05 → B08 → B09 → B11 → B12 → B13 → B15 → B16 → B17 → B20 ; B14 s'ajoute pour les sujets causaux.
+- **Actuariat et risque :** B01 → B03 → B04 → B05 → B08 → B09 → B10 → B11 → B12 → B16 → B18 ; B06, B13, B14, B17 et B19 en approfondissement. B20 s'ajoute pour une orientation recherche après B13, B15 et B17.
+- **Économétrie et statistique financière :** B01 → B03 → B04 → B05 → B08 → B11 → B12 → B13 → B14 → B16 → B17 → B19.
 
 ## 6. Graphe de dépendances et progression
 
@@ -337,7 +342,7 @@ Les dépendances sont des prérequis conceptuels, pas une obligation d'achever c
 - B16 nécessite les bases probabilistes et statistiques ; B09 est utile pour les modèles avancés.
 - B17 accompagne tous les parcours appliqués et ne doit pas être réduit à un cours d'outils.
 - B18 et B19 sont des spécialisations reposant sur les blocs de probabilité, inférence et modélisation.
-- B20 est un approfondissement théorique, pas un prérequis à toute pratique professionnelle.
+- B20 est un approfondissement théorique, pas un prérequis à toute pratique professionnelle ; il suppose une base de processus stochastiques, d'algèbre linéaire, de modélisation multivariée, de machine learning, de séries temporelles et de reproductibilité des données.
 
 ## 7. Compétences transversales
 
@@ -404,7 +409,7 @@ Tant qu'un backend sécurisé n'est pas opérationnel, les examens du site reste
 
 ## 12. Limites et décisions futures
 
-Cette architecture fixe le périmètre cible, mais ne signifie pas que les 20 blocs sont rédigés ou validés. Le découpage définitif des unités, les charges, les conventions, les versions logicielles, les projets intégrateurs, les langues et les domaines spécialisés seront précisés au fil des lots.
+Cette architecture couvre désormais 20 blocs et 196 unités identifiées dans les cartes pédagogiques. La présence d'un bloc sur GitHub Pages et la réussite de la CI ne constituent ni une accréditation, ni une revue académique indépendante, ni une validation par des apprenants. Les domaines explicitement signalés comme prolongements restent à développer.
 
 Aucun nombre arbitraire de leçons ne sera fixé pour donner une impression de volume. Le découpage suivra les objectifs d'apprentissage et la cohérence scientifique.
 

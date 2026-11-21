@@ -1,7 +1,7 @@
 # B13 — Seconde revue interne mathématique et pédagogique
 
 **Version examinée :** 1.1 · **Statut :** seconde passe assistée par IA, non indépendante  
-**Périmètre :** M01–M10, carte pédagogique et évaluation formative.
+**Périmètre :** MV01–MV10, carte pédagogique et évaluation formative.
 
 ## Contrôles de cohérence réalisés
 - Séquence logique : objets multivariés → distribution et distance → inférence → méthodes explicatives et exploratoires → grande dimension.
@@ -36,16 +36,16 @@ Cette revue est une vérification interne de cohérence et de couverture. Elle n
 
 ## Résultats de la seconde passe
 
-1. M01 : rang $\operatorname{rang}(S)\leq\min(p,n-1)$ et précautions relatives aux covariances pairwise.
-2. M02 : distinction du cas paramètres connus/estimés et rappel de la sensibilité aux atypies.
-3. M03 : hypothèses de la loi F de Hotelling T² explicitées via normalité multivariée, indépendance et Wishart ; intervalles marginaux distingués des régions simultanées.
-4. M04 : matrices H/E, degrés de liberté et critères multivariés formalisés.
-5. M05 : lien SVD/eigen, scores et convention des charges précisés ; exemple spectral recalculé.
-6. M06 : modèle général avec matrice de corrélation factorielle Φ et transformation de rotation donnant la même covariance.
-7. M07 : problème de valeurs propres généralisées et limites de singularité explicités.
-8. M08 : risque conditionnel avec matrice de coûts et calibration ajoutés.
-9. M09 : méthode DBSCAN et concentration des distances en grande dimension ajoutées.
-10. M10 : matrice de précision et corrélation partielle sous normalité, shrinkage et validation après sélection développés.
+1. MV01 : rang $\operatorname{rang}(S)\leq\min(p,n-1)$ et précautions relatives aux covariances pairwise.
+2. MV02 : distinction du cas paramètres connus/estimés et rappel de la sensibilité aux atypies.
+3. MV03 : hypothèses de la loi F de Hotelling T² explicitées via normalité multivariée, indépendance et Wishart ; intervalles marginaux distingués des régions simultanées.
+4. MV04 : matrices H/E, degrés de liberté et critères multivariés formalisés.
+5. MV05 : lien SVD/eigen, scores et convention des charges précisés ; exemple spectral recalculé.
+6. MV06 : modèle général avec matrice de corrélation factorielle Φ et transformation de rotation donnant la même covariance.
+7. MV07 : problème de valeurs propres généralisées et limites de singularité explicités.
+8. MV08 : risque conditionnel avec matrice de coûts et calibration ajoutés.
+9. MV09 : méthode DBSCAN et concentration des distances en grande dimension ajoutées.
+10. MV10 : matrice de précision et corrélation partielle sous normalité, shrinkage et validation après sélection développés.
 11. Évaluation : 18 questions, 100 points, somme vérifiée.
 12. Laboratoire : Python/R standard, tests de covariance, spectre, ACP, Mahalanobis, T², shrinkage et k-means.
 
@@ -57,3 +57,11 @@ Cette revue est une vérification interne de cohérence et de couverture. Elle n
 - La validation humaine indépendante, les tests apprenants et l'audit d'accessibilité restent à effectuer.
 
 Cette revue est interne et assistée par IA ; elle ne constitue pas une certification académique.
+
+
+## Complément de seconde passe — MANOVA et identifiants MV · 21 novembre 2026
+
+- Les identifiants publics des dix unités sont harmonisés en MV01–MV10 ; les noms de fichiers MV01–MV10 restent des chemins de stockage historiques et ne sont pas les identifiants pédagogiques.
+- MV04 reçoit les formules des matrices H/E, des quatre critères multivariés et de leurs transformations F (Rao/Wilks, Pillai, Hotelling–Lawley, Roy), avec conditions d'usage, degrés de liberté et limites.
+- Sources S158–S160 ajoutées au registre. La formule de Roy est décrite comme borne F hors cas exacts, et non comme approximation générique exacte.
+- Revue assistée par IA ; les calculs doivent être confrontés à un logiciel de référence et relus indépendamment avant toute utilisation sommative.

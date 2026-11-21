@@ -1,9 +1,9 @@
 # B20 — Carte pédagogique : Théorie statistique avancée et méthodes de recherche
 
-**Version :** 1.1 · **Statut :** seconde consolidation pédagogique publiée après CI complète ; revue indépendante à réaliser.
+**Version :** 1.2 · **Statut :** seconde consolidation publiée après CI complète ; revue indépendante à réaliser.
 **Charge indicative :** 60–76 heures de cours et ateliers, hors mémoire de recherche  
 **Niveau :** M1–M2 / préparation recherche  
-**Prérequis :** B08 probabilités, B11 inférence, B12 régression, B13 multivarié, B15 machine learning, B16 séries temporelles, B17 reproductibilité ; analyse réelle et algèbre linéaire avancées.
+**Prérequis :** B02 démonstrations, B03 algèbre linéaire, B04 analyse réelle, B08 probabilités, B09 processus stochastiques, B11 inférence, B12 modèles, B13 multivarié, B15 machine learning, B16 séries temporelles et B17 reproductibilité ; niveau L3 recommandé.
 
 ## Finalité
 Approfondir les fondements mathématiques de la statistique moderne, les résultats asymptotiques, l'inférence semi-paramétrique et bayésienne, les processus stochastiques, les méthodes en grande dimension, l'optimisation et la pratique scientifique reproductible.
@@ -16,7 +16,7 @@ Approfondir les fondements mathématiques de la statistique moderne, les résult
 | AT02 | Théorie asymptotique des estimateurs et méthodes delta | Établir consistance et normalité asymptotique | 6–7 h |
 | AT03 | Processus empiriques, convergence faible et bootstrap avancé | Comprendre limites fonctionnelles et rééchantillonnage | 6–8 h |
 | AT04 | Vraisemblance avancée, modèles semi-paramétriques et information | Étudier nuisance, efficacité et MLE | 6–8 h |
-| AT05 | Inférence bayésienne avancée et calcul Monte-Carlo | Construire posterior, MCMC et diagnostics | 6–8 h |
+| AT05 | Inférence bayésienne avancée, décision et calcul Monte-Carlo | Construire posterior, MCMC et diagnostics | 6–8 h |
 | AT06 | Processus stochastiques, martingales et temps d’arrêt | Formaliser information et dynamique aléatoire | 6–8 h |
 | AT07 | Statistique en grande dimension et inférence après sélection | Distinguer prédiction et inférence haute dimension | 6–8 h |
 | AT08 | Optimisation numérique et algorithmes statistiques | Diagnostiquer convergence et stabilité numérique | 5–7 h |
@@ -24,16 +24,17 @@ Approfondir les fondements mathématiques de la statistique moderne, les résult
 | AT10 | Projet de recherche avancée et mémoire reproductible | Construire un projet original défendable | 8–12 h de cadrage |
 
 ## Compétences transversales
-1. Maîtriser les modes de convergence et théorèmes limites.
+1. Maîtriser les modes de convergence et les théorèmes limites.
 2. Démontrer consistance, normalité asymptotique et résultats delta.
-3. Comprendre processus empiriques et validité du bootstrap.
+3. Comprendre processus empiriques, concentration et validité du bootstrap.
 4. Analyser vraisemblance, paramètres de nuisance et efficacité.
-5. Réaliser inférence bayésienne et diagnostiquer calcul Monte-Carlo.
-6. Formaliser processus adaptés, martingales et temps d'arrêt.
-7. Comprendre régularisation, grande dimension et inférence après sélection.
-8. Choisir des algorithmes numériques stables.
-9. Concevoir simulations et plans d'analyse reproductibles.
-10. Développer une question de recherche avec contribution et limites explicites.
+5. Construire une décision bayésienne sous fonction de perte et discuter le risque minimax.
+6. Réaliser une inférence bayésienne et diagnostiquer les calculs Monte-Carlo.
+7. Formaliser processus adaptés, martingales et temps d'arrêt.
+8. Comprendre régularisation, grande dimension et inférence après sélection.
+9. Choisir des algorithmes numériques stables.
+10. Concevoir simulations et protocoles de recherche reproductibles.
+11. Développer une question de recherche avec contribution et limites explicites.
 
 ## Dépendances pédagogiques
 AT01–AT03 construisent les fondements de convergence ; AT04–AT05 couvrent inférence fréquentiste avancée et Bayes ; AT06 traite processus ; AT07–AT08 lient théorie, grande dimension et calcul ; AT09–AT10 développent méthode et projet de recherche. Les unités s'appuient sur les blocs précédents et les prolongent vers des lectures de niveau doctoral.
@@ -71,3 +72,9 @@ Les fonctions sont didactiques. Elles ne remplacent pas les preuves, ne garantis
 Chaque théorème doit énoncer ses hypothèses et le mode de convergence ; chaque algorithme doit expliciter sa cible, son critère d'arrêt et ses diagnostics ; toute simulation doit distinguer erreur statistique, erreur Monte-Carlo et erreur numérique ; toute recherche doit tracer protocole, données, code, versions et limites.
 
 **Statut :** seconde consolidation pédagogique et laboratoire Python/R dans une branche candidate ; CI, revue humaine indépendante, tests apprenants et audit d'accessibilité à réaliser.
+
+
+## Compléments théoriques de la seconde passe
+
+- AT03 : inégalités de Hoeffding, Bernstein et McDiarmid, avec hypothèses de bornitude/indépendance et mise en garde sur les données dépendantes.
+- AT05 : risque fréquentiste, risque bayésien, action optimale sous perte, règles minimax et admissibilité.

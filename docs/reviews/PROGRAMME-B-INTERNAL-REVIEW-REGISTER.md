@@ -51,3 +51,12 @@ Les anciens statuts « draft » de cette première passe décrivaient l'absence 
 - évaluation alignée sur les objectifs ;
 - rendu, clavier, responsive et accessibilité contrôlés ;
 - décision de revue et limites résiduelles tracées par unité.
+
+
+## Audit transversal — 21 novembre 2026
+
+- Rapport : [PROGRAMME-B-CROSS-BLOCK-AUDIT-2026-11-21.md](PROGRAMME-B-CROSS-BLOCK-AUDIT-2026-11-21.md).
+- Contrôles structurels : 20 blocs, 196 unités, 196 identifiants publics uniques ; source register S01–S160 sans doublon ni trou ; 13 laboratoires Python/R B08–B20 intégrés à la CI.
+- Corrections documentaires et pédagogiques proposées dans la branche `chatgpt/curriculum-transversal-audit` : README, roadmap, architecture, parcours, codes B13 MV01–MV10, sources MANOVA S158–S160, en-têtes B18–B20, versions des cours B10–B20 et contenus AT03/AT05.
+- Le complément MANOVA MV04 de l'ancienne PR #60 est repris dans cette branche ; PR #60 doit être fermée après fusion de la reprise, afin d'éviter des branches concurrentes.
+- Cette revue est structurelle et assistée par IA ; elle ne vaut pas revue mathématique exhaustive, validation indépendante, tests apprenants ni audit d'accessibilité.
