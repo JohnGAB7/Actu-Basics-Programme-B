@@ -8,7 +8,7 @@ from typing import Sequence
 
 def _matrix(data: Sequence[Sequence[float]]) -> list[list[float]]:
     x = [[float(v) for v in row] for row in data]
-    if len(x) < 2 or not x or not x[0] or any(len(row) != len(x[0]) for row in x):
+    if not x or not x[0] or any(len(row) != len(x[0]) for row in x):
         raise ValueError("matrix must be rectangular with at least two rows and one column")
     if any(not math.isfinite(v) for row in x for v in row):
         raise ValueError("matrix values must be finite")
@@ -78,6 +78,7 @@ def _determinant(a: list[list[float]], tolerance: float = 1e-14) -> float:
 def covariance_matrix(data: Sequence[Sequence[float]]) -> list[list[float]]:
     x = _matrix(data)
     n,p = len(x),len(x[0])
+    if n < 2: raise ValueError("covariance requires at least two observations")
     means = [sum(row[j] for row in x)/n for j in range(p)]
     centered = [[row[j]-means[j] for j in range(p)] for row in x]
     return [[sum(row[i]*row[j] for row in centered)/(n-1) for j in range(p)] for i in range(p)]
@@ -100,13 +101,15 @@ def jacobi_eigen_symmetric(
     n = len(a)
     if len(a[0]) != n or any(abs(a[i][j]-a[j][i]) > 1e-10 for i in range(n) for j in range(n)):
         raise ValueError("matrix must be square and symmetric")
-    if tolerance <= 0 or max_iter < 1:
-        raise ValueError("positive tolerance and max_iter are required")
+    if not math.isfinite(tolerance) or tolerance <= 0 or max_iter < 1 or int(max_iter) != max_iter:
+        raise ValueError("positive finite tolerance and integer max_iter are required")
     v = [[1.0 if i == j else 0.0 for j in range(n)] for i in range(n)]
+    converged = False
     for _ in range(max_iter):
         p,q = max(((i,j) for i in range(n) for j in range(i+1,n)),
                   key=lambda ij: abs(a[ij[0]][ij[1]]), default=(0,0))
         if p == q or abs(a[p][q]) < tolerance:
+            converged = True
             break
         apq = a[p][q]
         tau = (a[q][q]-a[p][p])/(2*apq)
@@ -125,6 +128,8 @@ def jacobi_eigen_symmetric(
             vkp,vkq = v[k][p],v[k][q]
             v[k][p] = c*vkp-s*vkq
             v[k][q] = s*vkp+c*vkq
+    if not converged:
+        raise RuntimeError("Jacobi eigensolver did not converge within max_iter")
     order = sorted(range(n),key=lambda j:a[j][j],reverse=True)
     eigenvalues = [a[j][j] for j in order]
     eigenvectors = [[v[i][j] for j in order] for i in range(n)]
@@ -158,8 +163,15 @@ def mahalanobis_squared(x: Sequence[float], mean: Sequence[float],
     if len(x) != len(mean):
         raise ValueError("x and mean dimensions differ")
     delta = [float(a)-float(b) for a,b in zip(x,mean)]
-    inv = _inverse(_matrix(covariance))
-    return _dot(delta,_matmul(inv,[[v] for v in delta])[i][0] for i,v in enumerate(delta))
+    if any(not math.isfinite(v) for v in delta): raise ValueError("x and mean must be finite")
+    cov = _matrix(covariance)
+    if len(cov) != len(delta) or len(cov[0]) != len(delta) or any(abs(cov[i][j]-cov[j][i])>1e-10 for i in range(len(cov)) for j in range(len(cov))):
+        raise ValueError("covariance must be symmetric and dimensionally compatible")
+    eigenvalues,_ = jacobi_eigen_symmetric(cov)
+    if min(eigenvalues) <= 1e-12: raise ValueError("covariance must be positive definite")
+    inv = _inverse(cov)
+    transformed = [row[0] for row in _matmul(inv,[[v] for v in delta])]
+    return _dot(delta,transformed)
 
 
 def hotelling_one_sample(data: Sequence[Sequence[float]], null_mean: Sequence[float]) -> dict[str,float]:
@@ -194,7 +206,7 @@ def kmeans(data: Sequence[Sequence[float]], k: int, seed: int = 20261121,
            n_init: int = 10, max_iter: int = 300) -> dict[str,object]:
     x = _matrix(data)
     n,p = len(x),len(x[0])
-    if k < 1 or k > len({tuple(row) for row in x}) or n_init < 1 or max_iter < 1:
+    if n < 2 or k < 1 or k > len({tuple(row) for row in x}) or n_init < 1 or max_iter < 1:
         raise ValueError("invalid k or iteration count; require k distinct observations")
     rng = random.Random(seed)
     best = None
