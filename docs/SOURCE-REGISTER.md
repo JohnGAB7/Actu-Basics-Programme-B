@@ -282,3 +282,13 @@ Les ressources S108–S110 complètent le cadrage de B14. Elles ne constituent p
 | S113 | NIST, AI Risk Management Framework 1.0 (2023), NIST AI 100-1 : https://doi.org/10.6028/NIST.AI.100-1 ; portail : https://www.nist.gov/itl/ai-risk-management-framework | Gouvernance, cartographie, mesure, gestion, suivi et documentation des risques IA | ML10 ; cadre volontaire en cours de révision, à adapter au contexte et aux obligations applicables |
 
 Les ressources S111–S113 complètent le cadrage de B15. Elles ne constituent pas une validation indépendante du bloc ni une approbation de Programme B.
+
+
+## B16 — Compléments de la seconde passe
+| ID | Ressource | Domaines utiles | Utilisation |
+|---|---|---|---|
+| S114 | Hyndman & Athanasopoulos, Forecasting: Principles and Practice, 3e édition, OTexts (version en ligne mise à jour en novembre 2026) : https://otexts.com/fpp3/ | Exploration, stationnarité, ARIMA, ETS, validation temporelle, régression dynamique, prévision hiérarchique | Référence centrale pour TS01–TS07 et TS10 ; le texte privilégie l'application et renvoie aux références pour les preuves avancées |
+| S115 | statsmodels 0.15, ARIMA et State Space/SARIMAX documentation : https://www.statsmodels.org/stable/generated/statsmodels.tsa.arima.model.ARIMA.html ; https://www.statsmodels.org/stable/statespace.html | ARIMA/SARIMAX, espace-état, estimation, diagnostics et prévision | Référence d'implémentation pour TS03–TS04 et TS10 ; conventions et paramètres doivent être lus dans la version utilisée |
+| S116 | arch 7.2 documentation, volatility processes and forecasting : https://arch.readthedocs.io/en/stable/univariate/univariate_volatility_modeling.html ; https://arch.readthedocs.io/en/stable/univariate/univariate_volatility_forecasting.html | ARCH/GARCH, distributions d'innovation, volatilité et prévisions | Référence d'implémentation pour TS09 ; le laboratoire Programme B n'est qu'une récursion à paramètres fixés |
+
+Les ressources S114–S116 complètent le cadrage de B16. Elles ne constituent pas une validation indépendante du bloc ni une approbation de Programme B.
