@@ -48,3 +48,15 @@ Chaque unité comprend définitions, hypothèses, exemples, exercices corrigés,
 - MIT OCW 18.445 — Lecture Notes : https://ocw.mit.edu/courses/18-445-introduction-to-stochastic-processes-spring-2015/pages/lecture-notes/
 
 Ces ressources guident le cadrage et la vérification. Elles ne valident ni n'accréditent Programme B. Les chapitres et sections effectivement utilisés doivent être consignés lors de la revue approfondie.
+
+
+## Correspondance des ressources ouvertes vérifiées
+
+- **S01 — objets et familles de processus :** MIT 6.262, chapitre 1 (introduction) ; MIT 18.445, cours d'introduction.
+- **S02–S05 — chaînes de Markov discrètes :** MIT 18.445, notes sur chaînes finies, distributions stationnaires, temps d'atteinte, chaînes dénombrables, irréductibilité et récurrence.
+- **S06–S07 — Poisson et renouvellement :** MIT 6.262, chapitres 2 et 4 ; calendrier des séances 4–5 et 10–12.
+- **S08 — martingales et arrêt :** MIT 18.445, séances 15–18 ; MIT 15.070J pour les filtrations et théorèmes d'arrêt.
+- **S09 — temps continu et générateurs :** MIT 18.445, séances 21–24 ; MIT 6.262, chapitre 6 et sections sur les équations de Kolmogorov et les processus naissance-mort.
+- **S10 — brownien et calcul d'Itô :** MIT 15.070J, cours avancé couvrant mouvement brownien, intégration stochastique et calcul d'Itô. Ne pas attribuer ces contenus au cours MIT 18.445.
+
+Références institutionnelles vérifiées : [MIT 18.445 — cours et description](https://ocw.mit.edu/courses/18-445-introduction-to-stochastic-processes-spring-2015/), [notes 18.445](https://ocw.mit.edu/courses/18-445-introduction-to-stochastic-processes-spring-2015/pages/lecture-notes/), [MIT 6.262 — cours](https://ocw.mit.edu/courses/6-262-discrete-stochastic-processes-spring-2011/), [notes 6.262](https://www.ocw.mit.edu/courses/6-262-discrete-stochastic-processes-spring-2011/pages/course-notes/), [MIT 15.070J — cours](https://ocw.mit.edu/courses/15-070j-advanced-stochastic-processes-fall-2013/).
