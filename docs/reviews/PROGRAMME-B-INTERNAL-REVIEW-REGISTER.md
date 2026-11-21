@@ -116,3 +116,6 @@ Les anciens statuts « draft » de cette première passe décrivaient l'absence 
 - Une erreur importante de la première version de Roy a été détectée : le cas p=1,q>1 utilisait à tort la formule exacte du cas q=1. MV04 est corrigée par la formule d=max(p,q), F=Θ(v−d+q)/d ; exact si min(p,q)=1, borne supérieure sinon. Contrôle de réduction à l'ANOVA univariée ajouté.
 - S158–S160 sont reliées à MV04 ; S67–S71 aux autres unités. L'évaluation formative inclut les quatre critères et la prudence sur la borne de Roy.
 - Comparaison à R/SAS/Stata, recalcul des corrigés, tests apprenants et revue humaine indépendante restent requis.
+
+
+**Contrôle additionnel B13 :** helper `roy_f_bound` ajouté au laboratoire Python/R ; tests des deux cas exacts (p=1 ou q=1) et d'un cas de borne ; CI à confirmer.
