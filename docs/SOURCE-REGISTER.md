@@ -309,3 +309,21 @@ Les ressources S114–S116 complètent le cadrage de B16. Elles ne constituent p
 | S126 | European Commission — Data Quality Guidelines : https://op.europa.eu/webpub/op/data-quality-guidelines/en/ ; UC Davis DataLab — Reproducible Research Guide : https://ucdavisdatalab.github.io/guide_reproducible_research/ | Dimensions de qualité, organisation de projet, formats ouverts et workflows reproductibles | DE05 et DE08 ; qualité par usage et pérennité |
 
 Les ressources S117–S126 complètent le cadrage de B17. Elles ne constituent ni une validation indépendante de chaque démonstration/exemple, ni une approbation ou accréditation de Programme B.
+
+
+
+## B18 — Sources complémentaires de la seconde passe
+
+| ID | Ressource | Domaines utiles | Utilisation |
+|---|---|---|---|
+| S127 | Society of Actuaries — Fundamentals of Actuarial Mathematics (FAM), syllabus 2026 et ressources d'étude : https://www.soa.org/education/exam-req/edu-exam-fam/ ; https://www.soa.org/education/exam-req/edu-exam-fam/study/ | Modèles actuariels, tarification, provisionnement court terme, modèles contingents, assurance vie et rentes | Cadrage AR01–AR03, AR06–AR07 ; syllabus évolutif, vérifier l'administration applicable |
+| S128 | Society of Actuaries — Advanced Short-Term Actuarial Mathematics (ASTAM), Spring 2026 syllabus : https://www.soa.org/490012/globalassets/assets/files/edu/2026/spring/syllabi/2026-spring-exam-astam-syllabus.pdf | Crédibilité bayésienne, Bühlmann/Bühlmann–Straub, modèles de pertes et méthodes avancées | Approfondissement AR02, AR04 et AR07 |
+| S129 | Society of Actuaries — Credibility Educational Resource for Pension Actuaries : https://www.soa.org/resources/research-reports/2022/resource-pension-actuaries/ | Théorie de crédibilité, mutualisation d'expérience et mortalité | AR04 ; ressource pédagogique professionnelle |
+| S130 | EIOPA — Solvency II Single Rulebook, Article 77 (technical provisions) : https://www.eiopa.europa.eu/rulebook/solvency-ii-single-rulebook/article-2160_en | Best estimate, valeur actuelle des flux, marge de risque et méthodes actuarielles | AR06–AR07 et AR09 ; vérifier le texte consolidé et la transposition |
+| S131 | EIOPA — Solvency II Single Rulebook, Article 48 (actuarial function) : https://www.eiopa.europa.eu/rulebook/solvency-ii-single-rulebook/article-2131_en | Coordination des provisions, qualité des données, comparaison expérience, avis souscription/réassurance | AR10 ; synthèse pédagogique, pas un avis juridique |
+| S132 | EIOPA — Solvency II Single Rulebook, Article 101 (SCR) : https://www.eiopa.europa.eu/rulebook/solvency-ii-single-rulebook/article-2188_en | Calibration VaR 99,5 % à un an, risques couverts et techniques d'atténuation | AR09 ; vérifier les évolutions réglementaires |
+| S133 | Human Mortality Database — Overview and methods : https://www.mortality.org/Project/Overview | Tables de vie, taux de mortalité, données de décès et populations | AR05–AR06 ; limites de comparabilité et qualité des sources à examiner |
+| S134 | International Actuarial Association — International Standards of Actuarial Practice : https://actuaries.org/publications/international-standards-of-actuarial-practices/ ; ISAP 5 : https://actuaries.org/app/uploads/2025/04/ISAP5_ConformanceChanges_1Dec2018-1.pdf | Pratique actuarielle générale, modèles de risque d'assureur, hypothèses, incertitude et proportionnalité | AR09–AR10 ; standards internationaux à distinguer des obligations locales |
+| S135 | Society of Actuaries Research Institute — Evaluating Bias Mitigation Strategies in AI Models for Insurance Pricing and Risk Assessment (27 octobre 2026) : https://www.soa.org/resources/research-reports/2026/ai-insurance-bias-mitigation/ | Biais de mesure, variables indirectes, écarts de groupes et évaluation des modèles prédictifs d'assurance | AR03 et AR10 ; rapport de recherche, ne tranche pas seul les questions juridiques |
+
+Les ressources S127–S135 complètent le cadrage de B18. Elles ne valident pas chaque calcul, ne remplacent pas les manuels spécialisés et ne signifient aucune approbation de Programme B par les organismes cités.
