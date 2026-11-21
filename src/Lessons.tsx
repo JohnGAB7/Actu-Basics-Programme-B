@@ -14,6 +14,10 @@ import f07 from './content/bloc-01/F07.md?raw'
 import f08 from './content/bloc-01/F08.md?raw'
 import exercises from './content/bloc-01/EXERCICES.md?raw'
 import corrections from './content/bloc-01/CORRIGES.md?raw'
+import finalExam from './content/bloc-01/EXAMEN-FINAL.md?raw'
+import finalExamCorrection from './content/bloc-01/CORRIGE-EXAMEN-FINAL.md?raw'
+import calculusExam from './content/bloc-01/EXAMEN-CALCUL-DIFFERENTIEL.md?raw'
+import calculusCorrection from './content/bloc-01/CORRIGE-CALCUL-DIFFERENTIEL.md?raw'
 
 type Course = { code: string; title: string; description: string; content: string; source: string; sha: string; duration: string }
 const sourceRoot = 'https://github.com/JohnGAB7/Actu-Basics-Lab/tree/programme-b/bloc-1-fondations/programme-b/bloc-01'
@@ -27,24 +31,30 @@ const courses: Course[] = [
  {code:'F07',title:'Fonctions et relations mathématiques',description:'Étudier domaines, images, antécédents, variations et compositions.',content:f07,source:sourceRoot+'/F07-fonctions-relations/COURS.md',sha:'979a37a22ba41f792fffa4f47c1e6a591546efd4',duration:'4–5 h'},
  {code:'F08',title:'Repères, graphiques, unités et notation scientifique',description:'Lire et construire des représentations quantitatives fidèles.',content:f08,source:sourceRoot+'/F08-reperes-graphiques-unites/COURS.md',sha:'4e18b590c36dc6f2a48d8af9380ae8afe371eb06',duration:'3–4 h'}
 ]
-type Resource = 'course' | 'exercises' | 'corrections'
+type Resource = 'course' | 'exercises' | 'corrections' | 'final-exam' | 'final-correction' | 'calculus-exam' | 'calculus-correction'
 export function LessonLibrary({query,setQuery}:{query:string;setQuery:(value:string)=>void}) {
  const [selected,setSelected]=useState<Course|null>(null)
  const [resource,setResource]=useState<Resource>('course')
  const filtered=useMemo(()=>courses.filter(c=>(c.code+c.title+c.description).toLowerCase().includes(query.toLowerCase())),[query])
- const content=resource==='exercises'?exercises:resource==='corrections'?corrections:selected?.content??''
- const title=resource==='exercises'?'Banque de 40 exercices':resource==='corrections'?'Corrigés détaillés':selected?.title??''
+ const content=resource==='exercises'?exercises:resource==='corrections'?corrections:resource==='final-exam'?finalExam:resource==='final-correction'?finalExamCorrection:resource==='calculus-exam'?calculusExam:resource==='calculus-correction'?calculusCorrection:selected?.content??''
+ const title=resource==='exercises'?'Banque de 40 exercices':resource==='corrections'?'Corrigés détaillés':resource==='final-exam'?'Examen transversal — Bloc 1':resource==='final-correction'?'Corrigé — Examen transversal Bloc 1':resource==='calculus-exam'?'Examen complémentaire — Calcul différentiel':resource==='calculus-correction'?'Corrigé — Calcul différentiel':selected?.title??''
+ const durationLabel=resource==='final-exam'||resource==='final-correction'?'2 heures · 100 points':resource==='calculus-exam'||resource==='calculus-correction'?'2 h 30 · 100 points':selected?.duration??''
+ const sourceLink=resource==='course'?selected?.source:resource==='exercises'?sourceRoot+'/exercices/ENONCES.md':resource==='corrections'?sourceRoot+'/exercices/CORRIGES.md':resource==='final-exam'?sourceRoot+'/etudes-universitaires/EXAMEN-FINAL-BLOC-1.md':resource==='final-correction'?sourceRoot+'/etudes-universitaires/CORRIGE-EXAMEN-FINAL.md':resource==='calculus-exam'?sourceRoot+'/etudes-universitaires/EXAMEN-CALCUL-DIFFERENTIEL.md':sourceRoot+'/etudes-universitaires/CORRIGE-EXAMEN-CALCUL-DIFFERENTIEL.md'
  const openResource=(kind:Resource)=>{setSelected(courses[0]);setResource(kind)}
  if(selected) return <div className="content-wrap lesson-reader">
   <button className="lesson-back" onClick={()=>{setSelected(null);setResource('course')}}><ArrowLeft size={15}/> Retour à la bibliothèque</button>
-  <div className="lesson-reader-head"><div><div className="eyebrow">BLOC 1 · {resource==='course'?selected.code:'ENTRAÎNEMENT'}</div><h1>{title}</h1><p>{resource==='course'?selected.description:'Entraînement transversal sur les huit compétences fondamentales.'}</p></div><div className="lesson-time"><Clock3 size={15}/>{selected.duration}</div></div>
+  <div className="lesson-reader-head"><div><div className="eyebrow">BLOC 1 · {resource==='course'?selected.code:'ENTRAÎNEMENT'}</div><h1>{title}</h1><p>{resource==='course'?selected.description:'Entraînement transversal sur les huit compétences fondamentales.'}</p></div><div className="lesson-time"><Clock3 size={15}/>{durationLabel}</div></div>
   <div className="lesson-tabs" role="tablist" aria-label="Ressources pédagogiques">
    <button className={resource==='course'?'active':''} onClick={()=>setResource('course')}><BookOpen size={15}/> Leçon</button>
    <button className={resource==='exercises'?'active':''} onClick={()=>setResource('exercises')}><FileText size={15}/> Exercices (40)</button>
    <button className={resource==='corrections'?'active':''} onClick={()=>setResource('corrections')}><CheckCircle2 size={15}/> Corrigés</button>
+   <button className={resource==='final-exam'?'active':''} onClick={()=>setResource('final-exam')}><FileText size={15}/> Examen F01–F08</button>
+   <button className={resource==='final-correction'?'active':''} onClick={()=>setResource('final-correction')}><CheckCircle2 size={15}/> Corrigé F01–F08</button>
+   <button className={resource==='calculus-exam'?'active':''} onClick={()=>setResource('calculus-exam')}><FileText size={15}/> Examen calcul diff.</button>
+   <button className={resource==='calculus-correction'?'active':''} onClick={()=>setResource('calculus-correction')}><CheckCircle2 size={15}/> Corrigé calcul diff.</button>
   </div>
   <article className="markdown-card"><ReactMarkdown remarkPlugins={[remarkGfm,remarkMath]} rehypePlugins={[rehypeKatex]}>{content}</ReactMarkdown></article>
-  <div className="lesson-provenance"><span>Source pédagogique : Actu-Basics-Lab · blob {resource==='course'?selected.sha.slice(0,10):'source'}</span><a href={resource==='course'?selected.source:sourceRoot} target="_blank" rel="noreferrer">Consulter la source originale <ArrowUpRight size={13}/></a></div>
+  <div className="lesson-provenance"><span>Source pédagogique : Actu-Basics-Lab · {resource==='course'?selected.sha.slice(0,10):'document source'}</span><a href={sourceLink??sourceRoot} target="_blank" rel="noreferrer">Consulter la source originale <ArrowUpRight size={13}/></a></div>
  </div>
  return <div className="content-wrap">
   <div className="page-heading"><div><div className="eyebrow">RESSOURCES PÉDAGOGIQUES · BLOC 1</div><h1>Bibliothèque</h1><p>Les huit cours de fondation sont maintenant consultables dans cet espace.</p></div><span className="lesson-count">8 cours · 40 exercices</span></div>
@@ -54,6 +64,8 @@ export function LessonLibrary({query,setQuery}:{query:string;setQuery:(value:str
   {filtered.length===0&&<div className="lesson-empty">Aucun cours ne correspond à cette recherche.</div>}
   <div className="lesson-resource-row"><div><FileText size={18}/><span><strong>Banque d’exercices transversaux</strong><small>40 énoncés classés par compétence, F01 à F08</small></span></div><button className="secondary-button" onClick={()=>openResource('exercises')}>Consulter <ArrowUpRight size={14}/></button></div>
   <div className="lesson-resource-row"><div><CheckCircle2 size={18}/><span><strong>Corrigés de la banque d’exercices</strong><small>Résultats, méthodes et points de vigilance</small></span></div><button className="secondary-button" onClick={()=>openResource('corrections')}>Consulter <ArrowUpRight size={14}/></button></div>
+  <div className="lesson-resource-row"><div><FileText size={18}/><span><strong>Examen transversal des fondations F01–F08</strong><small>2 heures · 100 points · sujet et corrigé distincts</small></span></div><button className="secondary-button" onClick={()=>openResource('final-exam')}>Consulter le sujet <ArrowUpRight size={14}/></button></div>
+  <div className="lesson-resource-row"><div><FileText size={18}/><span><strong>Évaluation complémentaire — calcul différentiel</strong><small>2 h 30 · 100 points · épreuve distincte</small></span></div><button className="secondary-button" onClick={()=>openResource('calculus-exam')}>Consulter le sujet <ArrowUpRight size={14}/></button></div>
   <div className="lesson-provenance"><span>Version source : branche programme-b/bloc-1-fondations</span><a href={sourceRoot} target="_blank" rel="noreferrer">Ouvrir le dépôt pédagogique <ArrowUpRight size={13}/></a></div>
  </div>
 }
