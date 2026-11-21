@@ -60,7 +60,7 @@ export const questions: Question[] = [
 ]
 
 export const blocks = [
-  { code: 'B01', title: 'Fondations mathématiques et raisonnement quantitatif', subtitle: 'Nombres, calcul, algèbre, fonctions et précision', progress: 12, lessons: 1, tone: 'mint', status: '1 unité en draft · 7 planifiées' },
+  { code: 'B01', title: 'Fondations mathématiques et raisonnement quantitatif', subtitle: 'Nombres, calcul, algèbre, fonctions et précision', progress: 0, lessons: 1, tone: 'mint', status: '1 unité en draft · 7 planifiées' },
   { code: 'B02', title: 'Logique, preuves et mathématiques discrètes', subtitle: 'Logique, démonstrations, combinatoire et graphes', progress: 0, lessons: 0, tone: 'blue', status: 'Planifié' },
   { code: 'B03', title: 'Algèbre linéaire et géométrie vectorielle', subtitle: 'Espaces, matrices, projections et décompositions', progress: 0, lessons: 0, tone: 'violet', status: 'Planifié' },
   { code: 'B04', title: 'Analyse réelle et calcul à une variable', subtitle: 'Suites, limites, continuité, dérivation et intégration', progress: 0, lessons: 0, tone: 'amber', status: 'Planifié' },
