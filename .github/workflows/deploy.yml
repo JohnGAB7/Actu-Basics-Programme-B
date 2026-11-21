@@ -46,6 +46,8 @@ jobs:
         run: python -m unittest discover -s labs/b16/tests -v
       - name: Run B17 Python data engineering tests
         run: python -m unittest discover -s labs/b17/tests -v
+      - name: Run B18 Python actuarial tests
+        run: python -m unittest discover -s labs/b18/tests -v
       - name: Setup R
         uses: r-lib/actions/setup-r@v2
       - name: Run B08 R laboratory checks
@@ -68,6 +70,8 @@ jobs:
         run: Rscript labs/b16/time_series_lab.R
       - name: Run B17 R data engineering checks
         run: Rscript labs/b17/data_pipeline_lab.R
+      - name: Run B18 R actuarial checks
+        run: Rscript labs/b18/actuarial_lab.R
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
