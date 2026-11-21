@@ -211,7 +211,7 @@ export function getCourseSummaries(): CourseSummary[] {
   const blockCode = getBlockCode(course.code)
   const block = curriculumBlocks.find(item => item.code === blockCode)
   const status = getCourseStatus(blockCode)
-  return {...course, blockCode, blockTitle: block?.title ?? blockCode, status, statusLabel: getStatusLabel(status)}
+  return {...course, blockCode, blockTitle: block?.title ?? blockCode, status, statusLabel: getStatusLabel()}
  })
 }
 
@@ -219,7 +219,7 @@ function getCourseStatus(_blockCode: string): CourseStatus {
  return 'review'
 }
 
-function getStatusLabel(status: CourseStatus): string {
+function getStatusLabel(): string {
  return 'Revue interne effectuée'
 }
 
@@ -447,12 +447,12 @@ export function LessonLibrary({query,setQuery}:{query:string;setQuery:(value:str
   <div className="lesson-provenance"><span>Programme B · Version {selected.version} · Rédaction indépendante</span><a href={`https://github.com/JohnGAB7/Actu-Basics-Programme-B/blob/master/src/content/${selected.code.startsWith('ML') ? 'BLOC B15' : selected.code.startsWith('CI') ? 'bloc-14' : selected.code.startsWith('MV') ? 'bloc-13' : selected.code.startsWith('I') ? 'bloc-11' : selected.code.startsWith('T') ? 'bloc-10' : selected.code.startsWith('S') ? 'bloc-09' : selected.code.startsWith('P') ? 'bloc-08' : selected.code.startsWith('N') ? 'bloc-07' : selected.code.startsWith('O') ? 'bloc-06' : selected.code.startsWith('M') ? 'bloc-05' : selected.code.startsWith('A') ? 'bloc-04' : selected.code.startsWith('V') ? 'bloc-03' : selected.code.startsWith('D') ? 'bloc-02' : 'bloc-01'}/${selected.code.startsWith('MV') ? 'M' + selected.code.slice(2) : selected.code}.md`} target="_blank" rel="noreferrer">Voir le fichier source <ArrowUpRight size={13}/></a></div>
  </div>
  return <div className="content-wrap">
-  <div className="page-heading"><div><div className="eyebrow">RESSOURCES PÉDAGOGIQUES · BLOCS B01–B20</div><h1>Bibliothèque</h1><p>Explorez les 196 unités par bloc et par état éditorial. La présence au catalogue ne signifie pas validation académique.</p></div><span className="lesson-count">196 unités · 3 états éditoriaux</span></div>
+  <div className="page-heading"><div><div className="eyebrow">RESSOURCES PÉDAGOGIQUES · BLOCS B01–B20</div><h1>Bibliothèque</h1><p>Explorez les 196 unités par bloc et par état éditorial. La présence au catalogue ne signifie pas validation académique.</p></div><span className="lesson-count">196 unités · revue interne effectuée</span></div>
   <div className="lesson-library-intro"><div className="lesson-library-icon"><BookOpen size={20}/></div><div><strong>Fondations, mathématiques, probabilités, statistique descriptive et inférence</strong><p>B01 (F01–F08) construit les automatismes quantitatifs ; B02 (D01–D08) introduit la logique, les preuves, le dénombrement, les graphes et la complexité ; B03 (V01–V10) développe les espaces, matrices, projections et décompositions ; B04 (A01–A10) construit l’analyse réelle et le calcul différentiel et intégral. B05 (M01–M10) étend le calcul aux fonctions multivariées, aux intégrales multiples, aux champs vectoriels et aux équations différentielles ; B06 (O01–O10) développe la modélisation, la convexité, la programmation linéaire et entière, les réseaux, la dualité et l’optimisation non linéaire ; B07 (N01–N10) développe l’arithmétique flottante, le conditionnement, les méthodes numériques pour systèmes, racines, interpolation, quadrature et EDO, ainsi que la reproductibilité ; B08 (P01–P10) construit les fondements probabilistes : axiomes, Bayes, indépendance, variables aléatoires, lois, espérance conditionnelle et théorèmes limites ; B09 (S01–S10) développe les processus temporels : chaînes de Markov, Poisson, renouvellement, martingales, files M/M/1 et mouvement brownien ; B10 (T01–T10) couvre qualité, échantillonnage, statistique descriptive et exploration ; B11 (I01–I10) développe l’inférence : lois d’échantillonnage, estimation, vraisemblance, propriétés asymptotiques, intervalles, tests, puissance, bootstrap, permutation et Bayes ; B12 (R01–R10) couvre la régression, les GLM, les diagnostics et modèles mixtes ; B13 (MV01–MV10) couvre covariance multivariée, loi normale, T², MANOVA, ACP, analyse factorielle, corrélation canonique, discrimination, clustering et grande dimension ; B14 (CI01–CI10) traite résultats potentiels, randomisation, plans factoriels, DAG, standardisation, scores de propension, méthodes doublement robustes, variables instrumentales, discontinuité, différences-en-différences et sensibilité causale. Chaque unité comporte objectifs, leçon, exemples, exercices corrigés et références.</p></div></div>
   <div className="library-filter-panel">
    <div className="search-box"><Search size={17}/><input value={query} onChange={e=>setQuery(e.target.value)} placeholder="Rechercher une unité ou une compétence…" aria-label="Rechercher dans les unités"/></div>
    <label className="library-filter"><span>Bloc</span><select value={selectedBlock} onChange={e=>setSelectedBlock(e.target.value)}><option value="all">Tous les blocs</option>{curriculumBlocks.map(block=><option key={block.code} value={block.code}>{block.code} · {block.title}</option>)}</select></label>
-   <label className="library-filter"><span>État éditorial</span><select value={selectedStatus} onChange={e=>setSelectedStatus(e.target.value)}><option value="all">Tous les états</option><option value="draft">Brouillon pédagogique</option><option value="review">Revue interne</option><option value="working">Première version de travail</option></select></label>
+   <label className="library-filter"><span>État éditorial</span><select value={selectedStatus} onChange={e=>setSelectedStatus(e.target.value)}><option value="all">Tous les états</option><option value="review">Revue interne effectuée</option></select></label>
    <button className="library-reset" onClick={resetFilters}>Réinitialiser</button>
   </div>
   <div className="library-results-count">{filtered.length} unité(s) affichée(s) sur {summaries.length}</div>
