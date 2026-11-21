@@ -1,6 +1,6 @@
 # B13 — Évaluation formative de synthèse
 
-**Statut :** première proposition à relire · **Durée :** 120 minutes · **Total :** 100 points  
+**Statut :** Revue interne effectuée — consolidation pédagogique en cours.
 Cette évaluation vérifie les concepts du bloc. Elle ne constitue ni examen certifiant ni preuve de validation académique indépendante.
 
 ## Partie A — Fondements (20 points)
