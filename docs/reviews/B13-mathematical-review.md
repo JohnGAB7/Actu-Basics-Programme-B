@@ -55,3 +55,8 @@ La transformation de Wilks/Rao utilise t=1 par continuité dans les cas dégén�
 5. Revue humaine indépendante et tests apprenants.
 
 **Conclusion :** MV01–MV10 sont cohérents dans cette première passe après correction de Roy. Cette revue démontre qu'une validation mathématique ciblée est nécessaire au-delà de la CI de rendu ; elle ne constitue pas une certification académique.
+
+
+## Contrôle complémentaire du laboratoire
+
+Le helper `roy_f_bound` est intégré aux laboratoires Python/R et testé pour p=1,q=2,v=30, pour q=1,p=3,v=30, pour un cas de borne et pour des degrés de liberté résiduels insuffisants. La condition v≥p est imposée avant le calcul, car E doit être inversible. Cela ne remplace pas une implémentation MANOVA complète.
