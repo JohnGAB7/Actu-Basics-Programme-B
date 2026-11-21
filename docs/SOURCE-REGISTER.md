@@ -33,12 +33,14 @@ Une source ne prouve pas qu'un cours entier est correct. Pour chaque unité, pr�
 | S17 | Stanford — Statistics MS Curriculum / Bulletin : https://bulletin.stanford.edu/programs/graduate/statistics/master-of-science | Algèbre linéaire, calcul multivarié, programmation, probabilité, statistique, calcul numérique | Prérequis transversaux et préparation graduate |
 | S18 | OpenStax — Prealgebra 2e, §7.1 : https://openstax.org/books/prealgebra-2e/pages/7-1-rational-and-irrational-numbers | Nombres rationnels, irrationnels et classification | Vérifier les définitions et la progression de F01 |
 | S19 | OpenStax — College Algebra 2e, §§1.1 et 2.7 : https://openstax.org/books/college-algebra-2e/pages/1-1-real-numbers-algebra-essentials ; https://openstax.org/books/college-algebra-2e/pages/2-7-linear-inequalities-and-absolute-value-inequalities | Ensembles numériques, ordre, intervalles, inégalités et valeur absolue | Vérifier le périmètre conceptuel de F01 et la transition vers F06 |
+| S20 | OpenStax — Prealgebra 2e, §§4.2 et 4.5 : https://openstax.org/books/prealgebra-2e/pages/4-2-multiply-and-divide-fractions ; https://openstax.org/books/prealgebra-2e/pages/4-5-add-and-subtract-fractions-with-different-denominators | Équivalence, simplification, opérations sur fractions et dénominateurs communs | Vérifier les opérations exactes de F02 |
+| S21 | OpenStax — Prealgebra 2e, §§5.6 et 6.5 : https://openstax.org/books/prealgebra-2e/pages/5-6-ratios-and-rate ; https://openstax.org/books/prealgebra-2e/pages/6-5-solve-proportions-and-their-applications | Rapports, taux unitaires, proportions et applications | Vérifier le périmètre de proportionnalité de F02 |
 
 ## 3. Matrice de couverture par bloc
 
 | Bloc | Sources institutionnelles prioritaires |
 |---|---|
-| B01 Fondations | S01, S09, S18, S19 |
+| B01 Fondations | S01, S09, S18, S19, S20, S21 |
 | B02 Logique et discret | S01, S05 |
 | B03 Algèbre linéaire | S01, S07, S17 |
 | B04 Analyse réelle | S01, S06, S09 |
