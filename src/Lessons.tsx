@@ -108,7 +108,7 @@ const courses: Course[] = [
  {code:'M07',title:'Champs vectoriels, intégrales curvilignes et théorèmes intégraux',version:'1.0.0',description:'Circulation, flux, Green, Stokes et Gauss',duration:'5–6 h',content:m07},
  {code:'M08',title:'Équations différentielles du premier ordre et modèles dynamiques',version:'1.0.0',description:'Équations séparables, linéaires et stabilité élémentaire',duration:'4–5 h',content:m08},
  {code:'M09',title:'Équations différentielles linéaires du second ordre et systèmes',version:'1.0.0',description:'Équations à coefficients constants et systèmes linéaires',duration:'5–6 h',content:m09},
- {code:'M10',title:'Méthodes numériques, analyse qualitative et étude de systèmes',version:'1.0.0',description:'Euler, erreurs numériques et portraits de phase',duration:'4–5 h',content:m10},,
+ {code:'M10',title:'Méthodes numériques, analyse qualitative et étude de systèmes',version:'1.0.0',description:'Euler, erreurs numériques et portraits de phase',duration:'4–5 h',content:m10},
  {code:'O01',title:'Modélisation mathématique des problèmes d’optimisation',version:'1.0.0',description:'Variables, objectif, contraintes et faisabilité',duration:'4–5 h',content:o01},
  {code:'O02',title:'Ensembles convexes, fonctions convexes et géométrie de l’optimalité',version:'1.0.0',description:'Convexité et garanties globales d’optimalité',duration:'4–5 h',content:o02},
  {code:'O03',title:'Programmation linéaire : géométrie et méthode du simplexe',version:'1.0.0',description:'Polyèdres, bases, pivots et cas particuliers',duration:'5–6 h',content:o03},
