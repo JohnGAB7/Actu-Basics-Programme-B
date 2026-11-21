@@ -1,6 +1,6 @@
 # B02 — Carte pédagogique : logique, preuves et mathématiques discrètes
 
-**Version :** 1.0.0 · **Statut :** draft · **Date :** 21 novembre 2026
+**Version :** 1.0.0 · **Statut : revue interne effectuée — consolidation pédagogique en cours.
 
 ## Place dans le cursus
 
