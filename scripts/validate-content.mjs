@@ -11,7 +11,7 @@ import rehypeKatex from 'rehype-katex'
 const projectRoot = join(dirname(fileURLToPath(import.meta.url)), '..')
 const lessonLibrary = readFileSync(join(projectRoot, 'src/Lessons.tsx'), 'utf8')
 const imports = [...lessonLibrary.matchAll(/import\s+\w+\s+from\s+['"]\.\/content\/([^'"]+\.md)\?raw['"]/g)]
-const files = imports.map((match) => join(projectRoot, 'src', match[1])).sort()
+const files = imports.map((match) => join(projectRoot, 'src', 'content', match[1])).sort()
 
 if (files.length === 0) {
   throw new Error('No imported Markdown lesson files were found in src/Lessons.tsx.')
