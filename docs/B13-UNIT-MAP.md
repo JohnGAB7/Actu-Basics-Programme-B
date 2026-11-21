@@ -73,3 +73,6 @@ Le complément MV04 formalise les matrices H et E, les racines caractéristiques
 
 
 **Précision Roy (v1.2).** Avec d=max(p,q), la transformation est F=Θ(v−d+q)/d, ddl (d, v−d+q). Elle est exacte lorsque min(p,q)=1 ; sinon F est une borne supérieure et la p-value correspondante une borne inférieure. Le cas p=1 redonne F=Θv/q, comme l'ANOVA univariée.
+
+
+**Laboratoire ciblé :** le helper `roy_f_bound` (Python/R) vérifie la transformation exacte si min(p,q)=1 et la borne F sinon ; il ne constitue pas un moteur complet MANOVA.
