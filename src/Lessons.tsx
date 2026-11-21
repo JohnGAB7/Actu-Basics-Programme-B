@@ -31,14 +31,14 @@ const courses: Course[] = [
  {code:'F06',title:'Équations, inéquations et systèmes',version:'1.0.0',description:'Résoudre, vérifier et interpréter les contraintes algébriques.',duration:'6–7 h',content:f06},
  {code:'F07',title:'Fonctions et modélisation élémentaire',version:'1.0.0',description:'Domaines, images, transformations, composition et modèles.',duration:'6–7 h',content:f07},
  {code:'F08',title:'Repères, unités et représentation quantitative',version:'1.0.0',description:'Graphiques, unités, ordres de grandeur et calcul numérique.',duration:'5–6 h',content:f08},
- ,{code:'D01',title:'Logique propositionnelle et quantificateurs',version:'1.0.0',description:'Propositions, connecteurs, implications, négations et quantificateurs.',duration:'3–4 h',content:d01}
- ,{code:'D02',title:'Ensembles, applications et relations',version:'1.0.0',description:'Opérations ensemblistes, fonctions, équivalences et ordres.',duration:'3–4 h',content:d02}
- ,{code:'D03',title:'Méthodes de démonstration',version:'1.0.0',description:'Preuves directes, contraposée, contradiction et contre-exemples.',duration:'4–5 h',content:d03}
- ,{code:'D04',title:'Récurrence, sommes et récurrences simples',version:'1.0.0',description:'Induction, sommes finies et suites définies récursivement.',duration:'4–5 h',content:d04}
- ,{code:'D05',title:'Dénombrement et coefficients binomiaux',version:'1.0.0',description:'Permutations, arrangements, combinaisons et binôme de Newton.',duration:'4–5 h',content:d05}
- ,{code:'D06',title:'Probabilités finies et dénombrement',version:'1.0.0',description:'Univers finis, événements et équiprobabilité sous hypothèses.',duration:'3–4 h',content:d06}
- ,{code:'D07',title:'Graphes, arbres et réseaux',version:'1.0.0',description:'Sommets, arêtes, chemins, connexité et arbres.',duration:'4–5 h',content:d07}
- ,{code:'D08',title:'Algorithmes, complexité et notation asymptotique',version:'1.0.0',description:'Analyse de coûts, ordres de croissance et notations O, Ω, Θ.',duration:'4–5 h',content:d08}
+ {code:'D01',title:'Logique propositionnelle et quantificateurs',version:'1.0.0',description:'Propositions, connecteurs, implications, négations et quantificateurs.',duration:'3–4 h',content:d01},
+ {code:'D02',title:'Ensembles, applications et relations',version:'1.0.0',description:'Opérations ensemblistes, fonctions, équivalences et ordres.',duration:'3–4 h',content:d02},
+ {code:'D03',title:'Méthodes de démonstration',version:'1.0.0',description:'Preuves directes, contraposée, contradiction et contre-exemples.',duration:'4–5 h',content:d03},
+ {code:'D04',title:'Récurrence, sommes et récurrences simples',version:'1.0.0',description:'Induction, sommes finies et suites définies récursivement.',duration:'4–5 h',content:d04},
+ {code:'D05',title:'Dénombrement et coefficients binomiaux',version:'1.0.0',description:'Permutations, arrangements, combinaisons et binôme de Newton.',duration:'4–5 h',content:d05},
+ {code:'D06',title:'Probabilités finies et dénombrement',version:'1.0.0',description:'Univers finis, événements et équiprobabilité sous hypothèses.',duration:'3–4 h',content:d06},
+ {code:'D07',title:'Graphes, arbres et réseaux',version:'1.0.0',description:'Sommets, arêtes, chemins, connexité et arbres.',duration:'4–5 h',content:d07},
+ {code:'D08',title:'Algorithmes, complexité et notation asymptotique',version:'1.0.0',description:'Analyse de coûts, ordres de croissance et notations O, Ω, Θ.',duration:'4–5 h',content:d08}
 
 ]
 export function LessonLibrary({query,setQuery}:{query:string;setQuery:(value:string)=>void}) {
