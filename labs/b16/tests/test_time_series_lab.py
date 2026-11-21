@@ -39,6 +39,12 @@ class TimeSeriesLabTests(unittest.TestCase):
         self.assertAlmostEqual(result["mae"], 1.0)
         self.assertEqual(result["origins"], 2.0)
 
+    def test_rolling_origin_ar1_allows_nonstationary_finite_horizon_forecasts(self):
+        result = rolling_origin_mae([1, 2, 4, 8, 16, 32], 4, "ar1")
+        self.assertAlmostEqual(result["mae"], 0.0, places=10)
+        with self.assertRaises(ValueError):
+            rolling_origin_mae([1, 2, 4, 8, 16], 3, "ar1")
+
     def test_garch_recursion(self):
         result = garch11_variance([1, 2, 0], omega=0.1, alpha=0.2, beta=0.7, initial_variance=1)
         self.assertAlmostEqual(result["variance"][1], 1.0)

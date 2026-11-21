@@ -41,11 +41,12 @@ forecast_metrics <- function(actual,predicted) {
 rolling_origin_mae <- function(x,initial,method="naive",alpha=.3) {
   if(length(x)<=initial || initial<3 || initial!=as.integer(initial) || any(!is.finite(x))) stop("Invalid rolling-origin inputs")
   method <- tolower(method); if(!method %in% c("naive","ses","ar1")) stop("Invalid method")
+  if(method=="ar1" && initial<4) stop("AR(1) rolling-origin fits require at least four training observations")
   errors <- numeric(0)
   for(t in seq.int(initial+1,length(x))) {
     train <- x[1:(t-1)]
     pred <- if(method=="naive") tail(train,1) else if(method=="ses") ses_forecast(train,alpha,1)$forecast[1] else {
-      fit <- fit_ar1(train); forecast_ar1(tail(train,1),fit$intercept,fit$phi,fit$innovation_variance,1)[1,"mean"]
+      fit <- fit_ar1(train); ar1_forecast(tail(train,1),fit$phi,1,fit$intercept)[1]
     }
     errors <- c(errors,abs(x[t]-pred))
   }
@@ -137,6 +138,8 @@ stopifnot(nrow(rolling_origin_splits(10,4,2,2))==3)
 kg <- kalman_scalar_filter(c(NA,1),1,1,.1,.2,0,1)
 stopifnot(kg[1,"variance"]>1,kg[2,"variance"]<kg[1,"variance"])
 stopifnot(abs(rolling_origin_mae(1:5,3,"naive")$mae-1)<1e-12)
+explosive_roll <- rolling_origin_mae(c(1,2,4,8,16,32),4,"ar1")
+stopifnot(abs(explosive_roll$mae)<1e-10)
 g <- garch11_variance(c(1,2,0),.1,.2,.7,1)
 stopifnot(abs(g$variance[2]-1)<1e-12,abs(g$variance[3]-1.6)<1e-12,abs(g$unconditional_variance-1)<1e-12)
 x <- sin(2*pi*(0:31)/4); spec <- periodogram(x)
