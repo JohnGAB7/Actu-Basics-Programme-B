@@ -170,3 +170,15 @@ Les ressources S61–S66 sont des sources de cadrage et de vérification à cons
 | S71 | UCLA OARC — Statistical analyses and factor analysis resources : https://stats.oarc.ucla.edu/ | Analyse factorielle, diagnostics et interprétation des sorties | Ressource pédagogique complémentaire à vérifier par méthode |
 
 Les ressources S67–S71 sont des sources de cadrage et de vérification ; leur présence ne certifie pas les contenus et ne remplace pas la consultation des chapitres ou notes détaillés.
+
+
+## B14 — Plans d'expérience et inférence causale
+| ID | Ressource | Domaines utiles | Utilisation |
+|---|---|---|---|
+| S72 | Penn State STAT 503 — Design of Experiments : https://online.stat.psu.edu/stat503/ | Randomisation, réplication, blocage, plans factoriels, plans fractionnaires, surfaces de réponse, plans mixtes | Référence institutionnelle principale CI02–CI03 |
+| S73 | Penn State STAT 503 — course outline : https://online.stat.psu.edu/statprogram/stat503 | Objectifs, prérequis et périmètre graduate des plans d'expérience | Contrôle du cadrage expérimental |
+| S74 | Hernán & Robins — *Causal Inference: What If* : https://miguelhernan.org/whatifbook | Résultats potentiels, confusion, sélection, pondération, g-formula, variables instrumentales et données longitudinales | Référence théorique principale CI01, CI04–CI07 et CI10 |
+| S75 | Cunningham — *Causal Inference: The Mixtape* : https://www.scunning.com/mixtape.html | DAG, appariement, IV, RDD, différences-en-différences et contrôle synthétique | Référence appliquée CI04, CI06, CI08–CI09 |
+| S76 | DAG tutorial — Directed acyclic graphs for clinical research : https://pubmed.ncbi.nlm.nih.gov/37712307/ | DAG, porte arrière, confusion et biais de collision | Ressource pédagogique complémentaire CI04 |
+
+Les ressources S72–S76 sont des sources de cadrage ; leur présence ne constitue pas une validation indépendante du contenu.
