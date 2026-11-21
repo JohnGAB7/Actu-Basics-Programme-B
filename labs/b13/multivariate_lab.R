@@ -36,7 +36,7 @@ hotelling_one_sample <- function(x,mu0) {
 shrinkage_covariance <- function(S,lambda) {
   S <- as.matrix(S); p <- nrow(S)
   if(ncol(S)!=p || any(!is.finite(S)) || lambda<0 || lambda>1) stop("Invalid shrinkage inputs")
-  if(min(eigen(S,symmetric=TRUE,only.values=TRUE)$values)<-1e-10) stop("Covariance must be positive semidefinite")
+  if(min(eigen(S,symmetric=TRUE,only.values=TRUE)$values) < -1e-10) stop("Covariance must be positive semidefinite")
   target <- mean(diag(S))*diag(p)
   (1-lambda)*S+lambda*target
 }
