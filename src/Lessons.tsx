@@ -8,7 +8,7 @@ import f01 from './content/bloc-01/F01.md?raw'
 
 type Course = { code: string; title: string; description: string; duration: string; content?: string; status: 'draft' | 'planned' }
 const courses: Course[] = [
- {code:'F01',title:'Langage des nombres, ensembles et ordre',description:'Comprendre les ensembles numériques, les intervalles, les bases et la précision des calculs.',duration:'4–5 h',content:f01,status:'draft'},
+ {code:'F01',title:'Nombres, ensembles et ordre',description:'Comprendre les ensembles numériques, l'ordre, les intervalles et la distance.',duration:'4–5 h',content:f01,status:'draft'},
  {code:'F02',title:'Calcul, fractions, rapports et proportions',description:'Construire des raisonnements exacts et proportionnels.',duration:'À définir',status:'planned'},
  {code:'F03',title:'Pourcentages, indices et taux d’évolution',description:'Composer des variations et comparer des grandeurs.',duration:'À définir',status:'planned'},
  {code:'F04',title:'Puissances, racines et logarithmes',description:'Étudier les transformations multiplicatives et leurs domaines.',duration:'À définir',status:'planned'},
