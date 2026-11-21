@@ -437,7 +437,7 @@ export function LessonLibrary({query,setQuery}:{query:string;setQuery:(value:str
  ),[summaries,query,selectedBlock,selectedStatus])
  const selectedBlockCode=selected ? getBlockCode(selected.code) : 'B01'
  const selectedStatusCategory=getCourseStatus(selectedBlockCode)
- const selectedStatusLabel=getStatusLabel(selectedStatusCategory)
+ const selectedStatusLabel=getStatusLabel()
  const resetFilters=()=>{setQuery('');setSelectedBlock('all');setSelectedStatus('all')}
  if(selected) return <div className="content-wrap lesson-reader">
   <button className="lesson-back" onClick={()=>setSelected(null)}><ArrowLeft size={15}/> Retour à la bibliothèque</button>
