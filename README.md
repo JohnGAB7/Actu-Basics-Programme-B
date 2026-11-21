@@ -60,6 +60,7 @@ La CI principale vérifie :
 - [Protocole de revue académique](docs/ACADEMIC-REVIEW-PROTOCOL.md)
 - [Registre des revues internes](docs/reviews/PROGRAMME-B-INTERNAL-REVIEW-REGISTER.md)
 - [Revue transversale du cursus](docs/reviews/PROGRAMME-B-CROSS-BLOCK-AUDIT-2026-11-21.md)
+- Revues mathématiques approfondies : [B08](docs/reviews/B08-mathematical-review.md) · [B09](docs/reviews/B09-mathematical-review.md) · [B10](docs/reviews/B10-mathematical-review.md) · [B11](docs/reviews/B11-mathematical-review.md) · [B12](docs/reviews/B12-mathematical-review.md) · [B13](docs/reviews/B13-mathematical-review.md)
 - [Standards éditoriaux](docs/EDITORIAL-STANDARDS.md)
 - [Modèle de contenu et identifiants](docs/CONTENT-MODEL.md)
 - [Spécification du moteur d'évaluation](docs/ASSESSMENT-ENGINE.md)
