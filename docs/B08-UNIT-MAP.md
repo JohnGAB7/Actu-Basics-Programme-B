@@ -38,7 +38,11 @@ Chaque unité contient objectifs, définitions, hypothèses, démonstrations ou 
 ## Évaluation
 Épreuve formative proposée : 120 minutes, 100 points. Elle évalue axiomes, Bayes, indépendance, lois discrètes et continues, transformations, covariance, espérance conditionnelle, inégalités et théorèmes limites. Aucun résultat ne vaut certification.
 
-## Approfondissements intégrés à la consolidation\n\nLa seconde passe précise le cadre mesuré minimal, les lois binomiale négative et multinomiale, les familles Gamma/Bêta/Khi-deux/Student, les vecteurs gaussiens, l'espérance conditionnelle par rapport à une tribu, les inégalités de Cauchy–Schwarz et Borel–Cantelli, ainsi que les hypothèses précises des versions i.i.d. de la LLN et du TCL. Ces ajouts renforcent le niveau L2–L3 sans prétendre couvrir toute la théorie de la mesure ni les théorèmes limites avancés.\n\n## Sources de cadrage
+## Approfondissements intégrés à la consolidation
+
+La seconde passe précise le cadre mesuré minimal, les lois binomiale négative et multinomiale, les familles Gamma/Bêta/Khi-deux/Student, les vecteurs gaussiens, l'espérance conditionnelle par rapport à une tribu, les inégalités de Cauchy–Schwarz et Borel–Cantelli, ainsi que les hypothèses précises des versions i.i.d. de la LLN et du TCL. Ces ajouts renforcent le niveau L2–L3 sans prétendre couvrir toute la théorie de la mesure ni les théorèmes limites avancés.
+
+## Sources de cadrage
 - Harvard Statistics 110 — Probability : https://stat110.hsites.harvard.edu/about
 - MIT OCW 6.041SC — Probabilistic Systems Analysis and Applied Probability : https://ocw.mit.edu/courses/6-041sc-probabilistic-systems-analysis-and-applied-probability-fall-2013/
 - MIT OCW 18.05 — Introduction to Probability and Statistics : https://ocw.mit.edu/courses/18-05-introduction-to-probability-and-statistics-spring-2014/
