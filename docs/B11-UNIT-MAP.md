@@ -1,6 +1,6 @@
 # B11 — Théorie de l’inférence statistique
 
-**Version :** 1.0.0 · **Statut :** revue interne initiale · **Charge indicative :** 46–54 heures  
+**Version :** 1.0.0 · **Statut :** revue interne initiale · **Charge indicative :** 46–56 heures  
 **Public :** fin de licence / master en statistique, mathématiques appliquées, économie quantitative ou actuariat.
 
 ## Finalité
