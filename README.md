@@ -143,3 +143,8 @@ Dix unités originales (DE01–DE10) sont intégrées au lecteur : cycle de vie 
 ## Bloc B18 — Actuariat, assurance et modélisation du risque
 
 Dix unités originales (AR01–AR10) sont intégrées au lecteur : exposition et prime pure, fréquence-sévérité, tarification GLM, crédibilité, survie et mortalité, assurance vie et rentes, provisionnement non-vie, réassurance, capital économique et gouvernance actuarielle. La carte pédagogique, l’évaluation formative et la première revue interne sont disponibles dans `docs/B18-UNIT-MAP.md`, `docs/B18-EVALUATION.md` et `docs/reviews/B18-internal-review.md`. Les contenus restent des premières versions de travail ; dérivations détaillées, notebooks R/Python, cas complets et revue humaine indépendante restent à conduire.
+
+
+## Bloc B19 — Économétrie et statistiques financières
+
+Dix unités originales (EF01–EF10) sont intégrées au lecteur : identification économétrique, endogénéité et inférence robuste, données de panel, IV/GMM, choix discrets, rendements financiers, modèles de facteurs, VaR/ES et backtesting, microstructure et projet empirique. La carte pédagogique, l’évaluation formative et la première revue interne sont disponibles dans `docs/B19-UNIT-MAP.md`, `docs/B19-EVALUATION.md` et `docs/reviews/B19-internal-review.md`. Les contenus restent des premières versions de travail ; démonstrations détaillées, notebooks R/Python, données reproductibles et revue humaine indépendante restent à conduire.
