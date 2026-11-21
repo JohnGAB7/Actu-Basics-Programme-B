@@ -53,7 +53,7 @@ L'architecture cible comporte 20 blocs organisés en socle mathématique et comp
 - B10 : T01 à T10 publiées sur GitHub Pages ; seconde passe interne, laboratoire reproductible Python/R et cinq expériences interactives fusionnés et déployés. Revue humaine indépendante, tests apprenants et audit d'accessibilité restent à conduire.
 - B11 : I01 à I10 publiées sur GitHub Pages ; seconde passe interne, laboratoire reproductible Python/R et laboratoire interactif quatre expériences déployés. Revue humaine indépendante, tests apprenants et audit d’accessibilité restent à conduire.
 - B12 : R01 à R10 publiées sur GitHub Pages ; seconde passe mathématique, évaluation de 100 points et laboratoire Python/R déployés après fusion de la [PR #56](https://github.com/JohnGAB7/Actu-Basics-Programme-B/pull/56). Revue humaine indépendante, tests apprenants et audit d'accessibilité restent à conduire.
-- B13 : MV01 à MV10, seconde passe mathématique, carte pédagogique v1.1, évaluation formative de 100 points, revue interne et laboratoire reproductible Python/R sont présents sur master. Le build, les tests Python du laboratoire et les contrôles R/Markdown/KaTeX passent sur le déploiement master (run 44952384657). Les limites d'implémentation de certaines méthodes sont documentées ; revue humaine indépendante, tests apprenants et audit d'accessibilité restent à conduire.
+- B13 : MV01 à MV10 déjà publiées en première version ; seconde passe mathématique et laboratoire Python/R en intégration sur une branche candidate. Fusion et déploiement de cette consolidation à confirmer après CI.
 - B14–B20 : architecture cible définie ; contenus à développer, documenter et relire.
 - Le diagnostic interactif est une démonstration formative locale, non certifiante.
 - Aucun compte, historique privé serveur ou examen sécurisé n'est fourni par cette version statique.
@@ -128,12 +128,12 @@ Dix unités originales (MV01–MV10) sont intégrées au lecteur : covariance mu
 
 ## Bloc B14 — Plans d'expérience et inférence causale
 
-Dix unités originales (CI01–CI10) sont intégrées au lecteur : résultats potentiels et estimands, randomisation, plans factoriels, DAG et confusion, standardisation, scores de propension, estimation doublement robuste, variables instrumentales, discontinuité de régression, différences-en-différences et sensibilité. La carte pédagogique, l'évaluation formative et la première revue interne sont disponibles dans `docs/B14-UNIT-MAP.md`, `docs/B14-EVALUATION.md` et `docs/reviews/B14-internal-review.md`. Les unités restent des premières versions de travail ; preuves approfondies, notebooks R/Python, tests apprenants et revue humaine indépendante restent à conduire.
+Dix unités CI01–CI10 couvrent résultats potentiels, essais randomisés, plans factoriels, DAG, standardisation, scores de propension, AIPW/DML, variables instrumentales, RDD, DiD et sensibilité. La carte pédagogique v1.1, l'évaluation formative de 20 questions/100 points et la seconde revue interne sont disponibles dans `docs/B14-UNIT-MAP.md`, `docs/B14-EVALUATION.md` et `docs/reviews/B14-internal-review.md`. Le laboratoire Python/R est publié : randomisation, standardisation, IPW/AIPW, Wald, DiD 2×2 et RD locale. Revue humaine indépendante, tests apprenants et audit d'accessibilité restent à conduire.
 
 
 ## Bloc B15 — Apprentissage statistique et machine learning
 
-Dix unités originales (ML01–ML10) sont intégrées au lecteur : formulation du risque, généralisation, validation, régularisation, méthodes à noyaux, arbres et forêts, boosting, réseaux neuronaux, modèles probabilistes, détection d’anomalies et évaluation responsable. La carte pédagogique, l’évaluation formative et la première revue interne sont disponibles dans `docs/B15-UNIT-MAP.md`, `docs/B15-EVALUATION.md` et `docs/reviews/B15-internal-review.md`. Les contenus restent des premières versions de travail ; démonstrations approfondies, notebooks R/Python, tests apprenants et revue humaine indépendante restent à conduire.
+Dix unités ML01–ML10 couvrent formulation du risque, généralisation, validation, modèles linéaires, noyaux, arbres, boosting, réseaux de neurones, modèles probabilistes et évaluation responsable. La carte pédagogique v1.1, l'évaluation formative de 20 questions/100 points et la seconde revue interne sont disponibles dans `docs/B15-UNIT-MAP.md`, `docs/B15-EVALUATION.md` et `docs/reviews/B15-internal-review.md`. Le laboratoire Python/R est en validation CI : ridge/lasso univariés, KNN, métriques de classification, calibration, métriques par groupes et mélange gaussien par EM. Revue humaine indépendante, tests apprenants et audit d'accessibilité restent à conduire.
 
 
 ## Bloc B16 — Séries temporelles et prévision

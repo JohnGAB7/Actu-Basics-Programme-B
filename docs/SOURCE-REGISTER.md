@@ -272,3 +272,13 @@ La ressource S107 est une fiche de révision pédagogique ; elle complète les c
 | S110 | rdrobust — Local-Polynomial RD Estimation with Robust Confidence Intervals : https://github.com/cran/rdrobust/blob/master/man/rdrobust.Rd ; documentation du projet : https://rdpackages.github.io/ | Régression sur discontinuité locale, sélection de bande passante, intervalles robustes corrigés du biais | Référence technique pour CI08 ; le laboratoire B14 ne réimplémente pas ces procédures robustes |
 
 Les ressources S108–S110 complètent le cadrage de B14. Elles ne constituent pas une validation indépendante du bloc ni une approbation de Programme B.
+
+
+## B15 — Compléments de la seconde passe
+| ID | Ressource | Domaines utiles | Utilisation |
+|---|---|---|---|
+| S111 | scikit-learn — Probability calibration : https://scikit-learn.org/stable/modules/calibration.html | Courbes de calibration, score de Brier, log-loss et calibrateurs | CI10 et ML04 ; la documentation rappelle que Brier combine calibration, résolution et incertitude |
+| S112 | Fairlearn — Performing a Fairness Assessment : https://fairlearn.org/stable/user_guide/assessment/perform_fairness_assessment.html ; Common fairness metrics : https://fairlearn.org/stable/user_guide/assessment/common_fairness_metrics.html | Analyse des préjudices, métriques désagrégées, parité démographique, égalité des chances et odds | ML10 ; les métriques sont dépendantes du contexte et ne définissent pas seules l'équité |
+| S113 | NIST, AI Risk Management Framework 1.0 (2023), NIST AI 100-1 : https://doi.org/10.6028/NIST.AI.100-1 ; portail : https://www.nist.gov/itl/ai-risk-management-framework | Gouvernance, cartographie, mesure, gestion, suivi et documentation des risques IA | ML10 ; cadre volontaire en cours de révision, à adapter au contexte et aux obligations applicables |
+
+Les ressources S111–S113 complètent le cadrage de B15. Elles ne constituent pas une validation indépendante du bloc ni une approbation de Programme B.
