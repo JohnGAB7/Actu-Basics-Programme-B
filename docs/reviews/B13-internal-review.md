@@ -65,3 +65,12 @@ Cette revue est interne et assistée par IA ; elle ne constitue pas une certific
 - MV04 reçoit les formules des matrices H/E, des quatre critères multivariés et de leurs transformations F (Rao/Wilks, Pillai, Hotelling–Lawley, Roy), avec conditions d'usage, degrés de liberté et limites.
 - Sources S158–S160 ajoutées au registre. La formule de Roy est décrite comme borne F hors cas exacts, et non comme approximation générique exacte.
 - Revue assistée par IA ; les calculs doivent être confrontés à un logiciel de référence et relus indépendamment avant toute utilisation sommative.
+
+
+## Revue ciblée du complément MANOVA MV04 — 21 novembre 2026
+
+Une erreur de formule a été détectée dans la première version du complément : la transformation exacte de Roy pour le cas p=1 et q>1 avait été écrite comme si elle était la formule du cas q=1. Cela ne reproduisait pas l'ANOVA univariée. La formule est corrigée avec d=max(p,q) : F=Θ(v−d+q)/d, ddl (d,v−d+q), exacte lorsque min(p,q)=1 et borne supérieure F sinon. Le cas p=1 redonne F=Θv/q, ddl (q,v). La p-value obtenue à partir de la borne de Roy est une borne inférieure et peut être optimiste.
+
+La transformation de Wilks/Rao conserve t=1 par continuité dans les cas dégénérés (p,q)=(1,2) ou (2,1). Les formules de Pillai et Hotelling–Lawley ont été contrôlées par substitution dans le cas univarié et correspondent au F classique.
+
+Cette correction illustre pourquoi la CI Markdown/KaTeX ne suffit pas à valider les mathématiques. Une comparaison indépendante à R/MANOVA, SAS ou Stata reste requise.
