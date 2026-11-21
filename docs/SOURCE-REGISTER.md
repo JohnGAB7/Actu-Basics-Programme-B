@@ -411,3 +411,11 @@ Les cours MIT sont des références de périmètre et de profondeur ; leurs syll
 | S168 | MIT OpenCourseWare — 15.075J, *Statistical Thinking and Data Analysis* (Fall 2011) : https://ocw.mit.edu/courses/15-075j-statistical-thinking-and-data-analysis-fall-2011/ | Collecte, sondage, échantillonnage, résumé descriptif, distribution, corrélation et statistique appliquée | T01–T10 ; référence de cours avec notes, devoirs et examens |
 
 Les ressources S167–S168 cadrent les méthodes descriptives et les plans de sondage ; elles ne remplacent pas la vérification des conventions exactes des estimateurs de sondage dans les leçons.
+
+
+## B11 — références complémentaires pour bootstrap et Bayes
+
+| ID | Ressource | Domaines utiles | Utilisation |
+|---|---|---|---|
+| S169 | Efron, Bradley & Tibshirani, Robert J. — *An Introduction to the Bootstrap*, Chapman & Hall/CRC, 1993/1994 : https://www.routledge.com/An-Introductionto-the-Bootstrap/Efron-Tibshirani/p/book/9780429246593 | Bootstrap non paramétrique, erreur-type, intervalles percentile et BCa, tests par permutation | I09 ; référence méthodologique de rééchantillonnage |
+| S170 | Gelman, Andrew et al. — *Bayesian Data Analysis*, 3e éd., Chapman & Hall/CRC, 2013 : https://www.routledge.com/Bayesian-Data-Analysis-Third-Edition/Gelman-Carlin-Stern-Dunson-Vehtari/p/book/9781439840955 | Inférence bayésienne, modèle hiérarchique, prédictive, diagnostic et validation | I10 ; référence de fond bayésienne |
