@@ -12,7 +12,7 @@ The first frontend milestone is implemented on `feat/platform-v1`:
 - countdown timer, question navigation, browser-local answer saving, interrupted attempt resumption and explained results;
 - French-first responsive interface.
 
-This is a **demonstration**, not an official examination system. Responses are stored only in the current browser. There are no accounts, server persistence, protected answer keys or certified scoring yet. The official Bloc 1 final examination is not yet integrated.
+This is a **demonstration**, not an official examination system. Responses are stored only in the current browser. There are no accounts, server persistence, protected answer keys or certified scoring yet. The Bloc 1 transversal exam and the complementary differential-calculus exam are available as reading resources in the library, with separate corrections. They are not secure interactive exam sessions.
 
 ## Run locally
 
