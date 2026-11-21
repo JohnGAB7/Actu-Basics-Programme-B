@@ -230,3 +230,15 @@ Les ressources S87–S91 servent de cadrage et de vérification ; elles ne certi
 | S96 | EIOPA — Guidelines on valuation of Technical Provisions : https://www.eiopa.europa.eu/document/download/dec39b30-4aa3-4e06-aef8-4d06f7ee548a_en?filename=EIOPA-BoS-14-166rev2_GLs+on+the+valuation+of+technical+provisions.pdf | Qualité des données, segmentation, hypothèses et méthodes de valorisation | Cadrage complémentaire AR07 et AR10 |
 
 Les ressources S92–S96 sont des références de cadrage ; leur citation ne vaut ni avis juridique, ni validation actuarielle, ni mise à jour exhaustive du droit en vigueur.
+
+
+## B19 — Économétrie et statistiques financières
+| ID | Ressource | Domaines utiles | Utilisation |
+|---|---|---|---|
+| S97 | Wooldridge — *Introductory Econometrics: A Modern Approach* : https://www.cengage.com/c/introductory-econometrics-a-modern-approach-7e-wooldridge/ | Régression, endogénéité, variables instrumentales, panel et choix discret | Référence générale EF01–EF05 |
+| S98 | Wooldridge — *Econometric Analysis of Cross Section and Panel Data* : https://mitpress.mit.edu/9780262232586/econometric-analysis-of-cross-section-and-panel-data/ | Théorie avancée, panel, IV et méthodes des moments | Référence théorique EF02–EF05 |
+| S99 | Hansen — *Econometrics* (open textbook) : https://www.ssc.wisc.edu/~bhansen/econometrics/ | Théorie économétrique, estimation, tests et asymptotique | Ressource universitaire ouverte EF01–EF05 |
+| S100 | Engle (1982) — Autoregressive Conditional Heteroscedasticity : https://doi.org/10.2307/1912773 | Modélisation ARCH de la variance conditionnelle | Référence historique EF08, en complément de B16 |
+| S101 | Christoffersen — *Elements of Financial Risk Management* : https://www.sciencedirect.com/book/9780123744487/elements-of-financial-risk-management | Mesure de risque, VaR et validation | Référence appliquée EF08 |
+
+Les ressources S97–S101 orientent le cadrage et les vérifications ; elles ne certifient pas les unités.

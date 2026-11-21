@@ -515,3 +515,18 @@ Cette décomposition est une première version de travail. Les notebooks, comman
 10. Gouvernance actuarielle, validation et projet de modélisation du risque.
 
 Cette décomposition est une première version de travail. Les preuves détaillées, cas numériques, notebooks et validations indépendantes restent à conduire.
+
+
+### B19 — Économétrie et statistiques financières
+1. Fondements de l’économétrie et identification des relations.
+2. Régression économétrique, endogénéité et inférence robuste.
+3. Données de panel : effets fixes, aléatoires et différences.
+4. Variables instrumentales et méthodes des moments.
+5. Modèles de choix discret et données censurées.
+6. Rendements financiers, dépendance et propriétés empiriques.
+7. Modèles de facteurs, CAPM et évaluation des actifs.
+8. Volatilité financière, Value-at-Risk et backtesting.
+9. Microstructure des marchés et économétrie haute fréquence.
+10. Projet économétrique et financier : estimation, robustesse et communication.
+
+Cette décomposition est une première version de travail. Les preuves, simulations, notebooks et validations indépendantes restent à conduire.
