@@ -32,7 +32,7 @@ L'architecture cible comporte 20 blocs organisés en socle mathématique et comp
 - Le dossier complet comprend objectifs, leçons, exemples, applications, exercices corrigés et références ; les revues indépendantes et tests apprenants restent à conduire.
 - B02 : D01 à D08 rédigées et intégrées à la bibliothèque (draft) ; revue interne assistée par IA consignée, revue indépendante et tests apprenants encore requis.
 - B03 : V01 à V10 intégrées à la bibliothèque ; revue interne mathématique et pédagogique documentée. CI TypeScript/Vite et validation KaTeX réussies ; revue humaine indépendante et tests apprenants restent à conduire.
-- B04 : A01 à A10 rédigées sur la branche `feat/b04-real-analysis-calculus` ; revue interne en cours, intégration technique et contrôle du rendu à effectuer.
+- B04 : A01 à A10 publiées sur GitHub Pages ; revue interne mathématique et pédagogique documentée. CI TypeScript/Vite et validation Markdown/KaTeX réussies ; revue indépendante et tests apprenants restent à conduire.
 - B05–B20 : architecture cible définie ; contenus à développer, documenter et relire.
 - Le diagnostic interactif est une démonstration formative locale, non certifiante.
 - Aucun compte, historique privé serveur ou examen sécurisé n'est fourni par cette version statique.
