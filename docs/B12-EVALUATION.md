@@ -1,6 +1,6 @@
 # B12 — Évaluation formative
 
-**Durée :** 120 minutes · **Total :** 100 points · **Version :** 0.1.0 · **Statut :** brouillon à revoir.
+**Durée :** 120 minutes · **Total :** 100 points · **Version :** 0.1.0 · **Statut :** Revue interne effectuée — consolidation pédagogique en cours.
 
 1. **Interprétation (10 pts).** Pour $E(Y|X)=12+1,8X$, interpréter pente, constante et limites causales.
 2. **OLS (15 pts).** Dériver $\hat\beta=(X^TX)^{-1}X^Ty$ lorsque X est de rang plein ; interpréter $X^Te=0$.
