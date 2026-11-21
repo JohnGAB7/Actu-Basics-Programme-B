@@ -1,6 +1,6 @@
 # B13 — Évaluation formative de synthèse
 
-**Version :** 1.2 · **Total :** 100 points · **Statut :** seconde passe et complément MANOVA publiés avec le bloc ; test apprenant et revue indépendante à réaliser.
+**Version :** 1.3 · **Total :** 100 points · **Statut :** complément MANOVA révisé pour intégrer la correction de Roy ; validation CI à confirmer, test apprenant et revue indépendante à réaliser.
 Cette évaluation vérifie les concepts du bloc. Elle ne constitue ni examen certifiant ni preuve de validation académique indépendante.
 
 ## Partie A — Fondements (20 points)
