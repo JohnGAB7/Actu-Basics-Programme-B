@@ -387,3 +387,6 @@ Les références S158–S160 complètent les références multivariées déjà p
 | S162 | MIT OpenCourseWare — 18.05, *Introduction to Probability and Statistics* (Spring 2022) : https://ocw.mit.edu/courses/18-05-introduction-to-probability-and-statistics-spring-2022/ | Combinatoire, lois, Bayes, tests, intervalles et régression | P01–P08 ; référence complémentaire de probabilités et statistique introductives |
 
 Les références MIT complètent S03, S46 et S107. Elles servent de références pédagogiques et de comparaison de périmètre ; elles ne valident pas automatiquement les démonstrations ou corrigés du programme.
+
+
+| S163 | MIT OpenCourseWare — 18.175, *Theory of Probability*, Lecture 16: Berry–Esseen theorem : https://ocw.mit.edu/courses/18-175-theory-of-probability-spring-2014/59f08b62c812d8f6414c51455aebfd96_MIT18_175S14_Lecture16.pdf | Borne uniforme de Berry–Esseen, hypothèses de troisième moment et vitesse $n^{-1/2}$ | P10 ; quantification de l'erreur d'approximation normale |
