@@ -1,6 +1,6 @@
 # B11 — Théorie de l’inférence statistique
 
-**Version :** 1.0.0 · **Statut :** revue interne effectuée — consolidation pédagogique en cours.
+**Version :** 1.1.0 · **Statut :** seconde passe interne effectuée · laboratoire Python/R intégré · revue indépendante à venir.
 **Public :** fin de licence / master en statistique, mathématiques appliquées, économie quantitative ou actuariat.
 
 ## Finalité
@@ -58,3 +58,20 @@ Chaque unité comprend objectifs, définitions, démonstrations ou justification
 - Wasserman — *All of Statistics* : https://link.springer.com/book/10.1007/978-0-387-21736-9
 
 Ces sources cadrent la progression ; elles ne constituent pas une validation externe du contenu original du programme.
+
+
+## Contrôle de correspondance des ressources
+
+- **I01–I04 :** MIT OCW 18.650, lectures 3–6 (inférence paramétrique, EMV, méthode des moments) et MIT OCW 18.443, lectures L2–L4 (EMV, propriétés, loi normale multivariée et TCL).
+- **I05–I08 :** MIT OCW 18.650, lectures 7–10 (tests paramétriques) ; MIT OCW 18.443, lectures L5–L8 (intervalles, Student/Fisher, tests t et F). Les tests LR/Wald/score et leurs conditions sont approfondis avec Casella & Berger.
+- **I09 :** Wasserman, *All of Statistics* et Efron & Tibshirani, *An Introduction to the Bootstrap* ; le laboratoire distingue rééchantillonnage bootstrap et permutation sous échangeabilité.
+- **I10 :** MIT OCW 18.650, lectures 17–18 (statistiques bayésiennes) ; MIT OCW 18.443, lectures L9–L10 (règles de décision bayésiennes et tests les plus puissants).
+
+Pages institutionnelles consultées :
+- [MIT OCW 18.650 — notes](https://ocw.mit.edu/courses/18-650-statistics-for-applications-fall-2016/resources/lecture-notes/)
+- [MIT OCW 18.650 — diapositives et thèmes](https://ocw.mit.edu/courses/18-650-statistics-for-applications-fall-2016/pages/lecture-slides/)
+- [MIT OCW 18.443 — notes de cours](https://ocw.mit.edu/courses/18-443-statistics-for-applications-fall-2006/pages/lecture-notes/)
+- [MIT OCW 18.443 — syllabus](https://ocw.mit.edu/courses/18-443-statistics-for-applications-fall-2006/pages/syllabus/)
+- [Casella & Berger — Statistical Inference, 2e édition, copyright 2024](https://www.routledge.com/Statistical-Inference/Casella-Berger/p/book/9781032593036)
+
+Les ressources institutionnelles cadrent les thèmes et les lectures ; elles ne valident pas le contenu original de Programme B.
