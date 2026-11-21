@@ -42,3 +42,37 @@ Modèles de mortalité stochastique avancés, ALM complet, dérivés de longévi
 
 ## Critères de sortie
 L'apprenant doit définir précisément l'objet valorisé, choisir une méthode cohérente, expliciter les hypothèses, mesurer sensibilité et incertitude, comparer à l'expérience et documenter les limites. Les références réglementaires doivent toujours être vérifiées dans leur version en vigueur.
+
+
+
+## Seconde consolidation — version 1.1
+
+La seconde passe renforce les fondements mathématiques et les conditions d'application :
+- moments du coût agrégé et hypothèses d'indépendance fréquence-sévérité ;
+- vraisemblance Poisson avec offset, relativités et interactions ;
+- interprétation de EPV/VHM et extension Bühlmann–Straub ;
+- tables discrètes, force de mortalité, Kaplan–Meier et variance de Greenwood ;
+- EPV des assurances/rentes, calendrier de paiement et réserve prospective ;
+- Chain-Ladder, facteurs tail, Mack, bootstrap et Bornhuetter–Ferguson ;
+- couches de réassurance et coût attendu des récupérations ;
+- Expected Shortfall, dépendance de queue et calibration prudentielle ;
+- rôle de la fonction actuarielle, validation indépendante et suivi du modèle.
+
+## Laboratoire Python/R
+
+Le dossier `labs/b18/` ajoute des fonctions pédagogiques et tests :
+- fréquence par exposition et moments composés ;
+- GLM Poisson avec offset (IRLS minimal en Python, `glm.fit` en R) ;
+- crédibilité de Bühlmann ;
+- Kaplan–Meier/Greenwood ;
+- EPV d'une rente immédiate et d'une assurance temporaire ;
+- Chain-Ladder volume-pondéré ;
+- récupération XS et VaR/TVaR empiriques.
+
+Les implémentations ne sont pas des moteurs de tarification, provisionnement ou capital de production. Le laboratoire ne réimplémente pas Mack, bootstrap, Bühlmann–Straub, Cox, copules ni SCR.
+
+## Critères de qualité
+
+Chaque calcul doit déclarer unité d'exposition, base brute/nette, calendrier, population, horizon, convention d'actualisation et hypothèses de dépendance. Les modèles doivent être évalués par calibration, stabilité, sensibilité et validation hors période. Toute référence prudentielle doit être vérifiée dans la version juridiquement applicable à la date d'usage.
+
+**Statut :** seconde consolidation pédagogique et laboratoire Python/R ajoutés dans une branche candidate ; tests CI, revue humaine indépendante, tests apprenants et audit d'accessibilité à réaliser.
