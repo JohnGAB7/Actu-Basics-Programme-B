@@ -470,3 +470,18 @@ Cette décomposition est une première version de travail. Les preuves détaill�
 10. Évaluation responsable, interprétabilité et cycle de vie d'un modèle.
 
 Cette décomposition est une première version de travail. Les preuves détaillées, benchmarks reproductibles, notebooks et validations indépendantes restent à conduire.
+
+
+### B16 — Séries temporelles et prévision
+1. Données temporelles, tendances, saisonnalité et stationnarité.
+2. Autocorrélation, bruit blanc et processus linéaires.
+3. Modèles ARMA : identification, estimation et diagnostics.
+4. Modèles ARIMA et saisonniers SARIMA.
+5. Lissage exponentiel, décomposition et méthodes ETS.
+6. Régression avec erreurs temporelles et analyse d'intervention.
+7. Analyse spectrale et périodicités.
+8. Séries multivariées, VAR et cointégration.
+9. Volatilité conditionnelle : ARCH et GARCH.
+10. Modèles espace-état, filtre de Kalman et évaluation des prévisions.
+
+Cette décomposition est une première version de travail. Les preuves détaillées, notebooks et validations indépendantes restent à conduire.
