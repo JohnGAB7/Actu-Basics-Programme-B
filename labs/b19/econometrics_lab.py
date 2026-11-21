@@ -199,9 +199,9 @@ def empirical_var_es(losses: Sequence[float], alpha: float) -> dict[str, float]:
     return {"VaR": var, "ES": weighted / mass}
 
 
-def kupiec_lr_uc(exceptions: Sequence[bool], alpha: float) -> float:
-    """Kupiec unconditional-coverage likelihood-ratio statistic (no p-value)."""
-    if not exceptions or not 0 < alpha < 1:
+def kupiec_lr_uc(exceptions: Sequence[bool], expected_exception_rate: float) -> float:
+    """Kupiec LR statistic; expected_exception_rate is 1 - VaR confidence (no p-value)."""
+    if not exceptions or not 0 < expected_exception_rate < 1:
         raise ValueError("exceptions must be non-empty and alpha in (0,1)")
     n = len(exceptions)
     x = sum(bool(v) for v in exceptions)
@@ -212,7 +212,7 @@ def kupiec_lr_uc(exceptions: Sequence[bool], alpha: float) -> float:
         right = x * log(p) if x else 0.0
         return left + right
 
-    return max(0.0, -2.0 * (log_likelihood(alpha) - log_likelihood(phat)))
+    return max(0.0, -2.0 * (log_likelihood(expected_exception_rate) - log_likelihood(phat)))
 
 
 def realized_variance(intraday_returns: Sequence[float]) -> float:
