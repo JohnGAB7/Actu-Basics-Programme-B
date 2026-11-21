@@ -76,6 +76,11 @@ gaussian_mixture_1d_em <- function(x,K=2,max_iter=300,tolerance=1e-8,variance_fl
     if(iter>1 && abs(ll-previous)<=tolerance*(1+abs(previous))) { converged <- TRUE; break }
     previous <- ll
   }
+  # Report the observed-data log-likelihood for the parameters actually returned.
+  ll <- sum(vapply(x, function(value) {
+    logsumexp(log(weights) - .5 * log(2*pi*vars) -
+                (value-means)^2/(2*vars))
+  }, numeric(1)))
   ord <- order(means)
   list(weights=weights[ord],means=means[ord],variances=vars[ord],
        log_likelihood=ll,iterations=iter,converged=converged)
