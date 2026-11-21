@@ -1,6 +1,6 @@
 # B18 — Carte pédagogique : Actuariat, assurance et modélisation du risque
 
-**Version :** 0.1 · **Statut :** premier brouillon intégré, à approfondir et relire  
+**Version :** 0.1 · **Statut :** Revue interne effectuée — consolidation pédagogique en cours.
 **Charge indicative :** 54–66 heures · **Niveau :** L1–L3  
 **Prérequis :** B08 probabilités, B11 inférence, B12 régression, B13 multivarié, B16 séries temporelles ; B14 causalité et B17 ingénierie recommandés.
 
