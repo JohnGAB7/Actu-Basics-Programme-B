@@ -57,3 +57,11 @@ Cette revue est une vérification interne de cohérence et de couverture. Elle n
 - La validation humaine indépendante, les tests apprenants et l'audit d'accessibilité restent à effectuer.
 
 Cette revue est interne et assistée par IA ; elle ne constitue pas une certification académique.
+
+
+## Complément de seconde passe — MANOVA et identifiants MV · 21 novembre 2026
+
+- Les identifiants publics des dix unités sont harmonisés en MV01–MV10 ; les noms de fichiers M01–M10 restent des chemins de stockage historiques et ne sont pas les identifiants pédagogiques.
+- MV04 reçoit les formules des matrices H/E, des quatre critères multivariés et de leurs transformations F (Rao/Wilks, Pillai, Hotelling–Lawley, Roy), avec conditions d'usage, degrés de liberté et limites.
+- Sources S158–S160 ajoutées au registre. La formule de Roy est décrite comme borne F hors cas exacts, et non comme approximation générique exacte.
+- Revue assistée par IA ; les calculs doivent être confrontés à un logiciel de référence et relus indépendamment avant toute utilisation sommative.
