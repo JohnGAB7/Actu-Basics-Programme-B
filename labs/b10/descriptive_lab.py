@@ -34,7 +34,7 @@ def descriptive_summary(values: Sequence[float], ratio_scale: bool = True) -> di
     var_n = sum((v - mean) ** 2 for v in x) / n
     var_n1 = sum((v - mean) ** 2 for v in x) / (n - 1) if n > 1 else None
     mad = quantile_type7([abs(v - median) for v in x], 0.5)
-    cv = math.sqrt(var_n1) / abs(mean) if ratio_scale and n > 1 and mean != 0 else None
+    cv = math.sqrt(var_n1) / abs(mean) if ratio_scale and n > 1 and mean > 0 else None
     return {
         "n": float(n), "mean": mean, "median": median, "minimum": ordered[0],
         "q1": q1, "q3": q3, "iqr": q3 - q1, "maximum": ordered[-1],
