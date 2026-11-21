@@ -1,6 +1,6 @@
 # B13 — Évaluation formative de synthèse
 
-**Statut :** Revue interne effectuée — consolidation pédagogique en cours.
+**Version :** 1.1 · **Statut :** seconde passe interne effectuée · épreuve formative à tester auprès d'apprenants.
 Cette évaluation vérifie les concepts du bloc. Elle ne constitue ni examen certifiant ni preuve de validation académique indépendante.
 
 ## Partie A — Fondements (20 points)
@@ -53,3 +53,8 @@ Cette évaluation vérifie les concepts du bloc. Elle ne constitue ni examen cer
 
 ## Critères de réussite
 Seuil indicatif : 70/100, avec reprise obligatoire des erreurs portant sur l'interprétation des hypothèses, la singularité de covariance ou la fuite d'information. L'évaluation doit être testée sur un échantillon d'apprenants avant d'être considérée comme stabilisée.
+
+
+## Note de seconde passe
+
+Les 18 questions totalisent 100 points (20 + 20 + 25 + 15 + 20). Le corrigé reste indicatif ; les exercices doivent être testés auprès d'apprenants et comparés à des calculs indépendants avant toute validation académique.
