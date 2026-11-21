@@ -57,6 +57,10 @@ Une source ne prouve pas qu'un cours entier est correct. Pour chaque unité, pr�
 | S39 | MIT Course Catalog — 15.053 Optimization Methods in Business Analytics : https://catalog.mit.edu/subjects/15/ | Modélisation, programmation linéaire et entière, réseaux, non linéaire et applications | Contrôle de couverture appliquée et décisionnelle B06 |
 | S40 | Boyd & Vandenberghe — Convex Optimization : https://web.stanford.edu/~boyd/cvxbook/ | Ensembles et fonctions convexes, dualité, méthodes numériques et applications | Référence de fond pour O02, O04, O08–O09 |
 | S41 | MIT OpenCourseWare — 6.251J Introduction to Mathematical Programming : https://ocw.mit.edu/courses/6-251j-introduction-to-mathematical-programming-fall-2009/ | Géométrie LP, simplexe, dualité, sensibilité, robustesse, réseaux et optimisation discrète | Comparaison du socle linéaire et combinatoire O03–O06 |
+| S42 | MIT OpenCourseWare — 18.330 Introduction to Numerical Analysis : https://ocw.mit.edu/courses/18-330-introduction-to-numerical-analysis-spring-2012/ | Racines, interpolation, splines, quadrature, EDO, moindres carrés et algèbre linéaire numérique | Référence générale N05–N09 |
+| S43 | MIT OpenCourseWare — 18.335J Introduction to Numerical Methods : https://ocw.mit.edu/courses/18-335j-introduction-to-numerical-methods-spring-2019/ | Virgule flottante, erreur arrière, conditionnement, stabilité, algèbre linéaire et EDO raides | Référence approfondie N01–N04 et N09 |
+| S44 | Higham, Nicholas J. — Accuracy and Stability of Numerical Algorithms, 2e éd., SIAM, 2002 : https://nhigham.com/accuracy-and-stability-of-numerical-algorithms/ | Arithmétique flottante, analyse d'erreur, stabilité et algorithmes | Référence théorique N01–N04 |
+| S45 | Trefethen, Lloyd N. & Bau, David — Numerical Linear Algebra : https://people.maths.ox.ac.uk/trefethen/text.html | Conditionnement, stabilité, factorisations, moindres carrés, SVD et méthodes itératives | Référence de fond N02–N04 et N07 |
 
 ## 3. Matrice de couverture par bloc
 
@@ -68,7 +72,7 @@ Une source ne prouve pas qu'un cours entier est correct. Pour chaque unité, pr�
 | B04 Analyse réelle | S01, S06, S09, S29, S30, S31, S32 |
 | B05 Calcul multivarié et EDO | S01, S17, S33, S34, S35, S36 |
 | B06 Optimisation et recherche opérationnelle | S08, S10, S11, S13, S37, S38, S39, S40, S41 |
-| B07 Analyse numérique | S07, S11, S14, S17 |
+| B07 Analyse numérique | S42, S43, S44, S45 |
 | B08 Probabilités | S02, S03, S04, S10, S13, S15 |
 | B09 Processus stochastiques | S02, S10, S11, S13, S15, S16 |
 | B10 Descriptif et échantillonnage | S02, S04, S10, S14 |
