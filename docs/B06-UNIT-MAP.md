@@ -1,7 +1,7 @@
 # B06 — Carte pédagogique : optimisation et recherche opérationnelle
 
 **Version :** 1.0 · 21 novembre 2026  
-**Charge indicative :** 46–55 heures  
+**Charge indicative :** 45–55 heures  
 **Prérequis :** B03 (algèbre linéaire), B05 (calcul multivarié et EDO) ; B02 pour les graphes. B08 sera utile pour approfondir l'optimisation stochastique.
 
 ## Finalité
