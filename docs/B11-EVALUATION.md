@@ -1,6 +1,6 @@
 # B11 — Évaluation transversale : théorie de l’inférence statistique
 
-**Statut :** revue interne effectuée — consolidation pédagogique en cours.
+**Statut :** seconde passe interne effectuée · épreuve formative à tester auprès d'apprenants.
 
 **Durée :** 120 minutes · **Total :** 100 points · **Calculatrice autorisée**  
 **Consigne :** justifier les hypothèses utilisées. Une réponse numérique sans interprétation ne reçoit pas tous les points.
