@@ -20,7 +20,8 @@ wilson_interval <- function(x,n,alpha=.05) {
 }
 poisson_mle <- function(x) {
   if(length(x)==0 || any(!is.finite(x)) || any(x<0) || any(x!=floor(x))) stop("Counts must be non-negative integers")
-  c(n=length(x),estimate=mean(x),variance_estimate_under_model=sum(x)/length(x)^2,
+  c(n=length(x),estimate=mean(x),variance_of_observation_under_model=mean(x),
+    variance_of_mle_under_model=sum(x)/length(x)^2,variance_estimate_under_model=sum(x)/length(x)^2,
     boundary_supremum_at_zero=as.numeric(sum(x)==0))
 }
 beta_binomial_update <- function(x,n,a,b) {
