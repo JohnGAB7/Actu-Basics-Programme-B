@@ -38,3 +38,7 @@ npm run build
 
 ## Déploiement
 Le workflow GitHub Actions vérifie le build sur les branches et déploie GitHub Pages depuis master. Les autres branches ne modifient pas la prévisualisation publique.
+
+### Évaluation transversale B01
+
+Une épreuve formative de synthèse (90 min, 100 points), avec corrigé détaillé et étude de cas quantitative, est disponible dans [`docs/B01-EVALUATION.md`](./docs/B01-EVALUATION.md). Elle reste en draft et doit être testée auprès d'apprenants.
