@@ -138,7 +138,7 @@ Dix unités ML01–ML10 couvrent formulation du risque, généralisation, valida
 
 ## Bloc B16 — Séries temporelles et prévision
 
-Dix unités originales (TS01–TS10) sont intégrées au lecteur : stationnarité, autocorrélation, ARMA/ARIMA/SARIMA, lissage exponentiel, régression temporelle, analyse spectrale, VAR/cointégration, ARCH/GARCH, modèles espace-état et évaluation des prévisions. La carte pédagogique, l’évaluation formative et la première revue interne sont disponibles dans `docs/B16-UNIT-MAP.md`, `docs/B16-EVALUATION.md` et `docs/reviews/B16-internal-review.md`. Les contenus restent des premières versions de travail ; dérivations, notebooks R/Python, tests apprenants et revue humaine indépendante restent à conduire.
+Dix unités originales (TS01–TS10) sont approfondies en seconde passe : stationnarité, autocorrélation, ARMA/ARIMA/SARIMA, ETS, régression temporelle, analyse spectrale, VAR/cointégration, ARCH/GARCH, espace-état et évaluation multi-horizon. Carte pédagogique v1.1, évaluation formative, seconde revue interne et laboratoire reproductible Python/R ajoutés. Les contrôles Python/R sont intégrés à la CI ; revue humaine indépendante, tests apprenants et audit d'accessibilité restent à conduire.
 
 
 ## Bloc B17 — Ingénierie des données et recherche reproductible
