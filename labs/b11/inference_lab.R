@@ -1,69 +1,70 @@
-# B11 inference laboratory — base R only
+# B11 statistical inference laboratory — base R only
 set.seed(20261121)
-sample_means <- function(distribution=c("normal","exponential"),n=40,B=5000) {
- distribution<-match.arg(distribution); if(n<1||B<1) stop("Invalid n or B")
- replicate(B,mean(if(distribution=="normal") rnorm(n) else rexp(n)))
+
+binomial_pmf <- function(k,n,p) {
+  if(n<0 || k<0 || k>n || p<0 || p>1) stop("Invalid binomial inputs")
+  dbinom(k,size=n,prob=p)
 }
-bernoulli_risk <- function(p,n) {
- if(p<=0||p>=1||n<1) stop("Invalid p or n")
- v<-p*(1-p)/n; bias<-(1-2*p)/(n+2); vs<-n*p*(1-p)/(n+2)^2
- rbind(sample_mean=c(bias=0,variance=v,mse=v),
-       beta_uniform_mean=c(bias=bias,variance=vs,mse=vs+bias^2))
+exact_binomial_pvalue <- function(x,n,p0) {
+  if(n<1 || x<0 || x>n || p0<0 || p0>1) stop("Invalid exact test inputs")
+  probs <- dbinom(0:n,size=n,prob=p0)
+  min(1,sum(probs[probs <= dbinom(x,size=n,prob=p0)+1e-15]))
 }
-poisson_mle <- function(x) {if(length(x)==0||any(x<0|x!=floor(x))) stop("Invalid counts");mean(x)}
-proportion_interval <- function(x,n,method=c("wilson","wald"),alpha=.05) {
- method<-match.arg(method); if(n<1||x<0||x>n||alpha<=0||alpha>=1) stop("Invalid inputs")
- p<-x/n; z<-qnorm(1-alpha/2)
- if(method=="wald") return(c(p-z*sqrt(p*(1-p)/n),p+z*sqrt(p*(1-p)/n)))
- z2<-z^2; den<-1+z2/n; center<-(p+z2/(2*n))/den
- half<-z/den*sqrt(p*(1-p)/n+z2/(4*n^2)); c(center-half,center+half)
+wilson_interval <- function(x,n,alpha=.05) {
+  if(n<1 || x<0 || x>n || alpha<=0 || alpha>=1) stop("Invalid Wilson inputs")
+  z <- qnorm(1-alpha/2); phat <- x/n; z2 <- z^2
+  den <- 1+z2/n
+  center <- (phat+z2/(2*n))/den
+  half <- z/den*sqrt(phat*(1-phat)/n+z2/(4*n^2))
+  c(lower=center-half,upper=center+half)
 }
-coverage_simulation <- function(p,n,B=4000) {
- x<-rbinom(B,n,p); cover<-c(wald=0,wilson=0)
- for(i in seq_len(B)) for(method in names(cover)) {
-  ci<-proportion_interval(x[i],n,method); cover[method]<-cover[method]+(ci[1]<=p&&p<=ci[2])
- }
- cover/B
+poisson_mle <- function(x) {
+  if(length(x)==0 || any(!is.finite(x)) || any(x<0) || any(x!=floor(x))) stop("Counts must be non-negative integers")
+  c(n=length(x),estimate=mean(x),variance_estimate_under_model=sum(x)/length(x)^2,
+    boundary_supremum_at_zero=as.numeric(sum(x)==0))
 }
-required_n_mean <- function(sigma,delta,alpha=.05,power=.8) {
- if(sigma<=0||delta<=0||alpha<=0||alpha>=1||power<=0||power>=1) stop("Invalid inputs")
- ceiling(((qnorm(1-alpha/2)+qnorm(power))*sigma/delta)^2)
+beta_binomial_update <- function(x,n,a,b) {
+  if(n<0 || x<0 || x>n || a<=0 || b<=0) stop("Invalid Beta-Binomial inputs")
+  ap <- a+x; bp <- b+n-x
+  c(posterior_a=ap,posterior_b=bp,posterior_mean=ap/(ap+bp),
+    posterior_variance=ap*bp/((ap+bp)^2*(ap+bp+1)),
+    predictive_success_probability=ap/(ap+bp))
 }
-binomial_tests <- function(x,n,p0) {
- if(n<1||x<0||x>n||p0<=0||p0>=1) stop("Invalid inputs")
- p<-x/n; term<-function(k,r) if(k==0) 0 else k*log(r)
- lr<-2*(term(x,p/p0)+term(n-x,(1-p)/(1-p0)))
- wald<-if(p>0&&p<1) n*(p-p0)^2/(p*(1-p)) else NA_real_
- c(p_hat=p,lr=lr,wald=wald,score=n*(p-p0)^2/(p0*(1-p0)))
+bootstrap_mean_interval <- function(x,B=5000,alpha=.05) {
+  if(length(x)==0 || any(!is.finite(x)) || B<100 || alpha<=0 || alpha>=1) stop("Invalid bootstrap inputs")
+  n <- length(x)
+  means <- replicate(B,mean(sample(x,size=n,replace=TRUE)))
+  quantile(means,c(alpha/2,1-alpha/2),type=7,names=FALSE)
 }
-bootstrap_interval <- function(x,B=2000,alpha=.05,statistic=c("mean","median")) {
- statistic<-match.arg(statistic); if(length(x)==0||B<100||alpha<=0||alpha>=1) stop("Invalid inputs")
- v<-replicate(B,{s<-sample(x,length(x),replace=TRUE);if(statistic=="mean") mean(s) else median(s)})
- as.numeric(quantile(v,c(alpha/2,1-alpha/2),type=7,names=FALSE))
+permutation_mean_difference <- function(a,b,B=9999) {
+  if(length(a)==0 || length(b)==0 || any(!is.finite(c(a,b))) || B<99) stop("Invalid permutation inputs")
+  pooled <- c(a,b); na <- length(a)
+  observed <- mean(a)-mean(b)
+  permuted <- replicate(B,{
+    z <- sample(pooled)
+    mean(z[seq_len(na)])-mean(z[(na+1):length(z)])
+  })
+  extreme <- sum(abs(permuted)>=abs(observed)-1e-15)
+  p <- (extreme+1)/(B+1)
+  c(observed_difference=observed,extreme=extreme,repetitions=B,p_value_mc=p,
+    mc_se_approx=sqrt(p*(1-p)/(B+1)))
 }
-permutation_test <- function(x,y,B=5000) {
- if(length(x)<2||length(y)<2||B<100) stop("Invalid inputs")
- obs<-mean(x)-mean(y); pooled<-c(x,y); nx<-length(x); extreme<-0
- for(i in seq_len(B)) {z<-sample(pooled);d<-mean(z[seq_len(nx)])-mean(z[(nx+1):length(z)]);extreme<-extreme+(abs(d)>=abs(obs)-1e-15)}
- c(difference=obs,p_value=(extreme+1)/(B+1))
+one_sample_z_power <- function(n,effect,sigma,alpha=.05) {
+  if(n<1 || effect<0 || sigma<=0 || alpha<=0 || alpha>=1) stop("Invalid power inputs")
+  critical <- qnorm(1-alpha/2); shift <- effect*sqrt(n)/sigma
+  1-pnorm(critical-shift)+pnorm(-critical-shift)
 }
-beta_posterior <- function(x,n,a,b) {
- if(n<1||x<0||x>n||a<=0||b<=0) stop("Invalid inputs")
- c(a_post=a+x,b_post=b+n-x,mean=(a+x)/(a+b+n))
+z_test_sample_size <- function(effect,sigma,alpha=.05,target_power=.8) {
+  if(effect<=0 || sigma<=0 || alpha<=0 || alpha>=1 || target_power<=0 || target_power>=1) stop("Invalid sample-size inputs")
+  ceiling(((qnorm(1-alpha/2)+qnorm(target_power))*sigma/effect)^2)
 }
-beta_predictive <- function(k,m,a,b) {
- if(m<0||k<0||k>m||a<=0||b<=0) stop("Invalid inputs")
- exp(lchoose(m,k)+lbeta(a+k,b+m-k)-lbeta(a,b))
-}
-stopifnot(abs(mean(sample_means("normal",40,3000)))<.04)
-risk<-bernoulli_risk(.3,10);stopifnot(abs(risk["sample_mean","mse"]-.021)<1e-12)
-stopifnot(abs(poisson_mle(c(2,3,5))-10/3)<1e-12)
-coverage<-coverage_simulation(.05,20)
-stopifnot(coverage["wilson"]>coverage["wald"])
-stopifnot(required_n_mean(10,3)==88)
-stopifnot(binomial_tests(12,20,.5)["lr"]>0)
-stopifnot(bootstrap_interval(c(1,2,2,3,10),B=500)[1]<bootstrap_interval(c(1,2,2,3,10),B=500)[2])
-stopifnot(permutation_test(c(1,2,3),c(4,5,6),1000)["p_value"]>=1/1001)
-post<-beta_posterior(6,8,2,2);pred<-vapply(0:5,function(k) beta_predictive(k,5,post[1],post[2]),numeric(1))
-stopifnot(abs(sum(pred)-1)<1e-10)
+
+stopifnot(abs(exact_binomial_pvalue(10,10,.5)-2/1024)<1e-12)
+stopifnot(abs(wilson_interval(7,10)[1]-.3968)<.001)
+stopifnot(abs(wilson_interval(7,10)[2]-.8922)<.001)
+stopifnot(abs(poisson_mle(c(0,1,2,1,3,2))["estimate"]-1.5)<1e-12)
+bb <- beta_binomial_update(7,10,1,1)
+stopifnot(abs(bb["posterior_mean"]-2/3)<1e-12)
+stopifnot(z_test_sample_size(3,10)==88)
+stopifnot(one_sample_z_power(88,3,10)>=.8)
 cat("B11 R inference laboratory checks: OK\n")
