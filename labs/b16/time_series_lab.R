@@ -75,6 +75,45 @@ kalman_local_level <- function(y,q,r,initial_mean=0,initial_variance=1) {
   list(filtered_mean=means,filtered_variance=vars,innovations=innovations)
 }
 
+
+ar1_forecast <- function(last_value,phi,horizon,intercept=0) {
+  if(any(!is.finite(c(last_value,phi,intercept))) || horizon<1 || horizon!=as.integer(horizon)) stop("Invalid AR(1) forecast inputs")
+  out <- numeric(horizon); x <- last_value
+  for(i in seq_len(horizon)) { x <- intercept+phi*x; out[i] <- x }
+  out
+}
+forecast_errors <- function(actual,predicted) {
+  if(length(actual)==0 || length(actual)!=length(predicted) || any(!is.finite(c(actual,predicted)))) stop("Length mismatch or non-finite data")
+  e <- actual-predicted
+  c(mae=mean(abs(e)),rmse=sqrt(mean(e^2)))
+}
+mase <- function(actual,predicted,training,seasonality=1) {
+  if(length(training)<=seasonality || seasonality<1 || seasonality!=as.integer(seasonality)) stop("Invalid training scale")
+  scale <- mean(abs(training[(seasonality+1):length(training)]-training[1:(length(training)-seasonality)]))
+  if(scale<=0) stop("MASE undefined for zero naive scale")
+  forecast_errors(actual,predicted)["mae"]/scale
+}
+rolling_origin_splits <- function(n,initial,horizon,step=1) {
+  if(any(c(n,initial,horizon,step)!=as.integer(c(n,initial,horizon,step))) || initial<2 || horizon<1 || step<1 || initial+horizon>n) stop("Invalid rolling-origin dimensions")
+  origins <- seq(initial,n-horizon,by=step)
+  cbind(train_end=origins,test_start=origins,test_end=origins+horizon)
+}
+kalman_scalar_filter <- function(y,transition,loading,q,h,initial_state,initial_variance) {
+  if(any(!is.finite(c(transition,loading,q,h,initial_state,initial_variance))) || q<0 || h<=0 || initial_variance<0) stop("Invalid Kalman parameters")
+  a <- initial_state; p <- initial_variance
+  out <- matrix(NA_real_,length(y),2,dimnames=list(NULL,c("state","variance")))
+  for(i in seq_along(y)) {
+    ap <- transition*a; pp <- transition^2*p+q
+    if(is.na(y[i])) { a <- ap; p <- pp } else {
+      if(!is.finite(y[i])) stop("Observations must be finite or NA")
+      f <- loading^2*pp+h; k <- pp*loading/f
+      a <- ap+k*(y[i]-loading*ap); p <- (1-k*loading)*pp
+    }
+    out[i,] <- c(a,p)
+  }
+  out
+}
+
 # Exact checks
 stopifnot(all(difference(c(1,3,6,10))==c(2,3,4)))
 stopifnot(abs(acf_sample(c(1,2,3,4),2)[1]-1)<1e-12)
@@ -85,6 +124,11 @@ stopifnot(abs(fit$intercept-.5)<1e-8,abs(fit$phi-.5)<1e-8)
 fc <- forecast_ar1(tail(series,1),.5,.5,.25,2)
 stopifnot(abs(fc[1,"variance"]-.25)<1e-12)
 stopifnot(all(ses_forecast(c(10,12,14),1,2)$forecast==14))
+stopifnot(all(ar1_forecast(8,.5,3)==c(4,2,1)))
+stopifnot(abs(mase(c(3,5),c(2,4),c(1,2,3,4),1)-1)<1e-12)
+stopifnot(nrow(rolling_origin_splits(10,4,2,2))==3)
+kg <- kalman_scalar_filter(c(NA,1),1,1,.1,.2,0,1)
+stopifnot(kg[1,"variance"]>1,kg[2,"variance"]<kg[1,"variance"])
 stopifnot(abs(rolling_origin_mae(1:5,3,"naive")$mae-1)<1e-12)
 g <- garch11_variance(c(1,2,0),.1,.2,.7,1)
 stopifnot(abs(g$variance[2]-1)<1e-12,abs(g$variance[3]-1.6)<1e-12,abs(g$unconditional_variance-1)<1e-12)
