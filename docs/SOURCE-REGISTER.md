@@ -254,3 +254,11 @@ Les ressources S97–S101 orientent le cadrage et les vérifications ; elles ne 
 | S106 | Cambridge — Asymptotic Statistics, table of contents : https://www.cambridge.org/core/books/abs/asymptotic-statistics/notation/348A8DB41F3EA1051A135FFD787FD9E4 | Thèmes détaillés : convergence, processus empiriques, bootstrap et modèles semi-paramétriques | Vérification de couverture AT01–AT04 |
 
 Les ressources S102–S106 sont des références de cadrage ; elles ne constituent pas une validation indépendante ni une accréditation.
+
+
+## B08 — complément bibliographique de la seconde passe
+| ID | Ressource | Domaines utiles | Utilisation |
+|---|---|---|---|
+| S107 | Harvard Statistics 110 — Final Review, Fall 2011 : https://projects.iq.harvard.edu/sites/projects.iq.harvard.edu/files/stat110/files/final_review.pdf | Espérance conditionnelle, variance conditionnelle, lois discrètes et continues, distributions conjointes, inégalités de Cauchy–Schwarz/Markov/Chebychev/Jensen, LLN et TCL | Vérification transversale de P04–P10 |
+
+La ressource S107 est une fiche de révision pédagogique ; elle complète les cours et ne remplace pas les ouvrages de référence ni une revue indépendante.
