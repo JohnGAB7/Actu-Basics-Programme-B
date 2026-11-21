@@ -1,6 +1,6 @@
 # B10 — Évaluation formative transversale
 
-**Durée :** 120 minutes · **Barème :** 100 points · **Statut :** Revue interne effectuée — consolidation pédagogique en cours.
+**Durée :** 120 minutes · **Barème :** 100 points · **Statut :** Seconde passe interne effectuée · épreuve formative à tester auprès d'apprenants.
 
 ## Exercice 1 — Population et mesure (10 points)
 Une base contient une ligne par sinistre et un identifiant de contrat. Identifier l'unité statistique observée, expliquer pourquoi le numéro de contrat n'est pas une variable quantitative et préciser une information nécessaire pour calculer une fréquence annuelle.
@@ -20,7 +20,7 @@ Une enquête en ligne ouverte reçoit 20 000 réponses. Peut-on conclure que l'�
 ## Exercice 4 — Poids de sondage (10 points)
 Trois unités ont probabilités d'inclusion 0,5 ; 0,25 ; 0,1 et valeurs 10 ; 20 ; 30. Calculer les poids de base et l'estimateur HT du total.
 
-**Corrigé :** poids 2 ; 4 ; 10. Total HT = 2×10 + 4×20 + 10×30 = 400.
+**Corrigé :** poids de base 2 ; 4 ; 10. Total HT = 2×10 + 4×20 + 10×30 = 400. Sous probabilités d'inclusion positives connues pour toutes les unités de la population finie, le total HT est sans biais par rapport au plan. La variance de plan générale mobilise aussi les probabilités conjointes πᵢⱼ.
 
 ## Exercice 5 — Résumés (10 points)
 Pour les données 2, 3, 3, 7, 10, calculer moyenne et médiane. Commenter leur différence.
