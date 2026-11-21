@@ -119,3 +119,14 @@ Les anciens statuts « draft » de cette première passe décrivaient l'absence 
 
 
 **Contrôle additionnel B13 :** helper `roy_f_bound` ajouté au laboratoire Python/R ; tests des deux cas exacts (p=1 ou q=1) et d'un cas de borne ; CI à confirmer.
+
+
+## Revue complémentaire des laboratoires B08–B13 — 21 novembre 2026
+
+- B08 : convention de variance empirique n alignée entre Python/R.
+- B09 : validation des paramètres non finis alignée ; tests NaN/Inf ajoutés pour éviter les entrées invalides et simulations non terminantes.
+- B10 : Python traite désormais None/NaN comme manquants, aligné sur R ; Inf reste invalide.
+- B11 : variance de l'observation Poisson et variance de l'EMV distinguées explicitement dans les sorties Python/R.
+- B12 : convention de pénalisation Ridge/LASSO explicitée et testée analytiquement en Python/R.
+- B13 : helper Roy Python/R et tests exacts/bornés, dont la condition v≥p pour E inversible.
+- Les rapports mathématiques B08–B13 intègrent les constats de laboratoire. Comparaison complète à SciPy/statsmodels/R packages/SAS/Stata et validation indépendante restent à conduire.
