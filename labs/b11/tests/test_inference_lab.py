@@ -25,7 +25,7 @@ class InferenceLabTests(unittest.TestCase):
 
     def test_wilson_interval_and_coverage(self):
         w=proportion_interval(1,20,"wilson"); d=proportion_interval(1,20,"wald")
-        self.assertTrue(0<=w[0]<=w[1]<=1); self.assertGreater(d[1]-d[0],w[1]-w[0])
+        self.assertTrue(0<=w[0]<=w[1]<=1); self.assertLess(d[0],0); self.assertGreater(w[0],d[0])
         c=coverage_simulation(.05,20,4000,2026)
         self.assertGreater(c["wilson"],c["wald"])
 
