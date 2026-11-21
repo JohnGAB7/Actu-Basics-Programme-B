@@ -1,5 +1,7 @@
 # B07 — Carte pédagogique : analyse numérique et calcul scientifique
 
+**Statut :** revue interne effectuée — consolidation pédagogique en cours.
+
 **Version :** 1.0 · 21 novembre 2026  
 **Charge indicative :** 45–55 heures  
 **Prérequis :** B03 (algèbre linéaire), B04 (analyse à une variable), B05 (calcul multivarié et EDO). Programmation élémentaire en Python ou R recommandée.
