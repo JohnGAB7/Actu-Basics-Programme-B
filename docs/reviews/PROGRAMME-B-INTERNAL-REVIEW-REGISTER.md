@@ -107,3 +107,12 @@ Les anciens statuts « draft » de cette première passe décrivaient l'absence 
 - R01–R10 relues : OLS/Gauss–Markov, inférence t/F, contrastes/interactions, diagnostics/Cook/HC0, retransformation, AIC/BIC/régularisation, GLM/IRLS, logit/Poisson et modèles mixtes.
 - Aucun défaut mathématique bloquant identifié ; R09 précise la limite AIC/quasi-Poisson, R10 explicite l'exogénéité des effets aléatoires ; sources S61, S64–S66 et S79 reliées aux unités.
 - Tests numériques de cas limites, comparaison aux bibliothèques, recalcul exhaustif des corrigés, tests apprenants et revue humaine indépendante restent requis.
+
+
+## Revue mathématique B13 — 21 novembre 2026
+
+- Rapport : [B13-mathematical-review.md](B13-mathematical-review.md).
+- MV01–MV10 relues : covariance, Mahalanobis, Hotelling T², MANOVA, ACP, facteurs, corrélation canonique, LDA/QDA, clustering et grande dimension.
+- Une erreur importante de la première version de Roy a été détectée : le cas p=1,q>1 utilisait à tort la formule exacte du cas q=1. MV04 est corrigée par la formule d=max(p,q), F=Θ(v−d+q)/d ; exact si min(p,q)=1, borne supérieure sinon. Contrôle de réduction à l'ANOVA univariée ajouté.
+- S158–S160 sont reliées à MV04 ; S67–S71 aux autres unités. L'évaluation formative inclut les quatre critères et la prudence sur la borne de Roy.
+- Comparaison à R/SAS/Stata, recalcul des corrigés, tests apprenants et revue humaine indépendante restent requis.
