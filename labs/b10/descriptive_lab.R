@@ -9,7 +9,7 @@ descriptive_summary <- function(x, ratio_scale=TRUE) {
   if (length(x)==0 || any(!is.finite(x))) stop("x must be non-empty and finite")
   m <- median(x)
   mad_raw <- median(abs(x-m))
-  cv <- if (ratio_scale && length(x)>1 && mean(x)!=0) sd(x)/abs(mean(x)) else NA_real_
+  cv <- if (ratio_scale && length(x)>1 && mean(x)>0) sd(x)/abs(mean(x)) else NA_real_
   c(n=length(x), mean=mean(x), median=m, q1=quantile_type7(x,.25),
     q3=quantile_type7(x,.75), iqr=IQR(x,type=7), variance_n=mean((x-mean(x))^2),
     variance_n1=if(length(x)>1) var(x) else NA_real_, mad_raw=mad_raw,
