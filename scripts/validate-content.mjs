@@ -1,4 +1,4 @@
-import { readdirSync, readFileSync } from 'node:fs'
+import { readFileSync } from 'node:fs'
 import { dirname, join, relative } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { createElement } from 'react'
@@ -8,18 +8,10 @@ import remarkGfm from 'remark-gfm'
 import remarkMath from 'remark-math'
 import rehypeKatex from 'rehype-katex'
 
-const root = join(dirname(fileURLToPath(import.meta.url)), '../src/content')
-
-function markdownFiles(directory) {
-  return readdirSync(directory, { withFileTypes: true }).flatMap((entry) => {
-    const path = join(directory, entry.name)
-    return entry.isDirectory()
-      ? markdownFiles(path)
-      : entry.isFile() && entry.name.endsWith('.md') ? [path] : []
-  })
-}
-
-const files = markdownFiles(root).sort()
+const projectRoot = join(dirname(fileURLToPath(import.meta.url)), '..')
+const lessonLibrary = readFileSync(join(projectRoot, 'src/Lessons.tsx'), 'utf8')
+const imports = [...lessonLibrary.matchAll(/import\\s+\\w+\\s+from\\s+['\"]\\.\\/content\\/([^'\"]+\\.md)\\?raw['\"]/g)]
+const files = imports.map((match) => join(projectRoot, 'src', 'content', match[1])).sort()
 if (files.length === 0) {
   throw new Error('No Markdown lesson files were found under src/content.')
 }
