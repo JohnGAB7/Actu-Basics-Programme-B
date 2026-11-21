@@ -5,11 +5,12 @@ import remarkMath from 'remark-math'
 import rehypeKatex from 'rehype-katex'
 import { ArrowLeft, ArrowUpRight, BookOpen, Clock3, LockKeyhole, Search } from 'lucide-react'
 import f01 from './content/bloc-01/F01.md?raw'
+import f02 from './content/bloc-01/F02.md?raw'
 
 type Course = { code: string; title: string; description: string; duration: string; content?: string; status: 'draft' | 'planned' }
 const courses: Course[] = [
  {code:'F01',title:'Nombres, ensembles et ordre',description:'Comprendre les ensembles numériques, l’ordre, les intervalles et la distance.',duration:'4–5 h',content:f01,status:'draft'},
- {code:'F02',title:'Calcul, fractions, rapports et proportions',description:'Construire des raisonnements exacts et proportionnels.',duration:'À définir',status:'planned'},
+ {code:'F02',title:'Calcul, fractions, rapports et proportions',description:'Maîtriser les opérations exactes, les rapports et les proportions.',duration:'5–6 h',content:f02,status:'draft'},
  {code:'F03',title:'Pourcentages, indices et taux d’évolution',description:'Composer des variations et comparer des grandeurs.',duration:'À définir',status:'planned'},
  {code:'F04',title:'Puissances, racines et logarithmes',description:'Étudier les transformations multiplicatives et leurs domaines.',duration:'À définir',status:'planned'},
  {code:'F05',title:'Expressions algébriques et identités',description:'Transformer, développer et factoriser avec rigueur.',duration:'À définir',status:'planned'},
@@ -28,7 +29,7 @@ export function LessonLibrary({query,setQuery}:{query:string;setQuery:(value:str
   <div className="lesson-provenance"><span>Programme B · Version 1.1.0 · Rédaction indépendante</span><a href="https://github.com/JohnGAB7/Actu-Basics-Programme-B/blob/master/src/content/bloc-01/F01.md" target="_blank" rel="noreferrer">Voir le fichier source <ArrowUpRight size={13}/></a></div>
  </div>
  return <div className="content-wrap">
-  <div className="page-heading"><div><div className="eyebrow">RESSOURCES PÉDAGOGIQUES · BLOC B01</div><h1>Bibliothèque</h1><p>Le parcours des fondations mathématiques se construit progressivement.</p></div><span className="lesson-count">1 unité en draft · 7 planifiées</span></div>
+  <div className="page-heading"><div><div className="eyebrow">RESSOURCES PÉDAGOGIQUES · BLOC B01</div><h1>Bibliothèque</h1><p>Le parcours des fondations mathématiques se construit progressivement.</p></div><span className="lesson-count">2 unités en draft · 6 planifiées</span></div>
   <div className="lesson-library-intro"><div className="lesson-library-icon"><BookOpen size={20}/></div><div><strong>Fondations mathématiques et raisonnement quantitatif</strong><p>Les unités publiées sont rédigées indépendamment. Les unités planifiées ne sont pas encore présentées comme des cours disponibles.</p></div></div>
   <div className="search-box"><Search size={17}/><input value={query} onChange={e=>setQuery(e.target.value)} placeholder="Rechercher une unité ou une compétence…"/></div>
   <div className="lesson-course-grid">{filtered.map((course)=><button className={`lesson-course-card ${course.status==='planned'?'course-planned':''}`} key={course.code} disabled={course.status==='planned'} onClick={()=>setSelected(course)}><div className="lesson-course-top"><span>{course.code}</span><small>{course.status==='draft'?'DRAFT':'PLANIFIÉ'}</small></div><h3>{course.title}</h3><p>{course.description}</p><div className="lesson-course-foot"><span><Clock3 size={13}/>{course.duration}</span><strong>{course.status==='draft'?'Ouvrir l’unité':<>À construire <LockKeyhole size={13}/></>}</strong></div></button>)}</div>
