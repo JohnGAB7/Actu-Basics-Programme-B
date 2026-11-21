@@ -24,6 +24,7 @@ pca_lab <- function(x, standardize=FALSE) {
 }
 mahalanobis_squared <- function(x,mu,S) {
   d <- as.numeric(x-mu)
+  if(any(!is.finite(c(d,S))) || min(eigen(S,symmetric=TRUE,only.values=TRUE)$values)<=0) stop("Finite positive-definite covariance required")
   as.numeric(t(d)%*%solve(S,d))
 }
 hotelling_one_sample <- function(x,mu0) {
@@ -35,6 +36,7 @@ hotelling_one_sample <- function(x,mu0) {
 shrinkage_covariance <- function(S,lambda) {
   S <- as.matrix(S); p <- nrow(S)
   if(ncol(S)!=p || any(!is.finite(S)) || lambda<0 || lambda>1) stop("Invalid shrinkage inputs")
+  if(min(eigen(S,symmetric=TRUE,only.values=TRUE)$values)<-1e-10) stop("Covariance must be positive semidefinite")
   target <- mean(diag(S))*diag(p)
   (1-lambda)*S+lambda*target
 }
@@ -50,6 +52,7 @@ stopifnot(abs(correlation_matrix(x)[1,2])<=1)
 pc <- pca_lab(x)
 stopifnot(abs(sum(pc$explained)-1)<1e-10)
 stopifnot(abs(mahalanobis_squared(c(1,2),c(0,0),diag(2))-5)<1e-12)
+stopifnot(abs(mahalanobis_squared(2,0,matrix(4,1,1))-1)<1e-12)
 ht <- hotelling_one_sample(x,c(3.5,3.2,2.6))
 stopifnot(ht["t_squared"]>0,ht["f_statistic"]>0)
 singular <- matrix(c(1,1,1,1),nrow=2)
