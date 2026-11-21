@@ -51,6 +51,7 @@ class MultivariateLabTests(unittest.TestCase):
         a=kmeans(x,2,seed=10,n_init=5)
         b=kmeans(x,2,seed=10,n_init=5)
         self.assertEqual(a,b)
+        self.assertTrue(a["converged"])
         self.assertEqual(a["labels"][0],a["labels"][1])
         self.assertNotEqual(a["labels"][0],a["labels"][3])
         self.assertLess(a["inertia"],3)
