@@ -1,6 +1,6 @@
 # B19 — Évaluation formative de synthèse
 
-**Statut :** Revue interne effectuée — consolidation pédagogique en cours.
+**Version :** 1.1 · **Durée :** 120 minutes · **Total :** 100 points · **Statut :** publiée avec le bloc ; test apprenant et revue indépendante à réaliser.
 Évaluation formative, non certifiante.
 
 ## Partie A — Spécification et inférence (20 points)
