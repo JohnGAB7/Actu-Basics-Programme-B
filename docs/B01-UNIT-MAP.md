@@ -37,7 +37,7 @@ F01 à F08 disposent maintenant d'une première rédaction complète dans `src/c
 
 ## Évaluation transversale
 
-Une première épreuve de synthèse, avec barème et corrigé, est disponible dans [`docs/B01-EVALUATION.md`](./B01-EVALUATION.md). Elle vérifie les acquis de F01 à F08 et inclut une étude de cas quantitative. Elle constitue un outil formatif à faire relire et tester ; elle ne remplace pas une évaluation indépendante ni un test auprès d'apprenants.
+Une première épreuve de synthèse, avec barème et corrigé, est disponible dans [`docs/B01-EVALUATION.md`](./B01-EVALUATION.md). La revue éditoriale interne et ses limites sont consignées dans [`docs/reviews/B01-internal-review.md`](./reviews/B01-internal-review.md). Elle vérifie les acquis de F01 à F08 et inclut une étude de cas quantitative. Elle constitue un outil formatif à faire relire et tester ; elle ne remplace pas une évaluation indépendante ni un test auprès d'apprenants.
 
 ## Acquis de sortie du bloc
 
