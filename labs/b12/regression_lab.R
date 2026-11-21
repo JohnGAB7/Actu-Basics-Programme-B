@@ -5,7 +5,7 @@ fit<-lm(y~x)
 stopifnot(abs(coef(fit)[1]-1.26666666666667)<1e-10, abs(coef(fit)[2]-1.82857142857143)<1e-8)
 h<-hatvalues(fit); cooks<-cooks.distance(fit)
 stopifnot(all(h>=0 & h<=1),length(cooks)==length(x))
-# Ridge and one-predictor LASSO, centered predictor; intercept unpenalized
+# Ridge: 0.5*SSE + 0.5*lambda*beta^2; LASSO: 0.5*SSE + lambda*abs(beta), centered predictor; intercept unpenalized
 xc<-x-mean(x); yc<-y-mean(y); sxx<-sum(xc^2); sxy<-sum(xc*yc); lambda<-100
 ridge<-sxy/(sxx+lambda); lasso<-sign(sxy)*max(abs(sxy)-lambda,0)/sxx
 stopifnot(abs(ridge)<abs(sxy/sxx),lasso==0)
