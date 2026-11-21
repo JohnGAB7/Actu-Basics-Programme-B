@@ -9,7 +9,7 @@ N01–N02 : représentation, erreurs, conditionnement et stabilité. N03–N04 :
 ## Contrôles mathématiques effectués
 1. N01 : rationalisation de sqrt(x+1)-sqrt(x) et erreurs absolue/relative.
 2. N02 : formule du conditionnement local et identité Ae=r pour le résidu.
-3. N03 : recalcul du système symétrique défini positif : solution (9/5,8/5) pour second membre (5,6).
+3. N03 : recalcul du système symétrique défini positif : solution (9/5,7/5) pour second membre (5,6).
 4. N04 : critère spectral ρ(G)<1 et distinction conditions suffisantes/nécessaires.
 5. N05 : borne de dichotomie et caractère local de la convergence quadratique de Newton.
 6. N06 : unicité de l'interpolant et hypothèses du reste.
