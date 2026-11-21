@@ -46,7 +46,11 @@ class CausalLabTests(unittest.TestCase):
         self.assertAlmostEqual(att[0], 1.0)
         self.assertAlmostEqual(att[2], 0.25)
         self.assertAlmostEqual(overlap[0], 0.2)
-        self.assertAlmostEqual(weighted_smd([1, 1, 0, 0], a, ate), 0.0)
+        a_balance = [1, 1, 1, 1, 0, 1, 0, 0, 0, 0]
+        x_balance = [1, 1, 1, 1, 1, 0, 0, 0, 0, 0]
+        e_balance = propensity_scores_binary_covariate(a_balance, x_balance)
+        w_balance = propensity_weights(a_balance, e_balance)
+        self.assertAlmostEqual(weighted_smd(x_balance, a_balance, w_balance), 0.0)
 
     def test_effective_sample_size(self):
         self.assertAlmostEqual(effective_sample_size([1, 1, 1, 1]), 4.0)
