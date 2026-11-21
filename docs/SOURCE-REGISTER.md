@@ -146,3 +146,16 @@ Pour chaque cours, conserver :
 - incertitudes ou limites restant à vérifier.
 
 Le registre sera enrichi au fil de la production. Une liste de liens généraux n'est pas une bibliographie finale.
+
+
+## B12 — Régression et modèles statistiques
+| ID | Ressource | Domaines utiles | Utilisation |
+|---|---|---|---|
+| S61 | Penn State STAT 501 — Regression Methods : https://online.stat.psu.edu/stat501/ | Régression simple/multiple, ANOVA, estimation, diagnostics, transformations, influence, colinéarité, pondération, logistique | Cadrage des unités R01–R09 ; consulter les leçons précises lors de la revue |
+| S62 | MIT OCW 18.650 — Statistics for Applications : https://ocw.mit.edu/courses/18-650-statistics-for-applications-fall-2016/ | Fondements théoriques, estimation, tests, régression, Bayes, ACP et GLM | Articulation de B11 et B12 |
+| S63 | Kutner et al., *Applied Linear Statistical Models*, 5e éd. | Régression linéaire appliquée, modèles et diagnostics | Référence de fond à consulter par chapitre |
+| S64 | Fox & Weisberg, *An R Companion to Applied Regression*, 3e éd. | Modélisation appliquée, diagnostics et implémentation R | Ateliers et diagnostics |
+| S65 | McCullagh & Nelder, *Generalized Linear Models*, 2e éd. | Famille exponentielle, liens et GLM | Fondements R08–R09 |
+| S66 | Gelman & Hill, *Data Analysis Using Regression and Multilevel/Hierarchical Models* | Régression multiniveau et modèles hiérarchiques | Introduction R10 |
+
+Les ressources S61–S66 sont des sources de cadrage et de vérification à consulter ; elles ne certifient pas le contenu de Programme B.
