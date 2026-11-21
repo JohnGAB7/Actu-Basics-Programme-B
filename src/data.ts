@@ -60,8 +60,8 @@ export const questions: Question[] = [
 ]
 
 export const blocks = [
-  { code: 'B01', title: 'Fondations mathématiques', subtitle: 'Nombres, algèbre et raisonnement quantitatif', progress: 100, lessons: 8, tone: 'mint', status: 'Cours intégrés à la bibliothèque' },
-  { code: 'B02', title: 'Algèbre linéaire', subtitle: 'Vecteurs, matrices et espaces vectoriels', progress: 25, lessons: 8, tone: 'blue', status: 'En cours de construction' },
-  { code: 'B03', title: 'Analyse mathématique', subtitle: 'Limites, continuité et calcul différentiel', progress: 0, lessons: 0, tone: 'violet', status: 'À venir' },
-  { code: 'B04', title: 'Probabilités', subtitle: 'Modèles aléatoires et distributions', progress: 0, lessons: 0, tone: 'amber', status: 'À venir' },
+  { code: 'B01', title: 'Fondations mathématiques', subtitle: 'Nombres, calcul, algèbre et modélisation', progress: 12, lessons: 1, tone: 'mint', status: '1 unité originale en draft · 7 planifiées' },
+  { code: 'B02', title: 'Algèbre linéaire', subtitle: 'Espaces vectoriels, matrices et applications', progress: 0, lessons: 0, tone: 'blue', status: 'Planifié' },
+  { code: 'B03', title: 'Analyse à une variable', subtitle: 'Suites, limites, dérivation et intégration', progress: 0, lessons: 0, tone: 'violet', status: 'Planifié' },
+  { code: 'B04', title: 'Probabilités', subtitle: 'Modèles aléatoires et distributions', progress: 0, lessons: 0, tone: 'amber', status: 'Planifié' },
 ]
