@@ -130,3 +130,13 @@ Les anciens statuts « draft » de cette première passe décrivaient l'absence 
 - B12 : convention de pénalisation Ridge/LASSO explicitée et testée analytiquement en Python/R.
 - B13 : helper Roy Python/R et tests exacts/bornés, dont la condition v≥p pour E inversible.
 - Les rapports mathématiques B08–B13 intègrent les constats de laboratoire. Comparaison complète à SciPy/statsmodels/R packages/SAS/Stata et validation indépendante restent à conduire.
+
+
+## Publication de la revue mathématique B08–B13 — PR #69
+
+- PR #69 fusionnée le 21 novembre 2026 ; commit a50772f552b267d7d42d3b032cb3877878cc9e4a.
+- CI complète sur le HEAD fee757c38c6d6f85fd8fbc00460dab4f3d8a9100 réussie : tests Python/R B08–B20, build/typecheck et rendu Markdown/KaTeX.
+- B13 MV04 v1.3 corrige la transformation F de Roy ; tests ciblés Python/R valident p=1, q=1, une borne et les degrés de liberté.
+- Source S171 (SAS/STAT) ajoutée. La divergence de formule imprimée dans le manuel Stata S159 pour p=1,q>1 est explicitement signalée ; pas de validation logicielle directe Stata.
+- PR #60 fermée après vérification que le complément MANOVA est repris et publié dans PR #68 et #69.
+- Limites : recalcul exhaustif des corrigés, comparaison directe à R/SAS/Stata, tests apprenants, revue humaine indépendante et audit d'accessibilité restent nécessaires.
