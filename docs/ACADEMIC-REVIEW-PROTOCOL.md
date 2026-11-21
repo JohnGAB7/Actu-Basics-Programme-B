@@ -45,6 +45,7 @@ Le protocole vise à rendre les contrôles explicites et traçables. Il ne trans
 - Les réponses numériques, unités, tolérances et barèmes sont vérifiés.
 - Les questions à choix unique ont une seule bonne réponse.
 - Les scripts et notebooks sont exécutés dans un environnement documenté.
+- Les fichiers Markdown contenant des formules sont rendus par le moteur KaTeX utilisé dans l'application ; les erreurs de rendu bloquantes sont détectées automatiquement.
 - Les tests couvrent cas standards, cas limites et erreurs attendues.
 - Les sorties sont reproductibles ou leurs sources de variabilité sont précisées.
 
