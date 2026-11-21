@@ -36,3 +36,8 @@ Aucune erreur mathématique bloquante n'a été identifiée dans les dix unités
 - Tests apprenants, revue humaine indépendante et audit d'accessibilité des graphiques.
 
 **Conclusion :** B10 présente une base méthodologique cohérente dans cette première passe. Les formules centrales sont cohérentes ; les tests de code ne remplacent pas la validation des choix de plan et des hypothèses de collecte.
+
+
+## Contrôle complémentaire du laboratoire
+
+Une divergence Python/R a été corrigée : Python comptait `None` comme manquant mais traitait `NaN` comme numérique invalide, tandis que R comptait `NA`/`NaN` comme manquant. Python traite désormais `None` et les flottants NaN comme manquants, et les tests Python/R couvrent cette convention. Les valeurs infinies restent des valeurs numériques invalides, non des valeurs manquantes.
