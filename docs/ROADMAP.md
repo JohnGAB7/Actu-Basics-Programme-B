@@ -21,20 +21,20 @@ Cette roadmap distingue le cursus publié, les contrôles internes, les validati
 - [x] Cartes pédagogiques et évaluations formatives créées pour les 20 blocs.
 - [x] Laboratoires Python/R pour B08–B20 intégrés à la CI.
 - [x] Seconde passe publiée pour B10–B12 et B14–B20.
-- [ ] Finaliser l'addendum MANOVA de B13 et harmoniser ses identifiants publics.
-- [ ] Harmoniser les prérequis, parcours, périmètres et statuts entre les 20 blocs.
+- [ ] Finaliser l'addendum MANOVA de B13 après réussite de la CI de cette branche et fermer la PR #60 devenue obsolète.
+- [x] Harmoniser les prérequis des parcours recherche, actuariat et économétrie ainsi que les périmètres B18–B20.
 - [ ] Localiser les références par notion et section pour les résultats centraux.
 - [ ] Compléter les preuves, corrigés et tests des unités signalées dans le registre de revue.
 
 ## 3. Audit transversal — en cours
 
-- [ ] Vérifier l'unicité des identifiants et la cohérence entre fichiers, cartes, lecteur et évaluations.
-- [ ] Vérifier le graphe des prérequis et l'ordre des parcours recommandés.
-- [ ] Comparer le périmètre annoncé dans l'architecture au contenu réellement présent.
+- [x] Vérifier les 196 codes publics : 196 identifiants uniques ; documenter le cas des chemins historiques B13.
+- [x] Corriger l'ordre des prérequis B20 dans les parcours recherche, actuariat et économétrie ; les autres dépendances restent à auditer.
+- [x] Aligner les périmètres B18–B20 sur leurs unités ; les autres blocs restent à examiner.
 - [ ] Contrôler les conventions, notations, définitions et résultats réutilisés entre blocs.
 - [ ] Contrôler les barèmes, objectifs et corrigés des évaluations.
-- [ ] Nettoyer les documents de gouvernance et les statuts historiques.
-- [ ] Produire un rapport d'anomalies avec gravité, preuve et décision de résolution.
+- [x] Actualiser README, roadmap, B19, B20 et le registre des sources ; le contrôle des autres en-têtes de blocs reste à compléter.
+- [x] Produire le rapport [d'audit transversal](reviews/PROGRAMME-B-CROSS-BLOCK-AUDIT-2026-11-21.md).
 
 ## 4. Validation académique et pédagogique indépendante
 
