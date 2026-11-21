@@ -153,7 +153,7 @@ Dix unités originales (AR01–AR10) ont été approfondies dans une seconde pas
 
 ## Bloc B19 — Économétrie et statistiques financières
 
-Dix unités originales (EF01–EF10) sont intégrées au lecteur : identification économétrique, endogénéité et inférence robuste, données de panel, IV/GMM, choix discrets, rendements financiers, modèles de facteurs, VaR/ES et backtesting, microstructure et projet empirique. La carte pédagogique, l’évaluation formative et la première revue interne sont disponibles dans `docs/B19-UNIT-MAP.md`, `docs/B19-EVALUATION.md` et `docs/reviews/B19-internal-review.md`. Les contenus restent des premières versions de travail ; démonstrations détaillées, notebooks R/Python, données reproductibles et revue humaine indépendante restent à conduire.
+Dix unités originales (EF01–EF10) ont été approfondies : estimands et hypothèses d'identification, HC0/HAC et clusters, effets fixes/aléatoires et biais de Nickell, 2SLS/GMM et faibles instruments, logit/IIA/censure, rendements et vintages macroéconomiques, facteurs et multiplicité, Expected Shortfall/backtesting, microstructure et protocole de recherche. La carte v1.1, l'évaluation, la seconde revue et les sources S136–S147 sont documentées. Un laboratoire Python/R sans dépendances externes couvre OLS, HC0/HAC, within, Wald IV simple, logit, rendements, CAPM, VaR/ES, Kupiec et variance réalisée. Les implémentations sont pédagogiques et ne remplacent pas des bibliothèques économétriques de production.
 
 
 ## Bloc B20 — Théorie statistique avancée et méthodes de recherche

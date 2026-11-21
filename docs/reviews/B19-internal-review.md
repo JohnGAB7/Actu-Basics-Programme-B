@@ -33,3 +33,36 @@
 
 ## Limites et statut
 La revue est une vérification interne de périmètre et de cohérence, non une revue académique indépendante. Les références doivent être consultées par chapitre et version ; leur présence ne signifie pas validation du contenu. Les unités sont des premières versions de travail, non accréditées.
+
+
+
+## Seconde revue interne — version 1.1
+
+**Périmètre :** approfondissements EF01–EF10, laboratoire Python/R, carte et évaluation.
+
+### Contrôles ajoutés
+- EF01 : estimands ATE/ATT/LATE, résultats potentiels, hypothèses d'identification et transportabilité.
+- EF02 : sandwich HC0, HAC/Newey–West, clusters, petits nombres de clusters et erreurs de mesure.
+- EF03 : within, exogénéité stricte, biais de Nickell, GMM dynamique et RE corrélés.
+- EF04 : 2SLS matriciel, faibles instruments, LATE, pondération GMM et sur-identification.
+- EF05 : logit/probit, effets marginaux, IIA, Tobit, sélection et mécanismes de censure/troncature.
+- EF06 : agrégation des rendements, stationnarité, vintages macro et biais point-in-time.
+- EF07 : erreurs de mesure des bêta, Fama–MacBeth et multiplicité/data mining.
+- EF08 : ES intégral, Kupiec/Christoffersen et distinction Bâle/usage général.
+- EF09 : variation quadratique, bruit de microstructure et estimateurs robustes.
+- EF10 : protocole de recherche, versions de données et gouvernance modèle mise à jour en 2026.
+
+### Laboratoire et tests
+Le laboratoire propose des primitives OLS, HC0/HAC, within, ratio de Wald simple, logit, rendements, CAPM, VaR/ES, Kupiec et variance réalisée. Les tests Python vérifient cas déterministes et erreurs d'entrée ; le script R contient des assertions de cohérence. Les versions sont volontairement minimales et ne remplacent pas des bibliothèques économétriques.
+
+### Limites restantes
+1. Vérifier HC0/HAC contre une bibliothèque de référence, notamment les conventions de correction petit échantillon.
+2. Étendre IV à 2SLS multi-instruments/covariables et inférence faible-instrument.
+3. Tester FE/RE et GMM dynamique sur jeux de référence.
+4. Ajouter modèles logit/probit estimés, Tobit/Heckman et diagnostics IIA.
+5. Comparer VaR/ES et backtests à des implémentations de référence.
+6. Ajouter un jeu haute fréquence synthétique et comparer realized kernels/subsampling à une bibliothèque spécialisée.
+7. Vérifier la portée de SR 26-2, du cadre Bâle et des règles locales selon l'organisation.
+8. Organiser tests apprenants et audit manuel d'accessibilité.
+
+**Conclusion :** seconde revue assistée par IA, non indépendante et non certifiante. La qualité des calculs pédagogiques n'est pas une validation académique externe.

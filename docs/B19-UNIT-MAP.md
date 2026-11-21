@@ -42,3 +42,31 @@ EF01–EF02 posent la spécification et l'inférence ; EF03–EF05 développent 
 
 ## Critères de sortie
 L'apprenant doit justifier l'identification et l'inférence, évaluer robustesse et sensibilité, respecter calendrier et provenance des données, et distinguer conclusions descriptives, prédictives et causales.
+
+
+
+## Seconde consolidation — version 1.1
+
+La seconde passe approfondit :
+- estimands, résultats potentiels, hypothèses de design et validité externe ;
+- covariance sandwich HC0, HAC/Newey–West et dépendance par clusters ;
+- transformation within, hypothèses FE/RE, biais de Nickell et effets aléatoires corrélés ;
+- 2SLS matriciel, faibles instruments, LATE et GMM ;
+- effets marginaux, IIA, censure/troncature et sélection ;
+- rendements, stationnarité, queues, vintages macroéconomiques et données point-in-time ;
+- bêta estimé, Fama–MacBeth, multiplicité et data mining ;
+- Expected Shortfall, tests de Kupiec/Christoffersen et contexte Bâle ;
+- variation quadratique, bruit de microstructure et realized kernels ;
+- protocole de recherche, provenance et gouvernance du risque de modèle.
+
+## Laboratoire Python/R
+
+Le dossier `labs/b19/` fournit OLS, HC0, HAC/Newey–West, transformation within, ratio de Wald à un instrument, logit et pente marginale, rendements simples/log, CAPM, VaR/ES empiriques, statistique LR de Kupiec et variance réalisée. Tests Python et assertions R sont prévus dans le workflow principal et la CI dédiée.
+
+Ces primitives sont didactiques : elles ne constituent pas un estimateur 2SLS général, un moteur panel dynamique, un logit ajusté, un estimateur haute fréquence robuste ou un système réglementaire de risque.
+
+## Critères de qualité
+
+Toute analyse doit distinguer estimation, identification et inférence ; annoncer le niveau de clustering, la structure temporelle, la population et l'horizon ; prévenir les biais look-ahead/survivorship ; conserver les vintages ; documenter toutes les spécifications essayées ; et comparer les résultats à des références ou modèles challengers.
+
+**Statut :** seconde consolidation pédagogique et laboratoire Python/R dans une branche candidate ; CI, revue humaine indépendante, tests apprenants et audit d'accessibilité à réaliser.

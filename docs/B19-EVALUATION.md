@@ -57,3 +57,27 @@
 
 ## Critères de réussite
 Seuil indicatif : 70/100. Confusions endogénéité/erreur-type, FE/RE, instrument valide ou VaR/ES imposent reprise ciblée. Faire tester le sujet avant stabilisation.
+
+
+
+## Barème analytique et critères de correction
+
+Le total reste de 100 points. Les réponses doivent distinguer :
+- association, prédiction et causalité ;
+- endogénéité, hétéroscédasticité, autocorrélation et dépendance cluster ;
+- validité d'un instrument, pertinence et force ;
+- effets within/inter et hypothèses RE ;
+- censure, troncature et sélection ;
+- rendement, volatilité et niveau de prix ;
+- VaR, ES et backtesting ;
+- variation quadratique et bruit de microstructure.
+
+Pour le projet, exiger un estimand explicite, un design défendable, un calendrier de disponibilité des données, une spécification de référence, inférence adaptée, diagnostics, analyses de sensibilité, reproductibilité et conclusion proportionnée aux hypothèses.
+
+## Cas limites obligatoires
+
+Les ateliers doivent inclure : matrice de design singulière, hétéroscédasticité, autocorrélation, peu de clusters, instrument faible, instrument invalide, panel court dynamique, attrition, séparation parfaite en logit, censure/troncature confondues, révision de série macroéconomique, survivorship bias, multiplicité de facteurs, exceptions VaR groupées et bruit bid-ask.
+
+## Critères bloquants
+
+Une étude n'est pas acceptée si elle interprète une erreur-type robuste comme une correction d'endogénéité, un instrument pertinent comme nécessairement valide, un coefficient logit comme variation directe de probabilité, une série révisée comme connue en temps réel, un alpha comme compétence prouvée ou une VaR comme perte maximale. Un bon backtest de fréquence ne dispense pas d'examiner l'indépendance des exceptions.
