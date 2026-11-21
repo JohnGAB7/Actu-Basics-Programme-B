@@ -8,6 +8,7 @@ https://johngab7.github.io/Actu-Basics-Programme-B/
 ## Architecture et gouvernance académique
 - Architecture académique cible : docs/PROGRAMME-B-CURRICULUM.md
 - Registre des références : docs/SOURCE-REGISTER.md
+- Protocole de revue académique : docs/ACADEMIC-REVIEW-PROTOCOL.md
 - Standards éditoriaux : docs/EDITORIAL-STANDARDS.md
 - Modèle de contenu : docs/CONTENT-MODEL.md
 - Moteur d'évaluation : docs/ASSESSMENT-ENGINE.md
