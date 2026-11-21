@@ -500,3 +500,18 @@ Cette décomposition est une première version de travail. Les preuves détaill�
 10. Projet intégré : construire un produit de données fiable.
 
 Cette décomposition est une première version de travail. Les notebooks, commandes, tests et validations indépendantes restent à conduire.
+
+
+### B18 — Actuariat, assurance et modélisation du risque
+1. Fondements actuariels, expositions et mesure du risque.
+2. Modélisation de la fréquence et de la sévérité des sinistres.
+3. Tarification, GLM, relativités et contraintes tarifaires.
+4. Crédibilité actuarielle et mutualisation de l’information.
+5. Survie, mortalité et tables de vie.
+6. Assurance vie, rentes et valeurs actuelles actuarielles.
+7. Provisionnement non-vie et triangles de développement.
+8. Réassurance, transfert de risque et structures de couverture.
+9. Capital économique, agrégation et solvabilité.
+10. Gouvernance actuarielle, validation et projet de modélisation du risque.
+
+Cette décomposition est une première version de travail. Les preuves détaillées, cas numériques, notebooks et validations indépendantes restent à conduire.
