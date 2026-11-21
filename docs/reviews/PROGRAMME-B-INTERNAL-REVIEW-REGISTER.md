@@ -60,3 +60,10 @@ Les anciens statuts « draft » de cette première passe décrivaient l'absence 
 - Corrections documentaires et pédagogiques proposées dans la branche `chatgpt/curriculum-transversal-audit` : README, roadmap, architecture, parcours, codes B13 MV01–MV10, sources MANOVA S158–S160, en-têtes B18–B20, versions des cours B10–B20 et contenus AT03/AT05.
 - Le complément MANOVA MV04 de l'ancienne PR #60 est repris dans cette branche ; PR #60 doit être fermée après fusion de la reprise, afin d'éviter des branches concurrentes.
 - Cette revue est structurelle et assistée par IA ; elle ne vaut pas revue mathématique exhaustive, validation indépendante, tests apprenants ni audit d'accessibilité.
+
+
+### Résultat de publication de l'audit transversal
+
+- PR [#68](https://github.com/JohnGAB7/Actu-Basics-Programme-B/pull/68) fusionnée ; commit `840086855a772d0a15f1770a3e04237e7a024fd6`.
+- PR #60 fermée après vérification de l'intégration MV04 dans master.
+- Déploiement master [#44959748131](https://github.com/JohnGAB7/Actu-Basics-Programme-B/actions/runs/44959748131) réussi : tests Python/R B08–B20, build, typecheck, KaTeX et GitHub Pages.
