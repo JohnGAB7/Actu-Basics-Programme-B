@@ -86,6 +86,10 @@ class CausalLabTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             iv_wald([1, 2], [0, 0], [0, 1])
         with self.assertRaises(ValueError):
+            iv_wald([1, 2], [0, 1], [1, 1])
+        with self.assertRaises(ValueError):
+            aipw_ate([1, 2], [1, 1], [0.5, 0.5], [0, 0], [1, 1])
+        with self.assertRaises(ValueError):
             local_linear_rd([1, 2], [-1, 1], bandwidth=1)
 
 
