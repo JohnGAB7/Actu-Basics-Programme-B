@@ -346,7 +346,7 @@ const courses: Course[] = [
  {code:'MV01',title:'Données multivariées, vecteurs aléatoires et covariance',version:'1.1.0',description:'Construire et interpréter les matrices de covariance et de corrélation.',duration:'4–5 h',content:mv01},
  {code:'MV02',title:'Loi normale multivariée, distance de Mahalanobis et atypies',version:'1.1.0',description:'Comprendre ellipsoïdes, distances et diagnostics multivariés.',duration:'5–6 h',content:mv02},
  {code:'MV03',title:'Inférence sur un vecteur moyen et test T² de Hotelling',version:'1.1.0',description:'Construire des tests et régions de confiance simultanés.',duration:'5–6 h',content:mv03},
- {code:'MV04',title:'Analyse multivariée de la variance (MANOVA)',version:'1.2.0',description:'Comparer simultanément les vecteurs moyens de plusieurs groupes.',duration:'5–6 h',content:mv04},
+ {code:'MV04',title:'Analyse multivariée de la variance (MANOVA)',version:'1.3.0',description:'Comparer simultanément les vecteurs moyens de plusieurs groupes.',duration:'5–6 h',content:mv04},
  {code:'MV05',title:'Analyse en composantes principales (ACP)',version:'1.1.0',description:'Dériver et interpréter une réduction dimensionnelle linéaire.',duration:'6–7 h',content:mv05},
  {code:'MV06',title:'Analyse factorielle et variables latentes',version:'1.1.0',description:'Modéliser la covariance commune par des facteurs latents.',duration:'6–7 h',content:mv06},
  {code:'MV07',title:'Corrélation canonique et relations entre deux ensembles',version:'1.1.0',description:'Étudier les relations entre deux blocs de variables.',duration:'4–5 h',content:mv07},
