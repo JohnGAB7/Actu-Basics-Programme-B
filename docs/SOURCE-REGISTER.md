@@ -262,3 +262,13 @@ Les ressources S102–S106 sont des références de cadrage ; elles ne constitue
 | S107 | Harvard Statistics 110 — Final Review, Fall 2011 : https://projects.iq.harvard.edu/sites/projects.iq.harvard.edu/files/stat110/files/final_review.pdf | Espérance conditionnelle, variance conditionnelle, lois discrètes et continues, distributions conjointes, inégalités de Cauchy–Schwarz/Markov/Chebychev/Jensen, LLN et TCL | Vérification transversale de P04–P10 |
 
 La ressource S107 est une fiche de révision pédagogique ; elle complète les cours et ne remplace pas les ouvrages de référence ni une revue indépendante.
+
+
+## B14 — Compléments de la seconde passe
+| ID | Ressource | Domaines utiles | Utilisation |
+|---|---|---|---|
+| S108 | DoubleML — User Guide and documentation : https://docs.doubleml.org/stable/ | Scores orthogonaux, double machine learning, sample-splitting, cross-fitting, inférence et implémentations Python/R | Vérification ciblée de CI07 ; la documentation décrit l'implémentation, pas une preuve autonome des hypothèses d'identification |
+| S109 | Callaway & Sant'Anna (2021), “Difference-in-Differences with multiple time periods”, Journal of Econometrics 225(2), 200–230 : https://doi.org/10.1016/j.jeconom.2020.12.001 | ATT de groupe-période, adoption échelonnée, hétérogénéité des effets et tendances parallèles conditionnelles | Référence de fond pour CI09 |
+| S110 | rdrobust — Local-Polynomial RD Estimation with Robust Confidence Intervals : https://github.com/cran/rdrobust/blob/master/man/rdrobust.Rd ; documentation du projet : https://rdpackages.github.io/ | Régression sur discontinuité locale, sélection de bande passante, intervalles robustes corrigés du biais | Référence technique pour CI08 ; le laboratoire B14 ne réimplémente pas ces procédures robustes |
+
+Les ressources S108–S110 complètent le cadrage de B14. Elles ne constituent pas une validation indépendante du bloc ni une approbation de Programme B.
