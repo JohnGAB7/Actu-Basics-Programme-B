@@ -35,7 +35,7 @@ Construire le polynôme de degré au plus un passant par (1,2) et (3,8). Différ
 ## Exercice 7 — Moindres carrés (10 points)
 Pourquoi QR peut-il être préférable aux équations normales ? Citer un usage de la SVD.
 
-**Corrigé :** κ(AᵀA) peut être proche de κ(A)². La SVD identifie les petites valeurs singulières et permet pseudoinverse et régularisation.
+**Corrigé :** En norme 2 et si A est de rang colonne plein, κ₂(AᵀA)=κ₂(A)². La SVD identifie les petites valeurs singulières et permet pseudoinverse et régularisation.
 
 ## Exercice 8 — Quadrature (10 points)
 Ordre global du trapèze composite et de Simpson composite ? Pourquoi un raffinement ne certifie-t-il pas toujours l'erreur ?
