@@ -133,7 +133,7 @@ Dix unités CI01–CI10 couvrent résultats potentiels, essais randomisés, plan
 
 ## Bloc B15 — Apprentissage statistique et machine learning
 
-Dix unités ML01–ML10 couvrent formulation du risque, généralisation, validation, modèles linéaires, noyaux, arbres, boosting, réseaux de neurones, modèles probabilistes et évaluation responsable. La carte pédagogique v1.1, l'évaluation formative de 20 questions/100 points et la seconde revue interne sont disponibles dans `docs/B15-UNIT-MAP.md`, `docs/B15-EVALUATION.md` et `docs/reviews/B15-internal-review.md`. Le laboratoire Python/R est en validation CI : ridge/lasso univariés, KNN, métriques de classification, calibration, métriques par groupes et mélange gaussien par EM. Revue humaine indépendante, tests apprenants et audit d'accessibilité restent à conduire.
+Dix unités ML01–ML10 couvrent formulation du risque, généralisation, validation, modèles linéaires, noyaux, arbres, boosting, réseaux de neurones, modèles probabilistes et évaluation responsable. La carte pédagogique v1.1, l'évaluation formative de 20 questions/100 points et la seconde revue interne sont disponibles dans `docs/B15-UNIT-MAP.md`, `docs/B15-EVALUATION.md` et `docs/reviews/B15-internal-review.md`. Le laboratoire Python/R est publié : ridge/lasso univariés, KNN, métriques de classification, calibration, métriques par groupes et mélange gaussien par EM. Revue humaine indépendante, tests apprenants et audit d'accessibilité restent à conduire.
 
 
 ## Bloc B16 — Séries temporelles et prévision
