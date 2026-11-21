@@ -25,14 +25,17 @@ function App() {
   const [submitted, setSubmitted] = useState(false)
   const [query, setQuery] = useState('')
   const [showIntro, setShowIntro] = useState(false)
+  const [savedAttempt, setSavedAttempt] = useState(false)
 
   useEffect(() => {
     const saved = localStorage.getItem(STORAGE_KEY)
     if (saved) {
       try {
-        const data = JSON.parse(saved) as { answers?: Answers; current?: number }
+        const data = JSON.parse(saved) as { answers?: Answers; current?: number; seconds?: number }
         if (data.answers) setAnswers(data.answers)
         if (typeof data.current === 'number') setCurrent(data.current)
+        if (typeof data.seconds === 'number') setSeconds(data.seconds)
+        setSavedAttempt(true)
       } catch { localStorage.removeItem(STORAGE_KEY) }
     }
   }, [])
@@ -47,8 +50,8 @@ function App() {
   }, [started, submitted])
 
   useEffect(() => {
-    if (started && !submitted) localStorage.setItem(STORAGE_KEY, JSON.stringify({ answers, current }))
-  }, [answers, current, started, submitted])
+    if (started && !submitted) localStorage.setItem(STORAGE_KEY, JSON.stringify({ answers, current, seconds }))
+  }, [answers, current, seconds, started, submitted])
 
   const score = useMemo(() => questions.reduce((n, q) => n + (answers[q.id] === q.answer ? 1 : 0), 0), [answers])
   const answered = Object.keys(answers).length
@@ -56,7 +59,9 @@ function App() {
   const filteredBlocks = blocks.filter(b => (b.title + b.subtitle).toLowerCase().includes(query.toLowerCase()))
   const time = `${String(Math.floor(seconds / 60)).padStart(2, '0')}:${String(seconds % 60).padStart(2, '0')}`
 
+  function resumeExam() { setStarted(true); setSavedAttempt(false); setView('exam') }
   function beginExam() {
+    setSavedAttempt(false)
     setAnswers({})
     setCurrent(0)
     setSeconds(30 * 60)
@@ -71,6 +76,7 @@ function App() {
     setAnswers(old => ({ ...old, [question.id]: index }))
   }
   function finishExam() {
+    setSavedAttempt(false)
     setSubmitted(true)
     setStarted(false)
     localStorage.removeItem(STORAGE_KEY)
@@ -158,12 +164,13 @@ function Overview({onNavigate, onStart}: {onNavigate:(v:View)=>void; onStart:()=
     <div className="section-head"><div><div className="eyebrow">VOTRE PROGRESSION</div><h2>Les parcours du programme</h2><p>Une progression structurée, du socle aux compétences avancées.</p></div><button className="text-button" onClick={() => onNavigate('paths')}>Tout voir <ArrowRight size={15}/></button></div>
     <div className="block-grid">{blocks.slice(0,3).map(b=><BlockCard key={b.code} block={b} onClick={() => onNavigate('paths')}/>)}</div>
     <div className="section-head exam-section-head"><div><div className="eyebrow">MES ÉVALUATIONS</div><h2>Vérifier ses acquis</h2><p>Les évaluations permettent d’identifier les acquis et les points à renforcer.</p></div></div>
+    {savedAttempt && <div className="resume-banner"><div><strong>Une évaluation est en cours</strong><span>Vos réponses et le temps restant sont conservés sur cet appareil.</span></div><button className="primary-button" onClick={resumeExam}>Reprendre <ArrowRight size={15}/></button></div>}
     <div className="exam-banner"><div className="exam-banner-icon"><FileCheck2 size={23}/></div><div className="exam-banner-copy"><strong>Diagnostic des fondations mathématiques</strong><span>8 questions · 30 minutes · Évaluation d’entraînement</span></div><button className="secondary-button" onClick={onStart}>Découvrir <ArrowRight size={15}/></button></div>
     <Footer/>
   </div>
 }
 
-function Stat({icon,label,value,note}: {icon:React.ReactNode;label:string;value:string;note:string}) { return <div className="stat-card"><div className="stat-top">{icon}<span>{label}</span></div><strong>{value}</strong><small>{note}</small></div> }
+function Stat({icon,label,value,note}: {icon:ReactNode;label:string;value:string;note:string}) { return <div className="stat-card"><div className="stat-top">{icon}<span>{label}</span></div><strong>{value}</strong><small>{note}</small></div> }
 
 function BlockCard({block,onClick}: {block:typeof blocks[number];onClick:()=>void}) {
   return <button className="block-card" onClick={onClick}><div className="block-card-top"><span className={`block-code ${block.tone}`}>{block.code}</span><span className="block-more"><MoreHorizontal size={18}/></span></div><h3>{block.title}</h3><p>{block.subtitle}</p><div className="block-progress"><div><span>Contenu pédagogique</span><strong>{block.progress}%</strong></div><div className="progress-track"><i style={{width:`${block.progress}%`}}/></div></div><div className="block-card-foot"><span>{block.lessons ? `${block.lessons} unités` : 'Programme planifié'}</span><span className="block-status">{block.status}</span></div></button>
