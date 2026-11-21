@@ -30,6 +30,8 @@ class MultivariateLabTests(unittest.TestCase):
 
     def test_mahalanobis(self):
         self.assertAlmostEqual(mahalanobis_squared([1,2],[0,0],[[1,0],[0,1]]),5)
+        self.assertAlmostEqual(mahalanobis_squared([2],[0],[[4]]),1)
+        self.assertEqual(jacobi_eigen_symmetric([[4]])[0],[4.0])
 
     def test_hotelling_t2(self):
         x=[[1,2],[2,1],[3,4],[4,3],[5,5],[6,4]]
@@ -68,6 +70,8 @@ class MultivariateLabTests(unittest.TestCase):
             hotelling_one_sample([[1,2],[2,1]],[0,0])
         with self.assertRaises(ValueError):
             shrinkage_covariance([[1,0],[0,1]],1.5)
+        with self.assertRaises(ValueError):
+            shrinkage_covariance([[1,2],[2,1]],.5)
         with self.assertRaises(ValueError):
             kmeans([[1,1],[1,1]],2)
 
