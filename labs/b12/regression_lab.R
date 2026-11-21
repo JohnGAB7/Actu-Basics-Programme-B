@@ -9,6 +9,12 @@ stopifnot(all(h>=0 & h<=1),length(cooks)==length(x))
 xc<-x-mean(x); yc<-y-mean(y); sxx<-sum(xc^2); sxy<-sum(xc*yc); lambda<-100
 ridge<-sxy/(sxx+lambda); lasso<-sign(sxy)*max(abs(sxy)-lambda,0)/sxx
 stopifnot(abs(ridge)<abs(sxy/sxx),lasso==0)
+# Check exact normalized objectives on a centered one-predictor example.
+x2 <- 1:5; y2 <- 2*x2; xc2 <- x2-mean(x2); yc2 <- y2-mean(y2)
+sxx2 <- sum(xc2^2); sxy2 <- sum(xc2*yc2); lambda2 <- 2
+ridge2 <- sxy2/(sxx2+lambda2)
+lasso2 <- sign(sxy2)*max(abs(sxy2)-lambda2,0)/sxx2
+stopifnot(abs(ridge2-20/12)<1e-12,abs(lasso2-18/10)<1e-12)
 # Logistic regression with deterministic synthetic binary data
 lx<-seq(-5,4.9,by=.1); lp<-plogis(-.2+.8*lx); ly<-rbinom(length(lx),1,lp)
 logit<-glm(ly~lx,family=binomial())
