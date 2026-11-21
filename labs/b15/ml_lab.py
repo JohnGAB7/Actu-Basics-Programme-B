@@ -66,8 +66,8 @@ def classification_metrics(y_true, probabilities, threshold=0.5):
 
 
 def calibration_bins(y_true, probabilities, n_bins=5):
-    y=[int(v) for v in y_true]; p=_finite(probabilities,"probabilities")
-    if len(y)!=len(p) or not y or any(v not in (0,1) for v in y): raise ValueError("invalid labels")
+    raw_y=list(y_true); y=[int(v) for v in raw_y]; p=_finite(probabilities,"probabilities")
+    if len(y)!=len(p) or not y or any(float(v)!=z or z not in (0,1) for v,z in zip(raw_y,y)): raise ValueError("invalid labels")
     if int(n_bins)!=n_bins or n_bins<1 or any(v<0 or v>1 for v in p): raise ValueError("invalid bin count or probabilities")
     bins=[]
     for b in range(int(n_bins)):
@@ -81,8 +81,8 @@ def calibration_bins(y_true, probabilities, n_bins=5):
 
 
 def group_metrics(y_true, probabilities, groups, threshold=0.5):
-    y=[int(v) for v in y_true]; p=_finite(probabilities,"probabilities"); g=list(groups)
-    if len(y)!=len(p) or len(y)!=len(g) or not y: raise ValueError("length mismatch or empty data")
+    raw_y=list(y_true); y=[int(v) for v in raw_y]; p=_finite(probabilities,"probabilities"); g=list(groups)
+    if len(y)!=len(p) or len(y)!=len(g) or not y or any(float(v)!=z or z not in (0,1) for v,z in zip(raw_y,y)): raise ValueError("invalid labels or length mismatch")
     if not math.isfinite(threshold) or not 0<=threshold<=1: raise ValueError("threshold must lie in [0,1]")
     result={}
     for group in sorted(set(g),key=str):
