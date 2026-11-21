@@ -24,12 +24,14 @@ Les blocs B18, B19 et B20 ont été consolidés et publiés sur GitHub Pages apr
 | X08 | Majeure | Le parcours recherche plaçait B20 avant plusieurs prérequis présents dans la carte ; les parcours actuariat et économétrie omettaient certains prérequis ou blocs recommandés. | Ordre des parcours mis à jour dans `src/curriculum.ts` et l'architecture académique. |
 | X09 | Majeure | La PR #60 portait le complément MANOVA de B13 mais était restée en brouillon et très en retard sur master après les fusions B14–B20. | Son contenu MV04 a été repris dans cette branche d'audit : H/E, racines, Wilks/Rao, Pillai, Hotelling–Lawley, Roy, degrés de liberté, exactitude/approximation/borne et limites. Sources S158–S160 ajoutées. La PR #60 sera fermée après fusion de cette reprise, afin d'éviter deux branches concurrentes. |
 | X10 | Mineure | Le modèle de contenu ne précisait pas la règle d'unicité des identifiants entre blocs et chemins de fichiers. | Identifiant global explicité sous la forme `Bxx-UNITCODE`, distinct du chemin physique de stockage. |
+| X11 | Mineure | Les métadonnées de version du lecteur ne reflétaient pas les secondes passes B10–B20 ; B13/B19/B20 comportaient en outre des révisions locales plus récentes. | Versions du lecteur harmonisées : 1.1.0 pour les secondes passes, 1.2.0 pour MV04, EF08, AT03 et AT05. Les 196 codes de cours sont uniques. |
 
 ## 3. Contrôles structurels effectués
 
 - Comptage des cartes pédagogiques B01–B20 et des lignes d'unités.
 - Vérification des codes et titres d'unités dans les cartes.
 - Comparaison du code public B13-MV01–MV10 avec les imports du lecteur.
+- Vérification des 196 entrées du lecteur : 196 codes uniques, sans doublon ; 198 fichiers Markdown de leçons et suppléments dans `src/content/` (les deux fichiers supplémentaires sont des examens/corrigés B01, pas des unités).
 - Contrôle des en-têtes de cartes et d'évaluations, des durées et barèmes déclarés.
 - Contrôle des identifiants du registre des sources et repérage du doublon S139.
 - Comparaison des périmètres B18–B20 entre architecture et unités réelles.
