@@ -38,6 +38,7 @@ def ols_diagnostics(x: Sequence[float], y: Sequence[float]) -> dict[str, list[fl
 
 
 def ridge_lasso_simple(x: Sequence[float], y: Sequence[float], penalty: float) -> dict[str, float]:
+    """Centered one-predictor minimizers: 0.5*SSE+0.5*λβ² (ridge), 0.5*SSE+λ|β| (lasso)."""
     a,b=_check_xy(x,y)
     if not math.isfinite(penalty) or penalty<0: raise ValueError("penalty must be finite and non-negative")
     mx,my=sum(a)/len(a),sum(b)/len(b)
