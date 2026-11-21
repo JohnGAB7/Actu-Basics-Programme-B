@@ -419,3 +419,8 @@ Les ressources S167–S168 cadrent les méthodes descriptives et les plans de so
 |---|---|---|---|
 | S169 | Efron, Bradley & Tibshirani, Robert J. — *An Introduction to the Bootstrap*, Chapman & Hall/CRC, 1993/1994 : https://www.routledge.com/An-Introductionto-the-Bootstrap/Efron-Tibshirani/p/book/9780429246593 | Bootstrap non paramétrique, erreur-type, intervalles percentile et BCa, tests par permutation | I09 ; référence méthodologique de rééchantillonnage |
 | S170 | Gelman, Andrew et al. — *Bayesian Data Analysis*, 3e éd., Chapman & Hall/CRC, 2013 : https://www.routledge.com/Bayesian-Data-Analysis-Third-Edition/Gelman-Carlin-Stern-Dunson-Vehtari/p/book/9781439840955 | Inférence bayésienne, modèle hiérarchique, prédictive, diagnostic et validation | I10 ; référence de fond bayésienne |
+
+
+| S171 | SAS Institute — SAS/STAT 14.1 User’s Guide, Multivariate Tests : https://support.sas.com/documentation/cdl/en/statug/68162/HTML/default/statug_introreg_sect038.htm | Transformations F des critères MANOVA et borne supérieure de Roy ; option de calcul exact | MV04 ; comparaison de la transformation de Roy et de ses degrés de liberté |
+
+**Note de cohérence S159/S171 :** la formule exacte imprimée dans le manuel Stata pour le cas « p ou νh = 1 » doit être maniée avec prudence lorsque p=1 et νh>1 : telle qu'elle est écrite, elle ne se réduit pas à l'ANOVA univariée (F=Θv/νh). La formule de borne SAS, F=Θ(v−d+νh)/d avec d=max(p,νh), donne bien cette réduction pour p=1. La dérivation scalaire est retenue pour le cas p=1 ; la comparaison directe à Stata reste explicitement à effectuer avant toute affirmation de compatibilité logicielle.
