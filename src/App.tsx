@@ -43,7 +43,7 @@ function App() {
   useEffect(() => {
     if (!started || submitted) return
     const id = window.setInterval(() => setSeconds(s => {
-      if (s <= 1) { window.clearInterval(id); setSubmitted(true); setView('results'); return 0 }
+      if (s <= 1) { window.clearInterval(id); setSubmitted(true); setStarted(false); setSavedAttempt(false); localStorage.removeItem(STORAGE_KEY); setView('results'); return 0 }
       return s - 1
     }), 1000)
     return () => window.clearInterval(id)
@@ -139,7 +139,7 @@ function App() {
           <div className="top-actions"><div className="preview-pill"><span/> Aperçu privé</div><button className="icon-button" aria-label="Aide"><CircleHelp size={18}/></button><div className="top-avatar">JG</div></div>
         </header>
 
-        {view === 'overview' && <Overview onNavigate={nav} onStart={() => setShowIntro(true)} />}
+        {view === 'overview' && <Overview onNavigate={nav} onStart={() => setShowIntro(true)} savedAttempt={savedAttempt} onResume={resumeExam} />}
         {view === 'paths' && <Paths onStart={() => setShowIntro(true)} />}
         {view === 'exams' && <Exams onStart={() => setShowIntro(true)} />}
         {view === 'library' && <Library query={query} setQuery={setQuery} filteredBlocks={filteredBlocks} />}
@@ -156,7 +156,7 @@ function PageHeading({eyebrow, title, description, action}: {eyebrow: string; ti
   return <div className="page-heading"><div><div className="eyebrow">{eyebrow}</div><h1>{title}</h1><p>{description}</p></div>{action}</div>
 }
 
-function Overview({onNavigate, onStart}: {onNavigate:(v:View)=>void; onStart:()=>void}) {
+function Overview({onNavigate, onStart, savedAttempt, onResume}: {onNavigate:(v:View)=>void; onStart:()=>void; savedAttempt:boolean; onResume:()=>void}) {
   return <div className="content-wrap">
     <div className="welcome-line"><div><div className="eyebrow">SAMEDI 21 NOVEMBRE 2026 · VOTRE ESPACE</div><h1>Le savoir se construit <em>avec méthode.</em></h1><p>Un environnement exigeant pour progresser dans les sciences quantitatives.</p></div><div className="welcome-orb"><div className="orb-ring ring-one"/><div className="orb-ring ring-two"/><div className="orb-core"><Sparkles size={25}/></div></div></div>
     <div className="hero-panel"><div className="hero-copy"><div className="hero-kicker"><span className="kicker-line"/> LEARNING IS A JOURNEY</div><h2>De la compréhension<br/>à la <span>maîtrise.</span></h2><p>Des fondations mathématiques aux modèles avancés, construisez une compréhension solide, durable et applicable.</p><div className="hero-actions"><button className="primary-button" onClick={() => onNavigate('paths')}>Explorer les parcours <ArrowRight size={16}/></button><button className="text-button light" onClick={() => onNavigate('library')}>Voir la bibliothèque</button></div></div><div className="hero-visual"><div className="visual-grid"/><div className="visual-orbit orbit-a"/><div className="visual-orbit orbit-b"/><div className="visual-equation eq-a">∑ xᵢ · p(xᵢ)</div><div className="visual-equation eq-b">A · x = b</div><div className="visual-equation eq-c">∫ f(x) dx</div><div className="visual-node node-a"/><div className="visual-node node-b"/><div className="visual-node node-c"/><div className="visual-caption">MATHEMATICS <span>×</span> DATA <span>×</span> REASONING</div></div></div>
@@ -164,7 +164,7 @@ function Overview({onNavigate, onStart}: {onNavigate:(v:View)=>void; onStart:()=
     <div className="section-head"><div><div className="eyebrow">VOTRE PROGRESSION</div><h2>Les parcours du programme</h2><p>Une progression structurée, du socle aux compétences avancées.</p></div><button className="text-button" onClick={() => onNavigate('paths')}>Tout voir <ArrowRight size={15}/></button></div>
     <div className="block-grid">{blocks.slice(0,3).map(b=><BlockCard key={b.code} block={b} onClick={() => onNavigate('paths')}/>)}</div>
     <div className="section-head exam-section-head"><div><div className="eyebrow">MES ÉVALUATIONS</div><h2>Vérifier ses acquis</h2><p>Les évaluations permettent d’identifier les acquis et les points à renforcer.</p></div></div>
-    {savedAttempt && <div className="resume-banner"><div><strong>Une évaluation est en cours</strong><span>Vos réponses et le temps restant sont conservés sur cet appareil.</span></div><button className="primary-button" onClick={resumeExam}>Reprendre <ArrowRight size={15}/></button></div>}
+    {savedAttempt && <div className="resume-banner"><div><strong>Une évaluation est en cours</strong><span>Vos réponses et le temps restant sont conservés sur cet appareil.</span></div><button className="primary-button" onClick={onResume}>Reprendre <ArrowRight size={15}/></button></div>}
     <div className="exam-banner"><div className="exam-banner-icon"><FileCheck2 size={23}/></div><div className="exam-banner-copy"><strong>Diagnostic des fondations mathématiques</strong><span>8 questions · 30 minutes · Évaluation d’entraînement</span></div><button className="secondary-button" onClick={onStart}>Découvrir <ArrowRight size={15}/></button></div>
     <Footer/>
   </div>
