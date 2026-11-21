@@ -1,7 +1,7 @@
 # B08 — Revue interne mathématique et pédagogique
 
 **Version :** 0.2 · 21 novembre 2026  
-**Nature :** première passe interne assistée par IA, non indépendante et non certifiante.
+**Nature :** seconde passe interne assistée par IA, non indépendante et non certifiante. La première passe est conservée ci-dessous comme historique.
 
 ## Couverture
 P01 : espaces, axiomes et dénombrement. P02–P03 : conditionnement, Bayes, indépendance et indépendance conditionnelle. P04–P05 : variables discrètes et continues, lois usuelles et moments. P06–P08 : transformations, convolution, lois conjointes et espérance conditionnelle. P09–P10 : inégalités, convergence, LLN et TCL.
