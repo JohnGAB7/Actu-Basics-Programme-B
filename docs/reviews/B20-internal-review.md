@@ -1,6 +1,6 @@
-# B20 — Première revue interne de contenu
+# B20 — Seconde revue interne de contenu
 
-**Version examinée :** 0.1 · **Statut :** revue assistée par IA, non indépendante  
+**Version examinée :** 1.1 · **Statut :** seconde revue assistée par IA, non indépendante  
 **Périmètre :** AT01–AT10, carte pédagogique et évaluation formative.
 
 ## Contrôles de cohérence réalisés
@@ -33,3 +33,40 @@
 
 ## Limites et statut
 Cette revue vérifie le cadrage et les dépendances, pas l'exhaustivité de cours doctoraux. Les contenus sont des premières versions de travail, non accréditées et non validées par une institution. Les preuves, contre-exemples, démonstrations et corrections doivent être vérifiés indépendamment.
+
+
+
+## Seconde revue interne — version 1.1
+
+**Périmètre :** approfondissements AT01–AT10, laboratoire Python/R, carte et évaluation.
+
+### Contrôles ajoutés
+- AT01 : mesurabilité, mesure image, Fatou, convergence monotone/dominée et contre-exemples.
+- AT02 : expansion des estimateurs M, contiguïté, LAN, efficacité et limites non régulières.
+- AT03 : processus empirique, pont brownien, VC/entropie, tension et bootstrap fonctionnel.
+- AT04 : score efficace, espace tangent, profilage, frontière et double robustesse orthogonale.
+- AT05 : ratio MH, ergodicité, ESS/MCSE/R-hat, HMC et divergences.
+- AT06 : décomposition de Doob, variation quadratique et conditions d'arrêt optionnel.
+- AT07 : conditions lasso, debiasing et hypothèses de contrôle FDR.
+- AT08 : KKT, Armijo/Wolfe, BFGS et stabilité numérique.
+- AT09 : MCSE, couverture, puissance et gouvernance des données/modèles.
+- AT10 : portes d'acceptation, réplication indépendante et responsabilité scientifique.
+
+### Laboratoire et tests
+Le laboratoire Python/R couvre bootstrap percentile, permutation, delta, MH 1D, ESS simplifié, BH, ridge, gradient numérique, descente Armijo et MCSE. Tests Python et assertions R visent des cas synthétiques déterministes. L'ESS est une approximation rudimentaire et le MH ne couvre qu'une dimension.
+
+### Limites restantes
+1. Vérifier les limites et le taux de couverture du bootstrap sur plusieurs DGP et comparer BCa.
+2. Comparer MH/ESS à Stan ou posterior sur chaînes multimodales, fortement corrélées et à queue lourde.
+3. Implémenter plusieurs chaînes et diagnostics rank-normalized R-hat/ESS dans un atelier séparé.
+4. Ajouter exemples de bootstrap par blocs, wild bootstrap et cas non réguliers.
+5. Vérifier les preuves de LAN, efficacité semi-paramétrique et orthogonalité contre des références de théorie.
+6. Tester ridge/gradient sur jeux mal conditionnés et problèmes non convexes.
+7. Faire relire les preuves et contre-exemples par un statisticien théoricien indépendant.
+8. Organiser tests apprenants et audit manuel d'accessibilité.
+
+**Conclusion :** seconde revue assistée par IA, non indépendante et non certifiante ; elle ne remplace pas une revue académique de niveau doctorat.
+
+
+## Références
+S148–S152 (Berkeley, Stanford, MIT, Princeton) ; S153–S154 (Stan diagnostics) ; S155 (Benjamini–Hochberg) ; S156–S157 (bootstrap et théorie non asymptotique) ; S139 (guidance bancaire américaine sur le risque de modèle).

@@ -1,6 +1,6 @@
 # B20 — Évaluation formative de synthèse
 
-**Statut :** Revue interne effectuée — consolidation pédagogique en cours.
+**Version :** 1.1 · **Statut :** seconde passe interne ; validation CI et test apprenant à réaliser.
 Évaluation formative, non certifiante.
 
 ## Partie A — Probabilité et convergence (20 points)
@@ -57,3 +57,27 @@
 
 ## Critères de réussite
 Seuil indicatif : 70/100. Toute confusion sur les hypothèses de convergence, validité du bootstrap, diagnostics MCMC ou portée d'une conclusion impose une reprise ciblée. Une évaluation réelle de niveau master recherche nécessite correction humaine et jury.
+
+
+
+## Barème analytique et critères de correction
+
+Le barème reste de 100 points. Les réponses doivent énoncer les hypothèses avant les conclusions. Les points sont attribués à la définition, au théorème ou algorithme, à la justification des conditions, au calcul et à l'interprétation.
+
+Pour le projet, exiger :
+- question, estimand et contribution identifiés ;
+- hypothèses de régularité, d'identification et de dépendance ;
+- preuves ou dérivations reproductibles ;
+- simulation avec DGP, scénarios, réplications et MCSE ;
+- diagnostics de convergence/optimisation ;
+- sensibilité aux hypothèses, priors, pénalités et spécifications ;
+- données, code, versions et graines traçables ;
+- limites et résultats négatifs documentés.
+
+## Cas limites obligatoires
+
+Inclure : convergence en probabilité sans convergence presque sûre ; domination intégrable manquante ; paramètre à frontière ; densité nulle au quantile ; classe non Donsker ; bootstrap i.i.d. sur données dépendantes ; posterior multimodale ou funnel ; R-hat/ESS défavorables ; arrêt non borné sans uniform integrability ; matrice de design singulière ; p>n ; forte corrélation de variables ; multiplicité et dépendance des tests ; Hessienne mal conditionnée ; minimum local ; erreur Monte-Carlo non négligeable.
+
+## Critères bloquants
+
+Une démonstration ne peut pas invoquer un théorème sans ses hypothèses ; une chaîne MCMC ne peut être dite convergée sur le seul taux d'acceptation ; une simulation ne prouve pas un résultat général ; un algorithme qui s'arrête n'est pas nécessairement à l'optimum global ; et une procédure FDR ne garantit pas que chaque découverte individuelle est vraie.

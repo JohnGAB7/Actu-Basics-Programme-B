@@ -1,6 +1,6 @@
 # B20 — Carte pédagogique : Théorie statistique avancée et méthodes de recherche
 
-**Version :** 0.1 · **Statut :** Revue interne effectuée — consolidation pédagogique en cours.
+**Version :** 1.1 · **Statut :** seconde consolidation pédagogique ; validation CI et revue indépendante à réaliser.
 **Charge indicative :** 60–76 heures de cours et ateliers, hors mémoire de recherche  
 **Niveau :** M1–M2 / préparation recherche  
 **Prérequis :** B08 probabilités, B11 inférence, B12 régression, B13 multivarié, B15 machine learning, B16 séries temporelles, B17 reproductibilité ; analyse réelle et algèbre linéaire avancées.
@@ -43,3 +43,31 @@ Théorie complète des mesures, analyse fonctionnelle avancée, géométrie diff
 
 ## Critères de sortie
 L'apprenant doit démontrer ou appliquer des résultats sous hypothèses explicites, distinguer théorème et heuristique, documenter les limites des méthodes et concevoir un projet de recherche reproductible. La validation d'un mémoire, d'un diplôme ou d'une compétence doctorale relève d'une institution et d'un jury, pas de ce bloc.
+
+
+
+## Seconde consolidation — version 1.1
+
+La seconde passe renforce les fondements et les conditions de validité :
+- mesurabilité, mesure image, espérance conditionnelle, Fatou, convergence monotone/dominée et contre-exemples ;
+- développement asymptotique des estimateurs M, contiguïté, LAN et efficacité ;
+- processus empiriques, pont brownien, classes VC, entropie et bootstrap fonctionnel ;
+- score efficace, espace tangent, vraisemblance profilée, frontières et orthogonalité ;
+- balance détaillée, ergodicité, ESS/MCSE/R-hat et divergences HMC ;
+- décomposition de Doob, variation quadratique et conditions d'arrêt optionnel ;
+- garanties lasso, compatibilité, debiasing et dépendance des procédures FDR ;
+- conditions KKT, Armijo/Wolfe, BFGS, conditionnement et solveurs stables ;
+- erreur Monte-Carlo, puissance, couverture et gouvernance ;
+- portes d'acceptation, réplication et soutenance.
+
+## Laboratoire Python/R
+
+Le dossier `labs/b20/` ajoute bootstrap percentile, test de permutation exact/Monte-Carlo, méthode delta, Metropolis–Hastings unidimensionnel, ESS simplifié, Benjamini–Hochberg, ridge, gradient par différences finies, descente Armijo et erreur-type Monte-Carlo.
+
+Les fonctions sont didactiques. Elles ne remplacent pas les preuves, ne garantissent pas la convergence MCMC et ne couvrent pas HMC, diagnostics multi-chaînes complets, bootstrap dépendant, inférence sélective ou optimisation générale non convexe.
+
+## Critères de qualité
+
+Chaque théorème doit énoncer ses hypothèses et le mode de convergence ; chaque algorithme doit expliciter sa cible, son critère d'arrêt et ses diagnostics ; toute simulation doit distinguer erreur statistique, erreur Monte-Carlo et erreur numérique ; toute recherche doit tracer protocole, données, code, versions et limites.
+
+**Statut :** seconde consolidation pédagogique et laboratoire Python/R dans une branche candidate ; CI, revue humaine indépendante, tests apprenants et audit d'accessibilité à réaliser.
