@@ -70,3 +70,10 @@ Le laboratoire Python/R couvre bootstrap percentile, permutation, delta, MH 1D, 
 
 ## Références
 S148–S152 (Berkeley, Stanford, MIT, Princeton) ; S153–S154 (Stan diagnostics) ; S155 (Benjamini–Hochberg) ; S156–S157 (bootstrap et théorie non asymptotique) ; S139 (guidance bancaire américaine sur le risque de modèle).
+
+
+## Compléments AT03 et AT05 — seconde consolidation
+
+- AT03 explicite Hoeffding, Bernstein et McDiarmid, avec hypothèses d'indépendance, bornitude et limites pour données dépendantes.
+- AT05 explicite le risque fréquentiste, le risque de Bayes, les actions optimales sous perte, les règles minimax et l'admissibilité.
+- Ces compléments enrichissent le périmètre annoncé ; les preuves détaillées et les exercices doivent faire l'objet d'une relecture indépendante.
