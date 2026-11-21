@@ -38,3 +38,8 @@ Aucune erreur mathématique bloquante n'a été identifiée dans les dix unités
 5. Relecture humaine indépendante et tests apprenants.
 
 **Conclusion :** B09 présente une base mathématique cohérente dans cette première passe. Aucun défaut bloquant n'a été identifié ; les limites des théorèmes sont explicitement rappelées. Aucune certification académique n'est revendiquée.
+
+
+## Contrôle complémentaire du laboratoire
+
+Les entrées non finies sont désormais rejetées de manière cohérente dans les implémentations Python/R pour les matrices de transition, les intensités/taux, les horizons, les pas browniens et la variation quadratique. Des tests ciblés couvrent NaN/Inf et les paramètres invalides. Ces validations préviennent notamment des boucles de simulation qui pourraient ne jamais terminer sur des paramètres NaN.
