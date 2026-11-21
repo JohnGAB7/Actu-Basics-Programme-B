@@ -194,3 +194,15 @@ Les ressources S72–S76 sont des sources de cadrage ; leur présence ne constit
 | S81 | scikit-learn — Getting Started and Pipelines : https://scikit-learn.org/stable/getting_started | Pipelines, prétraitement, sélection et validation | Référence d'implémentation ML03–ML10 |
 
 Les ressources S77–S81 servent de cadrage et de vérification ; elles ne certifient pas les unités.
+
+
+## B16 — Séries temporelles et prévision
+| ID | Ressource | Domaines utiles | Utilisation |
+|---|---|---|---|
+| S82 | Penn State STAT 510 — Applied Time Series Analysis : https://online.stat.psu.edu/stat510/ | ARMA/ARIMA, ACF/PACF, saisonnalité, prévision, spectre, VAR, ARCH et interventions | Référence institutionnelle principale TS01–TS09 |
+| S83 | Penn State STAT 510 — course outline : https://online.stat.psu.edu/statprogram/stat510 | Objectifs, prérequis et périmètre graduate | Contrôle du cadrage et des dépendances |
+| S84 | Hyndman & Athanasopoulos — *Forecasting: Principles and Practice*, 3e éd. : https://otexts.com/fpptr/ | Exploration temporelle, décomposition, ETS, ARIMA, régression et évaluation des prévisions | Référence pratique TS01–TS06 et TS10 |
+| S85 | Shumway & Stoffer — *Time Series Analysis and Its Applications*, 5e éd. (2025) | Modèles temporels, analyse spectrale, modèles multivariés et méthodes avancées | Référence théorique complémentaire TS07–TS10 |
+| S86 | statsmodels — Time Series Analysis : https://www.statsmodels.org/stable/tsa.html | Implémentations Python ARIMA, espace-état et méthodes temporelles | Référence technique pour les futurs ateliers Python |
+
+Les ressources S82–S86 servent de cadrage et de vérification ; elles ne certifient pas les unités.
