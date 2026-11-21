@@ -29,6 +29,19 @@ Les graines aléatoires sont fixées dans les deux implémentations. Les valeurs
 | E06 — TCL | Comment la distribution des moyennes se rapproche-t-elle d'une normale ? | Sous les hypothèses du TCL, la moyenne centrée-réduite converge en loi vers N(0,1). |
 | E07 — Portefeuille de sinistres | Comment fréquence et sévérité déterminent-elles la charge agrégée ? | Modèle composé : N~Poisson(λ), S_i sévérités i.i.d., indépendantes de N ; E[ΣS_i]=λE[S]. |
 
+## Laboratoire interactif dans le Learning Studio
+
+La page « Laboratoire B08 » du site propose six expériences directement dans le navigateur :
+
+1. Loi forte des grands nombres : trajectoire de fréquences de Bernoulli.
+2. Théorème de Bayes : valeur prédictive positive selon les paramètres du test.
+3. Loi binomiale : fonction de masse, espérance et variance.
+4. Risque collectif : simulation d'un portefeuille composé Poisson–exponentiel.
+5. Théorème central limite : 3 000 moyennes d'échantillons exponentiels standardisées, comparées à la densité N(0,1). La taille d'échantillon est réglable ; l'asymétrie théorique 2/√n est affichée.
+6. Dépendance et covariance : contre-exemple exact avec X uniforme sur {-2,-1,1,2} et Y=X², pour lequel Cov(X,Y)=0 sans indépendance.
+
+Les expériences interactives utilisent des graines fixes pour rendre les résultats reproductibles. Les onglets suivent le modèle ARIA et prennent en charge la navigation clavier par flèches, Home et End. Les curseurs ont des noms accessibles. Cette documentation décrit les fonctionnalités livrées ; elle ne constitue pas un audit complet par lecteur d'écran.
+
 ## Paramètres documentés
 
 - E01 : p = 0,20 ; n = 100 000.
