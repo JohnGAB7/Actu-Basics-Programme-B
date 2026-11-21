@@ -60,3 +60,10 @@ La transformation de Wilks/Rao utilise t=1 par continuité dans les cas dégén�
 ## Contrôle complémentaire du laboratoire
 
 Le helper `roy_f_bound` est intégré aux laboratoires Python/R et testé pour p=1,q=2,v=30, pour q=1,p=3,v=30, pour un cas de borne et pour des degrés de liberté résiduels insuffisants. La condition v≥p est imposée avant le calcul, car E doit être inversible. Cela ne remplace pas une implémentation MANOVA complète.
+
+
+## Contrôle de concordance des références — Roy
+
+La réduction univariée est une vérification indépendante : lorsque p=1, H et E sont scalaires et Θ=H/E. Le test ANOVA associé à q degrés de liberté d'hypothèse est donc F=(H/q)/(E/v)=Θv/q, avec (q,v) degrés de liberté. La formule de borne publiée dans SAS/STAT (S171), d=max(p,q), donne exactement cette réduction.
+
+**Divergence documentaire à ne pas masquer :** le manuel Stata référencé en S159 imprime, pour les cas p ou q=1, une autre formule exacte Θ(v-p+1)/p avec ddl (|q-p|+1, v-p+1). Pour p=1 et q>1, cette expression ne redonne pas Θv/q. Nous n'avons pas exécuté Stata sur un cas synthétique ; il peut s'agir d'une coquille documentaire, d'une convention différente non identifiée ou d'un problème de transcription. La PR ne revendique donc pas de validation croisée Stata sur ce cas. Il faut comparer explicitement un modèle univarié à q>1 à SAS, Stata et R avant de conclure.
