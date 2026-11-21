@@ -86,3 +86,13 @@ Un bloc peut être présent sur le site sans être validé académiquement. Les 
 - **validé indépendamment** : revue humaine externe et tests apprenants documentés.
 
 Les évaluations restent formatives et non certifiantes tant qu'un processus indépendant de validation et une gouvernance d'examen ne sont pas établis.
+
+
+## 8. Revue mathématique approfondie — en cours
+
+- [x] Première passe B08–B12 : probabilités, processus stochastiques, statistique descriptive, inférence et régression ; aucun défaut bloquant détecté, précisions et références ajoutées.
+- [x] Première passe B13 : statistique multivariée ; une erreur de transformation F de Roy a été détectée et corrigée, avec test de cohérence sur le cas univarié.
+- [ ] Comparer les laboratoires B08–B13 à des bibliothèques de référence et tester les cas limites.
+- [ ] Revoir B14–B20, puis B01–B07 selon les risques et les prérequis.
+- [ ] Recalculer indépendamment les corrigés et les résultats numériques des 196 unités.
+- [ ] Organiser une revue humaine indépendante par domaines et des tests apprenants.
