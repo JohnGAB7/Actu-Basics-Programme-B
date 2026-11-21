@@ -51,3 +51,15 @@ X≥0 et E[X]=6. Donner une borne de P(X≥24). Si Var(X)=16 et E[X]=6, borner P
 Des variables i.i.d. ont moyenne 50 et écart-type 12. Donner l'approximation de la loi de la moyenne sur n=144 observations et expliquer la différence entre LLN et TCL.
 
 **Corrigé :** moyenne approximativement normale de moyenne 50 et écart-type 12/√144=1. La LLN décrit la convergence de la moyenne vers 50 ; le TCL décrit la distribution approximative de la fluctuation centrée et normalisée.
+
+
+## Addendum de vérification du corrigé
+
+Les dix résultats numériques ont été recalculés. Les valeurs arrondies sont cohérentes :
+- Ex. 2 : $P(D)=0,019$ et $P(B\mid D)=0,012/0,019\approx0,63158$.
+- Ex. 4 : $P(X=0)=0,75^8=0,100112915\ldots$.
+- Ex. 5 : $\operatorname{Var}(X)=4/3$.
+- Ex. 7 : $\operatorname{Cov}(X,Y)=3$ et $\rho=3/(3\cdot2)=0,5$.
+- Ex. 10 : $\overline X_{144}\approx\mathcal N(50,1)$, où le second paramètre est la variance ; l'écart-type de la moyenne est 1.
+
+**Précision importante :** l'approximation de l'exercice 10 est asymptotique et suppose les conditions du TCL. Les paramètres seuls ne garantissent pas que l'approximation soit précise à $n=144$ pour toute loi possible. Le sujet doit être lu comme une application du TCL, non comme une garantie uniforme d'erreur.

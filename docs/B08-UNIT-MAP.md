@@ -2,7 +2,7 @@
 
 **Statut :** revue interne effectuée — consolidation pédagogique en cours.
 
-**Version :** 1.0 · 21 novembre 2026  
+**Version :** 1.1 · 21 novembre 2026  
 **Charge indicative :** 45–55 heures  
 **Prérequis :** B02 (ensembles, logique et dénombrement), B04 (analyse à une variable). B03 (algèbre linéaire) est utile pour les lois conjointes multivariées. Programmation élémentaire recommandée.
 
@@ -38,10 +38,14 @@ Chaque unité contient objectifs, définitions, hypothèses, démonstrations ou 
 ## Évaluation
 Épreuve formative proposée : 120 minutes, 100 points. Elle évalue axiomes, Bayes, indépendance, lois discrètes et continues, transformations, covariance, espérance conditionnelle, inégalités et théorèmes limites. Aucun résultat ne vaut certification.
 
+## Approfondissements intégrés à la consolidation
+
+La seconde passe précise le cadre mesuré minimal, les lois binomiale négative et multinomiale, les familles Gamma/Bêta/Khi-deux/Student, les vecteurs gaussiens, l'espérance conditionnelle par rapport à une tribu, les inégalités de Cauchy–Schwarz et Borel–Cantelli, ainsi que les hypothèses précises des versions i.i.d. de la LLN et du TCL. Ces ajouts renforcent le niveau L2–L3 sans prétendre couvrir toute la théorie de la mesure ni les théorèmes limites avancés.
+
 ## Sources de cadrage
 - Harvard Statistics 110 — Probability : https://stat110.hsites.harvard.edu/about
 - MIT OCW 6.041SC — Probabilistic Systems Analysis and Applied Probability : https://ocw.mit.edu/courses/6-041sc-probabilistic-systems-analysis-and-applied-probability-fall-2013/
 - MIT OCW 18.05 — Introduction to Probability and Statistics : https://ocw.mit.edu/courses/18-05-introduction-to-probability-and-statistics-spring-2014/
-- Valesin, *Review of Measure-Theoretic Probability* : https://www.math.rug.nl/~valesin/review_probability.pdf
+- Valesin, *Review of Measure-Theoretic Probability* : https://www.math.rug.nl/~valesin/review_probability.pdf\n- Harvard Statistics 110 — Final Review : https://projects.iq.harvard.edu/sites/projects.iq.harvard.edu/files/stat110/files/final_review.pdf
 
 Ces ressources guident le cadrage et la vérification. Elles ne valident ni n'accréditent Programme B. Les sections effectivement utilisées doivent être consignées au fil de la revue approfondie.
