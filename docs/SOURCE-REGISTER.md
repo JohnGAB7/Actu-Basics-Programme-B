@@ -292,3 +292,20 @@ Les ressources S111–S113 complètent le cadrage de B15. Elles ne constituent p
 | S116 | arch 7.2 documentation, volatility processes and forecasting : https://arch.readthedocs.io/en/stable/univariate/univariate_volatility_modeling.html ; https://arch.readthedocs.io/en/stable/univariate/univariate_volatility_forecasting.html | ARCH/GARCH, distributions d'innovation, volatilité et prévisions | Référence d'implémentation pour TS09 ; le laboratoire Programme B n'est qu'une récursion à paramètres fixés |
 
 Les ressources S114–S116 complètent le cadrage de B16. Elles ne constituent pas une validation indépendante du bloc ni une approbation de Programme B.
+
+
+## B17 — Sources complémentaires de la seconde passe
+| ID | Ressource | Domaines utiles | Utilisation |
+|---|---|---|---|
+| S117 | Vrije Universiteit Amsterdam — Data Engineering (2026–2027) : https://studiegids.vu.nl/en/courses/2026-2027/XB_0112 | Pipelines, Python, SQL, Git, qualité, CI/CD et déploiement | Cadrage pratique DE01, DE04–DE06 et DE08 |
+| S118 | UC Berkeley School of Information — Data Science 204, Applied Data Engineering : https://www.ischool.berkeley.edu/courses/datasci/204 | Ingestion multi-sources, pipelines reproductibles, intégration, qualité et stockage | Conception DE01–DE05 et DE10 |
+| S119 | EPFL — CS-300 Data-intensive Systems : https://edu.epfl.ch/coursebook/fr/data-intensive-systems-CS-300 | Architecture SGBD, modèles, optimisation, index, transactions et concurrence | Fondements systèmes et SQL de DE02–DE03 |
+| S120 | EPFL — CS-460 Systems for Data Management and Data Science : https://edu.epfl.ch/coursebook/en/systems-for-data-management-and-data-science-CS-460 | Distribution, partitionnement, réplication, cohérence et calcul parallèle | Approfondissement DE06–DE07 |
+| S121 | Harvard Kempner Institute — Reproducible Research, Computing Handbook : https://handbook.eng.kempnerinstitute.harvard.edu/s2_swe_for_research/reproducible_research.html | Versionnement, environnement, graines, exécution de bout en bout, provenance | DE08 ; manifeste de provenance et reproductibilité computationnelle |
+| S122 | ULB — Data Science course content : https://deai.ulb.be/home/master-programme/course-content/ | Architecture SGBD, optimisation, transactions, entrepôts et workflows | Ancrage local et complément DE02, DE04 et DE06 |
+| S123 | PostgreSQL Documentation : https://www.postgresql.org/docs/current/ | SQL, contraintes, transactions, isolation, index et commandes | Vérification technique des exemples SQL, à adapter selon le moteur |
+| S124 | dbt Developer Hub — Data tests : https://docs.getdbt.com/docs/build/data-tests | Tests génériques, tests de relations, unicité, nullité et contrats | DE05 ; distinction règles et tests automatisés |
+| S125 | Apache Parquet Documentation : https://parquet.apache.org/docs/ | Format colonne, schéma et stockage analytique | DE03 ; formats et organisation physique |
+| S126 | European Commission — Data Quality Guidelines : https://op.europa.eu/webpub/op/data-quality-guidelines/en/ ; UC Davis DataLab — Reproducible Research Guide : https://ucdavisdatalab.github.io/guide_reproducible_research/ | Dimensions de qualité, organisation de projet, formats ouverts et workflows reproductibles | DE05 et DE08 ; qualité par usage et pérennité |
+
+Les ressources S117–S126 complètent le cadrage de B17. Elles ne constituent ni une validation indépendante de chaque démonstration/exemple, ni une approbation ou accréditation de Programme B.
