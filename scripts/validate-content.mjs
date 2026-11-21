@@ -37,6 +37,9 @@ for (const file of files) {
   if (displayDelimiters % 2 !== 0) {
     throw new Error(label + ' has an unmatched display math delimiter.')
   }
+  if (/\\\\[A-Za-z]/.test(source)) {
+    throw new Error(label + ' contains a doubled backslash before a LaTeX command.')
+  }
 
   const html = renderToStaticMarkup(
     createElement(
