@@ -411,3 +411,18 @@ Aucun nombre arbitraire de leçons ne sera fixé pour donner une impression de v
 ## 13. Références structurantes
 
 Voir docs/SOURCE-REGISTER.md pour le registre des sources institutionnelles, leur rôle et les blocs auxquels elles se rapportent. Les sources sont des références de comparaison et de vérification, jamais une approbation institutionnelle du Programme B.
+
+
+### B12 — Régression et modèles statistiques
+1. Cadre de régression, association et modèle linéaire simple.
+2. Moindres carrés ordinaires et géométrie matricielle.
+3. Inférence en régression et analyse de variance.
+4. Régression multiple, facteurs et interactions.
+5. Diagnostics, résidus et influence.
+6. Transformations et régression flexible.
+7. Sélection, multicolinéarité et régularisation.
+8. Fondements des modèles linéaires généralisés.
+9. Régression logistique et modèles de comptage.
+10. Modèles mixtes, validation et synthèse.
+
+Cette décomposition est une première version de travail. Les démonstrations, diagnostics, modèles mixtes, ateliers et évaluations détaillées restent soumis à revue.

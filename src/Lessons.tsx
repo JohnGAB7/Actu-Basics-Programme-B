@@ -110,6 +110,16 @@ import i07 from './content/bloc-11/I07.md?raw'
 import i08 from './content/bloc-11/I08.md?raw'
 import i09 from './content/bloc-11/I09.md?raw'
 import i10 from './content/bloc-11/I10.md?raw'
+import r01 from './content/bloc-12/R01.md?raw'
+import r02 from './content/bloc-12/R02.md?raw'
+import r03 from './content/bloc-12/R03.md?raw'
+import r04 from './content/bloc-12/R04.md?raw'
+import r05 from './content/bloc-12/R05.md?raw'
+import r06 from './content/bloc-12/R06.md?raw'
+import r07 from './content/bloc-12/R07.md?raw'
+import r08 from './content/bloc-12/R08.md?raw'
+import r09 from './content/bloc-12/R09.md?raw'
+import r10 from './content/bloc-12/R10.md?raw'
 
 type Course = { code: string; title: string; description: string; duration: string; version: string; content: string }
 const courses: Course[] = [
@@ -218,6 +228,16 @@ const courses: Course[] = [
  {code:'I07',title:'Puissance statistique, taille d’échantillon et multiplicité',version:'1.0.0',description:'Planification, effet minimal, FWER et FDR.',duration:'4–5 h',content:i07},
  {code:'I08',title:'Tests du rapport de vraisemblance, de Wald et du score',version:'1.0.0',description:'Tests paramétriques et lois limites du khi-deux.',duration:'5–6 h',content:i08},
  {code:'I09',title:'Bootstrap, permutation et inférence computationnelle',version:'1.0.0',description:'Rééchantillonnage, échangeabilité et incertitude Monte-Carlo.',duration:'5–6 h',content:i09},
+ {code:'R01',title:'Cadre de régression, association et modèle linéaire simple',version:'0.1.0',description:'Unité de travail du bloc B12 — régression et modèles statistiques.',duration:'5–6 h',content:r01},
+ {code:'R02',title:'Moindres carrés ordinaires et géométrie matricielle',version:'0.1.0',description:'Unité de travail du bloc B12 — régression et modèles statistiques.',duration:'5–6 h',content:r02},
+ {code:'R03',title:'Inférence en régression et analyse de variance',version:'0.1.0',description:'Unité de travail du bloc B12 — régression et modèles statistiques.',duration:'5–6 h',content:r03},
+ {code:'R04',title:'Régression multiple, facteurs et interactions',version:'0.1.0',description:'Unité de travail du bloc B12 — régression et modèles statistiques.',duration:'5–6 h',content:r04},
+ {code:'R05',title:'Diagnostics, résidus et influence',version:'0.1.0',description:'Unité de travail du bloc B12 — régression et modèles statistiques.',duration:'5–6 h',content:r05},
+ {code:'R06',title:'Transformations et régression flexible',version:'0.1.0',description:'Unité de travail du bloc B12 — régression et modèles statistiques.',duration:'5–6 h',content:r06},
+ {code:'R07',title:'Sélection, multicolinéarité et régularisation',version:'0.1.0',description:'Unité de travail du bloc B12 — régression et modèles statistiques.',duration:'5–6 h',content:r07},
+ {code:'R08',title:'Fondements des modèles linéaires généralisés',version:'0.1.0',description:'Unité de travail du bloc B12 — régression et modèles statistiques.',duration:'5–6 h',content:r08},
+ {code:'R09',title:'Régression logistique et modèles de comptage',version:'0.1.0',description:'Unité de travail du bloc B12 — régression et modèles statistiques.',duration:'5–6 h',content:r09},
+ {code:'R10',title:'Modèles mixtes, validation et synthèse',version:'0.1.0',description:'Unité de travail du bloc B12 — régression et modèles statistiques.',duration:'5–6 h',content:r10},
  {code:'I10',title:'Introduction à l’inférence bayésienne',version:'1.0.0',description:'Prior, vraisemblance, posterior, crédibilité et prédiction.',duration:'5–6 h',content:i10},
 ]
 export function LessonLibrary({query,setQuery}:{query:string;setQuery:(value:string)=>void}) {

@@ -71,7 +71,7 @@ export const blocks = [
   { code: 'B09', title: 'Processus stochastiques', subtitle: 'Markov, Poisson, renouvellement et martingales', progress: 0, lessons: 10, tone: 'blue', status: '10 unités en revue interne' },
   { code: 'B10', title: 'Statistique descriptive, échantillonnage et exploration', subtitle: 'Qualité des données, EDA et échantillonnage', progress: 0, lessons: 10, tone: 'mint', status: '10 unités en revue interne' },
   { code: 'B11', title: 'Théorie de l\'inférence statistique', subtitle: 'Estimation, tests, intervalles et Bayes', progress: 0, lessons: 10, tone: 'violet', status: '10 unités en revue interne' },
-  { code: 'B12', title: 'Régression et modèles statistiques', subtitle: 'Régression, ANOVA, GLM et diagnostics', progress: 0, lessons: 0, tone: 'amber', status: 'Planifié' },
+  { code: 'B12', title: 'Régression et modèles statistiques', subtitle: 'Régression linéaire, GLM, diagnostics et modèles mixtes', progress: 0, lessons: 10, tone: 'amber', status: '10 unités intégrées · brouillon pédagogique à revoir' },
   { code: 'B13', title: 'Statistique multivariée et grande dimension', subtitle: 'ACP, modèles latents et grande dimension', progress: 0, lessons: 0, tone: 'blue', status: 'Planifié' },
   { code: 'B14', title: 'Plans d\'expérience et inférence causale', subtitle: 'Randomisation, DAG et méthodes quasi expérimentales', progress: 0, lessons: 0, tone: 'mint', status: 'Planifié' },
   { code: 'B15', title: 'Apprentissage statistique et machine learning', subtitle: 'Généralisation, modèles prédictifs et validation', progress: 0, lessons: 0, tone: 'violet', status: 'Planifié' },
