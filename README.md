@@ -14,6 +14,9 @@ https://johngab7.github.io/Actu-Basics-Programme-B/
 - Carte pédagogique du Bloc B05 : docs/B05-UNIT-MAP.md
 - Carte pédagogique du Bloc B06 : docs/B06-UNIT-MAP.md
 - Carte pédagogique du Bloc B12 : docs/B12-UNIT-MAP.md
+- Carte pédagogique du Bloc B13 : docs/B13-UNIT-MAP.md
+- Évaluation formative B13 : docs/B13-EVALUATION.md
+- Revue interne B13 v1.1 : docs/reviews/B13-internal-review.md
 - Évaluation formative B12 v1.1 : docs/B12-EVALUATION.md
 - Revue interne B12 v1.2 : docs/reviews/B12-internal-review.md
 - Évaluation transversale B06 : docs/B06-EVALUATION.md
@@ -50,7 +53,8 @@ L'architecture cible comporte 20 blocs organisés en socle mathématique et comp
 - B10 : T01 à T10 publiées sur GitHub Pages ; seconde passe interne, laboratoire reproductible Python/R et cinq expériences interactives fusionnés et déployés. Revue humaine indépendante, tests apprenants et audit d'accessibilité restent à conduire.
 - B11 : I01 à I10 publiées sur GitHub Pages ; seconde passe interne, laboratoire reproductible Python/R et laboratoire interactif quatre expériences déployés. Revue humaine indépendante, tests apprenants et audit d’accessibilité restent à conduire.
 - B12 : R01 à R10 publiées sur GitHub Pages ; seconde passe mathématique, évaluation de 100 points et laboratoire Python/R déployés après fusion de la [PR #56](https://github.com/JohnGAB7/Actu-Basics-Programme-B/pull/56). Revue humaine indépendante, tests apprenants et audit d'accessibilité restent à conduire.
-- B13–B20 : architecture cible définie ; contenus à développer, documenter et relire.
+- B13 : MV01 à MV10 déjà publiées en première version ; seconde passe mathématique et laboratoire Python/R en intégration sur une branche candidate. Fusion et déploiement de cette consolidation à confirmer après CI.
+- B14–B20 : architecture cible définie ; contenus à développer, documenter et relire.
 - Le diagnostic interactif est une démonstration formative locale, non certifiante.
 - Aucun compte, historique privé serveur ou examen sécurisé n'est fourni par cette version statique.
 
@@ -119,7 +123,7 @@ Dix unités originales (I01–I10) couvrent les lois d’échantillonnage, l’e
 
 ## Bloc B13 — Statistique multivariée et grande dimension
 
-Dix unités originales (MV01–MV10) sont intégrées au lecteur : covariance multivariée, loi normale et distance de Mahalanobis, inférence T², MANOVA, ACP, analyse factorielle, corrélation canonique, analyse discriminante, clustering et méthodes de grande dimension. La carte pédagogique, l'évaluation formative et la première revue interne sont disponibles dans `docs/B13-UNIT-MAP.md`, `docs/B13-EVALUATION.md` et `docs/reviews/B13-internal-review.md`. Les unités restent des premières versions de travail : démonstrations approfondies, exemples chiffrés complets, notebooks, tests apprenants et revue humaine indépendante restent à conduire.
+Dix unités originales (MV01–MV10) sont intégrées au lecteur : covariance multivariée, loi normale et distance de Mahalanobis, inférence T², MANOVA, ACP, analyse factorielle, corrélation canonique, analyse discriminante, clustering et méthodes de grande dimension. La carte pédagogique, l'évaluation formative et la première revue interne sont disponibles dans `docs/B13-UNIT-MAP.md`, `docs/B13-EVALUATION.md` et `docs/reviews/B13-internal-review.md`. La seconde passe approfondit les hypothèses et démonstrations (Hotelling T², MANOVA, ACP/SVD, modèles factoriels, corrélation canonique, coûts de classification, DBSCAN et grande dimension). Le laboratoire Python/R est en validation ; revue humaine indépendante, tests apprenants et audit d'accessibilité restent à conduire.
 
 
 ## Bloc B14 — Plans d'expérience et inférence causale
