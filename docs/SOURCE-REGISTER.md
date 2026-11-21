@@ -182,3 +182,15 @@ Les ressources S67–S71 sont des sources de cadrage et de vérification ; leur 
 | S76 | DAG tutorial — Directed acyclic graphs for clinical research : https://pubmed.ncbi.nlm.nih.gov/37712307/ | DAG, porte arrière, confusion et biais de collision | Ressource pédagogique complémentaire CI04 |
 
 Les ressources S72–S76 sont des sources de cadrage ; leur présence ne constitue pas une validation indépendante du contenu.
+
+
+## B15 — Apprentissage statistique et machine learning
+| ID | Ressource | Domaines utiles | Utilisation |
+|---|---|---|---|
+| S77 | MIT OpenCourseWare 6.036 — Introduction to Machine Learning : https://ocw.mit.edu/courses/6-036-introduction-to-machine-learning-fall-2020/ | Formulation, représentation, surapprentissage, généralisation, apprentissage supervisé et par renforcement | Référence institutionnelle de cadrage ML01–ML03 et ML08 |
+| S78 | MIT Open Learning — Introduction to Machine Learning : https://openlearning.mit.edu/node/5591 | Objectifs, prérequis, laboratoires et principes de l'apprentissage | Vérification de la progression et des prérequis |
+| S79 | Hastie, Tibshirani & Friedman — *The Elements of Statistical Learning*, 2e éd. : https://link.springer.com/book/10.1007/978-0-387-84858-7 | Modèles linéaires, régularisation, noyaux, validation, arbres, boosting, réseaux et apprentissage non supervisé | Référence de fond ML02–ML09 |
+| S80 | scikit-learn — Common pitfalls and data leakage : https://scikit-learn.org/stable/common_pitfalls.html | Fuite, séparation train/test, prétraitement et pipelines | Contrôle technique de ML03 et ML10 |
+| S81 | scikit-learn — Getting Started and Pipelines : https://scikit-learn.org/stable/getting_started | Pipelines, prétraitement, sélection et validation | Référence d'implémentation ML03–ML10 |
+
+Les ressources S77–S81 servent de cadrage et de vérification ; elles ne certifient pas les unités.
