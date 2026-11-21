@@ -21,10 +21,10 @@ exponential_sample <- rexp(n_laws, rate = 2)
 normal_sample <- rnorm(n_laws, mean = 0, sd = 1)
 e03 <- c(
   bernoulli_mean = mean(bernoulli_sample),
-  bernoulli_variance = var(bernoulli_sample),
+  bernoulli_variance = mean((bernoulli_sample - mean(bernoulli_sample))^2),
   exponential_mean = mean(exponential_sample),
   normal_mean = mean(normal_sample),
-  normal_variance = var(normal_sample)
+  normal_variance = mean((normal_sample - mean(normal_sample))^2)
 )
 
 # E04 — zero covariance does not imply independence.
