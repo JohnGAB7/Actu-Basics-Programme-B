@@ -1,0 +1,31 @@
+name: B20 advanced statistics laboratory checks
+
+on:
+  pull_request:
+    branches: [master]
+    paths:
+      - "labs/b20/**"
+      - ".github/workflows/b20-lab.yml"
+  push:
+    branches:
+      - "chatgpt/b20-advanced-statistical-theory"
+    paths:
+      - "labs/b20/**"
+      - ".github/workflows/b20-lab.yml"
+
+jobs:
+  b20-labs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Run B20 Python advanced statistics tests
+        run: python -m unittest discover -s labs/b20/tests -v
+      - name: Setup R
+        uses: r-lib/actions/setup-r@v2
+      - name: Run B20 R advanced statistics checks
+        run: Rscript labs/b20/advanced_statistics_lab.R
