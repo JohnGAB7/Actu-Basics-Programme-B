@@ -65,9 +65,17 @@ class DescriptiveLabTests(unittest.TestCase):
         self.assertGreater(result["stratum_2"]["rate_A"], result["stratum_2"]["rate_B"])
         self.assertLess(result["aggregate"]["rate_A"], result["aggregate"]["rate_B"])
 
-    def test_missingness_rates(self):
-        result = missingness_summary([{"x": 1}, {"x": None}, {"x": 3}], ["x"])
-        self.assertAlmostEqual(result["x"]["missing_rate"], 1 / 3)
+    def test_missingness_rates_include_none_and_nan(self):
+        result = missingness_summary([{"x": 1}, {"x": None}, {"x": float('nan')}, {"x": 3}], ["x"])
+        self.assertEqual(result["x"]["missing"], 2.0)
+        self.assertEqual(result["x"]["observed"], 2.0)
+        self.assertAlmostEqual(result["x"]["missing_rate"], .5)
+
+    def test_quality_audit_treats_nan_as_missing_not_invalid_numeric(self):
+        rows = [{"id": "a", "amount": float('nan')}, {"id": "b", "amount": 5}]
+        audit = audit_records(rows, "id", ["amount"], {"amount": (0, 10)})
+        self.assertEqual(audit["missing_by_field"]["amount"], 1)
+        self.assertEqual(audit["invalid_numeric"]["amount"], 0)
 
     def test_invalid_inputs(self):
         with self.assertRaises(ValueError):
