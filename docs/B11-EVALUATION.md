@@ -53,7 +53,7 @@ Un test bilatéral produit $p=0,032$.
 1. Pour 8 tests indépendants de niveau 5 %, calculer le risque d’au moins un faux positif sous tous les nuls.
 2. Donner le seuil Bonferroni pour un FWER de 5 %.
 
-**Corrigé.** $1-0,95^8\approx0,3366$. Bonferroni : $0,05/8=0,00625$ par test.
+**Corrigé.** Sous indépendance des 8 tests et si les 8 hypothèses nulles sont vraies, $FWER=1-0,95^8\approx0,33658$. Sans indépendance, l'inégalité de Bonferroni garantit $FWER\leq\sum_i\alpha_i$ ; avec 8 seuils égaux, $0,05/8=0,00625$ par test.
 
 ## Exercice 8 — Tests de vraisemblance (10 points)
 Un test LR donne $D=6,4$ avec 2 contraintes.
