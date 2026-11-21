@@ -102,4 +102,9 @@ stopifnot(knn_predict(c(0,1,2),c(0,10,20),.1,1,"regression")==0)
 # Two separated synthetic Gaussian components.
 mix <- gaussian_mixture_1d_em(c(-2.2,-2,-1.8,-2.1,-1.9,1.8,2,2.2,1.9,2.1),2)
 stopifnot(abs(sum(mix$weights)-1)<1e-10,mix$means[1] < -1,mix$means[2] > 1,all(mix$variances>0))
+mix_ll_check <- sum(vapply(c(-2.2,-2,-1.8,-2.1,-1.9,1.8,2,2.2,1.9,2.1), function(value) {
+  logsumexp(log(mix$weights)-.5*log(2*pi*mix$variances)-
+              (value-mix$means)^2/(2*mix$variances))
+}, numeric(1)))
+stopifnot(abs(mix$log_likelihood-mix_ll_check)<1e-10)
 cat("B15 R machine learning laboratory checks: OK\n")
