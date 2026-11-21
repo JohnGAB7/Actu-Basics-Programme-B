@@ -91,8 +91,8 @@ empirical_var_es <- function(losses, alpha) {
   c(VaR = var, ES = weighted / mass)
 }
 
-kupiec_lr_uc <- function(exceptions, alpha) {
-  if (length(exceptions) == 0L || alpha <= 0 || alpha >= 1) stop("invalid backtest inputs")
+kupiec_lr_uc <- function(exceptions, expected_exception_rate) {
+  if (length(exceptions) == 0L || expected_exception_rate <= 0 || expected_exception_rate >= 1) stop("invalid backtest inputs")
   n <- length(exceptions)
   x <- sum(as.logical(exceptions))
   phat <- x / n
@@ -101,7 +101,7 @@ kupiec_lr_uc <- function(exceptions, alpha) {
     right <- if (x == 0) 0 else x * log(p)
     left + right
   }
-  max(0, -2 * (ll(alpha) - ll(phat)))
+  max(0, -2 * (ll(expected_exception_rate) - ll(phat)))
 }
 
 realized_variance <- function(intraday_returns) {
