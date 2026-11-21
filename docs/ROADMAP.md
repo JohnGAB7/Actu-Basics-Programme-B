@@ -40,7 +40,8 @@
 
 ## Milestone 5 — Programme expansion
 - [ ] Integrate reviewed Bloc 1 content and exams.
-- [ ] Integrate Bloc 2 (linear algebra) progressively.
+- [ ] Integrate Bloc 2 (logic, proofs and discrete mathematics) after review.
+- [ ] Develop Bloc 3 (linear algebra and vector geometry) progressively.
 - [ ] Add statistics curriculum modules as they are reviewed.
 - [ ] Add English content after pedagogical translation review.
 
