@@ -1,0 +1,65 @@
+import { readdirSync, readFileSync } from 'node:fs'
+import { dirname, join, relative } from 'node:path'
+import { fileURLToPath } from 'node:url'
+import { createElement } from 'react'
+import { renderToStaticMarkup } from 'react-dom/server'
+import ReactMarkdown from 'react-markdown'
+import remarkGfm from 'remark-gfm'
+import remarkMath from 'remark-math'
+import rehypeKatex from 'rehype-katex'
+
+const root = join(dirname(fileURLToPath(import.meta.url)), '../src/content')
+
+function markdownFiles(directory) {
+  return readdirSync(directory, { withFileTypes: true }).flatMap((entry) => {
+    const path = join(directory, entry.name)
+    return entry.isDirectory()
+      ? markdownFiles(path)
+      : entry.isFile() && entry.name.endsWith('.md') ? [path] : []
+  })
+}
+
+const files = markdownFiles(root).sort()
+if (files.length === 0) {
+  throw new Error('No Markdown lesson files were found under src/content.')
+}
+
+let totalMathNodes = 0
+for (const file of files) {
+  const source = readFileSync(file, 'utf8')
+  const inlineDelimiters = [...source.matchAll(/(?<!\$)\$(?!\$)/g)].length
+  const displayDelimiters = [...source.matchAll(/\$\$/g)].length
+  const label = relative(process.cwd(), file)
+
+  if (inlineDelimiters % 2 !== 0) {
+    throw new Error(label + ' has an unmatched inline math delimiter.')
+  }
+  if (displayDelimiters % 2 !== 0) {
+    throw new Error(label + ' has an unmatched display math delimiter.')
+  }
+
+  const html = renderToStaticMarkup(
+    createElement(
+      ReactMarkdown,
+      {
+        remarkPlugins: [remarkGfm, remarkMath],
+        rehypePlugins: [[rehypeKatex, { throwOnError: true }]],
+      },
+      source,
+    ),
+  )
+
+  if (html.includes('katex-error')) {
+    throw new Error(label + ' contains a KaTeX rendering error.')
+  }
+
+  const mathNodes = (html.match(/class="katex"/g) ?? []).length
+  if ((inlineDelimiters + displayDelimiters) > 0 && mathNodes === 0) {
+    throw new Error(label + ' contains math delimiters but rendered no KaTeX nodes.')
+  }
+
+  totalMathNodes += mathNodes
+  process.stdout.write('Validated ' + label + ': ' + mathNodes + ' rendered math expressions.\n')
+}
+
+process.stdout.write('Content validation passed: ' + files.length + ' Markdown file(s), ' + totalMathNodes + ' rendered math expression(s).\n')
