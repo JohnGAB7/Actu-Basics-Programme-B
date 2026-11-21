@@ -50,6 +50,8 @@ def poisson_mle(counts: Sequence[int]) -> dict[str, float]:
     return {
         "n": float(n),
         "estimate": total / n,
+        "variance_of_observation_under_model": total / n,
+        "variance_of_mle_under_model": total / (n * n),
         "variance_estimate_under_model": total / (n * n),
         "boundary_supremum_at_zero": float(total == 0),
     }
