@@ -1,7 +1,7 @@
 # Bloc B01 — Carte pédagogique des huit unités
 
-**Version 1.0 · 21 novembre 2026**  
-**Statut : planification détaillée · F01 et F02 sont en draft ; F03–F08 restent planned.**
+**Version 1.1 · 21 novembre 2026**  
+**Statut : huit unités rédigées et intégrées en draft ; aucune n'est encore reviewed, tested ou published.**
 
 ## Mission du bloc
 
@@ -22,6 +22,10 @@ Installer les bases du raisonnement quantitatif nécessaires aux mathématiques 
 
 Charge indicative totale : 40 à 48 heures. Cette estimation sera révisée après le test des unités auprès d'apprenants ; elle ne constitue pas une durée universelle.
 
+## État de rédaction — livraison groupée
+
+F01 à F08 disposent maintenant d'une première rédaction complète dans `src/content/bloc-01/` et sont toutes exposées dans la bibliothèque. Chaque unité comporte objectifs, développement conceptuel, exemples, applications, exercices corrigés, critères de maîtrise et références. Le statut reste `draft` jusqu'à la réalisation des revues scientifiques indépendantes, tests de calcul/code, tests apprenants et contrôles d'accessibilité/publication. La présence des huit unités ne vaut pas validation académique.
+
 ## Dépendances et règles de progression
 
 - F01 précède les opérations sur fractions et l'étude des inégalités.
@@ -30,6 +34,10 @@ Charge indicative totale : 40 à 48 heures. Cette estimation sera révisée apr�
 - F05 construit le langage symbolique ; F06 mobilise ce langage pour résoudre et vérifier.
 - F07 réunit expressions, équations et représentations dans le concept de fonction.
 - F08 est une unité de synthèse quantitative et de représentation. Certains chapitres (coordonnées, unités, ordres de grandeur) peuvent être abordés plus tôt ; l'étude des erreurs numériques vient après les opérations exactes.
+
+## Évaluation transversale
+
+Une première épreuve de synthèse, avec barème et corrigé, est disponible dans [`docs/B01-EVALUATION.md`](./B01-EVALUATION.md). La revue éditoriale interne et ses limites sont consignées dans [`docs/reviews/B01-internal-review.md`](./reviews/B01-internal-review.md). Elle vérifie les acquis de F01 à F08 et inclut une étude de cas quantitative. Elle constitue un outil formatif à faire relire et tester ; elle ne remplace pas une évaluation indépendante ni un test auprès d'apprenants.
 
 ## Acquis de sortie du bloc
 
