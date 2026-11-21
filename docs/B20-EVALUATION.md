@@ -1,6 +1,6 @@
 # B20 — Évaluation formative de synthèse
 
-**Version :** 1.1 · **Statut :** seconde passe interne ; validation CI et test apprenant à réaliser.
+**Version :** 1.2 · **Durée :** 120 minutes · **Total :** 100 points · **Statut :** publiée avec le bloc ; test apprenant et revue indépendante à réaliser.
 Évaluation formative, non certifiante.
 
 ## Partie A — Probabilité et convergence (20 points)
