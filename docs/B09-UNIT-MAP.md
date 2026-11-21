@@ -1,5 +1,7 @@
 # B09 — Carte pédagogique : processus stochastiques
 
+**Statut :** revue interne effectuée — consolidation pédagogique en cours.
+
 **Version :** 1.0 · 21 novembre 2026  
 **Charge indicative :** 48–58 heures  
 **Prérequis :** B08 (probabilités), B04 (analyse) et B03 (algèbre linéaire pour les matrices de transition et générateurs). Les bases de l'espérance conditionnelle sont indispensables.
