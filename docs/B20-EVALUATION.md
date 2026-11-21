@@ -1,6 +1,6 @@
 # B20 — Évaluation formative de synthèse
 
-**Statut :** première proposition à relire · **Durée :** 150 minutes · **Total :** 100 points  
+**Statut :** Revue interne effectuée — consolidation pédagogique en cours.
 Évaluation formative, non certifiante.
 
 ## Partie A — Probabilité et convergence (20 points)
