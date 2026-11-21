@@ -1,6 +1,7 @@
-# B11 — Revue interne mathématique et pédagogique
+# B11 — Seconde revue interne mathématique et pédagogique
 
-**Version examinée :** 1.1.0 · **Statut :** seconde passe interne assistée par IA · **Date :** 21 novembre 2026  
+**Version examinée :** 1.1.0 · **Statut :** revue interne assistée par IA · **Date :** 21 novembre 2026  
+**Nature :** seconde passe interne assistée par IA, à partir du dépôt et de calculs ciblés.
 **Limite :** cette revue n’est pas indépendante, n’est pas une expertise humaine externe et ne constitue pas une certification académique.
 
 ## Périmètre contrôlé
@@ -53,27 +54,32 @@ Les distinctions pédagogiques essentielles sont explicitement rappelées : esti
 La première passe ne met pas en évidence d’erreur structurelle majeure dans le périmètre élémentaire couvert. Elle identifie toutefois des approfondissements importants avant de qualifier le bloc de version stabilisée. B11 reste en **revue interne**, non certifié et non validé par MIT, Harvard, Princeton, Stanford ou toute autre institution.
 
 
-## Résultats de la seconde passe — 21 novembre 2026
+## Seconde passe — vérifications complémentaires
 
-1. **I02 — risque fréquentiste du shrinkage Beta(1,1).** Pour $\tilde p=(S+1)/(n+2)$, biais $(1-2p)/(n+2)$, variance $np(1-p)/(n+2)^2$. À $p=0,3,n=10$, EQM ≈ 0,01569 contre 0,021 pour la moyenne empirique ; l'avantage n'est pas uniforme sur tout l'espace des paramètres.
-2. **I03 — frontière de Poisson.** Si tous les comptes sont nuls, la log-vraisemblance est strictement croissante lorsque $\lambda\downarrow0$ ; pour l'espace $\lambda>0$, le supremum est à la frontière et n'est pas atteint.
-3. **I07 — taille d'échantillon.** Avec $\alpha=0,05$, puissance 0,80, $\sigma=10$ et $\delta=3$, l'approximation normale donne $n=\lceil87,1\rceil=88$.
-4. **I08 — tests de vraisemblance.** Les statistiques LR, Wald et score sont asymptotiquement équivalentes sous les conditions régulières, mais ne sont pas interchangeables à taille finie ; le Wald est indéfini si l'estimation est à la frontière.
-5. **I09 — rééchantillonnage.** Le bootstrap percentile et la permutation Monte-Carlo sont codés avec graine fixe ; la correction $(1+N_{ext})/(B+1)$ empêche une p-value simulée nulle. L'échangeabilité et le plan restent des conditions de validité.
-6. **I10 — Bayes.** Notation corrigée en termes de densité/masse a priori $\pi(\theta)$, vraisemblance $f(x\mid\theta)$, posterior et évidence $m(x)$ ; ajout de la prédictive Beta–Binomiale.
-7. **Bibliographie.** Les pages MIT OCW 18.650/18.443 ont été consultées pour faire correspondre les thèmes aux cours et lectures. Casella & Berger, 2e édition, copyright 2024, est confirmé par l'éditeur Routledge.
+### Vérifications mathématiques
 
-## Laboratoire reproductible ajouté
+1. I01 : formule exacte du rapport F des variances empiriques sous normalité et indépendance des deux échantillons ; degrés de liberté n₁−1,n₂−1.
+2. I02 : la consistance découle de EQM(θ̂_n)→0 par Markov ; biais et variance tendant séparément vers zéro constituent un critère suffisant.
+3. I03 : la maximisation de la vraisemblance distingue les candidats intérieurs et les frontières ; l'exemple Poisson tout-zéro n'a pas de maximum dans l'espace strictement positif, seulement un supremum en limite.
+4. I04 : les identités d'information, Cramér–Rao et Rao–Blackwell sont conditionnées par leurs hypothèses de régularité et d'intégrabilité.
+5. I05–I07 : les notions de couverture, puissance, FWER et FDR restent distinctes ; correction du corrigé FWER avec hypothèse d'indépendance explicitée et borne de Bonferroni sans cette hypothèse.
+6. I08 : ajout de l'information efficace et de la statistique score en présence d'un paramètre nuisance ; la forme simple requiert une matrice d'information nuisance inversible.
+7. I09 : le laboratoire précise la définition du test binomial bilatéral par ordre des probabilités, le bootstrap i.i.d. et les conditions d'échangeabilité de la permutation.
+8. I10 : normalisation postérieure, notation des densités, conjugaison Beta–Binomiale et distribution prédictive revérifiées.
 
-- Python standard library : distributions d'échantillonnage, risque exact Bernoulli, EMV Poisson, intervalles Wald/Wilson, couverture simulée, taille d'échantillon, LR/Wald/score, bootstrap, permutation, posterior et prédictive Beta–Binomiale.
-- R base : fonctions équivalentes et contrôles numériques.
-- Tests Python : reproductibilité, décomposition biais-variance, couverture près de la frontière, taille d'échantillon, tests asymptotiques, bootstrap/permutation et normalisation prédictive.
-- La CI du dépôt est étendue aux tests Python et contrôles R B11.
+### Livrables reproductibles
 
-## Points qui restent ouverts
+- labs/b11/inference_lab.py : test binomial exact par ordre des probabilités, intervalle de Wilson, EMV Poisson, mise à jour Beta–Binomiale, bootstrap percentile, permutation Monte-Carlo, puissance et taille d'échantillon pour test z.
+- labs/b11/inference_lab.R : implémentations équivalentes en R base.
+- labs/b11/tests/test_inference_lab.py : tests des valeurs, cas limites, reproductibilité et garde-fous.
+- Les contrôles Python et R B11 sont ajoutés au workflow CI ; leur résultat doit être vérifié avant fusion.
 
-- Démonstrations complètes de Neyman–Pearson, Rao–Blackwell, Cramér–Rao et Wilks.
-- Couverture et risque sous modèles non réguliers, paramètres sur frontière, données dépendantes et plans de sondage complexes.
-- Bootstrap studentisé/BCa, permutations exactes, tests non paramétriques et contrôle FDR sous dépendance générale.
-- Diagnostics computationnels plus approfondis et sensibilité aux priors dans les modèles complexes.
-- Revue humaine indépendante, tests apprenants et audit d'accessibilité.
+### Points restant ouverts
+
+- Revue académique humaine indépendante des dix unités et des corrigés.
+- Exécution des scripts dans les environnements documentés et inspection des résultats en CI.
+- Tests d'apprenants sur la compréhension des p-values, couverture, puissance, vraisemblance et schémas de rééchantillonnage.
+- Audit d'accessibilité et contrôle manuel du rendu sur desktop et mobile.
+- Approfondir dans B20 les preuves de Neyman–Pearson, Wilks, théorie asymptotique et méthodes bayésiennes computationnelles.
+
+La seconde passe n'est ni indépendante ni certifiante. Les tests automatisés valident des cas de référence codés, pas l'ensemble du raisonnement pédagogique.

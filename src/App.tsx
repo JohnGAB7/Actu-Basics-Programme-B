@@ -13,8 +13,9 @@ import { LessonLibrary, getCourseSummaries } from './Lessons'
 import { curriculumDetails, learningPaths, getBlockForCourse } from './curriculum'
 import { ProbabilityLab } from './ProbabilityLab'
 import { DescriptiveLab } from './DescriptiveLab'
+import { InferenceLab } from './InferenceLab'
 
-type View = 'overview' | 'paths' | 'block' | 'exams' | 'library' | 'lab' | 'labB10' | 'exam' | 'results'
+type View = 'overview' | 'paths' | 'block' | 'exams' | 'library' | 'lab' | 'labB10' | 'labB11' | 'exam' | 'results'
 type Answers = Record<number, number>
 
 const STORAGE_KEY = 'programme-b-demo-attempt-v1'
@@ -106,7 +107,8 @@ function App() {
     { id: 'exams' as View, label: 'Centre d’examens', icon: FileCheck2 },
     { id: 'library' as View, label: 'Bibliothèque', icon: LibraryBig },
     { id: 'lab' as View, label: 'Laboratoire B08', icon: FlaskConical },
-    { id: 'labB10' as View, label: 'Laboratoire B10', icon: BarChart3 }, 
+    { id: 'labB10' as View, label: 'Laboratoire B10', icon: BarChart3 },
+    { id: 'labB11' as View, label: 'Laboratoire B11', icon: Activity }, 
   ]
 
   return (
@@ -141,7 +143,7 @@ function App() {
       <main className="main-area">
         <header className="topbar">
           <button className="icon-button mobile-menu" onClick={() => setMobileMenu(true)} aria-label="Ouvrir le menu"><Menu size={20}/></button>
-          <div className="breadcrumb"><span>Programme B</span><ChevronRight size={14}/><strong>{view === 'overview' ? 'Vue d’ensemble' : view === 'paths' ? 'Parcours & blocs' : view === 'block' ? selectedBlockCode : view === 'exams' || view === 'exam' || view === 'results' ? 'Centre d’examens' : view === 'lab' ? 'Laboratoire B08' : view === 'labB10' ? 'Laboratoire B10' : 'Bibliothèque'}</strong></div>
+          <div className="breadcrumb"><span>Programme B</span><ChevronRight size={14}/><strong>{view === 'overview' ? 'Vue d’ensemble' : view === 'paths' ? 'Parcours & blocs' : view === 'block' ? selectedBlockCode : view === 'exams' || view === 'exam' || view === 'results' ? 'Centre d’examens' : view === 'lab' ? 'Laboratoire B08' : view === 'labB10' ? 'Laboratoire B10' : view === 'labB11' ? 'Laboratoire B11' : 'Bibliothèque'}</strong></div>
           <div className="top-actions"><div className="preview-pill"><span/> Aperçu privé</div><button className="icon-button" aria-label="Aide"><CircleHelp size={18}/></button><div className="top-avatar">JG</div></div>
         </header>
 
@@ -152,6 +154,7 @@ function App() {
         {view === 'library' && <LessonLibrary query={query} setQuery={setQuery} />}
         {view === 'lab' && <ProbabilityLab />}
         {view === 'labB10' && <DescriptiveLab />}
+        {view === 'labB11' && <InferenceLab />}
         {view === 'exam' && <Exam current={current} setCurrent={setCurrent} answers={answers} chooseAnswer={chooseAnswer} seconds={seconds} time={time} progress={progress} onFinish={finishExam} />}
         {view === 'results' && <Results score={score} answered={answered} answers={answers} onRetry={resetExam} onPaths={() => nav('paths')} />}
       </main>
