@@ -10,10 +10,11 @@ import rehypeKatex from 'rehype-katex'
 
 const projectRoot = join(dirname(fileURLToPath(import.meta.url)), '..')
 const lessonLibrary = readFileSync(join(projectRoot, 'src/Lessons.tsx'), 'utf8')
-const imports = [...lessonLibrary.matchAll(/import\\s+\\w+\\s+from\\s+['\"]\\.\\/content\\/([^'\"]+\\.md)\\?raw['\"]/g)]
-const files = imports.map((match) => join(projectRoot, 'src', 'content', match[1])).sort()
+const imports = [...lessonLibrary.matchAll(/import\s+\w+\s+from\s+['"]\.\/content\/([^'"]+\.md)\?raw['"]/g)]
+const files = imports.map((match) => join(projectRoot, 'src', match[1])).sort()
+
 if (files.length === 0) {
-  throw new Error('No Markdown lesson files were found under src/content.')
+  throw new Error('No imported Markdown lesson files were found in src/Lessons.tsx.')
 }
 
 let totalMathNodes = 0
@@ -57,4 +58,4 @@ for (const file of files) {
   process.stdout.write('Validated ' + label + ': ' + mathNodes + ' rendered math expressions.\n')
 }
 
-process.stdout.write('Content validation passed: ' + files.length + ' Markdown file(s), ' + totalMathNodes + ' rendered math expression(s).\n')
+process.stdout.write('Content validation passed: ' + files.length + ' active lesson file(s), ' + totalMathNodes + ' rendered math expression(s).\n')
