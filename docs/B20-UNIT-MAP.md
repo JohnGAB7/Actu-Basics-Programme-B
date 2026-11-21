@@ -1,6 +1,6 @@
 # B20 — Carte pédagogique : Théorie statistique avancée et méthodes de recherche
 
-**Version :** 1.1 · **Statut :** seconde consolidation pédagogique ; validation CI et revue indépendante à réaliser.
+**Version :** 1.1 · **Statut :** seconde consolidation pédagogique publiée après CI complète ; revue indépendante à réaliser.
 **Charge indicative :** 60–76 heures de cours et ateliers, hors mémoire de recherche  
 **Niveau :** M1–M2 / préparation recherche  
 **Prérequis :** B08 probabilités, B11 inférence, B12 régression, B13 multivarié, B15 machine learning, B16 séries temporelles, B17 reproductibilité ; analyse réelle et algèbre linéaire avancées.
