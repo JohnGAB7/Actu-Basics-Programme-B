@@ -38,7 +38,7 @@ Lorsque min(p,q)>1, cette transformation est une borne supérieure F ; la p-valu
 
 **Erreur détectée :** la première version appliquait (F=Theta(v-p+1)/p) aux deux cas p=1 ou q=1. Cette formule n'est correcte que pour q=1. Elle est corrigée dans MV04 et un contrôle numérique p=1, q=2, v=30, Θ=0,4 donne F=6 avec (2,30) ddl, comme l'ANOVA univariée.
 
-La transformation de Wilks/Rao utilise t=1 par continuité dans les cas dégénérés (p,q)=(1,2) ou (2,1). Les formules de Pillai et Hotelling–Lawley ont été vérifiées dans le cas min(p,q)=1, où elles redonnent le F univarié.
+La transformation de Wilks/Rao utilise t=1 par continuité dans les cas dégénérés (p,q)=(1,2) ou (2,1). Les formules de Pillai et Hotelling–Lawley ont été vérifiées dans le cas min(p,q)=1, où elles redonnent le F univarié. Le laboratoire B13 reçoit un helper `roy_f_bound` en Python et R, avec tests des deux cas exacts et du cas de borne.
 
 ## Enrichissements et traçabilité
 
