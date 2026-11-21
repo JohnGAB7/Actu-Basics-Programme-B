@@ -66,7 +66,7 @@ B01 à B17 constituent le socle mathématique, probabiliste, statistique et comp
 
 | Code | Bloc | Périmètre principal | Prérequis structurants |
 |---|---|---|---|
-| B18 | Actuariat, assurance et modélisation du risque | Fréquence-sévérité, tarification, crédibilité, survie, mortalité, réserving, réassurance, agrégation, ruine, capital et solvabilité | B08, B09, B11, B12, B16 |
+| B18 | Actuariat, assurance et modélisation du risque | Fréquence-sévérité, tarification, crédibilité, survie, mortalité, provisionnement, réassurance, agrégation, ruine, capital et solvabilité | B08, B09, B11, B12, B16 |
 | B19 | Économétrie et statistiques financières | Régression économétrique, séries financières, volatilité, données de panel, endogénéité, risque, prévision et évaluation empirique | B11, B12, B14, B16 |
 | B20 | Théorie statistique avancée et méthodes de recherche | Probabilité mesurée, convergence avancée, asymptotique, processus empiriques, concentration, décision, semi-paramétrique, lecture et reproduction d'articles | B02, B04, B08, B11, B12 ; L3 recommandé |
 
