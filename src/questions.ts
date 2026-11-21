@@ -1,0 +1,10 @@
+export const questions = [
+{id:1,skill:'Fractions & proportions',prompt:'Une fréquence observée vaut 18 sinistres pour 120 contrats exposés. Quelle est sa valeur en pourcentage ?',options:['12 %','15 %','18 %','20 %'],answer:1,explanation:'18 / 120 = 0,15, soit 15 %. Le dénominateur représente les contrats exposés.'},
+{id:2,skill:'Pourcentages & variations',prompt:'Un montant de 200 € augmente de 10 %, puis diminue de 10 %. Quel est le montant final ?',options:['200 €','198 €','202 €','180 €'],answer:1,explanation:'200 × 1,10 × 0,90 = 198 €. Les variations successives se composent.'},
+{id:3,skill:'Puissances & logarithmes',prompt:'Pour x > 0, quelle expression est égale à ln(x²) ?',options:['ln(x)²','2 ln(x)','ln(2x)','x ln(2)'],answer:1,explanation:'La propriété ln(aᵇ) = b ln(a) donne ln(x²) = 2 ln(x).'},
+{id:4,skill:'Équations',prompt:'Résoudre 3(2x − 1) = 4x + 5.',options:['x = 2','x = 3','x = 4','x = 5'],answer:2,explanation:'6x − 3 = 4x + 5, donc 2x = 8 et x = 4.'},
+{id:5,skill:'Fonctions',prompt:'Soit f(x) = 2x² − 3x + 1. Quelle est la valeur de f(−2) ?',options:['3','7','11','15'],answer:3,explanation:'f(−2) = 2 × 4 + 6 + 1 = 15.'},
+{id:6,skill:'Variations',prompt:'Une prime passe de 800 € à 920 €. Quel est le taux d’évolution ?',options:['12 %','15 %','18 %','20 %'],answer:1,explanation:'(920 − 800) / 800 = 0,15, soit une hausse de 15 %.'},
+{id:7,skill:'Raisonnement algébrique',prompt:'Si a/b = 3/5 et a + b = 64, quelle est la valeur de a ?',options:['20','24','30','40'],answer:1,explanation:'Posons a = 3k et b = 5k. 8k = 64, donc a = 24.'},
+{id:8,skill:'Modélisation',prompt:'Un service facture 12 € de frais fixes et 3 € par dossier. Quelle fonction donne le coût C(n) ?',options:['12n + 3','15n','12 + 3n','3(n + 12)'],answer:2,explanation:'Le coût fixe est 12 € et le coût variable 3 € par dossier : C(n) = 12 + 3n.'}
+] as const;
