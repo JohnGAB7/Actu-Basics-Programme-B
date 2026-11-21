@@ -13,6 +13,9 @@ https://johngab7.github.io/Actu-Basics-Programme-B/
 - Carte pédagogique du Bloc B04 : docs/B04-UNIT-MAP.md
 - Carte pédagogique du Bloc B05 : docs/B05-UNIT-MAP.md
 - Carte pédagogique du Bloc B06 : docs/B06-UNIT-MAP.md
+- Carte pédagogique du Bloc B12 : docs/B12-UNIT-MAP.md
+- Évaluation formative B12 (brouillon) : docs/B12-EVALUATION.md
+- Revue interne initiale B12 : docs/reviews/B12-internal-review.md
 - Évaluation transversale B06 : docs/B06-EVALUATION.md
 - Revue interne B06 : docs/reviews/B06-internal-review.md
 - Évaluation transversale B05 : docs/B05-EVALUATION.md
@@ -107,3 +110,6 @@ Une épreuve formative de synthèse (90 min, 100 points), avec corrigé détaill
 ## Bloc B11 — Théorie de l’inférence statistique
 
 Dix unités originales (I01–I10) couvrent les lois d’échantillonnage, l’estimation ponctuelle, les méthodes des moments et du maximum de vraisemblance, les propriétés asymptotiques, les intervalles, les tests, la puissance, les tests LR/Wald/score, le bootstrap, les permutations et l’introduction bayésienne. La carte pédagogique, l’évaluation corrigée et la première revue interne sont disponibles dans docs/B11-UNIT-MAP.md, docs/B11-EVALUATION.md et docs/reviews/B11-internal-review.md. Le bloc reste en revue interne ; les tests apprenants et une revue indépendante restent à conduire.
+
+
+- B12 : R01 à R10 intégrées dans le lecteur comme premières versions de travail. Carte pédagogique, évaluation formative initiale et revue interne de périmètre disponibles ; revue mathématique approfondie, notebooks, tests apprenants et validation indépendante restent à conduire.
