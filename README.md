@@ -11,6 +11,9 @@ https://johngab7.github.io/Actu-Basics-Programme-B/
 - Carte pédagogique du Bloc B02 : docs/B02-UNIT-MAP.md
 - Carte pédagogique du Bloc B03 : docs/B03-UNIT-MAP.md
 - Carte pédagogique du Bloc B04 : docs/B04-UNIT-MAP.md
+- Carte pédagogique du Bloc B05 : docs/B05-UNIT-MAP.md
+- Évaluation transversale B05 : docs/B05-EVALUATION.md
+- Revue interne B05 : docs/reviews/B05-internal-review.md
 - Évaluation transversale B04 : docs/B04-EVALUATION.md
 - Revue interne B04 : docs/reviews/B04-internal-review.md
 - Évaluation transversale B03 : docs/B03-EVALUATION.md
@@ -33,7 +36,8 @@ L'architecture cible comporte 20 blocs organisés en socle mathématique et comp
 - B02 : D01 à D08 rédigées et intégrées à la bibliothèque (draft) ; revue interne assistée par IA consignée, revue indépendante et tests apprenants encore requis.
 - B03 : V01 à V10 intégrées à la bibliothèque ; revue interne mathématique et pédagogique documentée. CI TypeScript/Vite et validation KaTeX réussies ; revue humaine indépendante et tests apprenants restent à conduire.
 - B04 : A01 à A10 publiées sur GitHub Pages ; revue interne mathématique et pédagogique documentée. CI TypeScript/Vite et validation Markdown/KaTeX réussies ; revue indépendante et tests apprenants restent à conduire.
-- B05–B20 : architecture cible définie ; contenus à développer, documenter et relire.
+- B05 : M01 à M10 rédigées et intégrées à la bibliothèque sur la branche de travail ; revue interne et contrôles CI à terminer avant publication.
+- B06–B20 : architecture cible définie ; contenus à développer, documenter et relire.
 - Le diagnostic interactif est une démonstration formative locale, non certifiante.
 - Aucun compte, historique privé serveur ou examen sécurisé n'est fourni par cette version statique.
 
@@ -54,6 +58,10 @@ Le workflow GitHub Actions vérifie le build sur les branches et déploie GitHub
 ### Évaluation transversale B02
 
 Une épreuve formative de synthèse (90 min, 100 points), avec corrigé, est disponible dans [`docs/B02-EVALUATION.md`](./docs/B02-EVALUATION.md). Elle reste en draft et doit être relue indépendamment puis testée auprès d'apprenants. La revue interne est consignée dans [`docs/reviews/B02-internal-review.md`](./docs/reviews/B02-internal-review.md).
+
+### Évaluation transversale B05
+
+Une épreuve formative de synthèse (120 min, 100 points), avec corrigé, est disponible dans [`docs/B05-EVALUATION.md`](./docs/B05-EVALUATION.md). La revue interne est consignée dans [`docs/reviews/B05-internal-review.md`](./docs/reviews/B05-internal-review.md).
 
 ### Évaluation transversale B04
 
