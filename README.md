@@ -18,8 +18,8 @@ https://johngab7.github.io/Actu-Basics-Programme-B/
 L'architecture cible comporte 20 blocs organisés en socle mathématique et computationnel, probabilités/statistique, spécialisations appliquées et approfondissements de recherche. Elle est développée progressivement ; le nombre de blocs planifiés ne signifie pas que leurs cours sont rédigés ou validés.
 
 ## État pédagogique actuel
-- B01 : F01 est rédigé dans une première version originale (draft).
-- F02–F08 : unités planifiées, non publiées.
+- B01 : F01 et F02 sont rédigées en version originale (draft).
+- F03–F08 : unités planifiées, non publiées.
 - B02–B20 : architecture cible définie ; contenus à développer, documenter et relire.
 - Le diagnostic interactif est une démonstration formative locale, non certifiante.
 - Aucun compte, historique privé serveur ou examen sécurisé n'est fourni par cette version statique.
