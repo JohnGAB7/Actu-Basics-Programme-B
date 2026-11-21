@@ -15,10 +15,11 @@ aggregate_moments <- function(mean_n, var_n, mean_x, var_x) {
 poisson_offset_fit <- function(design, counts, exposures) {
   if (nrow(design) != length(counts) || length(counts) != length(exposures) ||
       any(counts < 0) || any(exposures <= 0)) stop("invalid inputs")
-  fit <- stats::glm(counts ~ design - 1, family = stats::poisson(link = "log"),
-                    offset = log(exposures))
-  list(coefficients = stats::coef(fit), fitted_means = stats::fitted(fit),
-       deviance = stats::deviance(fit), converged = fit$converged)
+  fit <- stats::glm.fit(x = as.matrix(design), y = counts,
+                          family = stats::poisson(link = "log"),
+                          offset = log(exposures))
+  list(coefficients = fit$coefficients, fitted_means = fit$fitted.values,
+       deviance = fit$deviance, converged = fit$converged)
 }
 
 buhlmann_credibility <- function(epv, vhm, observations) {
