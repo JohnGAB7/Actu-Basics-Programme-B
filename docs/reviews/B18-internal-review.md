@@ -1,6 +1,6 @@
-# B18 — Première revue interne de contenu
+# B18 — Seconde revue interne de contenu
 
-**Version examinée :** 0.1 · **Statut :** revue assistée par IA, non indépendante  
+**Version examinée :** 1.1 · **Statut :** seconde revue assistée par IA, non indépendante  
 **Périmètre :** AR01–AR10, carte pédagogique et évaluation formative.
 
 ## Contrôles de cohérence réalisés
@@ -65,3 +65,14 @@ Le laboratoire Python/R couvre les primitives définies dans `labs/b18/README.md
 7. Organiser tests apprenants et audit manuel d'accessibilité.
 
 **Conclusion :** seconde revue assistée par IA ; elle ne constitue ni validation académique indépendante, ni avis réglementaire, ni certification.
+
+
+## Références complémentaires de la seconde passe
+- S127–S128 : Society of Actuaries, FAM/ASTAM 2026, modèles actuariels, tarification, provisionnement et crédibilité.
+- S129 : SOA, Credibility Educational Resource for Pension Actuaries.
+- S130–S132 : EIOPA, articles 77 (provisions), 48 (fonction actuarielle) et 101 (SCR) du Rulebook Solvency II.
+- S133 : Human Mortality Database, périmètre et méthodes des tables de mortalité.
+- S134 : International Actuarial Association, ISAP 1/5 et pratique actuarielle.
+- S135 : SOA Research Institute, étude 2026 sur biais et modèles prédictifs de tarification d'assurance.
+
+Les références cadrent les objectifs ; elles ne remplacent pas la vérification des éditions, des textes consolidés ni une revue indépendante.
