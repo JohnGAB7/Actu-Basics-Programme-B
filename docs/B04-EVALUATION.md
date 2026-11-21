@@ -1,6 +1,6 @@
 # B04 — Évaluation transversale
 
-**Statut :** draft · **Durée :** 120 minutes · **Total :** 100 points  
+**Statut : revue interne effectuée — consolidation pédagogique en cours.
 **Consigne :** détailler les raisonnements, indiquer les hypothèses et justifier les critères utilisés.
 
 ## Exercice 1 — Convergence d'une suite (10 points)
