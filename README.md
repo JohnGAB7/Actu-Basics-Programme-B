@@ -138,3 +138,8 @@ Dix unités originales (TS01–TS10) sont intégrées au lecteur : stationnarit�
 ## Bloc B17 — Ingénierie des données et recherche reproductible
 
 Dix unités originales (DE01–DE10) sont intégrées au lecteur : cycle de vie et architecture, SQL et intégrité, formats et stockage, ingestion ETL/ELT, qualité et observabilité, orchestration, calcul distribué, reproductibilité, gouvernance et projet intégré. La carte pédagogique, l’évaluation formative et la première revue interne sont disponibles dans `docs/B17-UNIT-MAP.md`, `docs/B17-EVALUATION.md` et `docs/reviews/B17-internal-review.md`. Les contenus restent des premières versions de travail ; ateliers exécutables, benchmarks, tests apprenants et revue humaine indépendante restent à conduire.
+
+
+## Bloc B18 — Actuariat, assurance et modélisation du risque
+
+Dix unités originales (AR01–AR10) sont intégrées au lecteur : exposition et prime pure, fréquence-sévérité, tarification GLM, crédibilité, survie et mortalité, assurance vie et rentes, provisionnement non-vie, réassurance, capital économique et gouvernance actuarielle. La carte pédagogique, l’évaluation formative et la première revue interne sont disponibles dans `docs/B18-UNIT-MAP.md`, `docs/B18-EVALUATION.md` et `docs/reviews/B18-internal-review.md`. Les contenus restent des premières versions de travail ; dérivations détaillées, notebooks R/Python, cas complets et revue humaine indépendante restent à conduire.
