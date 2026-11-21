@@ -1,6 +1,6 @@
 # B13 — Carte pédagogique : Statistique multivariée et grande dimension
 
-**Version :** 1.3 · **Statut :** correctif mathématique MANOVA MV04 en validation CI ; revue indépendante et comparaison logicielle à réaliser.
+**Version :** 1.3 · **Statut :** revue mathématique ciblée et correctif MANOVA MV04 publiés après CI complète ; comparaison logicielle et revue indépendante à réaliser.
 **Charge indicative :** 52–62 heures (cours, calculs, ateliers et projet)  
 **Niveau :** L1–L3, avec ouverture L4 sur les méthodes de grande dimension  
 **Prérequis :** B03 algèbre linéaire, B08 probabilités, B10 exploration et échantillonnage, B11 inférence, B12 régression. Connaissances R ou Python recommandées.
@@ -76,3 +76,8 @@ Le complément MV04 formalise les matrices H et E, les racines caractéristiques
 
 
 **Laboratoire ciblé :** le helper `roy_f_bound` (Python/R) vérifie la transformation exacte si min(p,q)=1 et la borne F sinon ; il ne constitue pas un moteur complet MANOVA.
+
+
+## Statut de publication v1.3
+
+La revue mathématique B08–B13 et le correctif MV04 sont fusionnés dans master par PR #69. CI complète réussie sur le HEAD de la PR (Python/R B08–B20, build, typecheck et Markdown/KaTeX). Le déploiement GitHub Pages du commit de fusion est suivi dans le workflow master. La réduction univariée de Roy et la divergence documentaire Stata/SAS sont consignées dans MV04 et le rapport de revue ; aucune comparaison logicielle Stata directe n'est revendiquée.
