@@ -426,3 +426,17 @@ Voir docs/SOURCE-REGISTER.md pour le registre des sources institutionnelles, leu
 10. Modèles mixtes, validation et synthèse.
 
 Cette décomposition est une première version de travail. Les démonstrations, diagnostics, modèles mixtes, ateliers et évaluations détaillées restent soumis à revue.
+
+### B13 — Statistique multivariée et grande dimension
+1. Données multivariées, vecteurs aléatoires et covariance.
+2. Loi normale multivariée, distance de Mahalanobis et atypies.
+3. Inférence sur un vecteur moyen et test T² de Hotelling.
+4. Analyse multivariée de la variance (MANOVA).
+5. Analyse en composantes principales (ACP).
+6. Analyse factorielle et variables latentes.
+7. Corrélation canonique et relations entre deux ensembles.
+8. Analyse discriminante et classification supervisée.
+9. Classification non supervisée et analyse de groupes.
+10. Statistique de grande dimension, régularisation et étude intégrée.
+
+Cette décomposition est une première version de travail. Les preuves détaillées, notebooks R/Python, analyses de sensibilité, exemples complets et validation indépendante restent à conduire.
