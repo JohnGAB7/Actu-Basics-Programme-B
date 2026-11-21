@@ -377,3 +377,13 @@ Les ressources S148–S157 complètent le cadrage. S139 est réutilisée depuis 
 | S160 | UCLA Statistical Consulting — MANOVA, Stata Annotated Output : https://stats.oarc.ucla.edu/stata/output/manova/ | Lecture des statistiques, degrés de liberté, p-values et borne F de Roy | MV04 ; interprétation des sorties logicielles |
 
 Les références S158–S160 complètent les références multivariées déjà présentes. Les sorties logicielles et les approximations F doivent être interprétées selon le modèle et les degrés de liberté ; elles ne valident pas automatiquement une analyse sous mesures répétées ou modèle mixte.
+
+
+## B08 — références de fondations probabilistes
+
+| ID | Ressource | Domaines utiles | Utilisation |
+|---|---|---|---|
+| S161 | MIT OpenCourseWare — 6.041SC, *Probabilistic Systems Analysis and Applied Probability* (Fall 2013) : https://ocw.mit.edu/courses/6-041sc-probabilistic-systems-analysis-and-applied-probability-fall-2013/ | Modèles probabilistes, axiomes, conditionnement, indépendance, variables aléatoires, processus et théorèmes limites | P01–P10 ; référence de cours structurée avec notes, problèmes et examens |
+| S162 | MIT OpenCourseWare — 18.05, *Introduction to Probability and Statistics* (Spring 2022) : https://ocw.mit.edu/courses/18-05-introduction-to-probability-and-statistics-spring-2022/ | Combinatoire, lois, Bayes, tests, intervalles et régression | P01–P08 ; référence complémentaire de probabilités et statistique introductives |
+
+Les références MIT complètent S03, S46 et S107. Elles servent de références pédagogiques et de comparaison de périmètre ; elles ne valident pas automatiquement les démonstrations ou corrigés du programme.
