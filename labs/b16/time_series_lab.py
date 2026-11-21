@@ -73,6 +73,7 @@ def rolling_origin_mae(values,initial,method="naive",alpha=0.3):
     if int(initial)!=initial or initial<3 or initial>=len(x): raise ValueError("initial must be an integer in [3,n-1]")
     method=method.lower()
     if method not in {"naive","ses","ar1"}: raise ValueError("method must be naive, ses, or ar1")
+    if method=="ar1" and initial<4: raise ValueError("AR(1) rolling-origin fits require at least four training observations")
     errors=[]
     for t in range(int(initial),len(x)):
         train=x[:t]; actual=x[t]
@@ -80,7 +81,7 @@ def rolling_origin_mae(values,initial,method="naive",alpha=0.3):
         elif method=="ses": prediction=ses_forecast(train,alpha,1)["forecast"][0]
         else:
             fit=fit_ar1(train)
-            prediction=forecast_ar1(train[-1],fit["intercept"],fit["phi"],fit["innovation_variance"],1)[0]["mean"]
+            prediction=ar1_forecast(train[-1],fit["phi"],1,fit["intercept"])[0]
         errors.append(abs(actual-prediction))
     return {"mae":sum(errors)/len(errors),"errors":errors,"origins":float(len(errors))}
 
