@@ -208,7 +208,7 @@ def kmeans(data: Sequence[Sequence[float]], k: int, seed: int = 20261121,
            n_init: int = 10, max_iter: int = 300) -> dict[str,object]:
     x = _matrix(data)
     n,p = len(x),len(x[0])
-    if n < 2 or k < 1 or k > len({tuple(row) for row in x}) or n_init < 1 or max_iter < 1:
+    if n < 2 or k < 1 or k > len({tuple(row) for row in x}) or n_init < 1 or max_iter < 1 or int(n_init)!=n_init or int(max_iter)!=max_iter:
         raise ValueError("invalid k or iteration count; require k distinct observations")
     rng = random.Random(seed)
     best = None
@@ -224,11 +224,12 @@ def kmeans(data: Sequence[Sequence[float]], k: int, seed: int = 20261121,
                 acc,candidate = 0.0,x[-1][:]
                 for row,d in zip(x,distances):
                     acc += d
-                    if acc >= threshold:
+                    if acc > threshold:
                         candidate = row[:]
                         break
             centroids.append(candidate)
         labels = [-1]*n
+        converged = False
         for iteration in range(max_iter):
             new_labels = [min(range(k),key=lambda j:_squared_distance(row,centroids[j])) for row in x]
             new_centroids=[]
@@ -240,6 +241,7 @@ def kmeans(data: Sequence[Sequence[float]], k: int, seed: int = 20261121,
                 else:
                     new_centroids.append([sum(row[d] for row in members)/len(members) for d in range(p)])
             if new_labels == labels:
+                converged = True
                 centroids=new_centroids
                 labels=new_labels
                 break
@@ -247,7 +249,7 @@ def kmeans(data: Sequence[Sequence[float]], k: int, seed: int = 20261121,
             centroids=new_centroids
         inertia=sum(_squared_distance(row,centroids[label]) for row,label in zip(x,labels))
         if best is None or inertia < best["inertia"]:
-            best={"labels":labels[:],"centroids":centroids,"inertia":inertia,"iterations":iteration+1}
+            best={"labels":labels[:],"centroids":centroids,"inertia":inertia,"iterations":iteration+1,"converged":converged}
     return best
 
 
