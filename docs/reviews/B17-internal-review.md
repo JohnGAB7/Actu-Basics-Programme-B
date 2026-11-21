@@ -1,6 +1,6 @@
-# B17 — Première revue interne de contenu
+# B17 — Revue interne de contenu
 
-**Version examinée :** 0.1 · **Statut :** revue assistée par IA, non indépendante  
+**Version examinée :** 1.1 · **Statut :** seconde revue assistée par IA, non indépendante  
 **Périmètre :** DE01–DE10, carte pédagogique et évaluation formative.
 
 ## Contrôles de cohérence réalisés
