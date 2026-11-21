@@ -1,0 +1,31 @@
+name: B19 econometrics laboratory checks
+
+on:
+  pull_request:
+    branches: [master]
+    paths:
+      - "labs/b19/**"
+      - ".github/workflows/b19-lab.yml"
+  push:
+    branches:
+      - "chatgpt/b19-econometrics-financial-statistics"
+    paths:
+      - "labs/b19/**"
+      - ".github/workflows/b19-lab.yml"
+
+jobs:
+  b19-labs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Run B19 Python econometrics tests
+        run: python -m unittest discover -s labs/b19/tests -v
+      - name: Setup R
+        uses: r-lib/actions/setup-r@v2
+      - name: Run B19 R econometrics checks
+        run: Rscript labs/b19/econometrics_lab.R
