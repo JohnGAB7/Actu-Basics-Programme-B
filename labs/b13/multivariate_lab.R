@@ -63,3 +63,29 @@ km <- kmeans(groups,centers=2,nstart=10)
 stopifnot(length(km$cluster)==nrow(groups),km$tot.withinss<3,km$ifault==0)
 stopifnot(covariance_rank_bound(5,10)==4)
 cat("B13 R multivariate laboratory checks: OK\n")
+
+
+roy_f_bound <- function(theta, p, q, v) {
+  if (length(theta)!=1 || !is.finite(theta) || theta<0 ||
+      length(p)!=1 || length(q)!=1 || length(v)!=1 ||
+      any(!is.finite(c(p,q,v))) || any(c(p,q,v)!=as.integer(c(p,q,v))) ||
+      p<1 || q<1 || v<1) stop("theta must be finite/non-negative and p, q, v positive integers")
+  d <- max(p,q)
+  df2 <- v-d+q
+  if (df2<=0) stop("denominator degrees of freedom must be positive")
+  exact <- min(p,q)==1
+  c(f_statistic=theta*df2/d,df1=d,df2=df2,
+    is_exact=as.numeric(exact),is_upper_bound=as.numeric(!exact),
+    p_value_is_lower_bound=as.numeric(!exact))
+}
+
+# Roy F transformation: univariate response and rank-one hypothesis exact cases.
+roy_p1 <- roy_f_bound(.4,1,2,30)
+stopifnot(abs(roy_p1["f_statistic"]-6)<1e-12,
+          roy_p1["df1"]==2,roy_p1["df2"]==30,roy_p1["is_exact"]==1)
+roy_q1 <- roy_f_bound(.4,3,1,30)
+stopifnot(abs(roy_q1["f_statistic"]-(.4*28/3))<1e-12,
+          roy_q1["df1"]==3,roy_q1["df2"]==28,roy_q1["is_exact"]==1)
+roy_bound <- roy_f_bound(.4,2,3,30)
+stopifnot(abs(roy_bound["f_statistic"]-4)<1e-12,
+          roy_bound["is_upper_bound"]==1,roy_bound["p_value_is_lower_bound"]==1)
