@@ -39,3 +39,8 @@ Lecture des huit unités D01–D08, de la carte pédagogique et de l'évaluation
 ## Décision éditoriale
 
 B02 peut être intégré à la bibliothèque comme **draft** pour revue et expérimentation. Il ne doit pas être présenté comme validé, certifiant ou équivalent à un cours institutionnel. Le passage à reviewed exige une relecture indépendante ; le passage à tested exige des essais avec apprenants et corrections documentées.
+
+
+## Décision de consolidation — 21 novembre 2026
+
+La revue de cohérence de D01–D08, de la carte et de l'évaluation est considérée effectuée au niveau interne. B02 est désormais classé **revue interne effectuée — consolidation pédagogique en cours**. Les contrôles logiques, combinatoires et graphes consignés dans ce dossier sont conservés ; les corrigés exhaustifs, références localisées, tests apprenants et relecture humaine indépendante restent à compléter. L'ancien état `draft` est historique et supersédé par le registre global `docs/reviews/PROGRAMME-B-INTERNAL-REVIEW-REGISTER.md`.
