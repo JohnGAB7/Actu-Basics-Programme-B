@@ -46,10 +46,10 @@ Le laboratoire Python/R couvre :
 - différences, ACF empirique et AR(1) estimé par OLS ;
 - prévisions AR(1) et variance d'erreur ;
 - lissage exponentiel simple et validation à origine glissante ;
-- MAE/RMSE ;
+- MAE/RMSE/MASE et splits d'origine roulante ;
 - récursion GARCH(1,1), persistance et variance inconditionnelle ;
 - périodogramme discret ;
-- filtre de Kalman scalaire de niveau local avec observations manquantes.
+- filtre de Kalman scalaire général et niveau local avec observations manquantes.
 
 Les fonctions sont pédagogiques et univariées. Elles ne remplacent pas statsmodels, fable/forecast, arch ou un moteur espace-état général.
 
