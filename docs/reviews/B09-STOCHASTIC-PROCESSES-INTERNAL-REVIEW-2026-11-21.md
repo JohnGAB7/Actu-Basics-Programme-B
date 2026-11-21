@@ -39,6 +39,17 @@ Dix unités S01–S10 : processus stochastiques, chaînes de Markov à temps dis
 - Les tests apprenants, l'audit visuel, responsive, clavier et lecteur d'écran doivent rester des étapes distinctes.
 - Une revue académique humaine indépendante est nécessaire avant toute prétention de validation externe.
 
+## Contrôle bibliographique ciblé
+
+Les pages officielles MIT OCW ont été consultées pour vérifier l'adéquation des cours avec les unités :
+
+- 18.445 (Spring 2015) couvre chaînes de Markov, marches aléatoires, martingales, processus de Poisson et chaînes à temps continu ; ses notes comprennent explicitement temps d'atteinte, arrêt optionnel et générateurs.
+- 6.262 (Spring 2011) couvre processus de Poisson, chaînes de Markov finies/dénombrables, renouvellement, récompenses, martingales et processus de Markov.
+- 15.070J (Fall 2013) couvre filtrations, martingales, théorèmes d'arrêt, mouvement brownien, intégration stochastique et calcul d'Itô.
+- Correction bibliographique : ne pas citer 18.445 comme source principale du mouvement brownien ; S10 est désormais référencé à 15.070J.
+
+Ces ressources sont des références de cadrage, pas une approbation institutionnelle de Programme B.
+
 ## Conclusion
 
 La seconde passe renforce la précision des hypothèses, des notations et des calculs dans les dix unités et dans l'évaluation formative. B09 reste en consolidation pédagogique. Cette revue interne ne constitue ni une validation académique indépendante, ni une certification, ni une preuve de test apprenant.
