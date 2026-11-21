@@ -1,6 +1,6 @@
 # B15 — Carte pédagogique : Apprentissage statistique et machine learning
 
-**Version :** 0.1 · **Statut :** premier brouillon pédagogique intégré, à approfondir et relire  
+**Version :** 0.1 · **Statut :** Revue interne effectuée — consolidation pédagogique en cours.
 **Charge indicative :** 56–68 heures  
 **Niveau :** L1–L3  
 **Prérequis :** B03 algèbre linéaire, B11 inférence, B12 modèles statistiques ; B13 multivarié, B14 causalité et B17 ingénierie recommandés.
