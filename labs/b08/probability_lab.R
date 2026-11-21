@@ -14,6 +14,19 @@ specificity <- 0.90
 posterior_positive <- sensitivity * prevalence /
   (sensitivity * prevalence + (1 - specificity) * (1 - prevalence))
 
+# E03 — empirical moments for common probability laws.
+n_laws <- 100000L
+bernoulli_sample <- rbinom(n_laws, size = 1, prob = 0.30)
+exponential_sample <- rexp(n_laws, rate = 2)
+normal_sample <- rnorm(n_laws, mean = 0, sd = 1)
+e03 <- c(
+  bernoulli_mean = mean(bernoulli_sample),
+  bernoulli_variance = var(bernoulli_sample),
+  exponential_mean = mean(exponential_sample),
+  normal_mean = mean(normal_sample),
+  normal_variance = var(normal_sample)
+)
+
 # E04 — zero covariance does not imply independence.
 x_dep <- c(-2, -1, 1, 2)
 y_dep <- x_dep^2
@@ -52,6 +65,9 @@ e07 <- c(
 
 # Deterministic analytical checks (simulation outputs remain approximate).
 stopifnot(abs(posterior_positive - 0.08755760368663594) < 1e-12)
+stopifnot(abs(e03[["bernoulli_mean"]] - 0.30) < 0.01)
+stopifnot(abs(e03[["exponential_mean"]] - 0.50) < 0.02)
+stopifnot(abs(e03[["normal_mean"]]) < 0.02)
 stopifnot(abs(e04_covariance) < 1e-12)
 stopifnot(abs(e01 - p) < 0.01)
 stopifnot(abs(tail(e05_path, 1) - p_lln) < 0.01)
