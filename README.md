@@ -42,3 +42,8 @@ Production build: `npm run build`.
 A browser-only application cannot protect answer keys or provide trustworthy private exam records. Real examinations require authenticated server-side sessions, authorization, a database, server-authoritative timing, server-side grading, auditability and privacy controls.
 
 See `docs/` for architecture, assessment engine, content model, editorial standards and roadmap.
+
+
+## Optional GitHub Pages deployment
+
+The build is validated on pushes and pull requests. Public deployment is intentionally opt-in. To enable it after configuring GitHub Pages with **Settings → Pages → Build and deployment → Source: GitHub Actions**, add the repository Actions variable `ENABLE_GITHUB_PAGES=true`. Until both settings are configured, the build still runs and the deployment job is skipped.
