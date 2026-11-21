@@ -148,3 +148,8 @@ Dix unités originales (AR01–AR10) sont intégrées au lecteur : exposition et
 ## Bloc B19 — Économétrie et statistiques financières
 
 Dix unités originales (EF01–EF10) sont intégrées au lecteur : identification économétrique, endogénéité et inférence robuste, données de panel, IV/GMM, choix discrets, rendements financiers, modèles de facteurs, VaR/ES et backtesting, microstructure et projet empirique. La carte pédagogique, l’évaluation formative et la première revue interne sont disponibles dans `docs/B19-UNIT-MAP.md`, `docs/B19-EVALUATION.md` et `docs/reviews/B19-internal-review.md`. Les contenus restent des premières versions de travail ; démonstrations détaillées, notebooks R/Python, données reproductibles et revue humaine indépendante restent à conduire.
+
+
+## Bloc B20 — Théorie statistique avancée et méthodes de recherche
+
+Dix unités originales (AT01–AT10) sont intégrées au lecteur : probabilité mesurée et convergence, théorie asymptotique, processus empiriques, vraisemblance et semi-paramétrique, Bayes et MCMC, martingales, grande dimension, optimisation numérique, méthodes de recherche et projet de recherche. La carte pédagogique, l’évaluation formative et la première revue interne sont disponibles dans `docs/B20-UNIT-MAP.md`, `docs/B20-EVALUATION.md` et `docs/reviews/B20-internal-review.md`. Les contenus restent des premières versions de travail ; preuves complètes, contre-exemples, notebooks, vérification indépendante et tests apprenants restent à conduire.
