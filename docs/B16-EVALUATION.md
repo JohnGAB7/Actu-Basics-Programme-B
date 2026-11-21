@@ -1,6 +1,6 @@
 # B16 — Évaluation formative de synthèse
 
-**Statut :** Revue interne effectuée — consolidation pédagogique en cours.
+**Statut :** Évaluation formative enrichie en seconde passe ; validation indépendante et tests apprenants à venir.
 Évaluation formative, non certifiante.
 
 ## Partie A — Structure temporelle (20 points)
