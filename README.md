@@ -41,4 +41,4 @@ Le workflow GitHub Actions vérifie le build sur les branches et déploie GitHub
 
 ### Évaluation transversale B01
 
-Une épreuve formative de synthèse (90 min, 100 points), avec corrigé détaillé et étude de cas quantitative, est disponible dans [`docs/B01-EVALUATION.md`](./docs/B01-EVALUATION.md). Elle reste en draft et doit être testée auprès d'apprenants.
+Une épreuve formative de synthèse (90 min, 100 points), avec corrigé détaillé et étude de cas quantitative, est disponible dans [`docs/B01-EVALUATION.md`](./docs/B01-EVALUATION.md). Elle reste en draft et doit être testée auprès d'apprenants. La revue éditoriale interne, ses corrections et les contrôles restant à effectuer sont consignés dans [`docs/reviews/B01-internal-review.md`](./docs/reviews/B01-internal-review.md).
