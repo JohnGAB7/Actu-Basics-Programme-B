@@ -15,7 +15,7 @@ python -m unittest discover -s labs/b08/tests -v
 Rscript labs/b08/probability_lab.R
 ```
 
-Les graines aléatoires sont fixées dans les deux implémentations. Les valeurs obtenues dans Python et R ne sont pas censées être identiques : les générateurs pseudo-aléatoires et leurs algorithmes diffèrent. La reproductibilité est attendue à l'intérieur de chaque environnement et version de générateur.
+Les graines aléatoires sont fixées dans les deux implémentations. Les valeurs obtenues dans Python et R ne sont pas censées être identiques : les générateurs pseudo-aléatoires et leurs algorithmes diffèrent. La reproductibilité est attendue à l'intérieur de chaque environnement et version de générateur. Les variances empiriques E03 utilisent le moment centré d'ordre 2 avec dénominateur n dans les deux langages ; elles ne correspondent pas à l'estimateur sans biais avec dénominateur n−1.
 
 ## Expériences
 
