@@ -1,6 +1,6 @@
 # B11 — Théorie de l’inférence statistique
 
-**Version :** 1.1.0 · **Statut :** seconde passe interne effectuée · laboratoire Python/R intégré · revue indépendante à venir.
+**Version :** 1.1.0 · **Statut :** seconde passe interne effectuée · laboratoire Python/R et interface interactive intégrés · revue indépendante et tests apprenants à venir.
 **Public :** fin de licence / master en statistique, mathématiques appliquées, économie quantitative ou actuariat.
 
 ## Finalité
@@ -46,7 +46,7 @@ L’apprenant doit pouvoir :
 10. effectuer une mise à jour bayésienne simple et discuter le rôle du prior.
 
 ## Méthodes d’apprentissage
-Chaque unité comprend objectifs, définitions, démonstrations ou justifications, exemples calculés, applications, erreurs fréquentes, exercices corrigés et références. Les notebooks R/Python seront ajoutés comme ressources séparées après vérification reproductible ; leur mention dans les objectifs ne signifie pas qu’ils sont déjà livrés.
+Chaque unité comprend objectifs, définitions, démonstrations ou justifications, exemples calculés, applications, erreurs fréquentes, exercices corrigés et références. Le laboratoire Python/R est disponible dans labs/b11/README.md. Il fournit des expériences reproductibles ciblées ; il ne constitue ni un logiciel statistique généraliste ni une validation des hypothèses sur des données réelles.
 
 ## Évaluation recommandée
 Épreuve de synthèse de 120 minutes, 100 points, complétée par exercices de programmation et une interprétation écrite des résultats. Seuil indicatif de maîtrise : 70/100, avec correction obligatoire des erreurs de raisonnement sur les hypothèses, les p-values et la couverture.
@@ -60,18 +60,25 @@ Chaque unité comprend objectifs, définitions, démonstrations ou justification
 Ces sources cadrent la progression ; elles ne constituent pas une validation externe du contenu original du programme.
 
 
-## Contrôle de correspondance des ressources
+## Compléments de la seconde passe interne
 
-- **I01–I04 :** MIT OCW 18.650, lectures 3–6 (inférence paramétrique, EMV, méthode des moments) et MIT OCW 18.443, lectures L2–L4 (EMV, propriétés, loi normale multivariée et TCL).
-- **I05–I08 :** MIT OCW 18.650, lectures 7–10 (tests paramétriques) ; MIT OCW 18.443, lectures L5–L8 (intervalles, Student/Fisher, tests t et F). Les tests LR/Wald/score et leurs conditions sont approfondis avec Casella & Berger.
-- **I09 :** Wasserman, *All of Statistics* et Efron & Tibshirani, *An Introduction to the Bootstrap* ; le laboratoire distingue rééchantillonnage bootstrap et permutation sous échangeabilité.
-- **I10 :** MIT OCW 18.650, lectures 17–18 (statistiques bayésiennes) ; MIT OCW 18.443, lectures L9–L10 (règles de décision bayésiennes et tests les plus puissants).
+- I01 : formule explicite de la loi F pour le rapport de deux variances corrigées, avec hypothèses de normalité et d'indépendance.
+- I02 : justification de la consistance par convergence de l'EQM vers zéro et inégalité de Markov.
+- I08 : forme du test du score avec paramètre de nuisance et information efficace (complément de Schur).
+- I09 : lien vers le laboratoire reproductible et rappel des conventions de permutation/Monte-Carlo.
+- I10 : notation bayésienne standard, densité marginale et condition de posterior propre.
+- Évaluation recalculée ; les hypothèses exactes/asymptotiques, les frontières et les interprétations fréquentistes/bayésiennes sont maintenues explicites.
 
-Pages institutionnelles consultées :
-- [MIT OCW 18.650 — notes](https://ocw.mit.edu/courses/18-650-statistics-for-applications-fall-2016/resources/lecture-notes/)
-- [MIT OCW 18.650 — diapositives et thèmes](https://ocw.mit.edu/courses/18-650-statistics-for-applications-fall-2016/pages/lecture-slides/)
-- [MIT OCW 18.443 — notes de cours](https://ocw.mit.edu/courses/18-443-statistics-for-applications-fall-2006/pages/lecture-notes/)
-- [MIT OCW 18.443 — syllabus](https://ocw.mit.edu/courses/18-443-statistics-for-applications-fall-2006/pages/syllabus/)
-- [Casella & Berger — Statistical Inference, 2e édition, copyright 2024](https://www.routledge.com/Statistical-Inference/Casella-Berger/p/book/9781032593036)
+## Références complémentaires du laboratoire
 
-Les ressources institutionnelles cadrent les thèmes et les lectures ; elles ne valident pas le contenu original de Programme B.
+- Brown, Cai & DasGupta (2001), *Interval Estimation for a Binomial Proportion*, Statistical Science 16(2), 101–133 : https://doi.org/10.1214/ss/1009213286
+- Efron & Tibshirani (1993), *An Introduction to the Bootstrap*, Chapman & Hall/CRC.
+- Good (2005), *Permutation, Parametric, and Bootstrap Tests of Hypotheses*, 3rd ed., Springer.
+- Casella & Berger, *Statistical Inference*, 2nd ed., chapitres sur estimation, tests et vraisemblance.
+
+Ces références complètent le cadrage bibliographique ; elles ne constituent pas une revue indépendante de cette version.
+
+
+## Laboratoire interactif du Learning Studio
+
+L'interface « Laboratoire B11 » comporte quatre expériences : intervalle de Wilson, test binomial exact bilatéral par ordre des probabilités, mise à jour Beta–Binomiale et comparaison bootstrap/permutation. Les panneaux sont navigables au clavier et exposent les hypothèses essentielles. Les résultats sont illustratifs et ne constituent pas une analyse de données réelles.
