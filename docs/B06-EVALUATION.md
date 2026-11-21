@@ -1,6 +1,6 @@
 # B06 — Évaluation transversale
 
-**Durée :** 120 minutes · **Total :** 100 points · **Statut :** épreuve formative, revue interne à effectuer.
+**Durée :** 120 minutes · **Total :** 100 points · **Statut :** Revue interne effectuée — consolidation pédagogique en cours.
 
 ## 1 — Formulation (10 points)
 Une unité de $x$ rapporte 3 et consomme 1 unité de ressource A et 3 de ressource B. Une unité de $y$ rapporte 5 et consomme 2 unités de A et 2 de B. Les capacités sont 8 et 12. Formuler le programme linéaire.

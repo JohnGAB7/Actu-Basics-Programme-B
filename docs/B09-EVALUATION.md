@@ -1,6 +1,6 @@
 # B09 — Évaluation formative transversale
 
-**Durée :** 120 minutes · **Barème :** 100 points · **Statut :** draft pédagogique avec corrigé.
+**Durée :** 120 minutes · **Barème :** 100 points · **Statut :** Revue interne effectuée — consolidation pédagogique en cours.
 
 ## Exercice 1 — Classification d'un processus (10 points)
 Donner un exemple de processus à temps discret et états discrets, puis un exemple à temps continu et états continus. Définir une trajectoire.

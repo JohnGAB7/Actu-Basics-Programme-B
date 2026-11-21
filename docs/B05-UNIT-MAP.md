@@ -1,5 +1,7 @@
 # B05 — Carte pédagogique : calcul multivarié et équations différentielles
 
+**Statut :** revue interne effectuée — consolidation pédagogique en cours.
+
 **Version :** 1.0 · 21 novembre 2026  
 **Charge indicative :** 43–52 heures  
 **Prérequis :** B03 (algèbre linéaire), B04 (analyse réelle et calcul à une variable).

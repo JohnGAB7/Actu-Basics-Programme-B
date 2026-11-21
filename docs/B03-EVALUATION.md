@@ -1,6 +1,6 @@
 # B03 — Évaluation transversale
 
-**Statut :** draft · **Durée :** 120 minutes · **Total :** 100 points  
+**Statut : revue interne effectuée — consolidation pédagogique en cours.
 **Consigne :** détailler les raisonnements, annoncer les dimensions et vérifier les résultats.
 
 ## Exercice 1 — Vecteurs et produit scalaire (10 points)

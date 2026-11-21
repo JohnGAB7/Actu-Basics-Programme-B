@@ -1,6 +1,6 @@
 # B14 — Carte pédagogique : Plans d'expérience et inférence causale
 
-**Version :** 0.1 · **Statut :** premier brouillon pédagogique intégré, à approfondir et relire  
+**Version :** 0.1 · **Statut :** Revue interne effectuée — consolidation pédagogique en cours.
 **Charge indicative :** 54–64 heures  
 **Niveau :** L1–L3, ouverture L4 introductive  
 **Prérequis :** B11 inférence, B12 régression ; B08 probabilités, B10 exploration et B16 séries temporelles recommandés.

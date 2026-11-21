@@ -1,6 +1,6 @@
 # B05 — Évaluation transversale
 
-**Durée :** 120 minutes · **Total :** 100 points · **Statut :** épreuve formative, revue interne à effectuer.
+**Durée :** 120 minutes · **Total :** 100 points · **Statut :** Revue interne effectuée — consolidation pédagogique en cours.
 
 ## 1 — Domaine et limite (10 points)
 Déterminer le domaine de (f(x,y)=\sqrt{4-x^2-y^2}). Étudier la limite de (g(x,y)=xy/(x^2+y^2)) à l'origine.

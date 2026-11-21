@@ -1,6 +1,6 @@
 # B02 — Évaluation transversale
 
-**Statut :** draft · **Durée :** 90 minutes · **Total :** 100 points  
+**Statut : revue interne effectuée — consolidation pédagogique en cours.
 **Consigne :** justifier les réponses. Un résultat correct sans justification ne reçoit pas nécessairement tous les points.
 
 ## Exercice 1 — Logique et quantificateurs (15 points)

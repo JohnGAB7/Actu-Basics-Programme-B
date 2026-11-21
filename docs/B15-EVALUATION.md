@@ -1,6 +1,6 @@
 # B15 — Évaluation formative de synthèse
 
-**Statut :** première proposition à relire · **Durée :** 120 minutes · **Total :** 100 points  
+**Statut :** Revue interne effectuée — consolidation pédagogique en cours.
 Évaluation formative, non certifiante.
 
 ## Partie A — Formulation et risque (20 points)

@@ -1,6 +1,6 @@
 # B12 — Régression et modèles statistiques
 
-**Version :** 0.1.0 · **Statut :** première version de travail · **Charge indicative :** 48–58 h  
+**Version :** 0.1.0 · **Statut :** revue interne effectuée — consolidation pédagogique en cours.
 **Public :** licence avancée / master en statistique, mathématiques appliquées, économie quantitative, science des données et actuariat.
 
 ## Finalité

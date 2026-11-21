@@ -1,6 +1,6 @@
 # B04 — Carte pédagogique : analyse réelle et calcul à une variable
 
-**Version :** 1.0.0 · **Statut :** draft en développement · **Date :** 21 novembre 2026
+**Version :** 1.0.0 · **Statut : revue interne effectuée — consolidation pédagogique en cours.
 
 ## Place dans le cursus
 

@@ -1,6 +1,6 @@
 # B16 — Carte pédagogique : Séries temporelles et prévision
 
-**Version :** 0.1 · **Statut :** premier brouillon pédagogique intégré, à approfondir et relire  
+**Version :** 0.1 · **Statut :** Revue interne effectuée — consolidation pédagogique en cours.
 **Charge indicative :** 54–66 heures  
 **Niveau :** L1–L3  
 **Prérequis :** B08 probabilités, B11 inférence, B12 régression, B13 multivarié ; B03 algèbre linéaire et B07 calcul numérique recommandés.

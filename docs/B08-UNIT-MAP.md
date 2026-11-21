@@ -1,5 +1,7 @@
 # B08 — Carte pédagogique : probabilités
 
+**Statut :** revue interne effectuée — consolidation pédagogique en cours.
+
 **Version :** 1.0 · 21 novembre 2026  
 **Charge indicative :** 45–55 heures  
 **Prérequis :** B02 (ensembles, logique et dénombrement), B04 (analyse à une variable). B03 (algèbre linéaire) est utile pour les lois conjointes multivariées. Programmation élémentaire recommandée.

@@ -1,5 +1,7 @@
 # B10 — Carte pédagogique : statistique descriptive, échantillonnage et exploration
 
+**Statut :** revue interne effectuée — consolidation pédagogique en cours.
+
 **Version :** 1.0 · 21 novembre 2026  
 **Charge indicative :** 47–57 heures  
 **Prérequis :** B01–B02 et probabilités introductives de B08. Les unités T03–T04 mobilisent probabilité conditionnelle et espérance ; les autres restent accessibles avec les bases de calcul et de représentation.
