@@ -53,6 +53,7 @@ export function LessonLibrary({query,setQuery}:{query:string;setQuery:(value:str
    <button className={resource==='calculus-exam'?'active':''} onClick={()=>setResource('calculus-exam')}><FileText size={15}/> Examen calcul diff.</button>
    <button className={resource==='calculus-correction'?'active':''} onClick={()=>setResource('calculus-correction')}><CheckCircle2 size={15}/> Corrigé calcul diff.</button>
   </div>
+  {resource==='final-exam'||resource==='final-correction'||resource==='calculus-exam'||resource==='calculus-correction'?<div className="exam-resource-warning"><strong>Ressource de préparation — pas une session d’examen sécurisée.</strong><span>Le sujet et son corrigé sont accessibles dans cette bibliothèque. Aucun chronométrage serveur, contrôle d’identité ni résultat certifiant n’est associé à cette lecture.</span></div>:null}
   <article className="markdown-card"><ReactMarkdown remarkPlugins={[remarkGfm,remarkMath]} rehypePlugins={[rehypeKatex]}>{content}</ReactMarkdown></article>
   <div className="lesson-provenance"><span>Source pédagogique : Actu-Basics-Lab · {resource==='course'?selected.sha.slice(0,10):'document source'}</span><a href={sourceLink??sourceRoot} target="_blank" rel="noreferrer">Consulter la source originale <ArrowUpRight size={13}/></a></div>
  </div>
