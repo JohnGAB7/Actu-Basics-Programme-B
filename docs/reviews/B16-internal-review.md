@@ -1,4 +1,4 @@
-# B16 — Première revue interne de contenu
+# B16 — Seconde revue interne de contenu
 
 **Version examinée :** 1.1 · **Statut :** seconde revue interne assistée par IA, non indépendante  
 **Périmètre :** TS01–TS10, carte pédagogique et évaluation formative.
