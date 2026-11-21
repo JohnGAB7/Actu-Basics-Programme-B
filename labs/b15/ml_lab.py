@@ -46,8 +46,8 @@ def knn_predict(train_x, train_y, test_x, k=3, task="regression"):
 
 
 def classification_metrics(y_true, probabilities, threshold=0.5):
-    y=[int(v) for v in y_true]; p=_finite(probabilities,"probabilities")
-    if len(y)!=len(p) or not y or any(v not in (0,1) for v in y): raise ValueError("binary labels and equal-length probabilities required")
+    raw_y=list(y_true); y=[int(v) for v in raw_y]; p=_finite(probabilities,"probabilities")
+    if len(y)!=len(p) or not y or any(float(v)!=z or z not in (0,1) for v,z in zip(raw_y,y)): raise ValueError("binary labels and equal-length probabilities required")
     if not math.isfinite(threshold) or not 0<=threshold<=1 or any(v<0 or v>1 for v in p): raise ValueError("invalid threshold or probabilities")
     pred=[int(v>=threshold) for v in p]
     tp=sum(1 for a,b in zip(y,pred) if a==1 and b==1)
