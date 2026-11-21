@@ -70,6 +70,11 @@ Une source ne prouve pas qu'un cours entier est correct. Pour chaque unité, pr�
 | S52 | MIT OpenCourseWare — 15.070J Advanced Stochastic Processes : https://ocw.mit.edu/courses/15-070j-advanced-stochastic-processes-fall-2013/ | Filtrations, martingales, temps d'arrêt, mouvement brownien, calcul d'Itô et applications aux files | Référence d'approfondissement S08–S10 |
 | S53 | MIT OpenCourseWare — 18.445 Lecture Notes : https://ocw.mit.edu/courses/18-445-introduction-to-stochastic-processes-spring-2015/pages/lecture-notes/ | Notes de cours sur chaînes finies, martingales, Poisson et chaînes de Markov à temps continu | Référence pédagogique S02–S06 et S08–S09 |
 
+| S57 | MIT OpenCourseWare — 18.650 Statistics for Applications (Fall 2016) : https://ocw.mit.edu/courses/18-650-statistics-for-applications-fall-2016/ | Inférence paramétrique, maximum de vraisemblance, méthode des moments, tests, Bayes | Référence de cadrage principale I01–I08 et I10 |
+| S58 | MIT OpenCourseWare — 18.443 Statistics for Applications (Fall 2006) : https://ocw.mit.edu/courses/18-443-statistics-for-applications-fall-2006/ | EMV, propriétés asymptotiques, TCL, intervalles, tests t/F, décisions bayésiennes | Notes détaillées pour I01–I08 |
+| S59 | Casella, George & Berger, Roger L. — Statistical Inference, 2e éd., Chapman & Hall/CRC, 2024 : https://www.routledge.com/Statistical-Inference/Casella-Berger/p/book/9781032593036 | Théorie des estimateurs, tests, intervalles et asymptotique | Référence théorique de fond I01–I08 |
+| S60 | Wasserman, Larry — All of Statistics: A Concise Course in Statistical Inference, Springer, 2004 : https://link.springer.com/book/10.1007/978-0-387-21736-9 | Inférence paramétrique, bootstrap, tests, Bayes et décision statistique | Référence de synthèse I02–I10 |
+
 ## 3. Matrice de couverture par bloc
 
 | Bloc | Sources institutionnelles prioritaires |
