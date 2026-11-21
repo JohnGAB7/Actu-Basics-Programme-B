@@ -212,17 +212,6 @@ function getBlockCode(code: string): string {
  const prefixes: Array<[string,string]> = [['AT','B20'],['EF','B19'],['AR','B18'],['DE','B17'],['TS','B16'],['ML','B15'],['CI','B14'],['MV','B13'],['R','B12'],['I','B11'],['T','B10'],['S','B09'],['P','B08'],['N','B07'],['O','B06'],['M','B05'],['A','B04'],['V','B03'],['D','B02'],['F','B01']]
  return prefixes.find(([prefix])=>code.startsWith(prefix))?.[1] ?? 'B01'
 }
-
-export type CourseSummary = Pick<Course, 'code' | 'title' | 'description' | 'duration' | 'version'> & { blockCode: string }
-
-export function getCourseSummaries(): CourseSummary[] {
- return courses.map(({content: _content, ...course}) => ({...course, blockCode: getBlockCode(course.code)}))
-}
-
-function getBlockCode(code: string): string {
- const prefixes: Array<[string,string]> = [['AT','B20'],['EF','B19'],['AR','B18'],['DE','B17'],['TS','B16'],['ML','B15'],['CI','B14'],['MV','B13'],['R','B12'],['I','B11'],['T','B10'],['S','B09'],['P','B08'],['N','B07'],['O','B06'],['M','B05'],['A','B04'],['V','B03'],['D','B02'],['F','B01']]
- return prefixes.find(([prefix])=>code.startsWith(prefix))?.[1] ?? 'B01'
-}
 const courses: Course[] = [
  {code:'F01',title:'Nombres, ensembles et ordre',version:'1.1.0',description:'Ensembles numériques, rationalité, ordre, intervalles et distance.',duration:'4–5 h',content:f01},
  {code:'F02',title:'Calcul, fractions, rapports et proportions',version:'1.0.0',description:'Calcul exact, fractions, rapports, taux et proportionnalité.',duration:'5–6 h',content:f02},
