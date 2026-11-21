@@ -242,3 +242,15 @@ Les ressources S92–S96 sont des références de cadrage ; leur citation ne vau
 | S101 | Christoffersen — *Elements of Financial Risk Management* : https://www.sciencedirect.com/book/9780123744487/elements-of-financial-risk-management | Mesure de risque, VaR et validation | Référence appliquée EF08 |
 
 Les ressources S97–S101 orientent le cadrage et les vérifications ; elles ne certifient pas les unités.
+
+
+## B20 — Théorie statistique avancée et méthodes de recherche
+| ID | Ressource | Domaines utiles | Utilisation |
+|---|---|---|---|
+| S102 | van der Vaart — *Asymptotic Statistics* : https://www.cambridge.org/core/books/asymptotic-statistics/A3C7DAD3F7E66A1FA60E9C8FE132EE1D | Convergence, delta, M-estimation, efficacité, Bayes, processus empiriques, bootstrap et semi-paramétrique | Référence centrale AT01–AT04 |
+| S103 | van der Vaart & Wellner — *Weak Convergence and Empirical Processes*, 2e éd. : https://link.springer.com/book/10.1007/978-3-031-29040-4 | Convergence faible, classes GC/Donsker, entropie, limites fonctionnelles et applications | Référence théorique AT03 |
+| S104 | Li & Babu — *A Graduate Course on Statistical Inference* : https://link.springer.com/book/10.1007/978-1-4939-9761-9 | Inférence finie, asymptotique, Bayes et équations d'estimation | Cadrage AT02, AT04–AT05 |
+| S105 | TU Delft — Asymptotic Statistics : https://www.tudelft.nl/ewi/over-de-faculteit/afdelingen/applied-mathematics/statistics/research/asymptotic-statistics | Domaine de recherche et bibliographie universitaire | Repérage de lectures avancées AT01–AT04 |
+| S106 | Cambridge — Asymptotic Statistics, table of contents : https://www.cambridge.org/core/books/abs/asymptotic-statistics/notation/348A8DB41F3EA1051A135FFD787FD9E4 | Thèmes détaillés : convergence, processus empiriques, bootstrap et modèles semi-paramétriques | Vérification de couverture AT01–AT04 |
+
+Les ressources S102–S106 sont des références de cadrage ; elles ne constituent pas une validation indépendante ni une accréditation.
