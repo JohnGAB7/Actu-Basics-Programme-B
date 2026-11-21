@@ -47,6 +47,11 @@ Une source ne prouve pas qu'un cours entier est correct. Pour chaque unité, pr�
 | S31 | OpenStax — Calculus, Volume 1 : https://openstax.org/details/books/calculus-volume-1 | Fonctions, limites, dérivées, applications et intégration | Contrôle pédagogique des fondations du calcul différentiel et intégral |
 | S32 | OpenStax — Calculus, Volume 2 : https://openstax.org/details/books/calculus-volume-2 | Techniques d'intégration, intégrales impropres, suites et séries, séries entières | Référence de cadrage pour A08–A10 |
 
+| S33 | MIT OpenCourseWare — 18.02SC Multivariable Calculus : https://ocw.mit.edu/courses/18-02sc-multivariable-calculus-fall-2010/ | Fonctions multivariées, dérivées partielles, gradient, optimisation, intégrales multiples, champs et théorèmes intégraux | Référence de cadrage M01–M07 |
+| S34 | MIT OpenCourseWare — 18.022 Calculus of Several Variables : https://ocw.mit.edu/courses/18-022-calculus-of-several-variables-fall-2010/ | Limites, différentiabilité, Jacobien, champs vectoriels et intégrales | Comparaison conceptuelle M01–M07 |
+| S35 | MIT OpenCourseWare — 18.03SC Differential Equations : https://ocw.mit.edu/courses/18-03sc-differential-equations-fall-2011/ | EDO premier et second ordre, méthodes numériques, systèmes et stabilité | Référence de cadrage M08–M10 |
+| S36 | MIT Course Catalog — Mathematics, 18.03 Differential Equations : https://catalog.mit.edu/subjects/18/ | Modélisation, EDO linéaires, oscillations, matrices et systèmes | Contrôle du périmètre EDO et prolongements |
+
 ## 3. Matrice de couverture par bloc
 
 | Bloc | Sources institutionnelles prioritaires |
@@ -55,7 +60,7 @@ Une source ne prouve pas qu'un cours entier est correct. Pour chaque unité, pr�
 | B02 Logique et discret | S01, S05 |
 | B03 Algèbre linéaire | S01, S07, S17, S25, S26, S27, S28 |
 | B04 Analyse réelle | S01, S06, S09, S29, S30, S31, S32 |
-| B05 Calcul multivarié et EDO | S01, S17 |
+| B05 Calcul multivarié et EDO | S01, S17, S33, S34, S35, S36 |
 | B06 Optimisation | S08, S10, S11, S13 |
 | B07 Analyse numérique | S07, S11, S14, S17 |
 | B08 Probabilités | S02, S03, S04, S10, S13, S15 |
