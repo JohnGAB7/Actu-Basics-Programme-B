@@ -24,7 +24,7 @@ class TimeSeriesLabTests(unittest.TestCase):
         self.assertAlmostEqual(fit["intercept"], 0.5, places=8)
         self.assertAlmostEqual(fit["phi"], 0.5, places=8)
         fc = forecast_ar1(values[-1], 0.5, 0.5, 0.25, 2)
-        self.assertAlmostEqual(fc[0]["mean"], 0.5 + 0.5 * (values[-1] - 1.0))
+        self.assertAlmostEqual(fc[0]["mean"], 1.0 + 0.5 * (values[-1] - 1.0))
         self.assertAlmostEqual(fc[0]["variance"], 0.25)
 
     def test_ses_and_metrics(self):
