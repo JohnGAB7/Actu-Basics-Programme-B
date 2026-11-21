@@ -348,3 +348,23 @@ Les ressources S127–S135 complètent le cadrage de B18. Elles ne valident pas 
 | S147 | Duke University — High Frequency Econometrics course outline : https://public.econ.duke.edu/~get/browse/courses/pbc/CourseOutline.pdf | Variation réalisée, sauts, bruit, estimations de volatilité et régressions haute fréquence | EF09 ; plan de cours 2018, référence pédagogique et non norme actuelle |
 
 Les ressources S136–S147 cadrent les contenus. SR 26-2 et les chapitres Bâle ont une portée réglementaire spécifique ; ils ne doivent pas être présentés comme des règles universelles. Les syllabus et cours ne valident pas chaque calcul de Programme B.
+
+
+
+## B20 — Sources complémentaires de la seconde passe
+
+| ID | Ressource | Domaines utiles | Utilisation |
+|---|---|---|---|
+| S148 | UC Berkeley — STAT 210A Theoretical Statistics, Fall 2026 : https://stat210a.berkeley.edu/fall-2026/ | Décision, estimation, familles exponentielles, théorie asymptotique, M-estimation | Cadrage AT01–AT04 |
+| S149 | Stanford — STATS 300A Theory of Statistics : https://web.stanford.edu/class/stats300a/syllabus.html | Optimalité, minimax, Bayes, suffisance, estimation et décision | AT02/AT04 et fondements de théorie statistique |
+| S150 | MIT — 18.655 Mathematical Statistics syllabus : https://www.mit.edu/~18.655/syllabus.html | Décision, estimation, MLE, asymptotique, bootstrap, permutation et bornes minimax | AT02–AT04 et AT09 |
+| S151 | MIT OpenCourseWare — 18.465 Statistical Learning Theory : https://mitocw.ups.edu.ec/courses/mathematics/18-465-topics-in-statistics-statistical-learning-theory-spring-2007/syllabus/ | Processus empiriques, VC, entropie, symétrisation et concentration | AT03 et AT07 |
+| S152 | Princeton — ORF 526 Probability Theory, Fall 2026 : https://orfe.princeton.edu/courses/fall-2026/probability-theory | Probabilité mesurée, TCL, filtrations, temps d'arrêt, martingales, processus de Markov et Brownien | AT01 et AT06 |
+| S153 | Stan — Diagnostics and warnings : https://mc-stan.org/learn-stan/diagnostics-warnings.html | R-hat, ESS, divergences, treedepth, diagnostics MCMC | AT05 ; seuils indicatifs et diagnostic global |
+| S154 | Stan Reference Manual — Effective Sample Size : https://mc-stan.org/docs/2_31/reference-manual/effective-sample-size.html | Autocorrélation, ESS, MCSE et TCL MCMC | AT05 |
+| S155 | Benjamini & Hochberg (1995) — Controlling the False Discovery Rate : https://doi.org/10.1111/j.2517-6161.1995.tb02031.x | Contrôle FDR sous conditions de dépendance | AT07 ; ne garantit pas la vérité individuelle de chaque rejet |
+| S156 | CRAN — boot package reference manual : https://cran.rstudio.org/web/packages/boot/refman/boot.html | Bootstrap paramétrique/non paramétrique, stratification et permutations | AT03 et AT09 ; documentation logicielle |
+| S157 | MIT — 18.656 Mathematical Statistics: a Non-Asymptotic Approach (catalogue 2026) : https://student.mit.edu/catalog/m18b.html | Concentration, grande dimension, non paramétrique, oracle inequalities et processus empiriques | AT03 et AT07 |
+| S139 | Federal Reserve — SR 26-2 Revised Guidance on Model Risk Management : https://www.federalreserve.gov/supervisionreg/srletters/SR2602.htm | Gouvernance, validation, suivi et effective challenge ; guidance américaine bancaire | AT09–AT10 ; référence déjà enregistrée dans le corpus B19 |
+
+Les ressources S148–S157 complètent le cadrage. S139 est réutilisée depuis B19 pour éviter un doublon. Les syllabus, manuels logiciels et guidance prudentielle n'approuvent pas Programme B et ne remplacent pas les preuves mathématiques ni la validation humaine.
