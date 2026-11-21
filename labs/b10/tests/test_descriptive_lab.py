@@ -15,8 +15,8 @@ class DescriptiveLabTests(unittest.TestCase):
         s = descriptive_summary(x)
         self.assertEqual(s["mean"], 5)
         self.assertEqual(s["median"], 3)
-        self.assertEqual(s["variance_n"], 8)
-        self.assertEqual(s["variance_n1"], 10)
+        self.assertEqual(s["variance_n"], 9.2)
+        self.assertEqual(s["variance_n1"], 11.5)
         self.assertEqual(s["iqr"], 4)
         self.assertEqual(quantile_type7([1, 2, 3, 4], .25), 1.75)
 
@@ -51,7 +51,7 @@ class DescriptiveLabTests(unittest.TestCase):
     def test_survey_estimators_and_fpc(self):
         self.assertEqual(horvitz_thompson_total([10, 20, 30], [.5, .25, .1]), 400)
         self.assertAlmostEqual(hajek_mean([10, 20, 30], [.5, .25, .1]), 400 / 16)
-        self.assertAlmostEqual(srs_mean_variance([10, 20, 30, 40, 50], 2), 25)
+        self.assertAlmostEqual(srs_mean_variance([10, 20, 30, 40, 50], 2), 75)
 
     def test_correlation_and_row_proportions(self):
         self.assertAlmostEqual(pearson_correlation([1, 2, 3], [2, 4, 6]), 1)
