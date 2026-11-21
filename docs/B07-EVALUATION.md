@@ -1,6 +1,6 @@
 # B07 — Évaluation formative transversale
 
-**Durée :** 120 minutes · **Barème :** 100 points · **Statut :** draft pédagogique avec corrigé.
+**Durée :** 120 minutes · **Barème :** 100 points · **Statut :** Revue interne effectuée — consolidation pédagogique en cours.
 
 ## Exercice 1 — Erreurs flottantes (10 points)
 Valeur exacte 250, résultat 249,4. Calculer les erreurs absolue et relative. Expliquer pourquoi six décimales affichées ne prouvent pas six décimales exactes.
