@@ -83,3 +83,11 @@ Les anciens statuts « draft » de cette première passe décrivaient l'absence 
 - S01–S10 relues : processus, chaînes de Markov, récurrence, stationnarité, absorption, Poisson, renouvellement, martingales, CTMC/M/M/1 et brownien.
 - Aucun défaut mathématique bloquant identifié dans cette première passe ; références MIT S164–S166 ajoutées et reliées aux unités.
 - Recalcul exhaustif des corrigés, tests numériques des cas limites, revue humaine indépendante et tests apprenants restent à réaliser.
+
+
+## Revue méthodologique B10 — 21 novembre 2026
+
+- Rapport : [B10-mathematical-review.md](B10-mathematical-review.md).
+- T01–T10 relues : population/échelles, qualité, sondage, HT/Hájek, distributions empiriques, mesures robustes, graphiques, associations, données manquantes et EDA.
+- Aucun défaut mathématique bloquant identifié ; l'exemple de variance sous sondage aléatoire simple a été recalculé ; T06 clarifie la portée de Tchebychev ; sources S167–S168 ajoutées.
+- Comparaison à un logiciel de sondage, recalcul exhaustif des corrigés, tests apprenants et revue humaine indépendante restent requis.
