@@ -40,3 +40,8 @@ Cette conclusion reste limitée à la lecture et aux vérifications ciblées de 
 - Relecture humaine indépendante, puis tests auprès d'apprenants.
 
 **Conclusion :** B08 présente une base mathématique cohérente dans cette première passe. Les compléments renforcent surtout la précision des hypothèses et les contre-exemples ; aucune certification académique n'est revendiquée.
+
+
+## Contrôle complémentaire du laboratoire
+
+Les implémentations Python/R ont été comparées sur la convention de variance empirique E03. Python utilisait le moment centré avec dénominateur n ; R utilisait `var()` (n−1). R a été aligné sur le moment d'ordre 2 avec dénominateur n, et cette convention est documentée dans le README. Les simulations restent différentes entre langages en raison des générateurs pseudo-aléatoires.
