@@ -1,6 +1,6 @@
 import unittest
 
-from time_series_lab import (
+from labs.b16.time_series_lab import (
     autocorrelation, ar1_forecast, difference, forecast_errors,
     garch11_variance, kalman_scalar_filter, mase, rolling_origin_splits,
 )
