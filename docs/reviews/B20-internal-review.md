@@ -1,6 +1,6 @@
-# B20 — Première revue interne de contenu
+# B20 — Seconde revue interne de contenu
 
-**Version examinée :** 0.1 · **Statut :** revue assistée par IA, non indépendante  
+**Version examinée :** 1.1 · **Statut :** seconde revue assistée par IA, non indépendante  
 **Périmètre :** AT01–AT10, carte pédagogique et évaluation formative.
 
 ## Contrôles de cohérence réalisés
@@ -66,3 +66,7 @@ Le laboratoire Python/R couvre bootstrap percentile, permutation, delta, MH 1D, 
 8. Organiser tests apprenants et audit manuel d'accessibilité.
 
 **Conclusion :** seconde revue assistée par IA, non indépendante et non certifiante ; elle ne remplace pas une revue académique de niveau doctorat.
+
+
+## Références
+S148–S152 (Berkeley, Stanford, MIT, Princeton) ; S153–S154 (Stan diagnostics) ; S155 (Benjamini–Hochberg) ; S156–S157 (bootstrap et théorie non asymptotique) ; S139 (guidance bancaire américaine sur le risque de modèle).
