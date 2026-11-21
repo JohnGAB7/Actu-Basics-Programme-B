@@ -160,17 +160,17 @@ export function DescriptiveLab() {
       <span className="eda-version">EDA · V1.0</span>
     </div>
     <div className="eda-intro"><div className="eda-intro-icon"><Activity size={22}/></div><div><strong>Une exploration rigoureuse commence par de bonnes questions.</strong><p>Les jeux de données sont pédagogiques et déterministes. Ils illustrent des concepts, pas une analyse d'un portefeuille réel.</p></div></div>
-    <div className="eda-tabs" role="tablist" aria-label="Expériences de statistique descriptive">
+    <div className="eda-tabs" role="tablist" aria-label="Expériences de statistique descriptive" aria-orientation="horizontal">
       {tabs.map((item,index)=>{const Icon=item.icon;return <button key={item.id} ref={element=>{tabRefs.current[index]=element}} id={'eda-tab-'+item.id} type="button" role="tab" aria-controls={'eda-panel-'+item.id} aria-selected={tab===item.id} tabIndex={tab===item.id?0:-1} className={tab===item.id?'active':''} onClick={()=>setTab(item.id)} onKeyDown={event=>{
         const next=event.key==='ArrowRight'?(index+1)%tabs.length:event.key==='ArrowLeft'?(index-1+tabs.length)%tabs.length:event.key==='Home'?0:event.key==='End'?tabs.length-1:-1
         if(next>=0){event.preventDefault();setTab(tabs[next].id);tabRefs.current[next]?.focus()}
       }}><Icon size={16}/><span>{item.label}</span></button>})}
     </div>
-    {tab==='summary'&&<SummaryPanel/>}
-    {tab==='sampling'&&<SamplingPanel/>}
-    {tab==='histogram'&&<HistogramPanel/>}
-    {tab==='missing'&&<MissingPanel/>}
-    {tab==='simpson'&&<SimpsonPanel/>}
+    <div hidden={tab!=='summary'}><SummaryPanel/></div>
+    <div hidden={tab!=='sampling'}><SamplingPanel/></div>
+    <div hidden={tab!=='histogram'}><HistogramPanel/></div>
+    <div hidden={tab!=='missing'}><MissingPanel/></div>
+    <div hidden={tab!=='simpson'}><SimpsonPanel/></div>
     <div className="eda-footnote"><strong>Limites méthodologiques.</strong> Les simulations et jeux d'exemple ne prouvent aucun théorème et ne remplacent pas l'analyse du plan de sondage, des mécanismes de collecte ou des hypothèses de données manquantes. Les résultats doivent être interprétés dans leur contexte.</div>
   </div>
 }
