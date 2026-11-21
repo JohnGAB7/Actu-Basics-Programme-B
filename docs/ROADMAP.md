@@ -92,7 +92,7 @@ Les évaluations restent formatives et non certifiantes tant qu'un processus ind
 
 - [x] Première passe B08–B12 : probabilités, processus stochastiques, statistique descriptive, inférence et régression ; aucun défaut bloquant détecté, précisions et références ajoutées.
 - [x] Première passe B13 : statistique multivariée ; une erreur de transformation F de Roy a été détectée et corrigée, avec test de cohérence sur le cas univarié.
-- [ ] Comparer les laboratoires B08–B13 à des bibliothèques de référence et tester les cas limites.
+- [ ] Comparer les laboratoires B08–B13 à des bibliothèques de référence. Les cas limites et cohérences Python/R ciblés sont désormais couverts par des tests ; l'équivalence numérique avec des logiciels de référence reste à démontrer.
 - [ ] Revoir B14–B20, puis B01–B07 selon les risques et les prérequis.
 - [ ] Recalculer indépendamment les corrigés et les résultats numériques des 196 unités.
 - [ ] Organiser une revue humaine indépendante par domaines et des tests apprenants.
