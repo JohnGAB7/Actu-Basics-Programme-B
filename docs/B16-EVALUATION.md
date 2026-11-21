@@ -57,3 +57,28 @@
 
 ## Critères de réussite
 Seuil indicatif : 70/100. Les erreurs sur stationnarité, dépendance, fuite temporelle ou interprétation d'intervention imposent une reprise ciblée. Le sujet doit être testé auprès d'apprenants avant stabilisation.
+
+
+## Barème de correction et exigences de reproductibilité
+
+Le barème reste fixé à 100 points. Pour chaque réponse calculatoire, attribuer les points à la formule, aux hypothèses, au calcul et à l'interprétation, pas uniquement au résultat numérique. Une réponse qui utilise des observations postérieures à l'origine de prévision pour choisir une transformation, un ordre ou un hyperparamètre doit perdre les points relatifs à la validité du protocole, même si l'erreur annoncée est faible.
+
+### Précisions attendues dans les réponses
+
+- ADF et KPSS ont des hypothèses nulles différentes ; leurs résultats dépendent des termes déterministes et des retards.
+- Les bandes ACF usuelles sont approximatives et ponctuelles ; elles ne prouvent pas l'indépendance.
+- AIC/BIC ne sont comparables qu'à échantillon et vraisemblance comparables.
+- Une prévision conditionnelle dépend de la perte : espérance sous perte quadratique, médiane sous perte absolue.
+- Granger décrit une amélioration prédictive conditionnelle, pas un effet causal structurel.
+- Une transformation logarithmique impose de traiter le biais de retransformation lorsqu'on vise une moyenne sur l'échelle originale.
+- La couverture des intervalles doit être présentée par horizon, avec leur largeur ; RMSE seul ne mesure pas la qualité probabiliste.
+- MAPE est inadapté lorsque les observations peuvent être nulles ou proches de zéro ; choisir une métrique cohérente avec l'objectif.
+
+### Protocole minimal du projet
+
+1. Documenter la fréquence, le calendrier, les dates manquantes et la définition de la cible.
+2. Définir avant l'ajustement les origines, horizons et période finale de test.
+3. Comparer au minimum naïf et saisonnier naïf lorsque pertinent.
+4. Estimer les transformations et paramètres uniquement sur le passé disponible à chaque origine.
+5. Vérifier résidus, stabilité et plausibilité des intervalles.
+6. Rapporter MAE/RMSE ou MASE par horizon, couverture et largeur des intervalles, ainsi que les limites de régime.
