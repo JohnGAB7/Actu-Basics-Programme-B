@@ -9,9 +9,10 @@ import {
   X
 } from 'lucide-react'
 import { blocks, questions } from './data'
-import { LessonLibrary } from './Lessons'
+import { LessonLibrary, getCourseSummaries } from './Lessons'
+import { curriculumDetails, learningPaths, getBlockForCourse } from './curriculum'
 
-type View = 'overview' | 'paths' | 'exams' | 'library' | 'exam' | 'results'
+type View = 'overview' | 'paths' | 'block' | 'exams' | 'library' | 'exam' | 'results'
 type Answers = Record<number, number>
 
 const STORAGE_KEY = 'programme-b-demo-attempt-v1'
@@ -25,6 +26,7 @@ function App() {
   const [started, setStarted] = useState(false)
   const [submitted, setSubmitted] = useState(false)
   const [query, setQuery] = useState('')
+  const [selectedBlockCode, setSelectedBlockCode] = useState('B01')
   const [showIntro, setShowIntro] = useState(false)
   const [savedAttempt, setSavedAttempt] = useState(false)
 
@@ -98,7 +100,7 @@ function App() {
 
   const navItems = [
     { id: 'overview' as View, label: 'Vue d’ensemble', icon: Home },
-    { id: 'paths' as View, label: 'Mes parcours', icon: Compass },
+    { id: 'paths' as View, label: 'Parcours & blocs', icon: Compass },
     { id: 'exams' as View, label: 'Centre d’examens', icon: FileCheck2 },
     { id: 'library' as View, label: 'Bibliothèque', icon: LibraryBig },
   ]
@@ -135,12 +137,13 @@ function App() {
       <main className="main-area">
         <header className="topbar">
           <button className="icon-button mobile-menu" onClick={() => setMobileMenu(true)} aria-label="Ouvrir le menu"><Menu size={20}/></button>
-          <div className="breadcrumb"><span>Programme B</span><ChevronRight size={14}/><strong>{view === 'overview' ? 'Vue d’ensemble' : view === 'paths' ? 'Mes parcours' : view === 'exams' || view === 'exam' || view === 'results' ? 'Centre d’examens' : 'Bibliothèque'}</strong></div>
+          <div className="breadcrumb"><span>Programme B</span><ChevronRight size={14}/><strong>{view === 'overview' ? 'Vue d’ensemble' : view === 'paths' ? 'Parcours & blocs' : view === 'block' ? selectedBlockCode : view === 'exams' || view === 'exam' || view === 'results' ? 'Centre d’examens' : 'Bibliothèque'}</strong></div>
           <div className="top-actions"><div className="preview-pill"><span/> Aperçu privé</div><button className="icon-button" aria-label="Aide"><CircleHelp size={18}/></button><div className="top-avatar">JG</div></div>
         </header>
 
-        {view === 'overview' && <Overview onNavigate={nav} onStart={() => setShowIntro(true)} savedAttempt={savedAttempt} onResume={resumeExam} />}
-        {view === 'paths' && <Paths onStart={() => setShowIntro(true)} />}
+        {view === 'overview' && <Overview onNavigate={nav} onSelectBlock={(code) => { setSelectedBlockCode(code); nav('block') }} onStart={() => setShowIntro(true)} savedAttempt={savedAttempt} onResume={resumeExam} />}
+        {view === 'paths' && <Paths onStart={() => setShowIntro(true)} onSelectBlock={(code) => { setSelectedBlockCode(code); nav('block') }} />}
+        {view === 'block' && <BlockDetail code={selectedBlockCode} onBack={() => nav('paths')} onLibrary={() => { setQuery(getBlockForCourse(selectedBlockCode) || ''); nav('library') }} />} 
         {view === 'exams' && <Exams onStart={() => setShowIntro(true)} />}
         {view === 'library' && <LessonLibrary query={query} setQuery={setQuery} />}
         {view === 'exam' && <Exam current={current} setCurrent={setCurrent} answers={answers} chooseAnswer={chooseAnswer} seconds={seconds} time={time} progress={progress} onFinish={finishExam} />}
@@ -156,13 +159,13 @@ function PageHeading({eyebrow, title, description, action}: {eyebrow: string; ti
   return <div className="page-heading"><div><div className="eyebrow">{eyebrow}</div><h1>{title}</h1><p>{description}</p></div>{action}</div>
 }
 
-function Overview({onNavigate, onStart, savedAttempt, onResume}: {onNavigate:(v:View)=>void; onStart:()=>void; savedAttempt:boolean; onResume:()=>void}) {
+function Overview({onNavigate, onSelectBlock, onStart, savedAttempt, onResume}: {onNavigate:(v:View)=>void; onSelectBlock:(code:string)=>void; onStart:()=>void; savedAttempt:boolean; onResume:()=>void}) {
   return <div className="content-wrap">
     <div className="welcome-line"><div><div className="eyebrow">SAMEDI 21 NOVEMBRE 2026 · VOTRE ESPACE</div><h1>Le savoir se construit <em>avec méthode.</em></h1><p>Un environnement exigeant pour progresser dans les sciences quantitatives.</p></div><div className="welcome-orb"><div className="orb-ring ring-one"/><div className="orb-ring ring-two"/><div className="orb-core"><Sparkles size={25}/></div></div></div>
     <div className="hero-panel"><div className="hero-copy"><div className="hero-kicker"><span className="kicker-line"/> LEARNING IS A JOURNEY</div><h2>De la compréhension<br/>à la <span>maîtrise.</span></h2><p>Des fondations mathématiques aux modèles avancés, construisez une compréhension solide, durable et applicable.</p><div className="hero-actions"><button className="primary-button" onClick={() => onNavigate('paths')}>Explorer les parcours <ArrowRight size={16}/></button><button className="text-button light" onClick={() => onNavigate('library')}>Voir la bibliothèque</button></div></div><div className="hero-visual"><div className="visual-grid"/><div className="visual-orbit orbit-a"/><div className="visual-orbit orbit-b"/><div className="visual-equation eq-a">∑ xᵢ · p(xᵢ)</div><div className="visual-equation eq-b">A · x = b</div><div className="visual-equation eq-c">∫ f(x) dx</div><div className="visual-node node-a"/><div className="visual-node node-b"/><div className="visual-node node-c"/><div className="visual-caption">MATHEMATICS <span>×</span> DATA <span>×</span> REASONING</div></div></div>
     <div className="stats-grid"><Stat icon={<BookOpen size={18}/>} label="Blocs structurés" value="20" note="Architecture académique du programme"/><Stat icon={<GraduationCap size={18}/>} label="Unités au catalogue" value="196" note="B01–B02 en draft · B03–B20 avec contenu"/><Stat icon={<Target size={18}/>} label="Parcours de maîtrise" value="06" note="Itinéraires recommandés"/><Stat icon={<Activity size={18}/>} label="Blocs avec contenu" value="20/20" note="Statuts et niveaux de revue détaillés par bloc"/></div>
     <div className="section-head"><div><div className="eyebrow">ARCHITECTURE PÉDAGOGIQUE</div><h2>Les parcours du programme</h2><p>Une progression structurée, du socle aux compétences avancées.</p></div><button className="text-button" onClick={() => onNavigate('paths')}>Tout voir <ArrowRight size={15}/></button></div>
-    <div className="block-grid">{blocks.slice(0,3).map(b=><BlockCard key={b.code} block={b} onClick={() => onNavigate('paths')}/>)}</div>
+    <div className="block-grid">{blocks.slice(0,3).map(b=><BlockCard key={b.code} block={b} onClick={() => onSelectBlock(b.code)}/>)}</div>
     <div className="section-head exam-section-head"><div><div className="eyebrow">MES ÉVALUATIONS</div><h2>Vérifier ses acquis</h2><p>Les évaluations permettent d’identifier les acquis et les points à renforcer.</p></div></div>
     {savedAttempt && <div className="resume-banner"><div><strong>Une évaluation est en cours</strong><span>Vos réponses et le temps restant sont conservés sur cet appareil.</span></div><button className="primary-button" onClick={onResume}>Reprendre <ArrowRight size={15}/></button></div>}
     <div className="exam-banner"><div className="exam-banner-icon"><FileCheck2 size={23}/></div><div className="exam-banner-copy"><strong>Diagnostic des fondations mathématiques</strong><span>8 questions · 30 minutes · Évaluation d’entraînement</span></div><button className="secondary-button" onClick={onStart}>Découvrir <ArrowRight size={15}/></button></div>
@@ -176,8 +179,39 @@ function BlockCard({block,onClick}: {block:typeof blocks[number];onClick:()=>voi
   return <button className="block-card" onClick={onClick}><div className="block-card-top"><span className={`block-code ${block.tone}`}>{block.code}</span><span className="block-more"><MoreHorizontal size={18}/></span></div><h3>{block.title}</h3><p>{block.subtitle}</p><div className="block-progress"><div><span>Contenu pédagogique</span><strong>{block.progress}%</strong></div><div className="progress-track"><i style={{width:`${block.progress}%`}}/></div></div><div className="block-card-foot"><span>{block.lessons ? `${block.lessons} unités` : 'Programme planifié'}</span><span className="block-status">{block.status}</span></div></button>
 }
 
-function Paths({onStart}:{onStart:()=>void}) {
-  return <div className="content-wrap"><PageHeading eyebrow="CURSUS QUANTITATIF" title="Mes parcours" description="Une architecture progressive pour développer une véritable maîtrise des disciplines quantitatives."/><div className="path-intro"><div className="path-intro-icon"><Compass size={22}/></div><div><strong>Une progression par compétences</strong><p>Chaque bloc associe cours, démonstrations, exercices gradués, ateliers et évaluations. Les statuts indiquent ce qui est réellement disponible.</p></div></div><div className="path-list">{blocks.map((b,i)=><div className="path-row" key={b.code}><div className={`path-index ${b.tone}`}>{String(i+1).padStart(2,'0')}</div><div className="path-main"><div className="path-title-line"><span>{b.code}</span><span className="path-status">{b.status}</span></div><h3>{b.title}</h3><p>{b.subtitle}</p><div className="path-meta"><span><BookOpen size={14}/>{b.lessons || '—'} unités</span><span><Activity size={14}/>{b.lessons ? 'Contenu en cours de revue' : 'À construire'}</span></div></div><div className="path-progress"><strong>{b.progress}%</strong><div className="progress-track"><i style={{width:`${b.progress}%`}}/></div></div><ChevronRight size={18} className="path-chevron"/></div>)}</div><div className="path-bottom"><div><Sparkles size={18}/><span><strong>Votre première étape</strong><small>Évaluez vos connaissances de départ en mathématiques.</small></span></div><button className="primary-button" onClick={onStart}>Lancer le diagnostic <ArrowRight size={15}/></button></div><Footer/></div>
+function Paths({onStart,onSelectBlock}:{onStart:()=>void;onSelectBlock:(code:string)=>void}) {
+  return <div className="content-wrap">
+    <PageHeading eyebrow="CURSUS QUANTITATIF" title="Parcours & blocs" description="Choisissez une trajectoire de maîtrise ou explorez directement les vingt blocs du cursus."/>
+    <div className="path-intro"><div className="path-intro-icon"><Compass size={22}/></div><div><strong>Une bibliothèque commune, plusieurs trajectoires</strong><p>Les parcours sont des itinéraires recommandés. Ils partagent les mêmes unités et respectent les dépendances conceptuelles sans imposer un ordre rigide.</p></div></div>
+    <div className="curriculum-section-title"><div><div className="eyebrow">ITINÉRAIRES RECOMMANDÉS</div><h2>Choisir un parcours de maîtrise</h2></div><span>6 parcours · 20 blocs</span></div>
+    <div className="learning-path-grid">{learningPaths.map(path=><article className="learning-path-card" key={path.id}><div className="learning-path-top"><span className="learning-path-index">{path.number}</span><span className="learning-path-level">{path.level}</span></div><h3>{path.title}</h3><p>{path.description}</p><div className="learning-path-sequence">{path.blocks.map((code,index)=><span key={code}>{code}{index<path.blocks.length-1&&<i>→</i>}</span>)}</div><div className="learning-path-foot"><span>{path.blocks.length} blocs dans la trajectoire</span><button className="text-button" onClick={()=>onSelectBlock(path.blocks[0])}>Commencer <ArrowRight size={14}/></button></div></article>)}</div>
+    <div className="curriculum-section-title block-catalogue-heading"><div><div className="eyebrow">CATALOGUE ACADÉMIQUE</div><h2>Explorer les vingt blocs</h2><p>Ouvrez une fiche pour consulter ses objectifs, prérequis, unités et ressources.</p></div><span>196 unités au catalogue</span></div>
+    <div className="curriculum-block-grid">{blocks.map((block,index)=><button className="curriculum-block-card" key={block.code} onClick={()=>onSelectBlock(block.code)}><div className="curriculum-block-card-top"><span className={`block-code ${block.tone}`}>{block.code}</span><span className="curriculum-block-order">{String(index+1).padStart(2,'0')}</span></div><h3>{block.title}</h3><p>{block.subtitle}</p><div className="curriculum-block-meta"><span><BookOpen size={14}/>{block.lessons} unités</span><span>{block.status.includes('draft')?'Brouillon': 'Contenu intégré'}</span></div><div className="curriculum-block-arrow"><span>Consulter la fiche</span><ArrowRight size={15}/></div></button>)}</div>
+    <div className="path-bottom"><div><Sparkles size={18}/><span><strong>Vous préférez commencer par un diagnostic ?</strong><small>Évaluez vos connaissances de départ en mathématiques.</small></span></div><button className="primary-button" onClick={onStart}>Lancer le diagnostic <ArrowRight size={15}/></button></div>
+    <Footer/>
+  </div>
+}
+
+function BlockDetail({code,onBack,onLibrary}:{code:string;onBack:()=>void;onLibrary:()=>void}) {
+  const block=blocks.find(item=>item.code===code) ?? blocks[0]
+  const detail=curriculumDetails[block.code]
+  const units=getCourseSummaries().filter(unit=>unit.blockCode===block.code)
+  return <div className="content-wrap block-detail-page">
+    <button className="lesson-back" onClick={onBack}><ArrowLeft size={15}/> Retour aux parcours et blocs</button>
+    <section className="block-detail-hero"><div><div className="eyebrow">PROGRAMME B · FICHE DE BLOC · {block.code}</div><h1>{block.title}</h1><p>{detail?.overview ?? block.subtitle}</p><div className="block-detail-tags"><span>{block.code}</span><span>{block.lessons} unités au catalogue</span><span>{block.status}</span></div></div><div className="block-detail-symbol">{block.code.slice(1)}</div></section>
+    <div className="block-detail-grid">
+      <section className="block-detail-main">
+        <div className="block-detail-panel"><div className="eyebrow">OBJECTIFS D’APPRENTISSAGE</div><h2>Ce que vous saurez faire</h2><ul>{(detail?.outcomes ?? []).map(item=><li key={item}>{item}</li>)}</ul></div>
+        <div className="block-detail-panel"><div className="eyebrow">UNITÉS PÉDAGOGIQUES</div><div className="block-detail-panel-heading"><h2>Contenu du bloc</h2><span>{units.length} unités répertoriées</span></div><div className="block-unit-list">{units.map(unit=><div className="block-unit-row" key={unit.code}><span className="block-unit-code">{unit.code}</span><span className="block-unit-title">{unit.title}<small>{unit.description}</small></span><span className="block-unit-duration">{unit.duration}</span></div>)}</div><button className="primary-button" onClick={onLibrary}>Ouvrir ces unités dans la bibliothèque <ArrowRight size={15}/></button></div>
+      </section>
+      <aside className="block-detail-aside">
+        <div className="block-detail-panel"><div className="eyebrow">PRÉREQUIS</div><h2>À maîtriser avant</h2><ul>{(detail?.prerequisites ?? ['Consulter la carte pédagogique du cursus.']).map(item=><li key={item}>{item}</li>)}</ul></div>
+        <div className="block-detail-panel"><div className="eyebrow">POSITIONNEMENT</div><h2>Dans le cursus</h2><p>{detail?.role ?? 'Ce bloc contribue à la progression générale du Programme B.'}</p><div className="block-detail-links"><a href={`https://github.com/JohnGAB7/Actu-Basics-Programme-B/blob/master/docs/${block.code}-UNIT-MAP.md`} target="_blank" rel="noreferrer">Carte pédagogique <ArrowUpRight size={13}/></a><a href={`https://github.com/JohnGAB7/Actu-Basics-Programme-B/blob/master/docs/${block.code}-EVALUATION.md`} target="_blank" rel="noreferrer">Évaluation formative <ArrowUpRight size={13}/></a></div></div>
+        <div className="block-detail-note"><ShieldCheck size={17}/><p>La présence d’une unité au catalogue ne vaut pas validation académique indépendante. Consultez le statut et les limites de chaque contenu avant de l’utiliser comme référence.</p></div>
+      </aside>
+    </div>
+    <Footer/>
+  </div>
 }
 
 function Exams({onStart}:{onStart:()=>void}) {
