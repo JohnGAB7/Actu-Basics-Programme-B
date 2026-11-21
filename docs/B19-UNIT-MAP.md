@@ -1,6 +1,6 @@
 # B19 — Carte pédagogique : Économétrie et statistiques financières
 
-**Version :** 0.1 · **Statut :** Revue interne effectuée — consolidation pédagogique en cours.
+**Version :** 1.1 · **Statut :** seconde passe publiée sur GitHub Pages après CI complète ; revue humaine indépendante et tests apprenants à réaliser.
 **Charge indicative :** 52–64 heures · **Niveau :** L2–L3  
 **Prérequis :** B11 inférence, B12 régression, B14 causalité, B16 séries temporelles, B17 ingénierie ; B13 recommandé.
 
