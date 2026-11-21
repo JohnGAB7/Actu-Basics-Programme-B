@@ -1,7 +1,7 @@
 # Bloc B01 — Carte pédagogique des huit unités
 
 **Version 1.0 · 21 novembre 2026**  
-**Statut : planification détaillée · les unités F02–F08 restent planned.**
+**Statut : planification détaillée · F01 et F02 sont en draft ; F03–F08 restent planned.**
 
 ## Mission du bloc
 
