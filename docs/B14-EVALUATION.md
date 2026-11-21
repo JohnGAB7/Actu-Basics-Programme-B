@@ -1,6 +1,6 @@
 # B14 — Évaluation formative de synthèse
 
-**Statut :** première proposition à relire · **Durée :** 120 minutes · **Total :** 100 points  
+**Statut :** Revue interne effectuée — consolidation pédagogique en cours.
 Cette évaluation est formative et non certifiante.
 
 ## Partie A — Estimands et hypothèses (20 points)
