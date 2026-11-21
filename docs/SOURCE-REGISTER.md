@@ -52,6 +52,12 @@ Une source ne prouve pas qu'un cours entier est correct. Pour chaque unité, pr�
 | S35 | MIT OpenCourseWare — 18.03SC Differential Equations : https://ocw.mit.edu/courses/18-03sc-differential-equations-fall-2011/ | EDO premier et second ordre, méthodes numériques, systèmes et stabilité | Référence de cadrage M08–M10 |
 | S36 | MIT Course Catalog — Mathematics, 18.03 Differential Equations : https://catalog.mit.edu/subjects/18/ | Modélisation, EDO linéaires, oscillations, matrices et systèmes | Contrôle du périmètre EDO et prolongements |
 
+| S37 | MIT OpenCourseWare — 15.093J Optimization Methods : https://ocw.mit.edu/courses/15-093j-optimization-methods-fall-2009/ | Programmation linéaire, simplexe, dualité, sensibilité, robustesse, réseaux, discret, non linéaire et dynamique | Référence principale de cadrage O01–O06, O10 |
+| S38 | MIT OpenCourseWare — 6.7220J Nonlinear Optimization (Spring 2025) : https://ocw.mit.edu/courses/6-7220j-nonlinear-optimization-spring-2025/ | Gradient, Newton, sous-gradient, contraintes, points intérieurs, analyse convexe et dualité | Référence principale de cadrage O02, O07–O09 |
+| S39 | MIT Course Catalog — 15.053 Optimization Methods in Business Analytics : https://catalog.mit.edu/subjects/15/ | Modélisation, programmation linéaire et entière, réseaux, non linéaire et applications | Contrôle de couverture appliquée et décisionnelle B06 |
+| S40 | Boyd & Vandenberghe — Convex Optimization : https://web.stanford.edu/~boyd/cvxbook/ | Ensembles et fonctions convexes, dualité, méthodes numériques et applications | Référence de fond pour O02, O04, O08–O09 |
+| S41 | MIT OpenCourseWare — 6.251J Introduction to Mathematical Programming : https://ocw.mit.edu/courses/6-251j-introduction-to-mathematical-programming-fall-2009/ | Géométrie LP, simplexe, dualité, sensibilité, robustesse, réseaux et optimisation discrète | Comparaison du socle linéaire et combinatoire O03–O06 |
+
 ## 3. Matrice de couverture par bloc
 
 | Bloc | Sources institutionnelles prioritaires |
@@ -61,7 +67,7 @@ Une source ne prouve pas qu'un cours entier est correct. Pour chaque unité, pr�
 | B03 Algèbre linéaire | S01, S07, S17, S25, S26, S27, S28 |
 | B04 Analyse réelle | S01, S06, S09, S29, S30, S31, S32 |
 | B05 Calcul multivarié et EDO | S01, S17, S33, S34, S35, S36 |
-| B06 Optimisation | S08, S10, S11, S13 |
+| B06 Optimisation et recherche opérationnelle | S08, S10, S11, S13, S37, S38, S39, S40, S41 |
 | B07 Analyse numérique | S07, S11, S14, S17 |
 | B08 Probabilités | S02, S03, S04, S10, S13, S15 |
 | B09 Processus stochastiques | S02, S10, S11, S13, S15, S16 |
