@@ -91,3 +91,11 @@ Les anciens statuts « draft » de cette première passe décrivaient l'absence 
 - T01–T10 relues : population/échelles, qualité, sondage, HT/Hájek, distributions empiriques, mesures robustes, graphiques, associations, données manquantes et EDA.
 - Aucun défaut mathématique bloquant identifié ; l'exemple de variance sous sondage aléatoire simple a été recalculé ; T06 clarifie la portée de Tchebychev ; sources S167–S168 ajoutées.
 - Comparaison à un logiciel de sondage, recalcul exhaustif des corrigés, tests apprenants et revue humaine indépendante restent requis.
+
+
+## Revue mathématique B11 — 21 novembre 2026
+
+- Rapport : [B11-mathematical-review.md](B11-mathematical-review.md).
+- I01–I10 relues : pivots, estimation, vraisemblance, Fisher, delta, Rao–Blackwell, CRLB, intervalles, tests, puissance, multiplicité, LR/Wald/score, bootstrap, permutation et Bayes.
+- Aucun défaut mathématique bloquant identifié dans cette première passe ; S169–S170 ajoutées pour bootstrap et Bayes et reliées aux unités.
+- Simulations de taille/couverture, recalcul exhaustif des corrigés, comparaison logicielle, tests apprenants et revue humaine indépendante restent à réaliser.
