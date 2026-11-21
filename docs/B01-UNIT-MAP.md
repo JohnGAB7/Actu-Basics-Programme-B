@@ -1,7 +1,7 @@
 # Bloc B01 — Carte pédagogique des huit unités
 
 **Version 1.1 · 21 novembre 2026**  
-**Statut : revue interne effectuée — consolidation pédagogique en cours.
+**Statut :** revue interne effectuée — consolidation pédagogique en cours.
 
 ## Mission du bloc
 
@@ -24,7 +24,7 @@ Charge indicative totale : 40 à 48 heures. Cette estimation sera révisée apr�
 
 ## État de rédaction — livraison groupée
 
-F01 à F08 disposent maintenant d'une première rédaction complète dans `src/content/bloc-01/` et sont toutes exposées dans la bibliothèque. Chaque unité comporte objectifs, développement conceptuel, exemples, applications, exercices corrigés, critères de maîtrise et références. Le Statut : revue interne effectuée — consolidation pédagogique en cours.
+F01 à F08 disposent maintenant d'une première rédaction complète dans `src/content/bloc-01/` et sont toutes exposées dans la bibliothèque. Chaque unité comporte objectifs, développement conceptuel, exemples, applications, exercices corrigés, critères de maîtrise et références.
 
 ## Dépendances et règles de progression
 
@@ -52,4 +52,4 @@ Au terme de B01, l'apprenant doit pouvoir :
 
 ## Règle éditoriale
 
-Chaque unité explicite les acquis antérieurs qu'elle réutilise. Une notion ne doit pas être répétée intégralement dans plusieurs unités : elle peut être rappelée brièvement, puis approfondie dans son unité de référence. Les Statut : revue interne effectuée — consolidation pédagogique en cours.
+Chaque unité explicite les acquis antérieurs qu'elle réutilise. Une notion ne doit pas être répétée intégralement dans plusieurs unités : elle peut être rappelée brièvement, puis approfondie dans son unité de référence.
