@@ -42,3 +42,30 @@ Administration avancée de bases distribuées, sécurité offensive, streaming �
 
 ## Critères de sortie
 L'apprenant doit concevoir et documenter un flux de données, automatiser des contrôles, gérer les reprises et changements de schéma, garantir la traçabilité, et justifier les choix de confidentialité et de stockage. Un pipeline qui s'exécute sans erreur n'est pas automatiquement fiable.
+
+
+
+## Seconde consolidation — version 1.1
+
+La seconde passe approfondit les points qui conditionnent la fiabilité réelle d'un pipeline : contrats et lineage, dépendances fonctionnelles et cardinalités SQL, compatibilité des schémas, CDC/watermarks, sémantique de livraison, dénominateurs des tests qualité, backfills, publication atomique, loi d'Amdahl, déterminisme numérique, manifeste de provenance, propagation de suppression et critères d'acceptation vérifiables.
+
+### Laboratoire reproductible
+
+Le dossier `labs/b17/` fournit des primitives Python/R et un exemple SQL :
+- contrôles de champs requis, doublons et clés étrangères ;
+- upsert idempotent et test de répétition ;
+- réconciliation des volumes et totaux ;
+- empreinte de données et partition mensuelle ;
+- schéma relationnel d'assurance, contrôles de cardinalité et requêtes de réconciliation.
+
+Le laboratoire est volontairement sans dépendances externes Python/R. Il illustre des mécanismes élémentaires et ne constitue pas une plateforme ETL, un moteur CDC ou un orchestrateur de production.
+
+### Critères de qualité supplémentaires
+
+- Toute métrique possède un grain, un dénominateur, une période et une règle de nullité.
+- Toute jointure explicite sa cardinalité attendue et ses contrôles avant/après.
+- Toute ingestion documente son curseur, son traitement des événements tardifs et ses garanties de rejeu.
+- Tout résultat reproductible est associé à un manifeste de provenance.
+- Toute performance annoncée est comparée à un baseline et accompagnée des conditions de mesure.
+
+**Statut :** seconde consolidation pédagogique et laboratoire Python/R/SQL ajoutés dans une branche candidate ; validation CI complète, revue humaine indépendante, tests apprenants et audit d'accessibilité restent à effectuer.
