@@ -530,3 +530,18 @@ Cette décomposition est une première version de travail. Les preuves détaill�
 10. Projet économétrique et financier : estimation, robustesse et communication.
 
 Cette décomposition est une première version de travail. Les preuves, simulations, notebooks et validations indépendantes restent à conduire.
+
+
+### B20 — Théorie statistique avancée et méthodes de recherche
+1. Fondements mesurés de la probabilité et convergence.
+2. Théorie asymptotique des estimateurs et méthodes delta.
+3. Processus empiriques, convergence faible et bootstrap avancé.
+4. Vraisemblance avancée, modèles semi-paramétriques et information.
+5. Inférence bayésienne avancée et calcul Monte-Carlo.
+6. Processus stochastiques, martingales et temps d’arrêt.
+7. Statistique en grande dimension et inférence après sélection.
+8. Optimisation numérique et algorithmes statistiques.
+9. Méthodes de recherche, simulation et science reproductible.
+10. Projet de recherche avancée et mémoire reproductible.
+
+Cette décomposition est une première version de travail ; les preuves détaillées, notebooks et validations indépendantes restent à conduire.

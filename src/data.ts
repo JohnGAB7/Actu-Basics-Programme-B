@@ -79,5 +79,5 @@ export const blocks = [
   { code: 'B17', title: 'Ingénierie des données et recherche reproductible', subtitle: 'Architecture, SQL, pipelines, qualité, calcul distribué et gouvernance', progress: 0, lessons: 10, tone: 'blue', status: '10 unités intégrées · brouillon pédagogique à revoir' },
   { code: 'B18', title: 'Actuariat, assurance et modélisation du risque', subtitle: 'Tarification, crédibilité, survie, provisions, réassurance et capital', progress: 0, lessons: 10, tone: 'mint', status: '10 unités intégrées · brouillon pédagogique à revoir' },
   { code: 'B19', title: 'Économétrie et statistiques financières', subtitle: 'Endogénéité, panels, facteurs, volatilité et microstructure', progress: 0, lessons: 10, tone: 'violet', status: '10 unités intégrées · brouillon pédagogique à revoir' },
-  { code: 'B20', title: 'Théorie statistique avancée et méthodes de recherche', subtitle: 'Asymptotique, processus empiriques et recherche', progress: 0, lessons: 0, tone: 'amber', status: 'Approfondissement planifié' },
+  { code: 'B20', title: 'Théorie statistique avancée et méthodes de recherche', subtitle: 'Convergence, asymptotique, Bayes, processus et recherche reproductible', progress: 0, lessons: 10, tone: 'amber', status: '10 unités intégrées · brouillon pédagogique à revoir' },
 ]
