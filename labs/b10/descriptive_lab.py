@@ -6,6 +6,15 @@ from collections import Counter
 from typing import Iterable, Mapping, Sequence
 
 
+def _is_missing(value: object) -> bool:
+    if value is None:
+        return True
+    try:
+        return isinstance(value, (int, float)) and math.isnan(float(value))
+    except (TypeError, ValueError):
+        return False
+
+
 def _nonempty(values: Sequence[float]) -> list[float]:
     x = [float(v) for v in values]
     if not x or any(not math.isfinite(v) for v in x):
@@ -76,8 +85,8 @@ def audit_records(
 ) -> dict[str, object]:
     """Audit missing fields, duplicate keys, invalid numerics and range violations."""
     numeric_ranges = numeric_ranges or {}
-    missing = {field: sum(r.get(field) is None for r in records) for field in required}
-    keys = [r.get(key) for r in records if r.get(key) is not None]
+    missing = {field: sum(_is_missing(r.get(field)) for r in records) for field in required}
+    keys = [r.get(key) for r in records if not _is_missing(r.get(key))]
     duplicates = sorted(str(k) for k, count in Counter(keys).items() if count > 1)
     invalid_numeric: dict[str, int] = {}
     out_of_range: dict[str, int] = {}
@@ -86,7 +95,7 @@ def audit_records(
         outside = 0
         for row in records:
             value = row.get(field)
-            if value is None:
+            if _is_missing(value):
                 continue
             try:
                 number = float(value)
@@ -181,9 +190,9 @@ def missingness_summary(records: Sequence[Mapping[str, object]], fields: Sequenc
         raise ValueError("records must be non-empty")
     return {
         field: {
-            "missing": float(sum(row.get(field) is None for row in records)),
-            "observed": float(sum(row.get(field) is not None for row in records)),
-            "missing_rate": sum(row.get(field) is None for row in records) / len(records),
+            "missing": float(sum(_is_missing(row.get(field)) for row in records)),
+            "observed": float(sum(not _is_missing(row.get(field)) for row in records)),
+            "missing_rate": sum(_is_missing(row.get(field)) for row in records) / len(records),
         }
         for field in fields
     }
