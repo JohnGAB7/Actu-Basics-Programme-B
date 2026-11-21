@@ -7,10 +7,10 @@ import { ArrowLeft, ArrowUpRight, BookOpen, Clock3, LockKeyhole, Search } from '
 import f01 from './content/bloc-01/F01.md?raw'
 import f02 from './content/bloc-01/F02.md?raw'
 
-type Course = { code: string; title: string; description: string; duration: string; content?: string; status: 'draft' | 'planned' }
+type Course = { code: string; title: string; description: string; duration: string; version?: string; content?: string; status: 'draft' | 'planned' }
 const courses: Course[] = [
- {code:'F01',title:'Nombres, ensembles et ordre',description:'Comprendre les ensembles numériques, l’ordre, les intervalles et la distance.',duration:'4–5 h',content:f01,status:'draft'},
- {code:'F02',title:'Calcul, fractions, rapports et proportions',description:'Maîtriser les opérations exactes, les rapports et les proportions.',duration:'5–6 h',content:f02,status:'draft'},
+ {code:'F01',title:'Nombres, ensembles et ordre',version:'1.1.0',description:'Comprendre les ensembles numériques, l’ordre, les intervalles et la distance.',duration:'4–5 h',content:f01,status:'draft'},
+ {code:'F02',title:'Calcul, fractions, rapports et proportions',version:'1.0.0',description:'Maîtriser les opérations exactes, les rapports et les proportions.',duration:'5–6 h',content:f02,status:'draft'},
  {code:'F03',title:'Pourcentages, indices et taux d’évolution',description:'Composer des variations et comparer des grandeurs.',duration:'À définir',status:'planned'},
  {code:'F04',title:'Puissances, racines et logarithmes',description:'Étudier les transformations multiplicatives et leurs domaines.',duration:'À définir',status:'planned'},
  {code:'F05',title:'Expressions algébriques et identités',description:'Transformer, développer et factoriser avec rigueur.',duration:'À définir',status:'planned'},
@@ -23,10 +23,10 @@ export function LessonLibrary({query,setQuery}:{query:string;setQuery:(value:str
  const filtered=useMemo(()=>courses.filter(c=>(c.code+c.title+c.description).toLowerCase().includes(query.toLowerCase())),[query])
  if(selected) return <div className="content-wrap lesson-reader">
   <button className="lesson-back" onClick={()=>setSelected(null)}><ArrowLeft size={15}/> Retour à la bibliothèque</button>
-  <div className="lesson-reader-head"><div><div className="eyebrow">BLOC B01 · {selected.code} · VERSION 1.1.0</div><h1>{selected.title}</h1><p>{selected.description}</p></div><div className="lesson-time"><Clock3 size={15}/>{selected.duration}</div></div>
+  <div className="lesson-reader-head"><div><div className="eyebrow">BLOC B01 · {selected.code} · VERSION {selected.version ?? '—'}</div><h1>{selected.title}</h1><p>{selected.description}</p></div><div className="lesson-time"><Clock3 size={15}/>{selected.duration}</div></div>
   <div className="exam-resource-warning"><strong>Contenu original Programme B</strong><span>Cette unité est une première version éditoriale. Elle reste en statut draft jusqu'à la revue mathématique, pédagogique et au test de rendu.</span></div>
   <article className="markdown-card"><ReactMarkdown remarkPlugins={[remarkGfm,remarkMath]} rehypePlugins={[rehypeKatex]}>{selected.content??''}</ReactMarkdown></article>
-  <div className="lesson-provenance"><span>Programme B · Version 1.1.0 · Rédaction indépendante</span><a href="https://github.com/JohnGAB7/Actu-Basics-Programme-B/blob/master/src/content/bloc-01/F01.md" target="_blank" rel="noreferrer">Voir le fichier source <ArrowUpRight size={13}/></a></div>
+  <div className="lesson-provenance"><span>Programme B · Version {selected.version ?? '—'} · Rédaction indépendante</span><a href="https://github.com/JohnGAB7/Actu-Basics-Programme-B/blob/master/src/content/bloc-01/F01.md" target="_blank" rel="noreferrer">Voir le fichier source <ArrowUpRight size={13}/></a></div>
  </div>
  return <div className="content-wrap">
   <div className="page-heading"><div><div className="eyebrow">RESSOURCES PÉDAGOGIQUES · BLOC B01</div><h1>Bibliothèque</h1><p>Le parcours des fondations mathématiques se construit progressivement.</p></div><span className="lesson-count">2 unités en draft · 6 planifiées</span></div>
