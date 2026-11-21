@@ -1,6 +1,6 @@
 # B15 — Carte pédagogique : Apprentissage statistique et machine learning
 
-**Version :** 1.1.0 · **Statut :** seconde passe interne approfondie · laboratoire Python/R en validation CI  
+**Version :** 1.1.0 · **Statut :** seconde passe interne approfondie · laboratoire Python/R publié sur GitHub Pages  
 **Charge indicative :** 56–68 heures  
 **Niveau :** L2–L4 introductif  
 **Prérequis :** B03 algèbre linéaire, B11 inférence, B12 modèles statistiques ; B13 multivarié, B14 causalité et B17 ingénierie recommandés.
