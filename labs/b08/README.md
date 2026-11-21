@@ -33,7 +33,7 @@ Les graines aléatoires sont fixées dans les deux implémentations. Les valeurs
 
 - E01 : p = 0,20 ; n = 100 000.
 - E02 : prévalence = 1 %, sensibilité = 95 %, spécificité = 90 %.
-- E03 : paramètres explicités dans les fonctions et le rapport.
+- E03 : Bernoulli(p = 0,30), exponentielle de taux 2 (moyenne 0,50) et normale standard ; n = 100 000.
 - E04 : X uniforme sur {-2, -1, 1, 2}, Y = X².
 - E05 : Bernoulli(p = 0,30), n = 100 000.
 - E06 : sommes de 40 variables exponentielles de moyenne 1, répétées 10 000 fois.
