@@ -1,6 +1,6 @@
 # B13 — Carte pédagogique : Statistique multivariée et grande dimension
 
-**Version :** 1.3 · **Statut :** correctif mathématique MANOVA MV04 en validation CI ; version 1.2 publiée, revue indépendante à réaliser.
+**Version :** 1.3 · **Statut :** correctif mathématique MANOVA MV04 en validation CI ; revue indépendante et comparaison logicielle à réaliser.
 **Charge indicative :** 52–62 heures (cours, calculs, ateliers et projet)  
 **Niveau :** L1–L3, avec ouverture L4 sur les méthodes de grande dimension  
 **Prérequis :** B03 algèbre linéaire, B08 probabilités, B10 exploration et échantillonnage, B11 inférence, B12 régression. Connaissances R ou Python recommandées.
