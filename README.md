@@ -14,8 +14,8 @@ https://johngab7.github.io/Actu-Basics-Programme-B/
 - Carte pédagogique du Bloc B05 : docs/B05-UNIT-MAP.md
 - Carte pédagogique du Bloc B06 : docs/B06-UNIT-MAP.md
 - Carte pédagogique du Bloc B12 : docs/B12-UNIT-MAP.md
-- Évaluation formative B12 (brouillon) : docs/B12-EVALUATION.md
-- Revue interne initiale B12 : docs/reviews/B12-internal-review.md
+- Évaluation formative B12 v1.1 : docs/B12-EVALUATION.md
+- Revue interne B12 v1.2 : docs/reviews/B12-internal-review.md
 - Évaluation transversale B06 : docs/B06-EVALUATION.md
 - Revue interne B06 : docs/reviews/B06-internal-review.md
 - Évaluation transversale B05 : docs/B05-EVALUATION.md
@@ -49,7 +49,8 @@ L'architecture cible comporte 20 blocs organisés en socle mathématique et comp
 - B09 : S01 à S10 publiées sur GitHub Pages ; carte pédagogique, évaluation formative et première revue interne documentées. CI TypeScript/Vite et validation Markdown/KaTeX réussies ; revue indépendante et tests apprenants restent à conduire.
 - B10 : T01 à T10 publiées sur GitHub Pages ; seconde passe interne, laboratoire reproductible Python/R et cinq expériences interactives fusionnés et déployés. Revue humaine indépendante, tests apprenants et audit d'accessibilité restent à conduire.
 - B11 : I01 à I10 publiées sur GitHub Pages ; seconde passe interne, laboratoire reproductible Python/R et laboratoire interactif quatre expériences déployés. Revue humaine indépendante, tests apprenants et audit d’accessibilité restent à conduire.
-- B12–B20 : architecture cible définie ; contenus à développer, documenter et relire.
+- B12 : R01 à R10 publiées dans le lecteur ; seconde passe mathématique, évaluation révisée à 100 points et laboratoire Python/R en validation sur la [PR #56](https://github.com/JohnGAB7/Actu-Basics-Programme-B/pull/56). La fusion et le déploiement restent à confirmer après CI. Revue humaine indépendante, tests apprenants et audit d'accessibilité à conduire.
+- B13–B20 : architecture cible définie ; contenus à développer, documenter et relire.
 - Le diagnostic interactif est une démonstration formative locale, non certifiante.
 - Aucun compte, historique privé serveur ou examen sécurisé n'est fourni par cette version statique.
 
@@ -73,7 +74,7 @@ Une épreuve formative de synthèse (90 min, 100 points), avec corrigé, est dis
 
 ### Évaluation transversale B10
 
-Une épreuve formative de synthèse (120 min, 100 points), avec corrigé, est disponible dans [`docs/B10-EVALUATION.md`](./docs/B10-EVALUATION.md). La seconde passe interne et le laboratoire Python/R sont en cours d'intégration ; voir [`docs/reviews/B10-internal-review.md`](./docs/reviews/B10-internal-review.md) et [`labs/b10/README.md`](./labs/b10/README.md). Les contrôles CI et la publication de cette consolidation restent à confirmer.
+Une épreuve formative de synthèse (120 min, 100 points), avec corrigé, est disponible dans [`docs/B10-EVALUATION.md`](./docs/B10-EVALUATION.md). La seconde passe interne, le laboratoire Python/R et le laboratoire interactif sont publiés ; voir [`docs/reviews/B10-internal-review.md`](./docs/reviews/B10-internal-review.md) et [`labs/b10/README.md`](./labs/b10/README.md). La revue humaine indépendante, les tests apprenants et l'audit d'accessibilité restent à conduire.
 
 ### Évaluation transversale B09
 
@@ -154,3 +155,8 @@ Dix unités originales (EF01–EF10) sont intégrées au lecteur : identificatio
 ## Bloc B20 — Théorie statistique avancée et méthodes de recherche
 
 Dix unités originales (AT01–AT10) sont intégrées au lecteur : probabilité mesurée et convergence, théorie asymptotique, processus empiriques, vraisemblance et semi-paramétrique, Bayes et MCMC, martingales, grande dimension, optimisation numérique, méthodes de recherche et projet de recherche. La carte pédagogique, l’évaluation formative et la première revue interne sont disponibles dans `docs/B20-UNIT-MAP.md`, `docs/B20-EVALUATION.md` et `docs/reviews/B20-internal-review.md`. Les contenus restent des premières versions de travail ; preuves complètes, contre-exemples, notebooks, vérification indépendante et tests apprenants restent à conduire.
+
+
+## Bloc B12 — Régression et modèles statistiques
+
+Dix unités R01–R10 couvrent régression linéaire, géométrie OLS, inférence et ANOVA, facteurs et interactions, diagnostics, transformations, régularisation, GLM, modèles logistiques et de comptage, puis modèles mixtes et validation. La carte pédagogique v1.2, l'évaluation formative de 100 points et la seconde revue interne sont disponibles dans les documents B12. Le laboratoire Python/R illustre OLS, diagnostics d'influence, ridge/LASSO univariés, logistique, Poisson avec offset et ICC. La consolidation est candidate sur la PR #56 ; la publication de cette seconde passe reste à confirmer après CI et fusion. La revue humaine indépendante, les tests apprenants et l'audit d'accessibilité restent à conduire.

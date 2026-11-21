@@ -1,6 +1,6 @@
 # B12 — Régression et modèles statistiques
 
-**Version :** 0.1.0 · **Statut :** revue interne effectuée — consolidation pédagogique en cours.
+**Version :** 1.2.0 · **Statut :** seconde passe interne approfondie · laboratoire Python/R en validation CI.
 **Public :** licence avancée / master en statistique, mathématiques appliquées, économie quantitative, science des données et actuariat.
 
 ## Finalité
@@ -42,7 +42,7 @@ B10 décrit et explore ; B11 établit les fondements généraux de l'inférence 
 R01–R04 : construction du modèle linéaire. R05 : diagnostics. R06–R07 : flexibilité et contrôle de complexité. R08–R09 : généralisation aux réponses non gaussiennes. R10 : données groupées et validation.
 
 ## Évaluation formative
-120 minutes / 100 points : OLS et interprétation (20), géométrie/rang (10), inférence/ANOVA (15), facteurs/interactions (10), diagnostics (10), transformation/régularisation (10), GLM (15), validation/modèles mixtes (10). Corrigé détaillé à stabiliser avant publication finale.
+120 minutes / 100 points : interprétation (10), OLS (10), géométrie/rang (10), inférence/ANOVA (15), interactions (10), diagnostics (10), transformation/régularisation (10), GLM (15), validation/modèles mixtes (10). L'évaluation comporte neuf questions ; corrigé indicatif à tester auprès d'apprenants.
 
 ## Sources de cadrage
 - Penn State STAT 501, Regression Methods: https://online.stat.psu.edu/stat501/
@@ -53,3 +53,30 @@ R01–R04 : construction du modèle linéaire. R05 : diagnostics. R06–R07 : fl
 - Gelman & Hill, *Data Analysis Using Regression and Multilevel/Hierarchical Models*.
 
 Ces références orientent le cadrage ; leur mention ne constitue ni validation externe ni accréditation. Les sections réellement consultées seront consignées dans la revue approfondie.
+
+## Seconde passe mathématique et ressources vérifiées
+
+- R02–R03 : conditions de Gauss–Markov, rang, normalité pour l'inférence exacte, test F partiel et comparaison de modèles emboîtés.
+- R05 : résidus studentisés internes, levier, distance de Cook et covariance sandwich HC0 ; les diagnostics ne sont pas des règles automatiques de suppression.
+- R06 : correction de retransformation log ; sous erreur normale, la moyenne conditionnelle inclut le facteur $e^{\sigma^2/2}$.
+- R07 : AIC/BIC, validation croisée imbriquée et convention de pénalisation ridge/LASSO.
+- R08 : schéma IRLS et définition de la déviance.
+- R09 : séparation logistique, quasi-Poisson et variance binomiale négative.
+- R10 : covariance marginale, ICC, ML/REML et ajustements singuliers.
+
+Sources institutionnelles consultées :
+- [Penn State STAT 501 — Regression Methods](https://online.stat.psu.edu/stat501/index) : OLS, ANOVA, diagnostics, facteurs, transformations, sélection, multicolinéarité, logistic.
+- [Penn State STAT 504 — Analysis of Discrete Data](https://online.stat.psu.edu/statprogram/stat504) : GLM, logit, Poisson, diagnostics et données discrètes.
+- [Penn State STAT 504 — Poisson regression and offsets](https://online.stat.psu.edu/stat504/Lesson09) : comptages, taux et exposition.
+- [Penn State STAT 462 — Generalized Linear Models](https://online.stat.psu.edu/stat462/node/211/) : famille GLM et liens usuels.
+- [UCLA OARC — ICC in linear multilevel models](https://stats.oarc.ucla.edu/wp-content/uploads/2024/12/effect_sizes_linear_multilevel_simple.html) : variance inter/intra-groupe et ICC.
+
+Ces ressources servent de repères et de vérification ciblée ; elles ne valident pas le cours original.
+
+
+## Compléments de seconde passe v1.2
+
+- R04 : codage des facteurs par g−1 indicatrices, choix de référence et contrastes, interactions facteur-continu, principe hiérarchique et centrage.
+- Évaluation : neuf questions et répartition de points recalculées à 100, alignées avec les compétences et la durée indiquées.
+- Laboratoire : contrôles de convergence Newton/IRLS, garde-fous sur les paramètres d'itération, gestion explicite du cas Poisson tout-zéro et validations d'entrées finies.
+- Limites documentées : laboratoire univarié pédagogique, non destiné à remplacer les implémentations statistiques généralistes.
