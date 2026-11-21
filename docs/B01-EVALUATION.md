@@ -1,6 +1,6 @@
 # Évaluation transversale — Bloc B01
 
-**Programme B · Version 1.0 · Statut : draft — outil formatif à tester**  
+**Programme B · Version 1.0 · Statut : revue interne effectuée — consolidation pédagogique en cours.
 **Durée indicative :** 90 minutes · **Barème :** 100 points · **Calculatrice :** autorisée, sauf indication contraire.
 
 Cette épreuve vérifie les acquis fondamentaux des unités F01 à F08. Elle évalue autant la qualité du raisonnement que le résultat numérique. Toute réponse doit préciser les domaines, les unités et les hypothèses pertinentes. Un résultat sans justification peut ne recevoir qu'une partie des points.
