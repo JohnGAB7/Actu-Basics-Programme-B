@@ -17,19 +17,20 @@ Rscript labs/b13/multivariate_lab.R
 1. Matrices de covariance et de corrélation, symétrie et unités.
 2. Décomposition spectrale d'une matrice symétrique par Jacobi ; ACP, valeurs propres, vecteurs propres, scores et variance expliquée.
 3. Distance de Mahalanobis et statistique T² de Hotelling avec transformation F (sans calcul de p-value).
-4. Shrinkage de covariance vers une cible sphérique, avec poids λ explicite.
-5. K-means déterministe avec initialisations multiples, centroïdes, étiquettes, inertie et indicateur de convergence.
-6. Borne de rang de la covariance empirique centrée lorsque p/n est élevé.
+4. Transformation F de Roy : cas exacts p=1 ou q=1, borne supérieure sinon, degrés de liberté et sens de la borne sur la p-value.
+5. Shrinkage de covariance vers une cible sphérique, avec poids λ explicite.
+6. K-means déterministe avec initialisations multiples, centroïdes, étiquettes, inertie et indicateur de convergence.
+7. Borne de rang de la covariance empirique centrée lorsque p/n est élevé.
 
 ## Hypothèses et limites
 
 - La covariance empirique utilise le diviseur n−1 et suppose des observations complètes ; les données manquantes ne sont pas imputées automatiquement.
 - La décomposition de Jacobi est destinée aux petites matrices symétriques ; elle ne remplace pas LAPACK/BLAS pour les grandes dimensions.
-- La statistique T² suppose des vecteurs indépendants issus d'une population normale multivariée et n>p ; sa transformation en F est exacte sous H0 et S inversible. Le laboratoire ne calcule pas la p-value.
+- La statistique T² suppose des vecteurs indépendants issus d'une population normale multivariée et n>p ; sa transformation en F est exacte sous H0 et S inversible. Le helper Roy exige v≥p pour que E puisse être inversible et distingue les cas exacts de la borne. Le laboratoire ne calcule pas la p-value.
 - La distance de Mahalanobis exige une covariance inversible et bien conditionnée ; un résultat numérique n'établit pas la normalité ni l'absence de contamination.
 - Le shrinkage vers la cible sphérique illustre le compromis biais-variance ; λ est fourni par l'utilisateur et n'est pas estimé automatiquement (Ledoit–Wolf/OAS non implémentés).
 - K-means optimise une inertie euclidienne et peut converger vers un optimum local ; plusieurs initialisations réduisent la dépendance à l'initialisation sans garantir l'optimum global.
-- MANOVA, analyse factorielle, corrélation canonique, LDA/QDA et méthodes de clustering par densité restent traitées dans le cours mais ne sont pas implémentées comme fonctions génériques dans ce laboratoire.
+- Le laboratoire inclut un helper ciblé pour la transformation F de Roy et ses cas exacts/bornés, testé contre le cas univarié. Il n'implémente pas un moteur complet d'estimation MANOVA ; analyse factorielle, corrélation canonique, LDA/QDA et méthodes de clustering par densité restent traitées dans le cours mais ne sont pas implémentées comme fonctions génériques.
 - Les données synthétiques n'établissent aucune causalité ni validité sur un portefeuille réel.
 
 ## Fichiers

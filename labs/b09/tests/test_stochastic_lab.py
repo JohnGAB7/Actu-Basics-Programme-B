@@ -56,6 +56,20 @@ class StochasticLabTests(unittest.TestCase):
         self.assertEqual(len(path), 101)
         self.assertTrue(all(abs(path[i + 1] - path[i]) == 1 for i in range(100)))
 
+    def test_non_finite_inputs_are_rejected(self):
+        with self.assertRaises(ValueError):
+            stationary_two_state(float('nan'), 0.3)
+        with self.assertRaises(ValueError):
+            simulate_poisson_arrivals(float('inf'), 1)
+        with self.assertRaises(ValueError):
+            simulate_renewal_count(2, float('nan'))
+        with self.assertRaises(ValueError):
+            poisson_pmf(2, float('nan'))
+        with self.assertRaises(ValueError):
+            simulate_brownian_path(float('nan'), 10)
+        with self.assertRaises(ValueError):
+            quadratic_variation([0.0, float('nan')])
+
     def test_brownian_quadratic_variation(self):
         path = simulate_brownian_path(1, 10000, random.Random(2026))
         self.assertEqual(path, simulate_brownian_path(1, 10000, random.Random(2026)))

@@ -1,8 +1,8 @@
 # B10 — Carte pédagogique : statistique descriptive, échantillonnage et exploration
 
-**Statut :** seconde passe interne effectuée · laboratoire reproductible intégré · revue indépendante à venir.
+**Statut :** première revue mathématique transversale en cours ; T06 clarifiée, CI à confirmer ; revue indépendante à venir.
 
-**Version :** 1.1 · 21 novembre 2026  
+**Version :** 1.2 · 21 novembre 2026  
 **Charge indicative :** 47–57 heures  
 **Prérequis :** B01–B02 et probabilités introductives de B08. Les unités T03–T04 mobilisent probabilité conditionnelle et espérance ; les autres restent accessibles avec les bases de calcul et de représentation.
 

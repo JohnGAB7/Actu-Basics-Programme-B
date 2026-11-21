@@ -27,6 +27,8 @@ class InferenceLabTests(unittest.TestCase):
     def test_poisson_mle_and_boundary(self):
         out = poisson_mle([0, 1, 2, 1, 3, 2])
         self.assertEqual(out["estimate"], 1.5)
+        self.assertAlmostEqual(out["variance_of_observation_under_model"], 1.5)
+        self.assertAlmostEqual(out["variance_of_mle_under_model"], .25)
         self.assertAlmostEqual(out["variance_estimate_under_model"], .25)
         self.assertEqual(poisson_mle([0, 0])["boundary_supremum_at_zero"], 1)
 

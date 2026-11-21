@@ -67,3 +67,66 @@ Les anciens statuts « draft » de cette première passe décrivaient l'absence 
 - PR [#68](https://github.com/JohnGAB7/Actu-Basics-Programme-B/pull/68) fusionnée ; commit `840086855a772d0a15f1770a3e04237e7a024fd6`.
 - PR #60 fermée après vérification de l'intégration MV04 dans master.
 - Déploiement master [#44959748131](https://github.com/JohnGAB7/Actu-Basics-Programme-B/actions/runs/44959748131) réussi : tests Python/R B08–B20, build, typecheck, KaTeX et GitHub Pages.
+
+
+## Revue mathématique B08 — 21 novembre 2026
+
+- Rapport : [B08-mathematical-review.md](B08-mathematical-review.md).
+- P01–P10 relues sur les axiomes, Bayes, indépendance, lois, transformations, covariance, espérance conditionnelle, inégalités, convergence, LLN/TCL.
+- Aucun défaut mathématique bloquant identifié dans cette première passe ; P05, P09 et P10 enrichies ; références S161–S163 ajoutées.
+- Recalcul exhaustif des exercices, revue humaine indépendante et tests apprenants restent à réaliser.
+
+
+## Revue mathématique B09 — 21 novembre 2026
+
+- Rapport : [B09-mathematical-review.md](B09-mathematical-review.md).
+- S01–S10 relues : processus, chaînes de Markov, récurrence, stationnarité, absorption, Poisson, renouvellement, martingales, CTMC/M/M/1 et brownien.
+- Aucun défaut mathématique bloquant identifié dans cette première passe ; références MIT S164–S166 ajoutées et reliées aux unités.
+- Recalcul exhaustif des corrigés, tests numériques des cas limites, revue humaine indépendante et tests apprenants restent à réaliser.
+
+
+## Revue méthodologique B10 — 21 novembre 2026
+
+- Rapport : [B10-mathematical-review.md](B10-mathematical-review.md).
+- T01–T10 relues : population/échelles, qualité, sondage, HT/Hájek, distributions empiriques, mesures robustes, graphiques, associations, données manquantes et EDA.
+- Aucun défaut mathématique bloquant identifié ; l'exemple de variance sous sondage aléatoire simple a été recalculé ; T06 clarifie la portée de Tchebychev ; sources S167–S168 ajoutées.
+- Comparaison à un logiciel de sondage, recalcul exhaustif des corrigés, tests apprenants et revue humaine indépendante restent requis.
+
+
+## Revue mathématique B11 — 21 novembre 2026
+
+- Rapport : [B11-mathematical-review.md](B11-mathematical-review.md).
+- I01–I10 relues : pivots, estimation, vraisemblance, Fisher, delta, Rao–Blackwell, CRLB, intervalles, tests, puissance, multiplicité, LR/Wald/score, bootstrap, permutation et Bayes.
+- Aucun défaut mathématique bloquant identifié dans cette première passe ; S169–S170 ajoutées pour bootstrap et Bayes et reliées aux unités.
+- Simulations de taille/couverture, recalcul exhaustif des corrigés, comparaison logicielle, tests apprenants et revue humaine indépendante restent à réaliser.
+
+
+## Revue mathématique B12 — 21 novembre 2026
+
+- Rapport : [B12-mathematical-review.md](B12-mathematical-review.md).
+- R01–R10 relues : OLS/Gauss–Markov, inférence t/F, contrastes/interactions, diagnostics/Cook/HC0, retransformation, AIC/BIC/régularisation, GLM/IRLS, logit/Poisson et modèles mixtes.
+- Aucun défaut mathématique bloquant identifié ; R09 précise la limite AIC/quasi-Poisson, R10 explicite l'exogénéité des effets aléatoires ; sources S61, S64–S66 et S79 reliées aux unités.
+- Tests numériques de cas limites, comparaison aux bibliothèques, recalcul exhaustif des corrigés, tests apprenants et revue humaine indépendante restent requis.
+
+
+## Revue mathématique B13 — 21 novembre 2026
+
+- Rapport : [B13-mathematical-review.md](B13-mathematical-review.md).
+- MV01–MV10 relues : covariance, Mahalanobis, Hotelling T², MANOVA, ACP, facteurs, corrélation canonique, LDA/QDA, clustering et grande dimension.
+- Une erreur importante de la première version de Roy a été détectée : le cas p=1,q>1 utilisait à tort la formule exacte du cas q=1. MV04 est corrigée par la formule d=max(p,q), F=Θ(v−d+q)/d ; exact si min(p,q)=1, borne supérieure sinon. Contrôle de réduction à l'ANOVA univariée ajouté.
+- S158–S160 sont reliées à MV04 ; S67–S71 aux autres unités. L'évaluation formative inclut les quatre critères et la prudence sur la borne de Roy.
+- Comparaison à R/SAS/Stata, recalcul des corrigés, tests apprenants et revue humaine indépendante restent requis.
+
+
+**Contrôle additionnel B13 :** helper `roy_f_bound` ajouté au laboratoire Python/R ; tests des deux cas exacts (p=1 ou q=1) et d'un cas de borne ; CI à confirmer.
+
+
+## Revue complémentaire des laboratoires B08–B13 — 21 novembre 2026
+
+- B08 : convention de variance empirique n alignée entre Python/R.
+- B09 : validation des paramètres non finis alignée ; tests NaN/Inf ajoutés pour éviter les entrées invalides et simulations non terminantes.
+- B10 : Python traite désormais None/NaN comme manquants, aligné sur R ; Inf reste invalide.
+- B11 : variance de l'observation Poisson et variance de l'EMV distinguées explicitement dans les sorties Python/R.
+- B12 : convention de pénalisation Ridge/LASSO explicitée et testée analytiquement en Python/R.
+- B13 : helper Roy Python/R et tests exacts/bornés, dont la condition v≥p pour E inversible.
+- Les rapports mathématiques B08–B13 intègrent les constats de laboratoire. Comparaison complète à SciPy/statsmodels/R packages/SAS/Stata et validation indépendante restent à conduire.

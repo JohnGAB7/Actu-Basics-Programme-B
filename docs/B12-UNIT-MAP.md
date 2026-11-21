@@ -1,6 +1,6 @@
 # B12 — Régression et modèles statistiques
 
-**Version :** 1.2.0 · **Statut :** seconde passe interne approfondie · laboratoire Python/R publié sur GitHub Pages.
+**Version :** 1.3.0 · **Statut :** première revue mathématique approfondie en cours ; précisions R09/R10 intégrées, CI à confirmer.
 **Public :** licence avancée / master en statistique, mathématiques appliquées, économie quantitative, science des données et actuariat.
 
 ## Finalité

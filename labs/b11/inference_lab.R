@@ -20,7 +20,8 @@ wilson_interval <- function(x,n,alpha=.05) {
 }
 poisson_mle <- function(x) {
   if(length(x)==0 || any(!is.finite(x)) || any(x<0) || any(x!=floor(x))) stop("Counts must be non-negative integers")
-  c(n=length(x),estimate=mean(x),variance_estimate_under_model=sum(x)/length(x)^2,
+  c(n=length(x),estimate=mean(x),variance_of_observation_under_model=mean(x),
+    variance_of_mle_under_model=sum(x)/length(x)^2,variance_estimate_under_model=sum(x)/length(x)^2,
     boundary_supremum_at_zero=as.numeric(sum(x)==0))
 }
 beta_binomial_update <- function(x,n,a,b) {
@@ -62,7 +63,10 @@ z_test_sample_size <- function(effect,sigma,alpha=.05,target_power=.8) {
 stopifnot(abs(exact_binomial_pvalue(10,10,.5)-2/1024)<1e-12)
 stopifnot(abs(wilson_interval(7,10)[1]-.3968)<.001)
 stopifnot(abs(wilson_interval(7,10)[2]-.8922)<.001)
-stopifnot(abs(poisson_mle(c(0,1,2,1,3,2))["estimate"]-1.5)<1e-12)
+pm <- poisson_mle(c(0,1,2,1,3,2))
+stopifnot(abs(pm["estimate"]-1.5)<1e-12,
+          abs(pm["variance_of_observation_under_model"]-1.5)<1e-12,
+          abs(pm["variance_of_mle_under_model"]-.25)<1e-12)
 bb <- beta_binomial_update(7,10,1,1)
 stopifnot(abs(bb["posterior_mean"]-2/3)<1e-12)
 stopifnot(z_test_sample_size(3,10)==88)

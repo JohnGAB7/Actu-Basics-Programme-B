@@ -30,7 +30,7 @@ La navigation du Learning Studio comprend « Laboratoire B11 » avec quatre exp�
 
 - Le test binomial exact suppose des essais Bernoulli indépendants de même probabilité sous H0. La définition bilatérale utilisée est celle de l'ordre des probabilités ; elle peut différer de deux fois la plus petite queue.
 - Wilson est un intervalle score avec approximation normale ; il n'est pas un intervalle exact binomial.
-- La variance de l'EMV Poisson est évaluée sous le modèle au paramètre estimé (estimateur plug-in), pas une variance universelle garantie.
+- Sous Poisson(λ), Var(X)=λ ; pour l'EMV λ̂= X̄ sur n observations, Var(λ̂)=λ/n. Le laboratoire distingue la variance de l'observation (plug-in λ̂) et celle de l'EMV (plug-in λ̂/n).
 - Le bootstrap percentile implémenté est élémentaire et suppose un échantillon i.i.d. ; les plans stratifiés, grappes et séries temporelles nécessitent un rééchantillonnage adapté.
 - Le test de permutation est valide lorsque l'échangeabilité sous le nul et le schéma de permutation sont justifiés. Les observations appariées, groupées ou stratifiées nécessitent des permutations contraintes.
 - La p-value Monte-Carlo utilise (b+1)/(B+1), où b est le nombre de permutations au moins aussi extrêmes ; elle n'est jamais nulle. L'erreur-type affichée est une approximation binomiale.

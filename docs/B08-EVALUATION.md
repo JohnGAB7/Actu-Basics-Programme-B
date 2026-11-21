@@ -1,6 +1,6 @@
 # B08 — Évaluation formative transversale
 
-**Durée :** 120 minutes · **Barème :** 100 points · **Statut :** Revue interne effectuée — consolidation pédagogique en cours.
+**Durée :** 120 minutes · **Barème :** 100 points · **Version :** 1.2 · **Statut :** évaluation formative ; revue mathématique des unités B08 en cours, tests apprenants à réaliser.
 
 ## Exercice 1 — Axiomes et union (10 points)
 P(A)=0,45, P(B)=0,35 et P(A∩B)=0,15. Calculer P(A∪B) et P(Aᶜ).

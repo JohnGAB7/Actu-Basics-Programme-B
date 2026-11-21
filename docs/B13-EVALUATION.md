@@ -1,6 +1,6 @@
 # B13 — Évaluation formative de synthèse
 
-**Version :** 1.2 · **Total :** 100 points · **Statut :** seconde passe et complément MANOVA publiés avec le bloc ; test apprenant et revue indépendante à réaliser.
+**Version :** 1.3 · **Total :** 100 points · **Statut :** complément MANOVA révisé pour intégrer la correction de Roy ; validation CI à confirmer, test apprenant et revue indépendante à réaliser.
 Cette évaluation vérifie les concepts du bloc. Elle ne constitue ni examen certifiant ni preuve de validation académique indépendante.
 
 ## Partie A — Fondements (20 points)
@@ -11,7 +11,7 @@ Cette évaluation vérifie les concepts du bloc. Elle ne constitue ni examen cer
 
 ## Partie B — Inférence et modèles (20 points)
 5. (8 pts) Décrire le test T² de Hotelling pour une moyenne vectorielle : hypothèses, statistique et transformation en loi F sous normalité multivariée et S inversible.
-6. (6 pts) Expliquer la différence entre une MANOVA et une série de tests ANOVA séparés.
+6. (6 pts) Expliquer la différence entre une MANOVA et une série de tests ANOVA séparés ; citer Wilks, Pillai, Hotelling–Lawley et Roy, et préciser pourquoi la borne F de Roy doit être interprétée avec prudence.
 7. (6 pts) Une MANOVA est significative. Quelles analyses de suivi sont possibles et quelles précautions de multiplicité faut-il prendre ?
 
 ## Partie C — Réduction dimensionnelle (25 points)
@@ -37,7 +37,7 @@ Cette évaluation vérifie les concepts du bloc. Elle ne constitue ni examen cer
 3. Les marges ne déterminent pas la dépendance jointe ; plusieurs copules/dépendances sont possibles pour des marges identiques.
 4. Covariance si les unités ont un sens comparable ou si l'échelle réelle importe ; corrélation si les échelles diffèrent et si l'on souhaite une contribution initiale standardisée. La décision dépend du contexte.
 5. \(T^2=n(\bar X-\mu_0)^TS^{-1}(\bar X-\mu_0)\) ; sous H0, normalité multivariée, indépendance et n>p, \((n-p)T^2/[p(n-1)]\sim F_{p,n-p}\).
-6. MANOVA teste une hypothèse globale sur le vecteur des moyennes et prend en compte les covariances ; ANOVA séparées fragmentent l'analyse et accroissent le problème de multiplicité.
+6. MANOVA teste une hypothèse globale sur le vecteur des moyennes et prend en compte les covariances ; Wilks résume le déterminant, Pillai la trace de H rapportée à H+E, Hotelling–Lawley la trace E⁻¹H et Roy la plus grande racine. La F de Roy est une borne supérieure hors cas exacts, donc sa p-value est une borne inférieure et peut être trop optimiste.
 7. Contrastes prévus, tests univariés ou comparaisons post-hoc avec ajustement (Holm, Bonferroni ou autre méthode justifiée), tailles d'effet et intervalles.
 8. Maximiser \(v^TSv\) sous \(v^Tv=1\) ; le multiplicateur de Lagrange conduit à \(Sv=\lambda v\), la solution maximale étant le vecteur propre de plus grande valeur propre.
 9. ACP résume la variance totale par projections orthogonales ; l'analyse factorielle modélise la covariance commune via facteurs latents et variances spécifiques.

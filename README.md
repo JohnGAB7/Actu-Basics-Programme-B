@@ -28,7 +28,7 @@ Les codes publics des unités sont uniques à l'échelle du programme (par exemp
 | B10 | Statistique descriptive et échantillonnage | [Carte](docs/B10-UNIT-MAP.md) · [Évaluation](docs/B10-EVALUATION.md) | Seconde passe et laboratoires Python/R/interactif publiés |
 | B11 | Inférence statistique | [Carte](docs/B11-UNIT-MAP.md) · [Évaluation](docs/B11-EVALUATION.md) | Seconde passe et laboratoires Python/R/interactif publiés |
 | B12 | Régression et modèles statistiques | [Carte](docs/B12-UNIT-MAP.md) · [Évaluation](docs/B12-EVALUATION.md) | Seconde passe et laboratoire Python/R publiés |
-| B13 | Statistique multivariée | [Carte](docs/B13-UNIT-MAP.md) · [Évaluation](docs/B13-EVALUATION.md) | Seconde passe et complément MANOVA publiés après CI complète ; revue indépendante à réaliser |
+| B13 | Statistique multivariée | [Carte](docs/B13-UNIT-MAP.md) · [Évaluation](docs/B13-EVALUATION.md) | Correctif mathématique MANOVA v1.3 en validation CI ; version précédente publiée, revue indépendante à réaliser |
 | B14 | Plans d'expérience et causalité | [Carte](docs/B14-UNIT-MAP.md) · [Évaluation](docs/B14-EVALUATION.md) | Seconde passe et laboratoire Python/R publiés |
 | B15 | Machine learning | [Carte](docs/B15-UNIT-MAP.md) · [Évaluation](docs/B15-EVALUATION.md) | Seconde passe et laboratoire Python/R publiés |
 | B16 | Séries temporelles | [Carte](docs/B16-UNIT-MAP.md) · [Évaluation](docs/B16-EVALUATION.md) | Seconde passe et laboratoire Python/R publiés |
@@ -60,6 +60,7 @@ La CI principale vérifie :
 - [Protocole de revue académique](docs/ACADEMIC-REVIEW-PROTOCOL.md)
 - [Registre des revues internes](docs/reviews/PROGRAMME-B-INTERNAL-REVIEW-REGISTER.md)
 - [Revue transversale du cursus](docs/reviews/PROGRAMME-B-CROSS-BLOCK-AUDIT-2026-11-21.md)
+- Revues mathématiques approfondies : [B08](docs/reviews/B08-mathematical-review.md) · [B09](docs/reviews/B09-mathematical-review.md) · [B10](docs/reviews/B10-mathematical-review.md) · [B11](docs/reviews/B11-mathematical-review.md) · [B12](docs/reviews/B12-mathematical-review.md) · [B13](docs/reviews/B13-mathematical-review.md)
 - [Standards éditoriaux](docs/EDITORIAL-STANDARDS.md)
 - [Modèle de contenu et identifiants](docs/CONTENT-MODEL.md)
 - [Spécification du moteur d'évaluation](docs/ASSESSMENT-ENGINE.md)

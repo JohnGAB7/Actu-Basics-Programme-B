@@ -377,3 +377,50 @@ Les ressources S148–S157 complètent le cadrage. S139 est réutilisée depuis 
 | S160 | UCLA Statistical Consulting — MANOVA, Stata Annotated Output : https://stats.oarc.ucla.edu/stata/output/manova/ | Lecture des statistiques, degrés de liberté, p-values et borne F de Roy | MV04 ; interprétation des sorties logicielles |
 
 Les références S158–S160 complètent les références multivariées déjà présentes. Les sorties logicielles et les approximations F doivent être interprétées selon le modèle et les degrés de liberté ; elles ne valident pas automatiquement une analyse sous mesures répétées ou modèle mixte.
+
+
+## B08 — références de fondations probabilistes
+
+| ID | Ressource | Domaines utiles | Utilisation |
+|---|---|---|---|
+| S161 | MIT OpenCourseWare — 6.041SC, *Probabilistic Systems Analysis and Applied Probability* (Fall 2013) : https://ocw.mit.edu/courses/6-041sc-probabilistic-systems-analysis-and-applied-probability-fall-2013/ | Modèles probabilistes, axiomes, conditionnement, indépendance, variables aléatoires, processus et théorèmes limites | P01–P10 ; référence de cours structurée avec notes, problèmes et examens |
+| S162 | MIT OpenCourseWare — 18.05, *Introduction to Probability and Statistics* (Spring 2022) : https://ocw.mit.edu/courses/18-05-introduction-to-probability-and-statistics-spring-2022/ | Combinatoire, lois, Bayes, tests, intervalles et régression | P01–P08 ; référence complémentaire de probabilités et statistique introductives |
+
+Les références MIT complètent S03, S46 et S107. Elles servent de références pédagogiques et de comparaison de périmètre ; elles ne valident pas automatiquement les démonstrations ou corrigés du programme.
+
+
+| S163 | MIT OpenCourseWare — 18.175, *Theory of Probability*, Lecture 16: Berry–Esseen theorem : https://ocw.mit.edu/courses/18-175-theory-of-probability-spring-2014/59f08b62c812d8f6414c51455aebfd96_MIT18_175S14_Lecture16.pdf | Borne uniforme de Berry–Esseen, hypothèses de troisième moment et vitesse $n^{-1/2}$ | P10 ; quantification de l'erreur d'approximation normale |
+
+
+## B09 — références de fondations des processus stochastiques
+
+| ID | Ressource | Domaines utiles | Utilisation |
+|---|---|---|---|
+| S164 | MIT OpenCourseWare — 18.445, *Introduction to Stochastic Processes* (Spring 2015) : https://ocw.mit.edu/courses/18-445-introduction-to-stochastic-processes-spring-2015/ | Chaînes de Markov, marches aléatoires, martingales et processus de branchement | S01–S05 et S08 ; référence de niveau graduate |
+| S165 | MIT OpenCourseWare — 6.262, *Discrete Stochastic Processes* (Spring 2011) : https://ocw.mit.edu/courses/6-262-discrete-stochastic-processes-spring-2011/ | Chaînes discrètes, processus de Poisson, files et modèles stochastiques | S02–S07 et S09 ; notes et exercices |
+| S166 | MIT OpenCourseWare — 15.070J, *Advanced Stochastic Processes* (Fall 2013) : https://ocw.mit.edu/courses/15-070j-advanced-stochastic-processes-fall-2013/ | Mesure, filtrations, martingales, arrêt optionnel, brownien, calcul d'Itô, limites fonctionnelles et applications en assurance/queues | S08–S10 ; référence avancée et comparaison de périmètre |
+
+Les cours MIT sont des références de périmètre et de profondeur ; leurs syllabi ne constituent pas une validation indépendante des leçons Programme B.
+
+
+## B10 — références de statistique descriptive et d'échantillonnage
+
+| ID | Ressource | Domaines utiles | Utilisation |
+|---|---|---|---|
+| S167 | NIST/SEMATECH — *e-Handbook of Statistical Methods*, chapitre 1, Exploratory Data Analysis : https://www.itl.nist.gov/div898/handbook/eda/eda.htm | Qualité des données, distributions, graphiques, valeurs atypiques, analyses exploratoires et études de cas | T01–T02, T05–T10 ; référence institutionnelle appliquée |
+| S168 | MIT OpenCourseWare — 15.075J, *Statistical Thinking and Data Analysis* (Fall 2011) : https://ocw.mit.edu/courses/15-075j-statistical-thinking-and-data-analysis-fall-2011/ | Collecte, sondage, échantillonnage, résumé descriptif, distribution, corrélation et statistique appliquée | T01–T10 ; référence de cours avec notes, devoirs et examens |
+
+Les ressources S167–S168 cadrent les méthodes descriptives et les plans de sondage ; elles ne remplacent pas la vérification des conventions exactes des estimateurs de sondage dans les leçons.
+
+
+## B11 — références complémentaires pour bootstrap et Bayes
+
+| ID | Ressource | Domaines utiles | Utilisation |
+|---|---|---|---|
+| S169 | Efron, Bradley & Tibshirani, Robert J. — *An Introduction to the Bootstrap*, Chapman & Hall/CRC, 1993/1994 : https://www.routledge.com/An-Introductionto-the-Bootstrap/Efron-Tibshirani/p/book/9780429246593 | Bootstrap non paramétrique, erreur-type, intervalles percentile et BCa, tests par permutation | I09 ; référence méthodologique de rééchantillonnage |
+| S170 | Gelman, Andrew et al. — *Bayesian Data Analysis*, 3e éd., Chapman & Hall/CRC, 2013 : https://www.routledge.com/Bayesian-Data-Analysis-Third-Edition/Gelman-Carlin-Stern-Dunson-Vehtari/p/book/9781439840955 | Inférence bayésienne, modèle hiérarchique, prédictive, diagnostic et validation | I10 ; référence de fond bayésienne |
+
+
+| S171 | SAS Institute — SAS/STAT 14.1 User’s Guide, Multivariate Tests : https://support.sas.com/documentation/cdl/en/statug/68162/HTML/default/statug_introreg_sect038.htm | Transformations F des critères MANOVA et borne supérieure de Roy ; option de calcul exact | MV04 ; comparaison de la transformation de Roy et de ses degrés de liberté |
+
+**Note de cohérence S159/S171 :** la formule exacte imprimée dans le manuel Stata pour le cas « p ou νh = 1 » doit être maniée avec prudence lorsque p=1 et νh>1 : telle qu'elle est écrite, elle ne se réduit pas à l'ANOVA univariée (F=Θv/νh). La formule de borne SAS, F=Θ(v−d+νh)/d avec d=max(p,νh), donne bien cette réduction pour p=1. La dérivation scalaire est retenue pour le cas p=1 ; la comparaison directe à Stata reste explicitement à effectuer avant toute affirmation de compatibilité logicielle.

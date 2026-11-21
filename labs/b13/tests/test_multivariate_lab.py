@@ -3,7 +3,7 @@ import unittest
 from labs.b13.multivariate_lab import (
     correlation_matrix, covariance_matrix, covariance_rank_bound,
     hotelling_one_sample, jacobi_eigen_symmetric, kmeans,
-    mahalanobis_squared, pca, shrinkage_covariance,
+    mahalanobis_squared, pca, roy_f_bound, shrinkage_covariance,
 )
 
 
@@ -59,6 +59,34 @@ class MultivariateLabTests(unittest.TestCase):
     def test_rank_bound(self):
         self.assertEqual(covariance_rank_bound(5,10),4)
         self.assertEqual(covariance_rank_bound(20,3),3)
+
+
+    def test_roy_f_exact_univariate_response(self):
+        result = roy_f_bound(0.4, p=1, q=2, v=30)
+        self.assertAlmostEqual(result["f_statistic"], 6.0)
+        self.assertEqual((result["df1"], result["df2"]), (2, 30))
+        self.assertTrue(result["is_exact"])
+        self.assertFalse(result["is_upper_bound"])
+
+    def test_roy_f_exact_rank_one_hypothesis(self):
+        result = roy_f_bound(0.4, p=3, q=1, v=30)
+        self.assertAlmostEqual(result["f_statistic"], 0.4 * 28 / 3)
+        self.assertEqual((result["df1"], result["df2"]), (3, 28))
+        self.assertTrue(result["is_exact"])
+
+    def test_roy_f_is_upper_bound_otherwise(self):
+        result = roy_f_bound(0.4, p=2, q=3, v=30)
+        self.assertAlmostEqual(result["f_statistic"], 4.0)
+        self.assertTrue(result["is_upper_bound"])
+        self.assertTrue(result["p_value_is_lower_bound"])
+
+    def test_roy_f_rejects_invalid_degrees_of_freedom(self):
+        with self.assertRaises(ValueError):
+            roy_f_bound(0.4, p=0, q=2, v=30)
+        with self.assertRaises(ValueError):
+            roy_f_bound(0.4, p=3, q=1, v=2)
+        with self.assertRaises(ValueError):
+            roy_f_bound(0.4, p=3, q=2, v=2)
 
     def test_invalid_inputs(self):
         with self.assertRaises(ValueError):

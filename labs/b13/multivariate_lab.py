@@ -267,3 +267,26 @@ if __name__ == "__main__":
     print("Shrinkage:",shrinkage_covariance(covariance_matrix(data),.2))
     groups=[[0,0],[0,1],[1,0],[10,10],[10,11],[11,10]]
     print("K-means:",kmeans(groups,2))
+
+
+def roy_f_bound(theta: float, p: int, q: int, v: int) -> dict[str, object]:
+    """Roy F transformation: exact when min(p,q)=1; otherwise an upper bound."""
+    if (not math.isfinite(theta) or theta < 0 or
+        not isinstance(p, int) or not isinstance(q, int) or not isinstance(v, int) or
+        p < 1 or q < 1 or v < 1):
+        raise ValueError("theta must be finite/non-negative and p, q, v positive integers")
+    if v < p:
+        raise ValueError("residual degrees of freedom must be at least p for E to be invertible")
+    d = max(p, q)
+    df2 = v - d + q
+    if df2 <= 0:
+        raise ValueError("denominator degrees of freedom must be positive")
+    exact = min(p, q) == 1
+    return {
+        "f_statistic": theta * df2 / d,
+        "df1": d,
+        "df2": df2,
+        "is_exact": exact,
+        "is_upper_bound": not exact,
+        "p_value_is_lower_bound": not exact,
+    }

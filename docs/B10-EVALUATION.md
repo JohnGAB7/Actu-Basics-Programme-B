@@ -1,6 +1,6 @@
 # B10 — Évaluation formative transversale
 
-**Durée :** 120 minutes · **Barème :** 100 points · **Statut :** Seconde passe interne effectuée · épreuve formative à tester auprès d'apprenants.
+**Durée :** 120 minutes · **Barème :** 100 points · **Version :** 1.2 · **Statut :** évaluation formative ; test apprenant et revue indépendante à réaliser.
 
 ## Exercice 1 — Population et mesure (10 points)
 Une base contient une ligne par sinistre et un identifiant de contrat. Identifier l'unité statistique observée, expliquer pourquoi le numéro de contrat n'est pas une variable quantitative et préciser une information nécessaire pour calculer une fréquence annuelle.

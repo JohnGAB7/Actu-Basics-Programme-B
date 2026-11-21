@@ -3,7 +3,7 @@ set.seed(20261121)
 
 validate_transition <- function(P) {
   if (!is.matrix(P) || nrow(P) == 0 || nrow(P) != ncol(P) ||
-      any(P < 0) || any(abs(rowSums(P) - 1) > 1e-10)) stop("Invalid transition matrix")
+      any(!is.finite(P)) || any(P < 0) || any(abs(rowSums(P) - 1) > 1e-10)) stop("Invalid transition matrix")
   invisible(TRUE)
 }
 propagate_markov <- function(pi, P, steps) {
@@ -12,17 +12,21 @@ propagate_markov <- function(pi, P, steps) {
   for (i in seq_len(steps)) pi <- as.numeric(pi %*% P)
   pi
 }
-stationary_two_state <- function(p01, p10) c(p10, p01) / (p01 + p10)
+stationary_two_state <- function(p01, p10) {
+  if (length(p01)!=1 || length(p10)!=1 || any(!is.finite(c(p01,p10))) ||
+      p01<=0 || p01>1 || p10<=0 || p10>1) stop("transition probabilities must be finite and in (0,1]")
+  c(p10, p01) / (p01 + p10)
+}
 absorption_one_transient <- function(q) {
   if (q < 0 || q >= 1) stop("q must be in [0,1)")
   c(mean_steps = 1/(1-q), variance_steps = q/(1-q)^2)
 }
 poisson_pmf <- function(k, mean) {
-  if (k < 0 || k != floor(k) || mean < 0) stop("Invalid Poisson parameters")
+  if (length(k)!=1 || length(mean)!=1 || any(!is.finite(c(k,mean))) || k < 0 || k != floor(k) || mean < 0) stop("Invalid Poisson parameters")
   dpois(k, mean)
 }
 simulate_poisson_arrivals <- function(rate, horizon) {
-  if (rate <= 0 || horizon < 0) stop("Invalid rate or horizon")
+  if (length(rate)!=1 || length(horizon)!=1 || any(!is.finite(c(rate,horizon))) || rate <= 0 || horizon < 0) stop("Invalid rate or horizon")
   times <- numeric()
   t <- 0
   repeat {
@@ -33,7 +37,7 @@ simulate_poisson_arrivals <- function(rate, horizon) {
   times
 }
 simulate_renewal_count <- function(mean_interarrival, horizon) {
-  if (mean_interarrival <= 0 || horizon < 0) stop("Invalid renewal parameters")
+  if (length(mean_interarrival)!=1 || length(horizon)!=1 || any(!is.finite(c(mean_interarrival,horizon))) || mean_interarrival <= 0 || horizon < 0) stop("Invalid renewal parameters")
   t <- 0
   count <- 0
   repeat {
@@ -43,12 +47,19 @@ simulate_renewal_count <- function(mean_interarrival, horizon) {
   }
   count
 }
-simulate_random_walk <- function(steps) c(0, cumsum(ifelse(runif(steps) < .5, 1, -1)))
+simulate_random_walk <- function(steps) {
+  if (length(steps)!=1 || !is.finite(steps) || steps<0 || steps!=floor(steps)) stop("steps must be a non-negative integer")
+  c(0, cumsum(ifelse(runif(steps) < .5, 1, -1)))
+}
 simulate_brownian_path <- function(horizon, steps) {
+  if (length(horizon)!=1 || length(steps)!=1 || any(!is.finite(c(horizon,steps))) || horizon<=0 || steps<=0 || steps!=floor(steps)) stop("horizon must be positive and steps a positive integer")
   dt <- horizon/steps
   c(0, cumsum(rnorm(steps, sd=sqrt(dt))))
 }
-quadratic_variation <- function(path) sum(diff(path)^2)
+quadratic_variation <- function(path) {
+  if (length(path)<2 || any(!is.finite(path))) stop("path must contain at least two finite points")
+  sum(diff(path)^2)
+}
 
 P <- matrix(c(.8,.3,.2,.7), nrow=2)
 stopifnot(max(abs(propagate_markov(c(1,0), P, 2)-c(.70,.30))) < 1e-10)

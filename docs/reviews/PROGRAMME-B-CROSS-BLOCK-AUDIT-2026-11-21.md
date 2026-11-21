@@ -25,6 +25,7 @@ Les blocs B18, B19 et B20 ont été consolidés et publiés sur GitHub Pages apr
 | X09 | Majeure | La PR #60 portait le complément MANOVA de B13 mais était restée en brouillon et très en retard sur master après les fusions B14–B20. | Son contenu MV04 a été repris dans cette branche d'audit : H/E, racines, Wilks/Rao, Pillai, Hotelling–Lawley, Roy, degrés de liberté, exactitude/approximation/borne et limites. Sources S158–S160 ajoutées. La PR #60 a été fermée après intégration de sa reprise dans la PR #68. |
 | X10 | Mineure | Le modèle de contenu ne précisait pas la règle d'unicité des identifiants entre blocs et chemins de fichiers. | Identifiant global explicité sous la forme `Bxx-UNITCODE`, distinct du chemin physique de stockage. |
 | X11 | Mineure | Les métadonnées de version du lecteur ne reflétaient pas les secondes passes B10–B20 ; B13/B19/B20 comportaient en outre des révisions locales plus récentes. | Versions du lecteur harmonisées : 1.1.0 pour les secondes passes, 1.2.0 pour MV04, EF08, AT03 et AT05. Les 196 codes de cours sont uniques. |
+| X12 | Critique mathématique (revue approfondie) | La première formule exacte de Roy dans MV04 appliquait le cas q=1 aussi au cas p=1,q>1 ; elle ne redonnait pas le F univarié. La CI de rendu ne pouvait pas détecter cette erreur. | Formule corrigée en `F=Θ(v−d+q)/d`, d=max(p,q), exacte si min(p,q)=1 et borne F sinon ; cas p=1,q=2 testé contre l'ANOVA univariée. Rapport B13 dédié ajouté ; comparaison R/SAS/Stata encore requise. |
 
 ## 3. Contrôles structurels effectués
 
@@ -64,3 +65,10 @@ Le dépôt peut être décrit comme un **cursus de 20 blocs, 196 unités, publi�
 - Ancienne PR [#60](https://github.com/JohnGAB7/Actu-Basics-Programme-B/pull/60) fermée après vérification que le complément MV04 est bien présent sur master.
 - Workflow master [#44959748131](https://github.com/JohnGAB7/Actu-Basics-Programme-B/actions/runs/44959748131) réussi : tests Python/R B08–B20, build, typecheck, validation Markdown/KaTeX et déploiement GitHub Pages.
 - Les statuts README, catalogue, carte B13 et évaluation B13 sont actualisés ; le workflow de confirmation de ces métadonnées est déclenché séparément.
+
+
+## Résultat de la revue mathématique approfondie initiale
+
+- B08–B12 : première passe sans erreur mathématique bloquante détectée ; hypothèses, contre-exemples et références précisés dans les rapports dédiés.
+- B13 : une erreur importante de la première formule Roy a été détectée et corrigée dans MV04 ; l'évaluation B13 et les cartes ont été alignées. Voir [B13-mathematical-review.md](B13-mathematical-review.md).
+- Cette revue ciblée n'est pas exhaustive ; les laboratoires et corrigés doivent encore être comparés à des références indépendantes.

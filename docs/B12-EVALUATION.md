@@ -1,6 +1,6 @@
 # B12 — Évaluation formative
 
-**Durée :** 120 minutes · **Total :** 100 points · **Version :** 1.1.0 · **Statut :** seconde passe interne effectuée · évaluation formative à tester auprès d'apprenants.
+**Durée :** 120 minutes · **Total :** 100 points · **Version :** 1.2.0 · **Statut :** évaluation formative ; test apprenant et revue indépendante à réaliser.
 
 1. **Interprétation (10 pts).** Pour $E(Y\mid X)=12+1,8X$, interpréter pente, constante et limites causales.
 2. **OLS (10 pts).** Dériver les équations normales et la solution $\hat\beta=(X^TX)^{-1}X^Ty$ lorsque X est de rang plein.
