@@ -33,13 +33,13 @@ Analyser simultanément plusieurs variables dépendantes ou explicatives, compre
 7. Communiquer les résultats sans surinterpréter axes, facteurs ou groupes.
 
 ## Dépendances pédagogiques
-- M01 est le socle commun.
-- M02 et M03 prolongent la géométrie et l'inférence multivariées.
-- M04 réutilise B12 et M01–M03.
-- M05 précède M06 et soutient M07–M10.
-- M08 mobilise les distributions multivariées et les modèles supervisés.
-- M09 est exploratoire et ne remplace pas la classification supervisée.
-- M10 synthétise les méthodes et ouvre vers B15 (machine learning), B17 (ingénierie des données) et B20 (théorie/recherche).
+- MV01 est le socle commun.
+- MV02 et MV03 prolongent la géométrie et l'inférence multivariées.
+- MV04 réutilise B12 et MV01–MV03.
+- MV05 précède MV06 et soutient MV07–MV10.
+- MV08 mobilise les distributions multivariées et les modèles supervisés.
+- MV09 est exploratoire et ne remplace pas la classification supervisée.
+- MV10 synthétise les méthodes et ouvre vers B15 (machine learning), B17 (ingénierie des données) et B20 (théorie/recherche).
 
 ## Hors périmètre ou approfondissements ultérieurs
 L'analyse de survie multivariée spécialisée, modèles graphiques probabilistes complets, matrices aléatoires, théorie asymptotique détaillée des grandes dimensions, réseaux neuronaux et causalité avancée sont renvoyés vers B15, B18, B19 et B20. Les références de cette carte servent de cadrage, pas de preuve que tous ces approfondissements sont déjà couverts.
@@ -50,16 +50,16 @@ L'apprenant doit pouvoir choisir une méthode en fonction de la question, établ
 
 ## Compléments de la seconde passe interne v1.1
 
-- M01 : rang de la covariance centrée et limites des covariances pairwise en présence de données manquantes.
-- M02 : distinction entre Mahalanobis avec paramètres connus et estimés ; sensibilité de la covariance classique et recours possible à des estimateurs robustes.
-- M03 : justification de la transformation exacte de Hotelling T² via normalité, indépendance et Wishart ; distinction des régions simultanées et intervalles marginaux.
+- MV01 : rang de la covariance centrée et limites des covariances pairwise en présence de données manquantes.
+- MV02 : distinction entre Mahalanobis avec paramètres connus et estimés ; sensibilité de la covariance classique et recours possible à des estimateurs robustes.
+- MV03 : justification de la transformation exacte de Hotelling T² via normalité, indépendance et Wishart ; distinction des régions simultanées et intervalles marginaux.
 - MV04 : définitions matricielles de H et E, degrés de liberté, valeurs propres, transformations F de Wilks/Rao, Pillai, Hotelling–Lawley et Roy ; distinction entre formule exacte, approximation et borne supérieure.
-- M05 : lien SVD/ACP, convention sur les charges et exemple spectral chiffré.
-- M06 : modèle factoriel avec matrice Φ, rotation oblique et indétermination de rotation.
-- M07 : équation propre généralisée des corrélations canoniques et limites en cas de matrices singulières.
-- M08 : règle de décision à coûts asymétriques et calibration.
-- M09 : DBSCAN et limites de distance en grande dimension.
-- M10 : matrice de précision, corrélations partielles, shrinkage et validation après sélection.
+- MV05 : lien SVD/ACP, convention sur les charges et exemple spectral chiffré.
+- MV06 : modèle factoriel avec matrice Φ, rotation oblique et indétermination de rotation.
+- MV07 : équation propre généralisée des corrélations canoniques et limites en cas de matrices singulières.
+- MV08 : règle de décision à coûts asymétriques et calibration.
+- MV09 : DBSCAN et limites de distance en grande dimension.
+- MV10 : matrice de précision, corrélations partielles, shrinkage et validation après sélection.
 - Laboratoire Python/R : covariance, corrélation, Jacobi, ACP, Mahalanobis, T², shrinkage et k-means ; tests et contrôles CI ajoutés.
 
 ## Périmètre de l'évaluation
