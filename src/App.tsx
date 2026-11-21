@@ -1,11 +1,12 @@
 import { useEffect, useMemo, useState } from 'react'
+import type { CSSProperties, ReactNode } from 'react'
 import {
-  Activity, ArrowDownRight, ArrowLeft, ArrowRight, ArrowUpRight, Award,
+  Activity, ArrowLeft, ArrowRight, Award,
   BarChart3, BookOpen, BrainCircuit, Check, CheckCircle2, ChevronDown,
-  ChevronLeft, ChevronRight, CircleHelp, Clock3, Command, Compass,
+  ChevronLeft, ChevronRight, CircleHelp, Clock3, Compass,
   FileCheck2, GraduationCap, Home, LibraryBig, LockKeyhole, Menu,
-  MoreHorizontal, Play, Search, ShieldCheck, Sparkles, Target, Timer,
-  X, Zap
+  MoreHorizontal, Search, ShieldCheck, Sparkles, Target, Timer,
+  X
 } from 'lucide-react'
 import { blocks, questions } from './data'
 
@@ -145,7 +146,7 @@ function App() {
   )
 }
 
-function PageHeading({eyebrow, title, description, action}: {eyebrow: string; title: string; description: string; action?: React.ReactNode}) {
+function PageHeading({eyebrow, title, description, action}: {eyebrow: string; title: string; description: string; action?: ReactNode}) {
   return <div className="page-heading"><div><div className="eyebrow">{eyebrow}</div><h1>{title}</h1><p>{description}</p></div>{action}</div>
 }
 
@@ -191,7 +192,7 @@ function Exam({current,setCurrent,answers,chooseAnswer,seconds,time,progress,onF
 function Results({score,answered,onRetry,onPaths}:{score:number;answered:number;onRetry:()=>void;onPaths:()=>void}) {
   const pct=Math.round(score/questions.length*100)
   const [expanded,setExpanded]=useState<number|null>(null)
-  return <div className="content-wrap"><PageHeading eyebrow="VOTRE RÉSULTAT" title="Diagnostic terminé" description="Voici une première lecture de vos réponses et des compétences explorées."/><div className="result-card"><div className="result-score"><div className="score-ring" style={{'--score':`${pct*3.6}deg`} as React.CSSProperties}><div><strong>{pct}<small>%</small></strong><span>RÉUSSITE</span></div></div></div><div className="result-summary"><div className="eyebrow">SYNTHÈSE DE L’ÉVALUATION</div><h2>{pct>=80?'De bonnes bases à consolider.':pct>=50?'Des acquis présents, à renforcer.':'Un socle à construire progressivement.'}</h2><p>Vous avez obtenu <strong>{score} bonne(s) réponse(s)</strong> sur {questions.length}. {answered<questions.length? `${questions.length-answered} question(s) sans réponse.`:'Toutes les questions ont reçu une réponse.'}</p><div className="result-metrics"><span><strong>{score}/{questions.length}</strong> Réponses correctes</span><span><strong>{answered}/{questions.length}</strong> Questions traitées</span></div><div className="result-actions"><button className="primary-button" onClick={onRetry}>Recommencer <ArrowRight size={15}/></button><button className="text-button" onClick={onPaths}>Voir les parcours</button></div></div></div><div className="section-head"><div><div className="eyebrow">ANALYSE DES RÉPONSES</div><h2>Correction détaillée</h2><p>Chaque réponse est accompagnée d’une explication.</p></div></div><div className="correction-list">{questions.map(q=>{const correct=answers[q.id]===q.answer;return <div className="correction-item" key={q.id}><button className="correction-head" onClick={()=>setExpanded(expanded===q.id?null:q.id)}><span className={`correction-status ${correct?'correct':'incorrect'}`}>{correct?<Check size={15}/>:<X size={15}/>}</span><span><strong>Question {q.id} · {q.skill}</strong><small>{correct?'Réponse correcte':'Réponse à revoir'}</small></span><ChevronDown size={17}/></button>{expanded===q.id&&<div className="correction-body"><p>{q.prompt}</p><div className="correct-answer"><CheckCircle2 size={16}/> Bonne réponse : {q.options[q.answer]}</div><p>{q.explanation}</p></div>}</div>})}</div><div className="integrity-note"><ShieldCheck size={18}/><p><strong>Résultat de démonstration.</strong> Ce score est calculé localement sur un petit jeu de questions d’exemple. Il ne constitue pas une note officielle du Bloc 1 et ne remplace pas l’examen final validé.</p></div><Footer/></div>
+  return <div className="content-wrap"><PageHeading eyebrow="VOTRE RÉSULTAT" title="Diagnostic terminé" description="Voici une première lecture de vos réponses et des compétences explorées."/><div className="result-card"><div className="result-score"><div className="score-ring" style={{'--score':`${pct*3.6}deg`} as CSSProperties}><div><strong>{pct}<small>%</small></strong><span>RÉUSSITE</span></div></div></div><div className="result-summary"><div className="eyebrow">SYNTHÈSE DE L’ÉVALUATION</div><h2>{pct>=80?'De bonnes bases à consolider.':pct>=50?'Des acquis présents, à renforcer.':'Un socle à construire progressivement.'}</h2><p>Vous avez obtenu <strong>{score} bonne(s) réponse(s)</strong> sur {questions.length}. {answered<questions.length? `${questions.length-answered} question(s) sans réponse.`:'Toutes les questions ont reçu une réponse.'}</p><div className="result-metrics"><span><strong>{score}/{questions.length}</strong> Réponses correctes</span><span><strong>{answered}/{questions.length}</strong> Questions traitées</span></div><div className="result-actions"><button className="primary-button" onClick={onRetry}>Recommencer <ArrowRight size={15}/></button><button className="text-button" onClick={onPaths}>Voir les parcours</button></div></div></div><div className="section-head"><div><div className="eyebrow">ANALYSE DES RÉPONSES</div><h2>Correction détaillée</h2><p>Chaque réponse est accompagnée d’une explication.</p></div></div><div className="correction-list">{questions.map(q=>{const correct=answers[q.id]===q.answer;return <div className="correction-item" key={q.id}><button className="correction-head" onClick={()=>setExpanded(expanded===q.id?null:q.id)}><span className={`correction-status ${correct?'correct':'incorrect'}`}>{correct?<Check size={15}/>:<X size={15}/>}</span><span><strong>Question {q.id} · {q.skill}</strong><small>{correct?'Réponse correcte':'Réponse à revoir'}</small></span><ChevronDown size={17}/></button>{expanded===q.id&&<div className="correction-body"><p>{q.prompt}</p><div className="correct-answer"><CheckCircle2 size={16}/> Bonne réponse : {q.options[q.answer]}</div><p>{q.explanation}</p></div>}</div>})}</div><div className="integrity-note"><ShieldCheck size={18}/><p><strong>Résultat de démonstration.</strong> Ce score est calculé localement sur un petit jeu de questions d’exemple. Il ne constitue pas une note officielle du Bloc 1 et ne remplace pas l’examen final validé.</p></div><Footer/></div>
 }
 
 function Footer() { return <footer className="page-footer"><span>PROGRAMME B <b>·</b> LEARNING STUDIO</span><span>Construire la compréhension, mesurer la maîtrise.</span></footer> }
