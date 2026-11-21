@@ -1,6 +1,6 @@
 # B16 — Évaluation formative de synthèse
 
-**Statut :** première proposition à relire · **Durée :** 120 minutes · **Total :** 100 points  
+**Statut :** Revue interne effectuée — consolidation pédagogique en cours.
 Évaluation formative, non certifiante.
 
 ## Partie A — Structure temporelle (20 points)
