@@ -9,6 +9,7 @@ import {
   X
 } from 'lucide-react'
 import { blocks, questions } from './data'
+import { LessonLibrary } from './Lessons'
 
 type View = 'overview' | 'paths' | 'exams' | 'library' | 'exam' | 'results'
 type Answers = Record<number, number>
@@ -56,7 +57,6 @@ function App() {
   const score = useMemo(() => questions.reduce((n, q) => n + (answers[q.id] === q.answer ? 1 : 0), 0), [answers])
   const answered = Object.keys(answers).length
   const progress = Math.round(answered / questions.length * 100)
-  const filteredBlocks = blocks.filter(b => (b.title + b.subtitle).toLowerCase().includes(query.toLowerCase()))
   const time = `${String(Math.floor(seconds / 60)).padStart(2, '0')}:${String(seconds % 60).padStart(2, '0')}`
 
   function resumeExam() { setStarted(true); setSavedAttempt(false); setView('exam') }
@@ -142,7 +142,7 @@ function App() {
         {view === 'overview' && <Overview onNavigate={nav} onStart={() => setShowIntro(true)} savedAttempt={savedAttempt} onResume={resumeExam} />}
         {view === 'paths' && <Paths onStart={() => setShowIntro(true)} />}
         {view === 'exams' && <Exams onStart={() => setShowIntro(true)} />}
-        {view === 'library' && <Library query={query} setQuery={setQuery} filteredBlocks={filteredBlocks} />}
+        {view === 'library' && <LessonLibrary query={query} setQuery={setQuery} />}
         {view === 'exam' && <Exam current={current} setCurrent={setCurrent} answers={answers} chooseAnswer={chooseAnswer} seconds={seconds} time={time} progress={progress} onFinish={finishExam} />}
         {view === 'results' && <Results score={score} answered={answered} answers={answers} onRetry={resetExam} onPaths={() => nav('paths')} />}
       </main>
@@ -185,10 +185,6 @@ function Exams({onStart}:{onStart:()=>void}) {
 }
 
 function Upcoming({code,title,detail,state}:{code:string;title:string;detail:string;state:string}) { return <div className="upcoming-card"><div className="upcoming-code">{code}</div><div><h3>{title}</h3><p>{detail}</p><span>{state}</span></div><LockKeyhole size={17}/></div> }
-
-function Library({query,setQuery,filteredBlocks}:{query:string;setQuery:(v:string)=>void;filteredBlocks:typeof blocks}) {
-  return <div className="content-wrap"><PageHeading eyebrow="RESSOURCES PÉDAGOGIQUES" title="Bibliothèque" description="Retrouvez les blocs, les notions et les ressources qui structurent le cursus."/><div className="search-box"><Search size={17}/><input value={query} onChange={e=>setQuery(e.target.value)} placeholder="Rechercher un bloc ou une discipline…"/><kbd>⌘ K</kbd></div><div className="library-list">{filteredBlocks.map(b=><div className="library-row" key={b.code}><div className={`block-code ${b.tone}`}>{b.code}</div><div><strong>{b.title}</strong><p>{b.subtitle}</p><small>{b.status}</small></div><span>{b.lessons ? `${b.lessons} unités` : '—'}</span><ChevronRight size={17}/></div>)}</div><div className="integrity-note"><CircleHelp size={18}/><p>Le catalogue présente l’organisation du programme. Une unité annoncée n’est pas nécessairement déjà publiée comme cours complet.</p></div><Footer/></div>
-}
 
 function Exam({current,setCurrent,answers,chooseAnswer,seconds,time,progress,onFinish}:{current:number;setCurrent:(v:number)=>void;answers:Answers;chooseAnswer:(v:number)=>void;seconds:number;time:string;progress:number;onFinish:()=>void}) {
   const q=questions[current]
