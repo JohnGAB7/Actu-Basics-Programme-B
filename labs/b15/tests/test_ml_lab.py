@@ -51,6 +51,8 @@ class MachineLearningLabTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             classification_metrics([0, 2], [0.2, 0.3])
         with self.assertRaises(ValueError):
+            classification_metrics([0, 0.5], [0.2, 0.3])
+        with self.assertRaises(ValueError):
             calibration_bins([0, 1], [0.1, 1.2])
         with self.assertRaises(ValueError):
             gaussian_mixture_1d_em([1, 1, 1], 2)
