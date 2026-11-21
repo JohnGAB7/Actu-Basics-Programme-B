@@ -1,6 +1,6 @@
 # B20 — Carte pédagogique : Théorie statistique avancée et méthodes de recherche
 
-**Version :** 1.1 · **Statut :** seconde consolidation pédagogique publiée après CI complète ; revue indépendante à réaliser.
+**Version :** 1.2 · **Statut :** seconde consolidation publiée après CI complète ; revue indépendante à réaliser.
 **Charge indicative :** 60–76 heures de cours et ateliers, hors mémoire de recherche  
 **Niveau :** M1–M2 / préparation recherche  
 **Prérequis :** B08 probabilités, B11 inférence, B12 régression, B13 multivarié, B15 machine learning, B16 séries temporelles, B17 reproductibilité ; analyse réelle et algèbre linéaire avancées.
@@ -30,6 +30,7 @@ Approfondir les fondements mathématiques de la statistique moderne, les résult
 4. Analyser vraisemblance, paramètres de nuisance et efficacité.
 5. Réaliser inférence bayésienne et diagnostiquer calcul Monte-Carlo.
 6. Formaliser processus adaptés, martingales et temps d'arrêt.
+7. Appliquer concentration, décision bayésienne, minimax et admissibilité sous hypothèses.
 7. Comprendre régularisation, grande dimension et inférence après sélection.
 8. Choisir des algorithmes numériques stables.
 9. Concevoir simulations et plans d'analyse reproductibles.
@@ -71,3 +72,9 @@ Les fonctions sont didactiques. Elles ne remplacent pas les preuves, ne garantis
 Chaque théorème doit énoncer ses hypothèses et le mode de convergence ; chaque algorithme doit expliciter sa cible, son critère d'arrêt et ses diagnostics ; toute simulation doit distinguer erreur statistique, erreur Monte-Carlo et erreur numérique ; toute recherche doit tracer protocole, données, code, versions et limites.
 
 **Statut :** seconde consolidation pédagogique et laboratoire Python/R dans une branche candidate ; CI, revue humaine indépendante, tests apprenants et audit d'accessibilité à réaliser.
+
+
+## Compléments théoriques de la seconde passe
+
+- AT03 : inégalités de Hoeffding, Bernstein et McDiarmid, avec hypothèses de bornitude/indépendance et mise en garde sur les données dépendantes.
+- AT05 : risque fréquentiste, risque bayésien, action optimale sous perte, règles minimax et admissibilité.
