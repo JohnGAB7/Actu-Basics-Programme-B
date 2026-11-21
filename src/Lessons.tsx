@@ -191,14 +191,14 @@ const courses: Course[] = [
  {code:'S10',title:'Mouvement brownien et processus gaussiens',version:'1.0.0',description:'Brownien, covariance, variation quadratique et diffusion',duration:'5–6 h',content:s10},
  {code:'T01',title:'Données, variables, populations et échelles de mesure',version:'1.0.0',description:'Population, unité, granularité et échelles de mesure',duration:'4–5 h',content:t01},
  {code:'T02',title:'Collecte, qualité et préparation des données',version:'1.0.0',description:'Qualité, contrôles, jointures et traçabilité',duration:'5–6 h',content:t02},
- {code:'T03',title:'Plans d'échantillonnage et représentativité',version:'1.0.0',description:'Plans probabilistes, sélection et biais de couverture',duration:'5–6 h',content:t03},
+ {code:'T03',title:'Plans d’échantillonnage et représentativité',version:'1.0.0',description:'Plans probabilistes, sélection et biais de couverture',duration:'5–6 h',content:t03},
  {code:'T04',title:'Estimateurs descriptifs sous sondage : totaux, moyennes et proportions',version:'1.0.0',description:'Pondération, estimateur HT et correction de population finie',duration:'5–6 h',content:t04},
  {code:'T05',title:'Tableaux, distributions et résumés numériques',version:'1.0.0',description:'Fréquences, distribution empirique et quantiles',duration:'5–6 h',content:t05},
  {code:'T06',title:'Dispersion, asymétrie, concentration et mesures robustes',version:'1.0.0',description:'Variance, IQR, MAD, asymétrie et robustesse',duration:'5–6 h',content:t06},
  {code:'T07',title:'Visualisation univariée : choisir et lire les graphiques',version:'1.0.0',description:'Barres, histogrammes, boxplots et intégrité visuelle',duration:'4–5 h',content:t07},
  {code:'T08',title:'Relations entre variables : tableaux croisés et graphiques bivariés',version:'1.0.0',description:'Tableaux croisés, associations, corrélation et paradoxe de Simpson',duration:'5–6 h',content:t08},
  {code:'T09',title:'Données manquantes, valeurs atypiques et sensibilité',version:'1.0.0',description:'MCAR, MAR, MNAR, valeurs atypiques et analyses de sensibilité',duration:'5–6 h',content:t09},
- {code:'T10',title:'Démarche d'exploration, synthèse et communication statistique',version:'1.0.0',description:'EDA, communication statistique et reproductibilité',duration:'4–5 h',content:t10},
+ {code:'T10',title:'Démarche d’exploration, synthèse et communication statistique',version:'1.0.0',description:'EDA, communication statistique et reproductibilité',duration:'4–5 h',content:t10},
 ]
 export function LessonLibrary({query,setQuery}:{query:string;setQuery:(value:string)=>void}) {
  const [selected,setSelected]=useState<Course|null>(null)
