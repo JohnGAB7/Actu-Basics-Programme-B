@@ -6,7 +6,7 @@ replacement for validated forecasting libraries or production risk systems.
 from __future__ import annotations
 
 from math import sqrt
-from typing import Iterable, Sequence
+from typing import Sequence
 
 
 def difference(values: Sequence[float], lag: int = 1) -> list[float]:
