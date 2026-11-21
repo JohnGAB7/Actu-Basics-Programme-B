@@ -74,3 +74,7 @@ La référence « MIT OCW 18.330 » précédemment indiquée dans P09 est incorr
 8. Obtenir une revue mathématique humaine indépendante avant toute prétention de validation académique.
 
 **Conclusion :** le contenu a reçu une seconde passe interne substantielle et les points ci-dessus sont documentés. Il reste en consolidation pédagogique ; cette revue ne vaut ni test apprenant, ni revue externe, ni certification.
+
+
+- Complément P05 : constante de normalisation de la loi Bêta reliée à la fonction Gamma.
+- Complément P08 : définition explicite de la variance conditionnelle et justification de la décomposition de variance totale par annulation du terme croisé.
