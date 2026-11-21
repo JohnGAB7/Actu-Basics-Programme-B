@@ -218,3 +218,15 @@ Les ressources S82–S86 servent de cadrage et de vérification ; elles ne certi
 | S91 | Apache Parquet Documentation : https://parquet.apache.org/docs/ | Format colonne, métadonnées et stockage analytique | Référence technique DE03 |
 
 Les ressources S87–S91 servent de cadrage et de vérification ; elles ne certifient pas les unités.
+
+
+## B18 — Actuariat, assurance et modélisation du risque
+| ID | Ressource | Domaines utiles | Utilisation |
+|---|---|---|---|
+| S92 | EIOPA — Actuarial function, Solvency II Rulebook : https://www.eiopa.europa.eu/rulebook/solvency-ii-single-rulebook/article-5935_en | Coordination et validation des provisions, incertitude, qualité des données, souscription et réassurance | Référence réglementaire de cadrage AR10 |
+| S93 | EIOPA — Directive 2009/138/EC, Article 48 : https://www.eiopa.europa.eu/rulebook/solvency-ii-single-rulebook/article-2131_en | Missions et compétences de la fonction actuarielle | Gouvernance AR10 |
+| S94 | EIOPA — Solvency II, Article 77 : https://www.eiopa.europa.eu/rulebook/solvency-ii-single-rulebook/article-2160_en | Best estimate, actualisation des flux et risk margin | Cadrage des provisions AR06–AR07 |
+| S95 | EUR-Lex — Directive 2009/138/EC : https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX%3A32009L0138 | Cadre Solvabilité II, provisions, capital et modules de risque | Référence réglementaire générale à vérifier dans sa version applicable |
+| S96 | EIOPA — Guidelines on valuation of Technical Provisions : https://www.eiopa.europa.eu/document/download/dec39b30-4aa3-4e06-aef8-4d06f7ee548a_en?filename=EIOPA-BoS-14-166rev2_GLs+on+the+valuation+of+technical+provisions.pdf | Qualité des données, segmentation, hypothèses et méthodes de valorisation | Cadrage complémentaire AR07 et AR10 |
+
+Les ressources S92–S96 sont des références de cadrage ; leur citation ne vaut ni avis juridique, ni validation actuarielle, ni mise à jour exhaustive du droit en vigueur.
