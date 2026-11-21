@@ -34,6 +34,8 @@ class MachineLearningLabTests(unittest.TestCase):
         groups = group_metrics(y, p, ["A", "A", "A", "B", "B", "B"], 0.5)
         self.assertEqual(set(groups), {"A", "B"})
         self.assertIn("selection_rate", groups["A"])
+        with self.assertRaises(ValueError):
+            group_metrics([0, 1], [0.2, 0.8], [1, "1"])
 
     def test_gaussian_mixture_em(self):
         x = [-2.2, -2.0, -1.8, -2.1, -1.9, 1.8, 2.0, 2.2, 1.9, 2.1]
