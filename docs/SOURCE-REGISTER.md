@@ -327,3 +327,24 @@ Les ressources S117–S126 complètent le cadrage de B17. Elles ne constituent n
 | S135 | Society of Actuaries Research Institute — Evaluating Bias Mitigation Strategies in AI Models for Insurance Pricing and Risk Assessment (27 octobre 2026) : https://www.soa.org/resources/research-reports/2026/ai-insurance-bias-mitigation/ | Biais de mesure, variables indirectes, écarts de groupes et évaluation des modèles prédictifs d'assurance | AR03 et AR10 ; rapport de recherche, ne tranche pas seul les questions juridiques |
 
 Les ressources S127–S135 complètent le cadrage de B18. Elles ne valident pas chaque calcul, ne remplacent pas les manuels spécialisés et ne signifient aucune approbation de Programme B par les organismes cités.
+
+
+
+## B19 — Sources complémentaires de la seconde passe
+
+| ID | Ressource | Domaines utiles | Utilisation |
+|---|---|---|---|
+| S136 | MIT OpenCourseWare — 14.382 Econometrics I, syllabus : https://opencw.aprende.org/courses/economics/14-382-econometrics-i-spring-2005/syllabus/ | Régression, hétéroscédasticité, autocorrélation, erreurs de mesure, IV, GLS et modèles à variable dépendante limitée | Fondements EF01–EF05 ; syllabus ancien utilisé comme référence de périmètre, non comme règle actuelle |
+| S137 | Princeton — ECO 518 Econometric Theory II, Spring 2026 : https://opr.princeton.edu/courses/spring-2026/econometric-theory-ii | Hétéroscédasticité, corrélation sérielle, GLS, IV, GMM, VAR, panel, bootstrap et effets de traitement | Cadrage avancé EF02–EF04 et EF10 |
+| S138 | Princeton — Graduate Economics course offerings : https://economics.princeton.edu/graduate-program/course-offerings/ | Séquence ECO 518/519 et économétrie non linéaire | EF03–EF05 ; vérifier les offres selon semestre |
+| S139 | Federal Reserve — SR 26-2, Revised Guidance on Model Risk Management (17 avril 2026) : https://www.federalreserve.gov/supervisionreg/srletters/sr2602.htm | Gouvernance des modèles, approche fondée sur le risque, validation, usage et suivi ; remplace SR 11-7 | EF10 ; portée américaine et organisations concernées à préciser |
+| S140 | OCC Bulletin 2026-13 — Revised Guidance on Model Risk Management : https://www.occ.gov/news-issuances/bulletins/2026/bulletin-2026-13.html | Guidance interagences actualisée et rescission des anciennes références | EF10 ; contexte prudentiel bancaire américain |
+| S141 | Federal Reserve Bank of St. Louis — FRED API : https://fred.stlouisfed.org/docs/api/fred/ | Séries économiques, API, métadonnées, révisions et ALFRED | EF06 et EF10 ; provenance et point-in-time |
+| S142 | FRED/ALFRED — Real-Time Periods : https://fred.stlouisfed.org/docs/api/fred/realtime_period.html | Périodes de connaissance, dates de publication et révisions historiques | EF06 ; prévenir le look-ahead sur données macroéconomiques |
+| S143 | Kenneth R. French Data Library : https://mba.tuck.dartmouth.edu/pages/Faculty/ken.french/data_library.html | Facteurs Fama/French, portefeuilles, rendements et changement de format CRSP FIZ/CIZ à partir de 2025 | EF07 ; documenter univers, méthodologie et vintages |
+| S144 | Basel Committee — MAR32, Internal models approach: backtesting and P&L attribution : https://www.bis.org/basel_framework/chapter/MAR/32.htm | Exceptions VaR, backtesting, P&L réel/hypothétique et exigences de desk | EF08 ; cadre bancaire prudentiel, pas règle universelle |
+| S145 | BIS Basel Framework — Market risk terminology : https://www.bis.org/basel_framework/standard/mar/10/inforce/2023-01-01/published/2020-03-27 | Définition ES, liquidité, diversification, backtesting et attribution P&L | EF08 ; terminologie prudentielle |
+| S146 | University of Chicago — FINM 34600, Analysis of High Frequency Data : https://finmath.uchicago.edu/curriculum/degree-concentrations/machine-learning-and-ai/finm-34600/ | Économétrie haute fréquence, volatilité et microstructure | EF09 ; cours de référence de périmètre |
+| S147 | Duke University — High Frequency Econometrics course outline : https://public.econ.duke.edu/~get/browse/courses/pbc/CourseOutline.pdf | Variation réalisée, sauts, bruit, estimations de volatilité et régressions haute fréquence | EF09 ; plan de cours 2018, référence pédagogique et non norme actuelle |
+
+Les ressources S136–S147 cadrent les contenus. SR 26-2 et les chapitres Bâle ont une portée réglementaire spécifique ; ils ne doivent pas être présentés comme des règles universelles. Les syllabus et cours ne valident pas chaque calcul de Programme B.
