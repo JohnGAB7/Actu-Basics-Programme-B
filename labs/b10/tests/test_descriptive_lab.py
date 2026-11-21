@@ -24,7 +24,7 @@ class DescriptiveLabTests(unittest.TestCase):
         s = descriptive_summary([1, 2, 2, 3, 100])
         self.assertEqual(s["median"], 2)
         self.assertEqual(s["mad_raw"], 1)
-        self.assertIsNone(descriptive_summary([-1, 0, 1])["cv_sample"])
+        self.assertIsNone(descriptive_summary([-1, 0, 1])["cv_sample"])\n        self.assertIsNone(descriptive_summary([-3, -2, -1])["cv_sample"])
         self.assertIsNone(descriptive_summary([1, 2, 3], ratio_scale=False)["cv_sample"])
 
     def test_ecdf(self):
