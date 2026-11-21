@@ -75,3 +75,11 @@ Les anciens statuts « draft » de cette première passe décrivaient l'absence 
 - P01–P10 relues sur les axiomes, Bayes, indépendance, lois, transformations, covariance, espérance conditionnelle, inégalités, convergence, LLN/TCL.
 - Aucun défaut mathématique bloquant identifié dans cette première passe ; P05, P09 et P10 enrichies ; références S161–S163 ajoutées.
 - Recalcul exhaustif des exercices, revue humaine indépendante et tests apprenants restent à réaliser.
+
+
+## Revue mathématique B09 — 21 novembre 2026
+
+- Rapport : [B09-mathematical-review.md](B09-mathematical-review.md).
+- S01–S10 relues : processus, chaînes de Markov, récurrence, stationnarité, absorption, Poisson, renouvellement, martingales, CTMC/M/M/1 et brownien.
+- Aucun défaut mathématique bloquant identifié dans cette première passe ; références MIT S164–S166 ajoutées et reliées aux unités.
+- Recalcul exhaustif des corrigés, tests numériques des cas limites, revue humaine indépendante et tests apprenants restent à réaliser.
