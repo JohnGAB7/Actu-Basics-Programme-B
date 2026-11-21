@@ -11,7 +11,7 @@ Laboratoire pédagogique Python/R sans dépendances externes.
 - rendements simples/logarithmiques ;
 - alpha/bêta CAPM sur rendements excédentaires ;
 - VaR/Expected Shortfall empiriques ;
-- statistique LR de couverture inconditionnelle de Kupiec ;
+- statistique LR de couverture inconditionnelle de Kupiec (argument = probabilité attendue d’exception, soit 1 − niveau de confiance VaR) ;
 - variance réalisée.
 
 ## Exécution
