@@ -84,8 +84,12 @@ def group_metrics(y_true, probabilities, groups, threshold=0.5):
     raw_y=list(y_true); y=[int(v) for v in raw_y]; p=_finite(probabilities,"probabilities"); g=list(groups)
     if len(y)!=len(p) or len(y)!=len(g) or not y or any(float(v)!=z or z not in (0,1) for v,z in zip(raw_y,y)): raise ValueError("invalid labels or length mismatch")
     if not math.isfinite(threshold) or not 0<=threshold<=1: raise ValueError("threshold must lie in [0,1]")
+    labels=sorted(set(g),key=str)
+    label_keys=[str(group) for group in labels]
+    if len(set(label_keys))!=len(label_keys):
+        raise ValueError("group labels must have unique string representations")
     result={}
-    for group in sorted(set(g),key=str):
+    for group in labels:
         idx=[i for i,v in enumerate(g) if v==group]
         if not idx: continue
         m=classification_metrics([y[i] for i in idx],[p[i] for i in idx],threshold)
