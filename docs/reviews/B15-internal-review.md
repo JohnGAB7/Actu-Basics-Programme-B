@@ -86,3 +86,8 @@ Le laboratoire demeure un ensemble de primitives univariées et de métriques, n
 - scikit-learn, Common pitfalls and data leakage : https://scikit-learn.org/stable/common_pitfalls.html
 
 **Statut :** revue interne assistée par IA, non indépendante. Les nouveaux tests doivent être exécutés par GitHub Actions avant de déclarer la correction vérifiée. Revue humaine spécialisée, tests apprenants, audit manuel d'accessibilité et validation sur données réelles restent distincts.
+
+
+### Cas limite complémentaire — métriques par groupe
+
+La fonction Python convertit les étiquettes de groupes en chaînes pour construire son dictionnaire de sortie. Deux étiquettes distinctes comme `1` et `"1"` auraient donc pu partager la même clé et écraser silencieusement un résultat. La fonction rejette désormais les représentations textuelles ambiguës ; un test unitaire couvre ce cas. Cette vérification ne définit pas une politique de traitement des groupes manquants ou des petits effectifs, qui reste à préciser selon le contexte d'application.
