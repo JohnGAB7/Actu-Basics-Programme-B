@@ -79,3 +79,5 @@ Cette correction illustre pourquoi la CI Markdown/KaTeX ne suffit pas à valider
 ## Contrôle automatisé ciblé de Roy — v1.3
 
 Le laboratoire B13 inclut désormais `roy_f_bound` en Python et R. Les tests vérifient p=1,q=2 (F=6, ddl 2/30), q=1,p=3 (F=0,4×28/3, ddl 3/28), ainsi qu'un cas min(p,q)>1 où F est une borne supérieure et la p-value une borne inférieure. Cela ne remplace pas un moteur MANOVA complet ni une comparaison à R/SAS/Stata.
+
+Le helper Roy valide également la condition v≥p nécessaire à l'inversibilité de E dans le modèle multivarié classique ; les tests Python/R rejettent les degrés de liberté résiduels insuffisants.
