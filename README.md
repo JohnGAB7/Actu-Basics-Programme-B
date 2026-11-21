@@ -54,6 +54,7 @@ La CI principale vérifie :
 ## Architecture et gouvernance
 
 - [Architecture académique et parcours](docs/PROGRAMME-B-CURRICULUM.md)
+- [Registre des 196 unités](docs/PROGRAMME-B-IMPLEMENTED-UNIT-REGISTER.md)
 - [Roadmap et état des jalons](docs/ROADMAP.md)
 - [Registre des sources](docs/SOURCE-REGISTER.md)
 - [Protocole de revue académique](docs/ACADEMIC-REVIEW-PROTOCOL.md)
