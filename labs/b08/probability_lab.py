@@ -28,6 +28,28 @@ def simulate_bernoulli_frequency(p: float, n: int, seed: int = SEED) -> float:
     return sum(rng.random() < p for _ in range(n)) / n
 
 
+
+def simulate_common_laws(n: int = 100_000, seed: int = SEED + 4) -> dict[str, float]:
+    """Empirical moments for Bernoulli, exponential(rate=2), and standard normal."""
+    if n <= 1:
+        raise ValueError("n must be greater than one.")
+    rng = random.Random(seed)
+    bernoulli = [float(rng.random() < 0.30) for _ in range(n)]
+    exponential = [rng.expovariate(2.0) for _ in range(n)]
+    normal = [rng.gauss(0.0, 1.0) for _ in range(n)]
+    return {
+        "bernoulli_mean": mean(bernoulli),
+        "bernoulli_variance": pstdev(bernoulli) ** 2,
+        "bernoulli_theoretical_mean": 0.30,
+        "bernoulli_theoretical_variance": 0.21,
+        "exponential_mean": mean(exponential),
+        "exponential_theoretical_mean": 0.50,
+        "normal_mean": mean(normal),
+        "normal_variance": pstdev(normal) ** 2,
+        "normal_theoretical_mean": 0.0,
+        "normal_theoretical_variance": 1.0,
+    }
+
 def dependent_zero_covariance() -> dict[str, float]:
     """A finite symmetric example: X and X² are dependent but uncorrelated."""
     x_values = (-2.0, -1.0, 1.0, 2.0)
@@ -118,6 +140,7 @@ def run_all() -> dict[str, object]:
         "seed": SEED,
         "E01_empirical_frequency": simulate_bernoulli_frequency(0.20, 100_000),
         "E02_bayes_positive": bayes_positive(0.01, 0.95, 0.90),
+        "E03_common_laws": simulate_common_laws(),
         "E04_uncorrelated_dependent": dependent_zero_covariance(),
         "E05_law_of_large_numbers": simulate_lln(),
         "E06_central_limit_theorem": simulate_clt(),
