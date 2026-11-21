@@ -203,7 +203,7 @@ import at09 from './content/bloc-20/AT09.md?raw'
 import at10 from './content/bloc-20/AT10.md?raw'
 
 type Course = { code: string; title: string; description: string; duration: string; version: string; content: string }
-export type CourseStatus = 'draft' | 'review' | 'working'
+export type CourseStatus = 'review'
 export type CourseSummary = Pick<Course, 'code' | 'title' | 'description' | 'duration' | 'version'> & { blockCode: string; blockTitle: string; status: CourseStatus; statusLabel: string }
 
 export function getCourseSummaries(): CourseSummary[] {
@@ -215,15 +215,12 @@ export function getCourseSummaries(): CourseSummary[] {
  })
 }
 
-function getCourseStatus(blockCode: string): CourseStatus {
- const block = curriculumBlocks.find(item => item.code === blockCode)
- if (blockCode === 'B01' || blockCode === 'B02') return 'draft'
- if (block?.status.toLowerCase().includes('revue interne')) return 'review'
- return 'working'
+function getCourseStatus(_blockCode: string): CourseStatus {
+ return 'review'
 }
 
 function getStatusLabel(status: CourseStatus): string {
- return status === 'draft' ? 'Brouillon pédagogique' : status === 'review' ? 'Revue interne' : 'Première version de travail'
+ return 'Revue interne effectuée'
 }
 
 function getBlockCode(code: string): string {
