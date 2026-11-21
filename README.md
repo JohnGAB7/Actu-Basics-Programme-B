@@ -7,6 +7,7 @@ https://johngab7.github.io/Actu-Basics-Programme-B/
 
 ## Architecture et gouvernance académique
 - Architecture académique cible : docs/PROGRAMME-B-CURRICULUM.md
+- Carte pédagogique du Bloc B01 : docs/B01-UNIT-MAP.md
 - Registre des références : docs/SOURCE-REGISTER.md
 - Protocole de revue académique : docs/ACADEMIC-REVIEW-PROTOCOL.md
 - Standards éditoriaux : docs/EDITORIAL-STANDARDS.md
