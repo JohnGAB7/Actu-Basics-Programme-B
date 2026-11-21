@@ -22,7 +22,10 @@ fit_ar1 <- function(x) {
 forecast_ar1 <- function(last,intercept,phi,innovation_variance,horizon) {
   if(any(!is.finite(c(last,intercept,phi,innovation_variance))) || innovation_variance<0 || abs(phi)>=1 || horizon<1 || horizon!=as.integer(horizon)) stop("Invalid stationary AR(1) forecast inputs")
   mu <- intercept/(1-phi)
-  do.call(rbind,lapply(seq_len(horizon),function(h) c(horizon=h,mean=mu+phi^h*(last-mu),variance=innovation_variance*sum(phi^(2*(0:(h-1))))))
+  forecasts <- lapply(seq_len(horizon),function(h) {
+    c(horizon=h,mean=mu+phi^h*(last-mu),variance=innovation_variance*sum(phi^(2*(0:(h-1)))))
+  })
+  do.call(rbind,forecasts)
 }
 ses_forecast <- function(x,alpha,horizon=1) {
   if(length(x)==0 || any(!is.finite(x)) || !is.finite(alpha) || alpha<0 || alpha>1 || horizon<1 || horizon!=as.integer(horizon)) stop("Invalid SES inputs")
