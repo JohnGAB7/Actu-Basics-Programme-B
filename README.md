@@ -133,3 +133,8 @@ Dix unités originales (ML01–ML10) sont intégrées au lecteur : formulation d
 ## Bloc B16 — Séries temporelles et prévision
 
 Dix unités originales (TS01–TS10) sont intégrées au lecteur : stationnarité, autocorrélation, ARMA/ARIMA/SARIMA, lissage exponentiel, régression temporelle, analyse spectrale, VAR/cointégration, ARCH/GARCH, modèles espace-état et évaluation des prévisions. La carte pédagogique, l’évaluation formative et la première revue interne sont disponibles dans `docs/B16-UNIT-MAP.md`, `docs/B16-EVALUATION.md` et `docs/reviews/B16-internal-review.md`. Les contenus restent des premières versions de travail ; dérivations, notebooks R/Python, tests apprenants et revue humaine indépendante restent à conduire.
+
+
+## Bloc B17 — Ingénierie des données et recherche reproductible
+
+Dix unités originales (DE01–DE10) sont intégrées au lecteur : cycle de vie et architecture, SQL et intégrité, formats et stockage, ingestion ETL/ELT, qualité et observabilité, orchestration, calcul distribué, reproductibilité, gouvernance et projet intégré. La carte pédagogique, l’évaluation formative et la première revue interne sont disponibles dans `docs/B17-UNIT-MAP.md`, `docs/B17-EVALUATION.md` et `docs/reviews/B17-internal-review.md`. Les contenus restent des premières versions de travail ; ateliers exécutables, benchmarks, tests apprenants et revue humaine indépendante restent à conduire.
