@@ -1,12 +1,22 @@
 # B10 — Revue interne mathématique et pédagogique
 
-**Version :** 0.1 · 21 novembre 2026  
+**Version :** 0.2 · 21 novembre 2026  
 **Nature :** première passe interne assistée par IA, non indépendante et non certifiante.
 
 ## Couverture
 T01 : unités, variables, populations et échelles. T02 : qualité, granularité, jointures et traçabilité. T03–T04 : plans de sondage, probabilités d'inclusion, poids HT/Hájek et correction de population finie. T05–T06 : distributions empiriques, quantiles, dispersion et robustesse. T07–T08 : graphiques univariés/bivariés et association. T09 : MCAR/MAR/MNAR, valeurs atypiques et sensibilité. T10 : EDA et communication reproductible.
 
-## Contrôles mathématiques à effectuer avant stabilisation
+## Contrôles mathématiques effectués lors de la seconde passe
+
+1. Recalcul des exemples de moyenne, médiane, variance et IQR ; correction des assertions numériques du laboratoire.
+2. Vérification de la formule HT, de sa propriété de non-biais sous probabilités d'inclusion positives connues et de la dépendance de sa variance aux probabilités conjointes πᵢⱼ.
+3. Vérification de la variance SRSWOR avec S² défini au dénominateur N−1 et de la correction de population finie ; exemple N=5, n=2 donne une variance de moyenne de 75.
+4. Vérification du ratio de Hájek comme estimateur généralement biaisé à taille finie.
+5. Alignement de la convention de quantiles du laboratoire sur type 7 (R par défaut).
+6. Vérification de la densité d'histogramme pour classes inégales par l'aire des rectangles.
+7. Exemple du paradoxe de Simpson vérifié numériquement : A gagne dans chaque strate, mais perd en agrégé.
+
+## Contrôles mathématiques restant à effectuer avant stabilisation
 1. Vérifier la définition de la population finie, les probabilités d'inclusion et les poids de sondage.
 2. Vérifier l'estimateur de Horvitz–Thompson et ses conditions de non-biais ; distinguer ratio de Hájek.
 3. Vérifier la convention de variance de population S² et la correction de population finie pour sondage aléatoire simple sans remise.
@@ -28,6 +38,12 @@ T01 : unités, variables, populations et échelles. T02 : qualité, granularité
 
 ## Contrôles éditoriaux et techniques
 Build TypeScript/Vite ; validation Markdown/KaTeX ; présence des dix unités T01–T10 dans le lecteur et catalogue ; cohérence des liens et prérequis ; tests clavier, lecteur d'écran et mobile ; tests apprenants sur le vocabulaire, les conventions de quantiles et les plans de sondage.
+
+## Livrables ajoutés
+
+- `labs/b10/descriptive_lab.py` et `labs/b10/descriptive_lab.R` : audit qualité, résumés, quantiles type 7, ECDF, histogramme à classes inégales, HT/Hájek, variance SRS, corrélation, données manquantes et Simpson.
+- `labs/b10/tests/test_descriptive_lab.py` : tests sur les résultats numériques, les entrées invalides, les pondérations et l'inversion de Simpson.
+- CI étendue aux tests Python et contrôles R de B10.
 
 ## Statut
 B10 constitue un premier ensemble de dix unités en revue interne. La revue est assistée par IA et n'est pas indépendante ; elle ne constitue ni certification ni accréditation. Les démonstrations approfondies, notebooks, tests apprenants et revue externe restent à conduire.
