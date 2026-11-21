@@ -134,6 +134,62 @@ def kalman_filter_local_level(observations,process_variance,measurement_variance
     return {"filtered_mean":means,"filtered_variance":variances,"innovations":innovations}
 
 
+def ar1_forecast(last_value, phi, horizon, intercept=0.0):
+    """Recursive AR(1) point forecasts; unlike forecast_ar1, no stationarity is required for finite h."""
+    if any(not math.isfinite(float(v)) for v in (last_value, phi, intercept)) or int(horizon)!=horizon or horizon<1:
+        raise ValueError("invalid AR(1) forecast inputs")
+    out=[]; value=float(last_value)
+    for _ in range(int(horizon)):
+        value=float(intercept)+float(phi)*value
+        out.append(value)
+    return out
+
+
+def forecast_errors(actual, predicted):
+    return forecast_metrics(actual,predicted)
+
+
+def mase(actual, predicted, training, seasonality=1):
+    train=_finite(training,"training")
+    if int(seasonality)!=seasonality or seasonality<1 or len(train)<=seasonality:
+        raise ValueError("training must contain more observations than the positive seasonality")
+    scale=sum(abs(train[i]-train[i-seasonality]) for i in range(seasonality,len(train)))/(len(train)-seasonality)
+    if scale<=0: raise ValueError("MASE undefined when the naive training scale is zero")
+    return forecast_errors(actual,predicted)["mae"]/scale
+
+
+def rolling_origin_splits(n, initial, horizon, step=1):
+    if any(int(v)!=v for v in (n,initial,horizon,step)) or initial<2 or horizon<1 or step<1 or initial+horizon>n:
+        raise ValueError("invalid rolling-origin dimensions")
+    origin=int(initial)
+    while origin+int(horizon)<=n:
+        yield (origin,origin,origin+int(horizon))
+        origin+=int(step)
+
+
+def kalman_scalar_filter(observations, transition, observation_loading, process_variance,
+                         observation_variance, initial_state, initial_variance):
+    pars=(transition,observation_loading,process_variance,observation_variance,initial_state,initial_variance)
+    if any(not math.isfinite(float(v)) for v in pars) or process_variance<0 or observation_variance<=0 or initial_variance<0:
+        raise ValueError("invalid scalar Kalman parameters")
+    if not observations: raise ValueError("observations must be non-empty")
+    state=float(initial_state); variance=float(initial_variance); output=[]
+    for obs in observations:
+        pred_state=transition*state
+        pred_var=transition*transition*variance+process_variance
+        if obs is None:
+            state,variance=pred_state,pred_var
+        else:
+            y=float(obs)
+            if not math.isfinite(y): raise ValueError("observations must be finite or None")
+            innovation_var=observation_loading**2*pred_var+observation_variance
+            gain=pred_var*observation_loading/innovation_var
+            state=pred_state+gain*(y-observation_loading*pred_state)
+            variance=(1-gain*observation_loading)*pred_var
+        output.append((state,variance))
+    return output
+
+
 if __name__=="__main__":
     series=[10,11,10.5,12,11.8,13,12.5,14]
     print("AR(1):",fit_ar1(series))
