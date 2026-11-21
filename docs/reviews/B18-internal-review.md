@@ -1,6 +1,6 @@
-# B18 — Première revue interne de contenu
+# B18 — Seconde revue interne de contenu
 
-**Version examinée :** 0.1 · **Statut :** revue assistée par IA, non indépendante  
+**Version examinée :** 1.1 · **Statut :** seconde revue assistée par IA, non indépendante  
 **Périmètre :** AR01–AR10, carte pédagogique et évaluation formative.
 
 ## Contrôles de cohérence réalisés
@@ -34,3 +34,45 @@
 
 ## Limites et statut
 Cette revue ne remplace pas un avis juridique ni une revue humaine indépendante en actuariat. Les règles réglementaires sont susceptibles d'évoluer et doivent être vérifiées à la date d'application. Les unités sont des premières versions de travail, non accréditées.
+
+
+
+## Seconde revue interne — version 1.1
+
+**Périmètre :** approfondissements AR01–AR10, laboratoire Python/R, carte pédagogique et évaluation.
+
+### Contrôles ajoutés
+- AR01–AR02 : loi de variance totale pour le coût composé, unités d'exposition, surdispersion, censure/troncature et dépendance fréquence-sévérité.
+- AR03 : log-vraisemblance Poisson avec offset, relativités/interactions, calibration du coût total et contraintes.
+- AR04 : justification du facteur Bühlmann et ouverture Bühlmann–Straub.
+- AR05 : force de mortalité, convention de censure ex æquo, Greenwood et distinction tables de période/cohorte.
+- AR06 : réserve prospective, paiements continus/discrets et options comportementales.
+- AR07 : facteur tail, Mack, bootstrap, Bornhuetter–Ferguson et réconciliation.
+- AR08 : clauses contractuelles, coût de couche et risque de contrepartie.
+- AR09 : Expected Shortfall intégral, dépendance de queue et contexte SCR Solvabilité II.
+- AR10 : rôle de la fonction actuarielle, validation proportionnée, biais et suivi.
+
+### Laboratoire et tests
+Le laboratoire Python/R couvre les primitives définies dans `labs/b18/README.md`. Les tests Python visent les cas déterministes et erreurs d'entrée ; le script R exécute des assertions de base. Le GLM Python est un IRLS minimal sans erreurs-types/covariance ; le GLM R utilise `glm.fit`. Les deux ne remplacent pas les bibliothèques de production.
+
+### Limites restantes
+1. Vérifier la convergence et les cas limites du GLM sur plusieurs jeux synthétiques ; ajouter des intervalles et diagnostics.
+2. Tester les calculs Chain-Ladder/Mack et bootstrap contre une implémentation de référence.
+3. Comparer Kaplan–Meier/Greenwood à un logiciel spécialisé sur jeux de référence.
+4. Ajouter données synthétiques de portefeuille, inflation, limites et grands sinistres.
+5. Faire relire les formules de réserves et de mortalité par un actuaire indépendant.
+6. Vérifier la réglementation Solvabilité II, IFRS 17 et les transpositions nationales en vigueur à la date d'utilisation.
+7. Organiser tests apprenants et audit manuel d'accessibilité.
+
+**Conclusion :** seconde revue assistée par IA ; elle ne constitue ni validation académique indépendante, ni avis réglementaire, ni certification.
+
+
+## Références complémentaires de la seconde passe
+- S127–S128 : Society of Actuaries, FAM/ASTAM 2026, modèles actuariels, tarification, provisionnement et crédibilité.
+- S129 : SOA, Credibility Educational Resource for Pension Actuaries.
+- S130–S132 : EIOPA, articles 77 (provisions), 48 (fonction actuarielle) et 101 (SCR) du Rulebook Solvency II.
+- S133 : Human Mortality Database, périmètre et méthodes des tables de mortalité.
+- S134 : International Actuarial Association, ISAP 1/5 et pratique actuarielle.
+- S135 : SOA Research Institute, étude 2026 sur biais et modèles prédictifs de tarification d'assurance.
+
+Les références cadrent les objectifs ; elles ne remplacent pas la vérification des éditions, des textes consolidés ni une revue indépendante.

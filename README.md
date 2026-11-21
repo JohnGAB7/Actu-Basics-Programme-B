@@ -148,7 +148,7 @@ Dix unités originales (DE01–DE10) sont intégrées au lecteur et approfondies
 
 ## Bloc B18 — Actuariat, assurance et modélisation du risque
 
-Dix unités originales (AR01–AR10) sont intégrées au lecteur : exposition et prime pure, fréquence-sévérité, tarification GLM, crédibilité, survie et mortalité, assurance vie et rentes, provisionnement non-vie, réassurance, capital économique et gouvernance actuarielle. La carte pédagogique, l’évaluation formative et la première revue interne sont disponibles dans `docs/B18-UNIT-MAP.md`, `docs/B18-EVALUATION.md` et `docs/reviews/B18-internal-review.md`. Les contenus restent des premières versions de travail ; dérivations détaillées, notebooks R/Python, cas complets et revue humaine indépendante restent à conduire.
+Dix unités originales (AR01–AR10) ont été approfondies dans une seconde passe : moments fréquence-sévérité, GLM avec offset, crédibilité Bühlmann/Bühlmann–Straub, survie/Kaplan–Meier, EPV vie et rentes, Chain-Ladder/Mack/Bornhuetter–Ferguson, réassurance, Expected Shortfall, solvabilité et gouvernance. La carte v1.1, l'évaluation, la seconde revue interne et les sources S127–S135 sont documentées. Un laboratoire Python/R sans dépendances externes couvre fréquence, moments agrégés, GLM Poisson, crédibilité, Kaplan–Meier, EPV, Chain-Ladder, XS et VaR/TVaR. Les tests CI et la revue humaine indépendante restent à conduire ; les implémentations ne sont pas des moteurs actuariels de production.
 
 
 ## Bloc B19 — Économétrie et statistiques financières
