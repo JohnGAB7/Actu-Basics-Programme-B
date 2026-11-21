@@ -88,21 +88,21 @@ did_2x2 <- function(tp,tpost,cp,cpost) {
   z <- c(tp,tpost,cp,cpost); if(any(!is.finite(z))) stop("Finite means required")
   (tpost-tp)-(cpost-cp)
 }
-local_intercept <- function(y,r,c,h,right=FALSE) {
-  keep <- if(right) r>=c else r<c
-  d <- r[keep]-c; yy <- y[keep]; w <- pmax(0,1-abs(d)/h)
+local_intercept <- function(y,r,cutoff,h,right=FALSE) {
+  keep <- if(right) r>=cutoff else r<cutoff
+  d <- r[keep]-cutoff; yy <- y[keep]; w <- pmax(0,1-abs(d)/h)
   use <- w>0; d <- d[use]; yy <- yy[use]; w <- w[use]
   if(length(d)<3 || length(unique(d))<2) stop("Insufficient local support")
   X <- cbind(1,d); XtWX <- crossprod(X,X*w); XtWy <- crossprod(X,yy*w)
   if(abs(det(XtWX))<1e-14) stop("Singular local design")
   as.numeric(solve(XtWX,XtWy)[1])
 }
-local_linear_rd <- function(y,r,c=0,h=1,a=NULL) {
-  if(length(y)!=length(r) || any(!is.finite(c(y,r))) || !is.finite(h) || h<=0) stop("Invalid RD inputs")
-  left <- local_intercept(y,r,c,h,FALSE); right <- local_intercept(y,r,c,h,TRUE)
+local_linear_rd <- function(y,r,cutoff=0,h=1,a=NULL) {
+  if(length(y)!=length(r) || any(!is.finite(base::c(y,r))) || !is.finite(cutoff) || !is.finite(h) || h<=0) stop("Invalid RD inputs")
+  left <- local_intercept(y,r,cutoff,h,FALSE); right <- local_intercept(y,r,cutoff,h,TRUE)
   jump <- right-left
   if(is.null(a)) return(c(jump_outcome=jump,left_intercept=left,right_intercept=right))
-  al <- local_intercept(a,r,c,h,FALSE); ar <- local_intercept(a,r,c,h,TRUE)
+  al <- local_intercept(a,r,cutoff,h,FALSE); ar <- local_intercept(a,r,cutoff,h,TRUE)
   ja <- ar-al; if(abs(ja)<=1e-12) stop("Zero treatment jump")
   c(jump_outcome=jump,jump_treatment=ja,fuzzy_rd=jump/ja)
 }
