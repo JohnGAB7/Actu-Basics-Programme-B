@@ -7,6 +7,7 @@ from labs.b08.probability_lab import (
     simulate_clt,
     simulate_compound_poisson,
     simulate_lln,
+    simulate_common_laws,
 )
 
 
@@ -24,6 +25,13 @@ class ProbabilityLabTests(unittest.TestCase):
         second = simulate_bernoulli_frequency(0.20, 100_000)
         self.assertEqual(first, second)
         self.assertLess(abs(first - 0.20), 0.01)
+
+    def test_common_law_simulations_match_theoretical_moments(self):
+        result = simulate_common_laws(n=50_000)
+        self.assertLess(abs(result["bernoulli_mean"] - 0.30), 0.015)
+        self.assertLess(abs(result["exponential_mean"] - 0.50), 0.015)
+        self.assertLess(abs(result["normal_mean"]), 0.02)
+        self.assertLess(abs(result["normal_variance"] - 1.0), 0.04)
 
     def test_zero_covariance_does_not_imply_independence(self):
         result = dependent_zero_covariance()
