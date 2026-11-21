@@ -31,7 +31,7 @@
 17. (5 pts) Décrire une simulation Monte-Carlo rigoureuse.
 18. (5 pts) Distinguer analyse exploratoire et confirmatoire.
 19. (5 pts) Citer les éléments nécessaires à la reproductibilité.
-20. (5 pts) Décrire une contribution de recherche et ses limites.
+20. (5 pts) Décrire une contribution de recherche et ses limites ; préciser comment une fonction de perte, un risque bayésien ou un critère minimax peut structurer une décision statistique.
 
 ## Corrigé indicatif
 1. A.s. : convergence avec probabilité 1 ; probabilité : probabilité d'écart supérieur à ε tend vers 0 ; loi : convergence des distributions aux points continus.
@@ -53,7 +53,7 @@
 17. Définir DGP, paramètres, scénarios, métriques, réplications, erreur Monte-Carlo et code.
 18. Exploratoire génère hypothèses ; confirmatoire teste protocole défini.
 19. Code, données, environnement, versions, paramètres, graines et documentation.
-20. Contribution précise, méthode, preuves/résultats, comparaison, robustesse et limites.
+20. Contribution précise, méthode, preuves/résultats, comparaison, robustesse et limites ; une décision statistique doit préciser l'espace d'actions et la fonction de perte.
 
 ## Critères de réussite
 Seuil indicatif : 70/100. Toute confusion sur les hypothèses de convergence, validité du bootstrap, diagnostics MCMC ou portée d'une conclusion impose une reprise ciblée. Une évaluation réelle de niveau master recherche nécessite correction humaine et jury.
