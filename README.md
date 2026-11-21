@@ -8,7 +8,7 @@ The first frontend milestone is implemented on `feat/platform-v1`:
 - responsive learner dashboard and programme catalogue;
 - learning-path overview and assessment centre;
 - interactive eight-question diagnostic demonstration;
-- countdown timer, question navigation, browser-local answer recovery and explained results;
+- countdown timer, question navigation, browser-local answer saving, interrupted attempt resumption and explained results;
 - French-first responsive interface.
 
 This is a **demonstration**, not an official examination system. Responses are stored only in the current browser. There are no accounts, server persistence, protected answer keys or certified scoring yet. The official Bloc 1 final examination is not yet integrated.
