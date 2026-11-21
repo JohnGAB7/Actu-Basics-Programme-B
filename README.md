@@ -5,6 +5,7 @@
 ## Application preview
 
 The first frontend milestone is implemented on `feat/platform-v1`:
+- searchable Bloc 1 library with the eight original F01–F08 courses, a Markdown/math reader, and 40 transversal exercises with corrections;
 - responsive learner dashboard and programme catalogue;
 - learning-path overview and assessment centre;
 - interactive eight-question diagnostic demonstration;
@@ -34,7 +35,7 @@ Production build: `npm run build`.
 
 ## Next milestones
 
-1. Integrate reviewed Bloc 1 courses and the actual final examination.
+1. Integrate the verified Bloc 1 final examination and correction, then build secure assessment flows.
 2. Build practice, diagnostic and remediation experiences.
 3. Add secure identity, persistence, server-side exam delivery and grading.
 4. Expand into Bloc 2 and the statistics curriculum.
