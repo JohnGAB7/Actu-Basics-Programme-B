@@ -8,7 +8,7 @@ on:
       - ".github/workflows/b20-lab.yml"
   push:
     branches:
-      - "chatgpt/b20-advanced-statistical-theory"
+      - "chatgpt/b20-rebased-on-current-master"
     paths:
       - "labs/b20/**"
       - ".github/workflows/b20-lab.yml"
