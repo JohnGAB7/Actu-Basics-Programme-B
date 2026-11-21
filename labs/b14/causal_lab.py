@@ -107,12 +107,14 @@ def ipw_ate(outcome,treatment,scores):
 
 def aipw_ate(outcome,treatment,scores,m0,m1,min_score=1e-6):
     y=_vec(outcome,"outcome"); a=_bin(treatment,"treatment"); e=_vec(scores,"scores"); p0=_vec(m0,"m0"); p1=_vec(m1,"m1"); _same(y=y,a=a,e=e,m0=p0,m1=p1)
+    if len(set(a)) != 2: raise ValueError("both treatment arms must be represented")
     if not 0<min_score<.5 or any(p<min_score or p>1-min_score for p in e): raise ValueError("scores outside declared overlap bounds")
     vals=[b-c+z*(v-b)/p-(1-z)*(v-c)/(1-p) for v,z,p,c,b in zip(y,a,e,p0,p1)]
     return _mean(vals)
 
 def iv_wald(outcome,treatment,instrument):
     y=_vec(outcome,"outcome"); a=_bin(treatment,"treatment"); z=_bin(instrument,"instrument"); _same(y=y,a=a,z=z)
+    if len(set(z)) != 2: raise ValueError("instrument must have both levels")
     def contrast(v):
         one=[q for q,g in zip(v,z) if g]; zero=[q for q,g in zip(v,z) if not g]
         if not one or not zero: raise ValueError("instrument must have both levels")
