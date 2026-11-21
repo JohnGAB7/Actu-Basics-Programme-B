@@ -31,12 +31,14 @@ Une source ne prouve pas qu'un cours entier est correct. Pour chaque unité, pr�
 | S15 | Stanford — Statistics MS Required Courses : https://statistics.stanford.edu/graduate-programs/statistics-ms/statistics-ms-required-courses | Probabilité, théorie statistique, régression, processus stochastiques, computation | Prérequis et profondeur graduate (B03–B12, B20) |
 | S16 | Stanford — Statistics PhD Coursework : https://statistics.stanford.edu/academic-programs/graduate-programs/phd-program/doctoral-program/doctoral-program-coursework | Séries temporelles, théorie avancée, processus stochastiques, multivarié, causalité, expériences, Bayes, Monte Carlo | Extensions L3–L4 (B09, B13–B16, B20) |
 | S17 | Stanford — Statistics MS Curriculum / Bulletin : https://bulletin.stanford.edu/programs/graduate/statistics/master-of-science | Algèbre linéaire, calcul multivarié, programmation, probabilité, statistique, calcul numérique | Prérequis transversaux et préparation graduate |
+| S18 | OpenStax — Prealgebra 2e, §7.1 : https://openstax.org/books/prealgebra-2e/pages/7-1-rational-and-irrational-numbers | Nombres rationnels, irrationnels et classification | Vérifier les définitions et la progression de F01 |
+| S19 | OpenStax — College Algebra 2e, §§1.1 et 2.7 : https://openstax.org/books/college-algebra-2e/pages/1-1-real-numbers-algebra-essentials ; https://openstax.org/books/college-algebra-2e/pages/2-7-linear-inequalities-and-absolute-value-inequalities | Ensembles numériques, ordre, intervalles, inégalités et valeur absolue | Vérifier le périmètre conceptuel de F01 et la transition vers F06 |
 
 ## 3. Matrice de couverture par bloc
 
 | Bloc | Sources institutionnelles prioritaires |
 |---|---|
-| B01 Fondations | S01, S09 |
+| B01 Fondations | S01, S09, S18, S19 |
 | B02 Logique et discret | S01, S05 |
 | B03 Algèbre linéaire | S01, S07, S17 |
 | B04 Analyse réelle | S01, S06, S09 |
