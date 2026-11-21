@@ -1,6 +1,6 @@
-# B11 — Première revue interne mathématique et pédagogique
+# B11 — Revue interne mathématique et pédagogique
 
-**Version examinée :** 1.0.0 · **Statut :** revue interne assistée par IA · **Date :** 21 novembre 2026  
+**Version examinée :** 1.1.0 · **Statut :** seconde passe interne assistée par IA · **Date :** 21 novembre 2026  
 **Limite :** cette revue n’est pas indépendante, n’est pas une expertise humaine externe et ne constitue pas une certification académique.
 
 ## Périmètre contrôlé
@@ -51,3 +51,29 @@ Les distinctions pédagogiques essentielles sont explicitement rappelées : esti
 
 ## Conclusion
 La première passe ne met pas en évidence d’erreur structurelle majeure dans le périmètre élémentaire couvert. Elle identifie toutefois des approfondissements importants avant de qualifier le bloc de version stabilisée. B11 reste en **revue interne**, non certifié et non validé par MIT, Harvard, Princeton, Stanford ou toute autre institution.
+
+
+## Résultats de la seconde passe — 21 novembre 2026
+
+1. **I02 — risque fréquentiste du shrinkage Beta(1,1).** Pour $\tilde p=(S+1)/(n+2)$, biais $(1-2p)/(n+2)$, variance $np(1-p)/(n+2)^2$. À $p=0,3,n=10$, EQM ≈ 0,01569 contre 0,021 pour la moyenne empirique ; l'avantage n'est pas uniforme sur tout l'espace des paramètres.
+2. **I03 — frontière de Poisson.** Si tous les comptes sont nuls, la log-vraisemblance est strictement croissante lorsque $\lambda\downarrow0$ ; pour l'espace $\lambda>0$, le supremum est à la frontière et n'est pas atteint.
+3. **I07 — taille d'échantillon.** Avec $\alpha=0,05$, puissance 0,80, $\sigma=10$ et $\delta=3$, l'approximation normale donne $n=\lceil87,1\rceil=88$.
+4. **I08 — tests de vraisemblance.** Les statistiques LR, Wald et score sont asymptotiquement équivalentes sous les conditions régulières, mais ne sont pas interchangeables à taille finie ; le Wald est indéfini si l'estimation est à la frontière.
+5. **I09 — rééchantillonnage.** Le bootstrap percentile et la permutation Monte-Carlo sont codés avec graine fixe ; la correction $(1+N_{ext})/(B+1)$ empêche une p-value simulée nulle. L'échangeabilité et le plan restent des conditions de validité.
+6. **I10 — Bayes.** Notation corrigée en termes de densité/masse a priori $\pi(\theta)$, vraisemblance $f(x\mid\theta)$, posterior et évidence $m(x)$ ; ajout de la prédictive Beta–Binomiale.
+7. **Bibliographie.** Les pages MIT OCW 18.650/18.443 ont été consultées pour faire correspondre les thèmes aux cours et lectures. Casella & Berger, 2e édition, copyright 2024, est confirmé par l'éditeur Routledge.
+
+## Laboratoire reproductible ajouté
+
+- Python standard library : distributions d'échantillonnage, risque exact Bernoulli, EMV Poisson, intervalles Wald/Wilson, couverture simulée, taille d'échantillon, LR/Wald/score, bootstrap, permutation, posterior et prédictive Beta–Binomiale.
+- R base : fonctions équivalentes et contrôles numériques.
+- Tests Python : reproductibilité, décomposition biais-variance, couverture près de la frontière, taille d'échantillon, tests asymptotiques, bootstrap/permutation et normalisation prédictive.
+- La CI du dépôt est étendue aux tests Python et contrôles R B11.
+
+## Points qui restent ouverts
+
+- Démonstrations complètes de Neyman–Pearson, Rao–Blackwell, Cramér–Rao et Wilks.
+- Couverture et risque sous modèles non réguliers, paramètres sur frontière, données dépendantes et plans de sondage complexes.
+- Bootstrap studentisé/BCa, permutations exactes, tests non paramétriques et contrôle FDR sous dépendance générale.
+- Diagnostics computationnels plus approfondis et sensibilité aux priors dans les modèles complexes.
+- Revue humaine indépendante, tests apprenants et audit d'accessibilité.
