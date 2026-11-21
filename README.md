@@ -102,3 +102,8 @@ Une épreuve formative de synthèse (120 min, 100 points), avec corrigé, est di
 ### Évaluation transversale B01
 
 Une épreuve formative de synthèse (90 min, 100 points), avec corrigé détaillé et étude de cas quantitative, est disponible dans [`docs/B01-EVALUATION.md`](./docs/B01-EVALUATION.md). Elle reste en draft et doit être testée auprès d'apprenants. La revue éditoriale interne, ses corrections et les contrôles restant à effectuer sont consignés dans [`docs/reviews/B01-internal-review.md`](./docs/reviews/B01-internal-review.md).
+
+
+## Bloc B11 — Théorie de l’inférence statistique
+
+Dix unités originales (I01–I10) couvrent les lois d’échantillonnage, l’estimation ponctuelle, les méthodes des moments et du maximum de vraisemblance, les propriétés asymptotiques, les intervalles, les tests, la puissance, les tests LR/Wald/score, le bootstrap, les permutations et l’introduction bayésienne. La carte pédagogique, l’évaluation corrigée et la première revue interne sont disponibles dans docs/B11-UNIT-MAP.md, docs/B11-EVALUATION.md et docs/reviews/B11-internal-review.md. Le bloc reste en revue interne ; les tests apprenants et une revue indépendante restent à conduire.
