@@ -44,7 +44,8 @@ L'architecture cible comporte 20 blocs organisés en socle mathématique et comp
 - B07 : N01 à N10 publiées sur GitHub Pages ; carte pédagogique, évaluation formative et première revue interne documentées. CI TypeScript/Vite et validation Markdown/KaTeX réussies ; revue indépendante et tests apprenants restent à conduire.
 - B08 : P01 à P10 publiées sur GitHub Pages ; carte pédagogique, évaluation formative et première revue interne documentées. CI TypeScript/Vite et validation Markdown/KaTeX réussies ; revue indépendante et tests apprenants restent à conduire.
 - B09 : S01 à S10 publiées sur GitHub Pages ; carte pédagogique, évaluation formative et première revue interne documentées. CI TypeScript/Vite et validation Markdown/KaTeX réussies ; revue indépendante et tests apprenants restent à conduire.
-- B10–B20 : architecture cible définie ; contenus à développer, documenter et relire.
+- B10 : T01 à T10 intégrées dans la branche de développement ; carte pédagogique, évaluation formative et première revue interne documentées. Publication après contrôles CI.
+- B11–B20 : architecture cible définie ; contenus à développer, documenter et relire.
 - Le diagnostic interactif est une démonstration formative locale, non certifiante.
 - Aucun compte, historique privé serveur ou examen sécurisé n'est fourni par cette version statique.
 
@@ -65,6 +66,10 @@ Le workflow GitHub Actions vérifie le build sur les branches et déploie GitHub
 ### Évaluation transversale B02
 
 Une épreuve formative de synthèse (90 min, 100 points), avec corrigé, est disponible dans [`docs/B02-EVALUATION.md`](./docs/B02-EVALUATION.md). Elle reste en draft et doit être relue indépendamment puis testée auprès d'apprenants. La revue interne est consignée dans [`docs/reviews/B02-internal-review.md`](./docs/reviews/B02-internal-review.md).
+
+### Évaluation transversale B10
+
+Une épreuve formative de synthèse (120 min, 100 points), avec corrigé, est disponible dans [`docs/B10-EVALUATION.md`](./docs/B10-EVALUATION.md). La première revue interne est consignée dans [`docs/reviews/B10-internal-review.md`](./docs/reviews/B10-internal-review.md). Le contenu est en revue interne et n'est pas encore publié.
 
 ### Évaluation transversale B09
 

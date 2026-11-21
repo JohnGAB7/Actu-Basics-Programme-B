@@ -122,6 +122,12 @@ Le corpus institutionnel couvre le cœur mathématique, statistique et data scie
 
 Aucune unité L3/L4 ne doit être rédigée sur la base d'une seule page de présentation institutionnelle. Il faudra identifier des notes de cours détaillées, manuels de référence et articles originaux.
 
+| S54 | MIT OpenCourseWare — 15.075J Statistical Thinking and Data Analysis : https://ocw.mit.edu/courses/15-075j-statistical-thinking-and-data-analysis-fall-2011/ | Statistique descriptive, échantillonnage, estimation, tests, régression et données catégorielles | Cadrage T01–T10 et transition vers B11 |
+| S55 | NIST/SEMATECH — e-Handbook of Statistical Methods : https://www.itl.nist.gov/div898/handbook/ | EDA, qualité de mesure, graphiques, distributions, valeurs atypiques, diagnostics et études de cas | Référence méthodologique T01–T02 et T05–T10 |
+| S56 | Sharon L. Lohr — *Sampling: Design and Analysis*, 3rd ed., Chapman & Hall/CRC | Plans probabilistes, probabilités d'inclusion, stratification, grappes, poids et estimation sous sondage | Référence de fond T03–T04 |
+
+| B10 Statistique descriptive et exploration | S54, S55, S56 |
+
 ## 6. Fiche de traçabilité par unité
 
 Pour chaque cours, conserver :
