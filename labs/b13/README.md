@@ -18,7 +18,7 @@ Rscript labs/b13/multivariate_lab.R
 2. Décomposition spectrale d'une matrice symétrique par Jacobi ; ACP, valeurs propres, vecteurs propres, scores et variance expliquée.
 3. Distance de Mahalanobis et statistique T² de Hotelling avec transformation F (sans calcul de p-value).
 4. Shrinkage de covariance vers une cible sphérique, avec poids λ explicite.
-5. K-means déterministe avec initialisations multiples, centroïdes, étiquettes et inertie.
+5. K-means déterministe avec initialisations multiples, centroïdes, étiquettes, inertie et indicateur de convergence.
 6. Borne de rang de la covariance empirique centrée lorsque p/n est élevé.
 
 ## Hypothèses et limites
