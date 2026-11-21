@@ -158,7 +158,7 @@ Dix unités originales (EF01–EF10) ont été approfondies : estimands et hypot
 
 ## Bloc B20 — Théorie statistique avancée et méthodes de recherche
 
-Dix unités originales (AT01–AT10) sont intégrées au lecteur : probabilité mesurée et convergence, théorie asymptotique, processus empiriques, vraisemblance et semi-paramétrique, Bayes et MCMC, martingales, grande dimension, optimisation numérique, méthodes de recherche et projet de recherche. La carte pédagogique, l’évaluation formative et la première revue interne sont disponibles dans `docs/B20-UNIT-MAP.md`, `docs/B20-EVALUATION.md` et `docs/reviews/B20-internal-review.md`. Les contenus restent des premières versions de travail ; preuves complètes, contre-exemples, notebooks, vérification indépendante et tests apprenants restent à conduire.
+Dix unités AT01–AT10 approfondies dans une seconde passe : mesurabilité et modes de convergence, estimateurs M/LAN/efficacité, processus empiriques et bootstrap, score efficace et nuisance, MCMC/ESS/HMC, martingales et arrêt optionnel, grande dimension/FDR, KKT/BFGS et calcul stable, protocole de recherche et projet reproductible. La carte v1.1, l'évaluation, la seconde revue et les sources S148–S157 sont documentées. Un laboratoire Python/R sans dépendances externes couvre bootstrap, permutation, delta, Metropolis–Hastings, ESS simplifié, Benjamini–Hochberg, ridge, gradient et MCSE. Les implémentations sont pédagogiques et ne remplacent ni les preuves, ni des moteurs de calcul statistique de production.
 
 
 ## Bloc B12 — Régression et modèles statistiques
