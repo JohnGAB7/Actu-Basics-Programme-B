@@ -440,3 +440,18 @@ Cette décomposition est une première version de travail. Les démonstrations, 
 10. Statistique de grande dimension, régularisation et étude intégrée.
 
 Cette décomposition est une première version de travail. Les preuves détaillées, notebooks R/Python, analyses de sensibilité, exemples complets et validation indépendante restent à conduire.
+
+
+### B14 — Plans d'expérience et inférence causale
+1. Questions causales, estimands et résultats potentiels.
+2. Randomisation, essais contrôlés et inférence de randomisation.
+3. Plans d'expérience, facteurs et interactions.
+4. DAG, confusion, médiation et biais de sélection.
+5. Identification par échangeabilité, stratification et standardisation.
+6. Score de propension, appariement et pondération.
+7. Estimation doublement robuste et apprentissage statistique causal.
+8. Variables instrumentales et discontinuité de régression.
+9. Différences-en-différences, études d'événement et contrôle synthétique.
+10. Sensibilité, validité externe et protocole causal intégré.
+
+Cette décomposition est une première version de travail. Les preuves détaillées, analyses numériques, notebooks, diagnostics avancés et validation indépendante restent à conduire.
