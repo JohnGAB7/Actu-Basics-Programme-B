@@ -40,7 +40,7 @@ L'architecture cible comporte 20 blocs organisés en socle mathématique et comp
 - B03 : V01 à V10 intégrées à la bibliothèque ; revue interne mathématique et pédagogique documentée. CI TypeScript/Vite et validation KaTeX réussies ; revue humaine indépendante et tests apprenants restent à conduire.
 - B04 : A01 à A10 publiées sur GitHub Pages ; revue interne mathématique et pédagogique documentée. CI TypeScript/Vite et validation Markdown/KaTeX réussies ; revue indépendante et tests apprenants restent à conduire.
 - B05 : M01 à M10 publiées sur GitHub Pages ; carte pédagogique, évaluation formative et revue interne documentées. CI TypeScript/Vite et validation Markdown/KaTeX réussies ; revue indépendante et tests apprenants restent à conduire.
-- B06 : O01 à O10 rédigées et intégrées à la bibliothèque sur la branche de travail ; revue interne et contrôles CI à terminer avant publication.
+- B06 : O01 à O10 publiées sur GitHub Pages ; carte pédagogique, évaluation formative et revue interne documentées. CI TypeScript/Vite et validation Markdown/KaTeX réussies ; revue indépendante et tests apprenants restent à conduire.
 - B07–B20 : architecture cible définie ; contenus à développer, documenter et relire.
 - Le diagnostic interactif est une démonstration formative locale, non certifiante.
 - Aucun compte, historique privé serveur ou examen sécurisé n'est fourni par cette version statique.
