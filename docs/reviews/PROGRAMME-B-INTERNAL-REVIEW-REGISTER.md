@@ -67,3 +67,11 @@ Les anciens statuts « draft » de cette première passe décrivaient l'absence 
 - PR [#68](https://github.com/JohnGAB7/Actu-Basics-Programme-B/pull/68) fusionnée ; commit `840086855a772d0a15f1770a3e04237e7a024fd6`.
 - PR #60 fermée après vérification de l'intégration MV04 dans master.
 - Déploiement master [#44959748131](https://github.com/JohnGAB7/Actu-Basics-Programme-B/actions/runs/44959748131) réussi : tests Python/R B08–B20, build, typecheck, KaTeX et GitHub Pages.
+
+
+## Revue mathématique B08 — 21 novembre 2026
+
+- Rapport : [B08-mathematical-review.md](B08-mathematical-review.md).
+- P01–P10 relues sur les axiomes, Bayes, indépendance, lois, transformations, covariance, espérance conditionnelle, inégalités, convergence, LLN/TCL.
+- Aucun défaut mathématique bloquant identifié dans cette première passe ; P05, P09 et P10 enrichies ; références S161–S163 ajoutées.
+- Recalcul exhaustif des exercices, revue humaine indépendante et tests apprenants restent à réaliser.
