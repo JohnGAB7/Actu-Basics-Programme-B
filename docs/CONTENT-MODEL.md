@@ -4,7 +4,8 @@ This is the conceptual contract for course and assessment content. It will be co
 
 ## Common metadata
 
-- `id`: stable slug, never reused for a different concept;
+- `id`: stable global identifier, never reused for a different concept; use the composite form `Bxx-UNITCODE` (for example, `B13-MV01`) so identifiers remain unique across blocks;
+- `blockCode` and `unitCode`: explicit parent block and public unit code; a storage filename may differ from the public unit code but must map to it unambiguously;
 - `version`: immutable content version;
 - `locale`: BCP 47 language tag, initially `fr-BE` or `fr-FR` as appropriate;
 - `title` and `summary`;
