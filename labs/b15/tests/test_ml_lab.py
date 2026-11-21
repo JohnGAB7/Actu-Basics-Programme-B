@@ -1,3 +1,4 @@
+import math
 import unittest
 
 from labs.b15.ml_lab import (
@@ -33,6 +34,8 @@ class MachineLearningLabTests(unittest.TestCase):
         groups = group_metrics(y, p, ["A", "A", "A", "B", "B", "B"], 0.5)
         self.assertEqual(set(groups), {"A", "B"})
         self.assertIn("selection_rate", groups["A"])
+        with self.assertRaises(ValueError):
+            group_metrics([0, 1], [0.2, 0.8], [1, "1"])
 
     def test_gaussian_mixture_em(self):
         x = [-2.2, -2.0, -1.8, -2.1, -1.9, 1.8, 2.0, 2.2, 1.9, 2.1]
@@ -42,6 +45,21 @@ class MachineLearningLabTests(unittest.TestCase):
         self.assertGreater(fit["means"][1], 1.0)
         self.assertTrue(all(v > 0 for v in fit["variances"]))
         self.assertGreaterEqual(fit["iterations"], 1)
+
+    def test_em_log_likelihood_matches_returned_parameters(self):
+        x = [-2.2, -2.0, -1.8, -2.1, -1.9, 1.8, 2.0, 2.2, 1.9, 2.1]
+        fit = gaussian_mixture_1d_em(x, 2, max_iter=1)
+        expected = 0.0
+        for value in x:
+            terms = [
+                math.log(w) - 0.5 * math.log(2 * math.pi * var)
+                - (value - mean) ** 2 / (2 * var)
+                for w, mean, var in zip(fit["weights"], fit["means"], fit["variances"])
+            ]
+            maximum = max(terms)
+            expected += maximum + math.log(sum(math.exp(term - maximum) for term in terms))
+        self.assertAlmostEqual(fit["log_likelihood"], expected, places=12)
+        self.assertFalse(fit["converged"])
 
     def test_invalid_inputs(self):
         with self.assertRaises(ValueError):

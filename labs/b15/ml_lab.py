@@ -84,8 +84,12 @@ def group_metrics(y_true, probabilities, groups, threshold=0.5):
     raw_y=list(y_true); y=[int(v) for v in raw_y]; p=_finite(probabilities,"probabilities"); g=list(groups)
     if len(y)!=len(p) or len(y)!=len(g) or not y or any(float(v)!=z or z not in (0,1) for v,z in zip(raw_y,y)): raise ValueError("invalid labels or length mismatch")
     if not math.isfinite(threshold) or not 0<=threshold<=1: raise ValueError("threshold must lie in [0,1]")
+    labels=sorted(set(g),key=str)
+    label_keys=[str(group) for group in labels]
+    if len(set(label_keys))!=len(label_keys):
+        raise ValueError("group labels must have unique string representations")
     result={}
-    for group in sorted(set(g),key=str):
+    for group in labels:
         idx=[i for i,v in enumerate(g) if v==group]
         if not idx: continue
         m=classification_metrics([y[i] for i in idx],[p[i] for i in idx],threshold)
@@ -126,6 +130,12 @@ def gaussian_mixture_1d_em(x, n_components=2, max_iter=300, tolerance=1e-8, vari
             converged=True
             break
         previous=log_likelihood
+    # Report the observed-data log-likelihood for the parameters actually returned.
+    log_likelihood=sum(_logsumexp([
+        math.log(weights[j])-0.5*math.log(2*math.pi*variances[j])
+        -(v-means[j])**2/(2*variances[j])
+        for j in range(k)
+    ]) for v in values)
     order=sorted(range(k),key=lambda j:means[j])
     return {"weights":[weights[j] for j in order],"means":[means[j] for j in order],
             "variances":[variances[j] for j in order],"log_likelihood":log_likelihood,
