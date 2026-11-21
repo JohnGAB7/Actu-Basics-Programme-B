@@ -364,6 +364,16 @@ Les ressources S136–S147 cadrent les contenus. SR 26-2 et les chapitres Bâle 
 | S155 | Benjamini & Hochberg (1995) — Controlling the False Discovery Rate : https://doi.org/10.1111/j.2517-6161.1995.tb02031.x | Contrôle FDR sous conditions de dépendance | AT07 ; ne garantit pas la vérité individuelle de chaque rejet |
 | S156 | CRAN — boot package reference manual : https://cran.rstudio.org/web/packages/boot/refman/boot.html | Bootstrap paramétrique/non paramétrique, stratification et permutations | AT03 et AT09 ; documentation logicielle |
 | S157 | MIT — 18.656 Mathematical Statistics: a Non-Asymptotic Approach (catalogue 2026) : https://student.mit.edu/catalog/m18b.html | Concentration, grande dimension, non paramétrique, oracle inequalities et processus empiriques | AT03 et AT07 |
-| S139 | Federal Reserve — SR 26-2 Revised Guidance on Model Risk Management : https://www.federalreserve.gov/supervisionreg/srletters/SR2602.htm | Gouvernance, validation, suivi et effective challenge ; guidance américaine bancaire | AT09–AT10 ; référence déjà enregistrée dans le corpus B19 |
 
 Les ressources S148–S157 complètent le cadrage. S139 est réutilisée depuis B19 pour éviter un doublon. Les syllabus, manuels logiciels et guidance prudentielle n'approuvent pas Programme B et ne remplacent pas les preuves mathématiques ni la validation humaine.
+
+
+## B13 — MANOVA : références complémentaires
+
+| ID | Ressource | Domaines utiles | Utilisation |
+|---|---|---|---|
+| S158 | Penn State STAT 505 — Multivariate Analysis of Variance (MANOVA) : https://online.stat.psu.edu/stat505/Lesson08 | Critères MANOVA, Wilks, Pillai, Hotelling–Lawley, hypothèses et diagnostics | MV04 ; enseignement appliqué et formules d'approximation |
+| S159 | StataCorp — Multivariate Statistics Reference Manual, section MANOVA : https://www.stata.com/manuals/mv.pdf | Méthodes et formules des quatre critères, transformations F, distinction exact/approximation/borne | MV04 ; documentation statistique de référence |
+| S160 | UCLA Statistical Consulting — MANOVA, Stata Annotated Output : https://stats.oarc.ucla.edu/stata/output/manova/ | Lecture des statistiques, degrés de liberté, p-values et borne F de Roy | MV04 ; interprétation des sorties logicielles |
+
+Les références S158–S160 complètent les références multivariées déjà présentes. Les sorties logicielles et les approximations F doivent être interprétées selon le modèle et les degrés de liberté ; elles ne valident pas automatiquement une analyse sous mesures répétées ou modèle mixte.
