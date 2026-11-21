@@ -206,3 +206,15 @@ Les ressources S77–S81 servent de cadrage et de vérification ; elles ne certi
 | S86 | statsmodels — Time Series Analysis : https://www.statsmodels.org/stable/tsa.html | Implémentations Python ARIMA, espace-état et méthodes temporelles | Référence technique pour les futurs ateliers Python |
 
 Les ressources S82–S86 servent de cadrage et de vérification ; elles ne certifient pas les unités.
+
+
+## B17 — Ingénierie des données et recherche reproductible
+| ID | Ressource | Domaines utiles | Utilisation |
+|---|---|---|---|
+| S87 | dbt Developer Hub — Data tests : https://docs.getdbt.com/docs/build/data-tests | Tests de nullité, unicité, valeurs admises, relations et tests métier | Référence opérationnelle DE05 |
+| S88 | dbt Developer Hub — What is dbt? : https://docs.getdbt.com/docs/introduction | Modèles SQL modulaires, lineage, tests, contrats et CI/CD | Cadrage DE01, DE05–DE06 et DE08 |
+| S89 | Commission européenne — Data Quality Guidelines : https://op.europa.eu/webpub/op/data-quality-guidelines/en/ | Qualité, documentation, schémas, sémantique, versionnement et publication | Référence institutionnelle DE01, DE03, DE05 et DE08 |
+| S90 | PostgreSQL Documentation : https://www.postgresql.org/docs/current/ | SQL, contraintes, transactions, isolation et administration | Référence technique DE02 |
+| S91 | Apache Parquet Documentation : https://parquet.apache.org/docs/ | Format colonne, métadonnées et stockage analytique | Référence technique DE03 |
+
+Les ressources S87–S91 servent de cadrage et de vérification ; elles ne certifient pas les unités.

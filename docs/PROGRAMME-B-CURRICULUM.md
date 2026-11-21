@@ -485,3 +485,18 @@ Cette décomposition est une première version de travail. Les preuves détaill�
 10. Modèles espace-état, filtre de Kalman et évaluation des prévisions.
 
 Cette décomposition est une première version de travail. Les preuves détaillées, notebooks et validations indépendantes restent à conduire.
+
+
+### B17 — Ingénierie des données et recherche reproductible
+1. Cycle de vie des données et architecture analytique.
+2. Modélisation relationnelle, SQL et intégrité des données.
+3. Formats, fichiers, stockage et partitionnement.
+4. Ingestion, ETL/ELT et intégration de sources.
+5. Qualité des données, tests et observabilité.
+6. Pipelines, orchestration et gestion des dépendances.
+7. Calcul distribué et traitement de grands volumes.
+8. Reproductibilité, versionnement et environnements de calcul.
+9. Sécurité, confidentialité et gouvernance des données.
+10. Projet intégré : construire un produit de données fiable.
+
+Cette décomposition est une première version de travail. Les notebooks, commandes, tests et validations indépendantes restent à conduire.
