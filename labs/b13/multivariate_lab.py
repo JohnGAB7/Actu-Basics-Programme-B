@@ -194,6 +194,8 @@ def shrinkage_covariance(covariance: Sequence[Sequence[float]], weight: float) -
         raise ValueError("covariance must be square and symmetric")
     if not math.isfinite(weight) or not 0 <= weight <= 1:
         raise ValueError("weight must lie in [0, 1]")
+    eigenvalues,_ = jacobi_eigen_symmetric(s)
+    if min(eigenvalues) < -1e-10: raise ValueError("covariance must be positive semidefinite")
     target = sum(s[i][i] for i in range(p))/p
     return [[(1-weight)*s[i][j]+(weight*target if i==j else 0.0) for j in range(p)] for i in range(p)]
 
