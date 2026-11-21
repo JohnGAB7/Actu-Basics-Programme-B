@@ -1,8 +1,8 @@
 # B09 — Carte pédagogique : processus stochastiques
 
-**Statut :** revue interne effectuée — consolidation pédagogique en cours.
+**Statut :** seconde passe de revue interne effectuée — consolidation pédagogique en cours.
 
-**Version :** 1.0 · 21 novembre 2026  
+**Version :** 1.1 · 21 novembre 2026  
 **Charge indicative :** 48–58 heures  
 **Prérequis :** B08 (probabilités), B04 (analyse) et B03 (algèbre linéaire pour les matrices de transition et générateurs). Les bases de l'espérance conditionnelle sont indispensables.
 
@@ -30,6 +30,10 @@ S01 introduit les objets et les trajectoires. S02–S05 construisent la théorie
 - B16 traitera les séries temporelles et la prévision ; B09 ne traite pas l'inférence temporelle appliquée.
 - Les chaînes de Markov sont introduites ici ; leurs applications Monte Carlo et MCMC relèveront des blocs de simulation et de machine learning.
 - Le calcul d'Itô, les équations différentielles stochastiques, les diffusions avancées, les grandes déviations et la théorie des files lourdes sont des prolongements L3/L4.
+
+## Consolidation de la seconde passe interne
+
+Les dix unités ont été enrichies par des approfondissements sur les objets mesurables et les distributions finies, les calculs multi-étapes et équations de premier pas, la classification des états, les conditions de convergence, les chaînes absorbantes, la caractérisation locale du processus de Poisson, les hypothèses des théorèmes de renouvellement et d'arrêt optionnel, les équations de Kolmogorov, la stabilité M/M/1 et la variation quadratique brownienne.
 
 ## Modalités pédagogiques
 Chaque unité comprend définitions, hypothèses, exemples, exercices corrigés, erreurs fréquentes et critères de maîtrise. Des simulations Python/R doivent illustrer les trajectoires, transitions, arrivées et temps d'attente, sans remplacer les démonstrations.
