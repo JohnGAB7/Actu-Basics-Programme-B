@@ -2,9 +2,10 @@ import math
 import unittest
 
 from labs.b16.time_series_lab import (
-    acf, difference, fit_ar1, forecast_ar1, forecast_metrics,
-    garch11_variance, kalman_filter_local_level, periodogram,
-    rolling_origin_mae, ses_forecast,
+    acf, ar1_forecast, difference, fit_ar1, forecast_ar1, forecast_errors,
+    forecast_metrics, garch11_variance, kalman_filter_local_level,
+    kalman_scalar_filter, mase, periodogram, rolling_origin_mae,
+    rolling_origin_splits, ses_forecast,
 )
 
 
@@ -57,6 +58,15 @@ class TimeSeriesLabTests(unittest.TestCase):
         self.assertAlmostEqual(result["filtered_variance"][0], 0.5)
         self.assertIsNone(result["innovations"][1])
         self.assertAlmostEqual(result["filtered_mean"][2], 2/3)
+
+    def test_compatibility_utilities(self):
+        self.assertEqual(ar1_forecast(8, 0.5, 3), [4.0, 2.0, 1.0])
+        self.assertAlmostEqual(forecast_errors([2, 4], [1, 5])["mae"], 1.0)
+        self.assertAlmostEqual(mase([3, 5], [2, 4], [1, 2, 3, 4], 1), 1.0)
+        self.assertEqual(list(rolling_origin_splits(10, 4, 2, 2)), [(4, 4, 6), (6, 6, 8), (8, 8, 10)])
+        general = kalman_scalar_filter([None, 1.0], 1.0, 1.0, 0.1, 0.2, 0.0, 1.0)
+        self.assertGreater(general[0][1], 1.0)
+        self.assertLess(general[1][1], general[0][1])
 
     def test_invalid_inputs(self):
         with self.assertRaises(ValueError):
