@@ -18,7 +18,8 @@ L'apprenant doit pouvoir :
 7. construire des projections orthogonales et comprendre QR ;
 8. formuler et résoudre des problèmes de moindres carrés ;
 9. calculer et interpréter valeurs propres et diagonalisation ;
-10. expliquer le rôle de la SVD et des approximations de faible rang ;\n11. reconnaître une matrice symétrique définie positive et utiliser Cholesky.
+10. expliquer le rôle de la SVD et des approximations de faible rang ;
+11. reconnaître une matrice symétrique définie positive et utiliser Cholesky.
 
 ## Unités
 
