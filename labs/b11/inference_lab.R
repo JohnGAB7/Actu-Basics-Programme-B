@@ -63,7 +63,10 @@ z_test_sample_size <- function(effect,sigma,alpha=.05,target_power=.8) {
 stopifnot(abs(exact_binomial_pvalue(10,10,.5)-2/1024)<1e-12)
 stopifnot(abs(wilson_interval(7,10)[1]-.3968)<.001)
 stopifnot(abs(wilson_interval(7,10)[2]-.8922)<.001)
-stopifnot(abs(poisson_mle(c(0,1,2,1,3,2))["estimate"]-1.5)<1e-12)
+pm <- poisson_mle(c(0,1,2,1,3,2))
+stopifnot(abs(pm["estimate"]-1.5)<1e-12,
+          abs(pm["variance_of_observation_under_model"]-1.5)<1e-12,
+          abs(pm["variance_of_mle_under_model"]-.25)<1e-12)
 bb <- beta_binomial_update(7,10,1,1)
 stopifnot(abs(bb["posterior_mean"]-2/3)<1e-12)
 stopifnot(z_test_sample_size(3,10)==88)
