@@ -3,70 +3,36 @@ import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import remarkMath from 'remark-math'
 import rehypeKatex from 'rehype-katex'
-import { ArrowLeft, ArrowUpRight, BookOpen, CheckCircle2, Clock3, FileText, Search } from 'lucide-react'
+import { ArrowLeft, ArrowUpRight, BookOpen, Clock3, LockKeyhole, Search } from 'lucide-react'
 import f01 from './content/bloc-01/F01.md?raw'
-import f02 from './content/bloc-01/F02.md?raw'
-import f03 from './content/bloc-01/F03.md?raw'
-import f04 from './content/bloc-01/F04.md?raw'
-import f05 from './content/bloc-01/F05.md?raw'
-import f06 from './content/bloc-01/F06.md?raw'
-import f07 from './content/bloc-01/F07.md?raw'
-import f08 from './content/bloc-01/F08.md?raw'
-import exercises from './content/bloc-01/EXERCICES.md?raw'
-import corrections from './content/bloc-01/CORRIGES.md?raw'
-import finalExam from './content/bloc-01/EXAMEN-FINAL.md?raw'
-import finalExamCorrection from './content/bloc-01/CORRIGE-EXAMEN-FINAL.md?raw'
-import calculusExam from './content/bloc-01/EXAMEN-CALCUL-DIFFERENTIEL.md?raw'
-import calculusCorrection from './content/bloc-01/CORRIGE-CALCUL-DIFFERENTIEL.md?raw'
 
-type Course = { code: string; title: string; description: string; content: string; source: string; sha: string; duration: string }
-const sourceRoot = 'https://github.com/JohnGAB7/Actu-Basics-Lab/tree/programme-b/bloc-1-fondations/programme-b/bloc-01'
+type Course = { code: string; title: string; description: string; duration: string; content?: string; status: 'published' | 'planned' }
 const courses: Course[] = [
- {code:'F01',title:'Nombres, ensembles et systèmes de numération',description:'Classer les nombres, manier les intervalles et comprendre les représentations exactes ou approchées.',content:f01,source:sourceRoot+'/F01-nombres-ensembles-numeration/COURS.md',sha:'1045945d97ad11ed7381f3b9381526ad324104f2',duration:'3–4 h'},
- {code:'F02',title:'Fractions, rapports et proportions',description:'Raisonner sur les quotients, les taux, les proportions et les hypothèses de proportionnalité.',content:f02,source:sourceRoot+'/F02-fractions-rapports-proportions/COURS.md',sha:'7693b0c6677e29426309be55fa938dd6ec45cd03',duration:'4–5 h'},
- {code:'F03',title:'Pourcentages, variations et indices',description:'Mesurer les évolutions, composer les variations et construire des indices comparables.',content:f03,source:sourceRoot+'/F03-pourcentages-variations-indices/COURS.md',sha:'28486c57a9e07677be9d38d76d03a0bbca29a9ab',duration:'3–4 h'},
- {code:'F04',title:'Puissances, racines et logarithmes',description:'Maîtriser les transformations multiplicatives et leurs domaines de validité.',content:f04,source:sourceRoot+'/F04-puissances-racines-logarithmes/COURS.md',sha:'49c264ad45242eb73b19ad86397eb688e3005308',duration:'4–5 h'},
- {code:'F05',title:'Algèbre et manipulation des expressions',description:'Traduire, développer, factoriser et simplifier en conservant les restrictions.',content:f05,source:sourceRoot+'/F05-algebre-expressions/COURS.md',sha:'0eef881d0813a679eb4d0ebf66daffd072ccaa83',duration:'4–5 h'},
- {code:'F06',title:'Équations, inéquations et systèmes',description:'Résoudre des équations et contraintes puis contrôler l’admissibilité des solutions.',content:f06,source:sourceRoot+'/F06-equations-inequations-systemes/COURS.md',sha:'296d20228a662bfccce48115e09de586464ecd35',duration:'5–6 h'},
- {code:'F07',title:'Fonctions et relations mathématiques',description:'Étudier domaines, images, antécédents, variations et compositions.',content:f07,source:sourceRoot+'/F07-fonctions-relations/COURS.md',sha:'979a37a22ba41f792fffa4f47c1e6a591546efd4',duration:'4–5 h'},
- {code:'F08',title:'Repères, graphiques, unités et notation scientifique',description:'Lire et construire des représentations quantitatives fidèles.',content:f08,source:sourceRoot+'/F08-reperes-graphiques-unites/COURS.md',sha:'4e18b590c36dc6f2a48d8af9380ae8afe371eb06',duration:'3–4 h'}
+ {code:'F01',title:'Langage des nombres, ensembles et ordre',description:'Comprendre les ensembles numériques, les intervalles, les bases et la précision des calculs.',duration:'5–7 h',content:f01,status:'published'},
+ {code:'F02',title:'Calcul, fractions, rapports et proportions',description:'Construire des raisonnements exacts et proportionnels.',duration:'À définir',status:'planned'},
+ {code:'F03',title:'Pourcentages, indices et taux d’évolution',description:'Composer des variations et comparer des grandeurs.',duration:'À définir',status:'planned'},
+ {code:'F04',title:'Puissances, racines et logarithmes',description:'Étudier les transformations multiplicatives et leurs domaines.',duration:'À définir',status:'planned'},
+ {code:'F05',title:'Expressions algébriques et identités',description:'Transformer, développer et factoriser avec rigueur.',duration:'À définir',status:'planned'},
+ {code:'F06',title:'Équations, inéquations et systèmes',description:'Résoudre et vérifier des contraintes algébriques.',duration:'À définir',status:'planned'},
+ {code:'F07',title:'Fonctions et modélisation élémentaire',description:'Décrire les dépendances, domaines, images et variations.',duration:'À définir',status:'planned'},
+ {code:'F08',title:'Repères, unités et représentation quantitative',description:'Lire des graphiques, convertir des unités et contrôler les ordres de grandeur.',duration:'À définir',status:'planned'},
 ]
-type Resource = 'course' | 'exercises' | 'corrections' | 'final-exam' | 'final-correction' | 'calculus-exam' | 'calculus-correction'
 export function LessonLibrary({query,setQuery}:{query:string;setQuery:(value:string)=>void}) {
  const [selected,setSelected]=useState<Course|null>(null)
- const [resource,setResource]=useState<Resource>('course')
  const filtered=useMemo(()=>courses.filter(c=>(c.code+c.title+c.description).toLowerCase().includes(query.toLowerCase())),[query])
- const content=resource==='exercises'?exercises:resource==='corrections'?corrections:resource==='final-exam'?finalExam:resource==='final-correction'?finalExamCorrection:resource==='calculus-exam'?calculusExam:resource==='calculus-correction'?calculusCorrection:selected?.content??''
- const title=resource==='exercises'?'Banque de 40 exercices':resource==='corrections'?'Corrigés détaillés':resource==='final-exam'?'Examen transversal — Bloc 1':resource==='final-correction'?'Corrigé — Examen transversal Bloc 1':resource==='calculus-exam'?'Examen complémentaire — Calcul différentiel':resource==='calculus-correction'?'Corrigé — Calcul différentiel':selected?.title??''
- const durationLabel=resource==='final-exam'||resource==='final-correction'?'2 heures · 100 points':resource==='calculus-exam'||resource==='calculus-correction'?'2 h 30 · 100 points':selected?.duration??''
- const sourceLink=resource==='course'?selected?.source:resource==='exercises'?sourceRoot+'/exercices/ENONCES.md':resource==='corrections'?sourceRoot+'/exercices/CORRIGES.md':resource==='final-exam'?sourceRoot+'/etudes-universitaires/EXAMEN-FINAL-BLOC-1.md':resource==='final-correction'?sourceRoot+'/etudes-universitaires/CORRIGE-EXAMEN-FINAL.md':resource==='calculus-exam'?sourceRoot+'/etudes-universitaires/EXAMEN-CALCUL-DIFFERENTIEL.md':sourceRoot+'/etudes-universitaires/CORRIGE-EXAMEN-CALCUL-DIFFERENTIEL.md'
- const openResource=(kind:Resource)=>{setSelected(courses[0]);setResource(kind)}
  if(selected) return <div className="content-wrap lesson-reader">
-  <button className="lesson-back" onClick={()=>{setSelected(null);setResource('course')}}><ArrowLeft size={15}/> Retour à la bibliothèque</button>
-  <div className="lesson-reader-head"><div><div className="eyebrow">BLOC 1 · {resource==='course'?selected.code:'ENTRAÎNEMENT'}</div><h1>{title}</h1><p>{resource==='course'?selected.description:'Entraînement transversal sur les huit compétences fondamentales.'}</p></div><div className="lesson-time"><Clock3 size={15}/>{durationLabel}</div></div>
-  <div className="lesson-tabs" role="tablist" aria-label="Ressources pédagogiques">
-   <button className={resource==='course'?'active':''} onClick={()=>setResource('course')}><BookOpen size={15}/> Leçon</button>
-   <button className={resource==='exercises'?'active':''} onClick={()=>setResource('exercises')}><FileText size={15}/> Exercices (40)</button>
-   <button className={resource==='corrections'?'active':''} onClick={()=>setResource('corrections')}><CheckCircle2 size={15}/> Corrigés</button>
-   <button className={resource==='final-exam'?'active':''} onClick={()=>setResource('final-exam')}><FileText size={15}/> Examen F01–F08</button>
-   <button className={resource==='final-correction'?'active':''} onClick={()=>setResource('final-correction')}><CheckCircle2 size={15}/> Corrigé F01–F08</button>
-   <button className={resource==='calculus-exam'?'active':''} onClick={()=>setResource('calculus-exam')}><FileText size={15}/> Examen calcul diff.</button>
-   <button className={resource==='calculus-correction'?'active':''} onClick={()=>setResource('calculus-correction')}><CheckCircle2 size={15}/> Corrigé calcul diff.</button>
-  </div>
-  {resource==='final-exam'||resource==='final-correction'||resource==='calculus-exam'||resource==='calculus-correction'?<div className="exam-resource-warning"><strong>Ressource de préparation — pas une session d’examen sécurisée.</strong><span>Le sujet et son corrigé sont accessibles dans cette bibliothèque. Aucun chronométrage serveur, contrôle d’identité ni résultat certifiant n’est associé à cette lecture.</span></div>:null}
-  <article className="markdown-card"><ReactMarkdown remarkPlugins={[remarkGfm,remarkMath]} rehypePlugins={[rehypeKatex]}>{content}</ReactMarkdown></article>
-  <div className="lesson-provenance"><span>Source pédagogique : Actu-Basics-Lab · {resource==='course'?selected.sha.slice(0,10):'document source'}</span><a href={sourceLink??sourceRoot} target="_blank" rel="noreferrer">Consulter la source originale <ArrowUpRight size={13}/></a></div>
+  <button className="lesson-back" onClick={()=>setSelected(null)}><ArrowLeft size={15}/> Retour à la bibliothèque</button>
+  <div className="lesson-reader-head"><div><div className="eyebrow">BLOC B01 · {selected.code} · VERSION 1.0</div><h1>{selected.title}</h1><p>{selected.description}</p></div><div className="lesson-time"><Clock3 size={15}/>{selected.duration}</div></div>
+  <div className="exam-resource-warning"><strong>Contenu original Programme B</strong><span>Cette unité est une première version éditoriale. Elle reste en statut draft jusqu'à la revue mathématique, pédagogique et au test de rendu.</span></div>
+  <article className="markdown-card"><ReactMarkdown remarkPlugins={[remarkGfm,remarkMath]} rehypePlugins={[rehypeKatex]}>{selected.content??''}</ReactMarkdown></article>
+  <div className="lesson-provenance"><span>Programme B · Version 1.0.0 · Rédaction indépendante</span><a href="https://github.com/JohnGAB7/Actu-Basics-Programme-B/blob/master/src/content/bloc-01/F01.md" target="_blank" rel="noreferrer">Voir le fichier source <ArrowUpRight size={13}/></a></div>
  </div>
  return <div className="content-wrap">
-  <div className="page-heading"><div><div className="eyebrow">RESSOURCES PÉDAGOGIQUES · BLOC 1</div><h1>Bibliothèque</h1><p>Les huit cours de fondation sont maintenant consultables dans cet espace.</p></div><span className="lesson-count">8 cours · 40 exercices</span></div>
-  <div className="lesson-library-intro"><div className="lesson-library-icon"><BookOpen size={20}/></div><div><strong>Fondations mathématiques et raisonnement quantitatif</strong><p>Chaque cours conserve son contenu source, ses références et ses exemples. Les exercices transversaux et leurs corrigés sont accessibles depuis chaque leçon.</p></div></div>
-  <div className="search-box"><Search size={17}/><input value={query} onChange={e=>setQuery(e.target.value)} placeholder="Rechercher un cours ou une compétence…"/></div>
-  <div className="lesson-course-grid">{filtered.map((course,i)=><button className="lesson-course-card" key={course.code} onClick={()=>{setSelected(course);setResource('course')}}><div className="lesson-course-top"><span>{course.code}</span><small>{String(i+1).padStart(2,'0')} / 08</small></div><h3>{course.title}</h3><p>{course.description}</p><div className="lesson-course-foot"><span><Clock3 size={13}/>{course.duration}</span><strong>Ouvrir le cours <ArrowUpRight size={14}/></strong></div></button>)}</div>
-  {filtered.length===0&&<div className="lesson-empty">Aucun cours ne correspond à cette recherche.</div>}
-  <div className="lesson-resource-row"><div><FileText size={18}/><span><strong>Banque d’exercices transversaux</strong><small>40 énoncés classés par compétence, F01 à F08</small></span></div><button className="secondary-button" onClick={()=>openResource('exercises')}>Consulter <ArrowUpRight size={14}/></button></div>
-  <div className="lesson-resource-row"><div><CheckCircle2 size={18}/><span><strong>Corrigés de la banque d’exercices</strong><small>Résultats, méthodes et points de vigilance</small></span></div><button className="secondary-button" onClick={()=>openResource('corrections')}>Consulter <ArrowUpRight size={14}/></button></div>
-  <div className="lesson-resource-row"><div><FileText size={18}/><span><strong>Examen transversal des fondations F01–F08</strong><small>2 heures · 100 points · sujet et corrigé distincts</small></span></div><button className="secondary-button" onClick={()=>openResource('final-exam')}>Consulter le sujet <ArrowUpRight size={14}/></button></div>
-  <div className="lesson-resource-row"><div><FileText size={18}/><span><strong>Évaluation complémentaire — calcul différentiel</strong><small>2 h 30 · 100 points · épreuve distincte</small></span></div><button className="secondary-button" onClick={()=>openResource('calculus-exam')}>Consulter le sujet <ArrowUpRight size={14}/></button></div>
-  <div className="lesson-provenance"><span>Version source : branche programme-b/bloc-1-fondations</span><a href={sourceRoot} target="_blank" rel="noreferrer">Ouvrir le dépôt pédagogique <ArrowUpRight size={13}/></a></div>
+  <div className="page-heading"><div><div className="eyebrow">RESSOURCES PÉDAGOGIQUES · BLOC B01</div><h1>Bibliothèque</h1><p>Le parcours des fondations mathématiques se construit progressivement.</p></div><span className="lesson-count">1 unité en draft · 7 planifiées</span></div>
+  <div className="lesson-library-intro"><div className="lesson-library-icon"><BookOpen size={20}/></div><div><strong>Fondations mathématiques et raisonnement quantitatif</strong><p>Les unités publiées sont rédigées indépendamment. Les unités planifiées ne sont pas encore présentées comme des cours disponibles.</p></div></div>
+  <div className="search-box"><Search size={17}/><input value={query} onChange={e=>setQuery(e.target.value)} placeholder="Rechercher une unité ou une compétence…"/></div>
+  <div className="lesson-course-grid">{filtered.map((course)=><button className={`lesson-course-card ${course.status==='planned'?'course-planned':''}`} key={course.code} disabled={course.status==='planned'} onClick={()=>setSelected(course)}><div className="lesson-course-top"><span>{course.code}</span><small>{course.status==='published'?'DRAFT':'PLANIFIÉ'}</small></div><h3>{course.title}</h3><p>{course.description}</p><div className="lesson-course-foot"><span><Clock3 size={13}/>{course.duration}</span><strong>{course.status==='published'?'Ouvrir l’unité':<>À construire <LockKeyhole size={13}/></>}</strong></div></button>)}</div>
+  {filtered.length===0&&<div className="lesson-empty">Aucune unité ne correspond à cette recherche.</div>}
+  <div className="lesson-provenance"><span>Contenus originaux · Aucun cours importé de l'ancien laboratoire</span><a href="https://github.com/JohnGAB7/Actu-Basics-Programme-B/blob/master/docs/PROGRAMME-B-CURRICULUM.md" target="_blank" rel="noreferrer">Architecture du cursus <ArrowUpRight size={13}/></a></div>
  </div>
 }

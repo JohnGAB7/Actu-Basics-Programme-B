@@ -1,50 +1,35 @@
-# Actu-Basics Programme B
+# Programme B — Learning Studio
 
-**A rigorous, open and interactive learning environment for mathematics, statistics and quantitative sciences.**
+Cursus indépendant en mathématiques, probabilités, statistique et sciences quantitatives, associé à une plateforme d'apprentissage responsive.
 
-## Application preview
+## Prévisualisation
+https://johngab7.github.io/Actu-Basics-Programme-B/
 
-The first frontend milestone is implemented on `feat/platform-v1`:
-- searchable Bloc 1 library with the eight original F01–F08 courses, a Markdown/math reader, and 40 transversal exercises with corrections;
-- responsive learner dashboard and programme catalogue;
-- learning-path overview and assessment centre;
-- interactive eight-question diagnostic demonstration;
-- countdown timer, question navigation, browser-local answer saving, interrupted attempt resumption and explained results;
-- French-first responsive interface.
+## Périmètre du dépôt
+Ce dépôt contient la plateforme web et les contenus originaux destinés à être publiés dans Programme B. Aucun contenu pédagogique d'Actu-Basics-Lab n'est utilisé comme contenu final.
 
-This is a **demonstration**, not an official examination system. Responses are stored only in the current browser. There are no accounts, server persistence, protected answer keys or certified scoring yet. The Bloc 1 transversal exam and the complementary differential-calculus exam are available as reading resources in the library, with separate corrections. They are not secure interactive exam sessions.
+- Architecture académique : `docs/PROGRAMME-B-CURRICULUM.md`
+- Standards éditoriaux : `docs/EDITORIAL-STANDARDS.md`
+- Modèle de contenu : `docs/CONTENT-MODEL.md`
+- Moteur d'évaluation : `docs/ASSESSMENT-ENGINE.md`
 
-## Run locally
+## État pédagogique actuel
+- B01 : F01 est rédigé dans une première version originale (draft).
+- F02–F08 : unités planifiées, non publiées.
+- B02–B13 : architecture de cursus planifiée ; contenus à développer et à relire.
+- Le diagnostic interactif est une démonstration formative locale, non certifiante.
+- Aucun compte, historique privé serveur ou examen sécurisé n'est fourni par cette version statique.
 
-Requirements: Node.js 22+.
+Les statuts de contenu sont explicites : planifié, draft, reviewed, tested, published ou retired. Un fichier présent dans Git n'est pas automatiquement un cours validé.
+
+## Développement local
+Node.js 22+ requis.
 
 ```bash
 npm install
 npm run dev
+npm run build
 ```
 
-Production build: `npm run build`.
-
-## Repository boundaries
-
-| Repository | Responsibility |
-| --- | --- |
-| [Actu-Basics-Lab](https://github.com/JohnGAB7/Actu-Basics-Lab) | Existing ACTU-BASICS public laboratory |
-| [Programme B source curriculum](https://github.com/JohnGAB7/Actu-Basics-Lab/tree/programme-b/bloc-2-algebre-lineaire) | Courses, exercises, corrections and workshops |
-| **This repository** | Programme B interactive learning platform |
-
-## Next milestones
-
-1. Integrate the verified Bloc 1 final examination and correction, then build secure assessment flows.
-2. Build practice, diagnostic and remediation experiences.
-3. Add secure identity, persistence, server-side exam delivery and grading.
-4. Expand into Bloc 2 and the statistics curriculum.
-
-A browser-only application cannot protect answer keys or provide trustworthy private exam records. Real examinations require authenticated server-side sessions, authorization, a database, server-authoritative timing, server-side grading, auditability and privacy controls.
-
-See `docs/` for architecture, assessment engine, content model, editorial standards and roadmap.
-
-
-## Optional GitHub Pages deployment
-
-The build is validated on pushes and pull requests. Public deployment is intentionally opt-in. To enable it after configuring GitHub Pages with **Settings → Pages → Build and deployment → Source: GitHub Actions**, add the repository Actions variable `ENABLE_GITHUB_PAGES=true`. Until both settings are configured, the build still runs and the deployment job is skipped.
+## Déploiement
+Le workflow GitHub Actions vérifie le build sur les branches et déploie GitHub Pages depuis `master`. Les autres branches ne modifient pas la prévisualisation publique.
