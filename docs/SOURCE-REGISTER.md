@@ -65,6 +65,10 @@ Une source ne prouve pas qu'un cours entier est correct. Pour chaque unité, pr�
 | S47 | MIT OpenCourseWare — 6.041SC Probabilistic Systems Analysis and Applied Probability : https://ocw.mit.edu/courses/6-041sc-probabilistic-systems-analysis-and-applied-probability-fall-2013/ | Modèles, Bayes, variables discrètes et continues, espérance, processus et TCL | Référence détaillée P01–P10 |
 | S48 | MIT OpenCourseWare — 18.05 Introduction to Probability and Statistics : https://ocw.mit.edu/courses/18-05-introduction-to-probability-and-statistics-spring-2014/ | Dénombrement, distributions, covariance, TCL et simulation avec R | Cadrage des fondamentaux P01–P10 |
 | S49 | Daniel Valesin — Review of Measure-Theoretic Probability : https://www.math.rug.nl/~valesin/review_probability.pdf | Espaces mesurables, tribus et probabilité de mesure ; référence d'approfondissement | Extension rigoureuse P01, P09–P10 |
+| S50 | MIT OpenCourseWare — 18.445 Introduction to Stochastic Processes : https://ocw.mit.edu/courses/18-445-introduction-to-stochastic-processes-spring-2015/ | Chaînes de Markov, marches aléatoires, martingales, processus de Poisson et chaînes continues | Référence générale S02–S05 et S08–S09 |
+| S51 | MIT OpenCourseWare — 6.262 Discrete Stochastic Processes : https://ocw.mit.edu/courses/6-262-discrete-stochastic-processes-spring-2011/ | Processus de Poisson, chaînes finies et dénombrables, renouvellement, marches aléatoires et martingales | Référence S02–S08 |
+| S52 | MIT OpenCourseWare — 15.070J Advanced Stochastic Processes : https://ocw.mit.edu/courses/15-070j-advanced-stochastic-processes-fall-2013/ | Filtrations, martingales, temps d'arrêt, mouvement brownien, calcul d'Itô et applications aux files | Référence d'approfondissement S08–S10 |
+| S53 | MIT OpenCourseWare — 18.445 Lecture Notes : https://ocw.mit.edu/courses/18-445-introduction-to-stochastic-processes-spring-2015/pages/lecture-notes/ | Notes de cours sur chaînes finies, martingales, Poisson et chaînes de Markov à temps continu | Référence pédagogique S02–S06 et S08–S09 |
 
 ## 3. Matrice de couverture par bloc
 
@@ -78,6 +82,7 @@ Une source ne prouve pas qu'un cours entier est correct. Pour chaque unité, pr�
 | B06 Optimisation et recherche opérationnelle | S08, S10, S11, S13, S37, S38, S39, S40, S41 |
 | B07 Analyse numérique | S42, S43, S44, S45 |
 | B08 Probabilités | S46, S47, S48, S49 |
+| B09 Processus stochastiques | S50, S51, S52, S53 |
 | B08 Probabilités | S02, S03, S04, S10, S13, S15 |
 | B09 Processus stochastiques | S02, S10, S11, S13, S15, S16 |
 | B10 Descriptif et échantillonnage | S02, S04, S10, S14 |
