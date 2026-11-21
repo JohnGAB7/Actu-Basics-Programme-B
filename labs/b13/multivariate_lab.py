@@ -275,6 +275,8 @@ def roy_f_bound(theta: float, p: int, q: int, v: int) -> dict[str, object]:
         not isinstance(p, int) or not isinstance(q, int) or not isinstance(v, int) or
         p < 1 or q < 1 or v < 1):
         raise ValueError("theta must be finite/non-negative and p, q, v positive integers")
+    if v < p:
+        raise ValueError("residual degrees of freedom must be at least p for E to be invertible")
     d = max(p, q)
     df2 = v - d + q
     if df2 <= 0:
