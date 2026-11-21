@@ -89,3 +89,5 @@ stopifnot(abs(roy_q1["f_statistic"]-(.4*28/3))<1e-12,
 roy_bound <- roy_f_bound(.4,2,3,30)
 stopifnot(abs(roy_bound["f_statistic"]-4)<1e-12,
           roy_bound["is_upper_bound"]==1,roy_bound["p_value_is_lower_bound"]==1)
+
+cat("B13 R multivariate laboratory checks: OK")
