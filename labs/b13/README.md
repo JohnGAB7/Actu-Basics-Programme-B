@@ -29,7 +29,7 @@ Rscript labs/b13/multivariate_lab.R
 - La distance de Mahalanobis exige une covariance inversible et bien conditionnée ; un résultat numérique n'établit pas la normalité ni l'absence de contamination.
 - Le shrinkage vers la cible sphérique illustre le compromis biais-variance ; λ est fourni par l'utilisateur et n'est pas estimé automatiquement (Ledoit–Wolf/OAS non implémentés).
 - K-means optimise une inertie euclidienne et peut converger vers un optimum local ; plusieurs initialisations réduisent la dépendance à l'initialisation sans garantir l'optimum global.
-- MANOVA, analyse factorielle, corrélation canonique, LDA/QDA et méthodes de clustering par densité restent traitées dans le cours mais ne sont pas implémentées comme fonctions génériques dans ce laboratoire.
+- Le laboratoire inclut un helper ciblé pour la transformation F de Roy et ses cas exacts/bornés, testé contre le cas univarié. Il n'implémente pas un moteur complet d'estimation MANOVA ; analyse factorielle, corrélation canonique, LDA/QDA et méthodes de clustering par densité restent traitées dans le cours mais ne sont pas implémentées comme fonctions génériques.
 - Les données synthétiques n'établissent aucune causalité ni validité sur un portefeuille réel.
 
 ## Fichiers
