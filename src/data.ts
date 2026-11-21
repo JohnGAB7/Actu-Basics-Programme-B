@@ -60,8 +60,24 @@ export const questions: Question[] = [
 ]
 
 export const blocks = [
-  { code: 'B01', title: 'Fondations mathématiques', subtitle: 'Nombres, calcul, algèbre et modélisation', progress: 12, lessons: 1, tone: 'mint', status: '1 unité originale en draft · 7 planifiées' },
-  { code: 'B02', title: 'Algèbre linéaire', subtitle: 'Espaces vectoriels, matrices et applications', progress: 0, lessons: 0, tone: 'blue', status: 'Planifié' },
-  { code: 'B03', title: 'Analyse à une variable', subtitle: 'Suites, limites, dérivation et intégration', progress: 0, lessons: 0, tone: 'violet', status: 'Planifié' },
-  { code: 'B04', title: 'Probabilités', subtitle: 'Modèles aléatoires et distributions', progress: 0, lessons: 0, tone: 'amber', status: 'Planifié' },
+  { code: 'B01', title: 'Fondations mathématiques et raisonnement quantitatif', subtitle: 'Nombres, calcul, algèbre, fonctions et précision', progress: 12, lessons: 1, tone: 'mint', status: '1 unité en draft · 7 planifiées' },
+  { code: 'B02', title: 'Logique, preuves et mathématiques discrètes', subtitle: 'Logique, démonstrations, combinatoire et graphes', progress: 0, lessons: 0, tone: 'blue', status: 'Planifié' },
+  { code: 'B03', title: 'Algèbre linéaire et géométrie vectorielle', subtitle: 'Espaces, matrices, projections et décompositions', progress: 0, lessons: 0, tone: 'violet', status: 'Planifié' },
+  { code: 'B04', title: 'Analyse réelle et calcul à une variable', subtitle: 'Suites, limites, continuité, dérivation et intégration', progress: 0, lessons: 0, tone: 'amber', status: 'Planifié' },
+  { code: 'B05', title: 'Calcul multivarié et équations différentielles', subtitle: 'Gradient, hessienne, intégrales multiples et EDO', progress: 0, lessons: 0, tone: 'blue', status: 'Planifié' },
+  { code: 'B06', title: 'Optimisation et recherche opérationnelle', subtitle: 'Convexité, dualité, optimisation et décision', progress: 0, lessons: 0, tone: 'mint', status: 'Planifié' },
+  { code: 'B07', title: 'Analyse numérique et calcul scientifique', subtitle: 'Stabilité, erreurs, algorithmes et simulation', progress: 0, lessons: 0, tone: 'violet', status: 'Planifié' },
+  { code: 'B08', title: 'Probabilités', subtitle: 'Variables aléatoires, lois et convergence', progress: 0, lessons: 0, tone: 'amber', status: 'Planifié' },
+  { code: 'B09', title: 'Processus stochastiques', subtitle: 'Markov, Poisson, renouvellement et martingales', progress: 0, lessons: 0, tone: 'blue', status: 'Planifié' },
+  { code: 'B10', title: 'Statistique descriptive, échantillonnage et exploration', subtitle: 'Qualité des données, EDA et échantillonnage', progress: 0, lessons: 0, tone: 'mint', status: 'Planifié' },
+  { code: 'B11', title: 'Théorie de l\\'inférence statistique', subtitle: 'Estimation, tests, intervalles et Bayes', progress: 0, lessons: 0, tone: 'violet', status: 'Planifié' },
+  { code: 'B12', title: 'Régression et modèles statistiques', subtitle: 'Régression, ANOVA, GLM et diagnostics', progress: 0, lessons: 0, tone: 'amber', status: 'Planifié' },
+  { code: 'B13', title: 'Statistique multivariée et grande dimension', subtitle: 'ACP, modèles latents et grande dimension', progress: 0, lessons: 0, tone: 'blue', status: 'Planifié' },
+  { code: 'B14', title: 'Plans d\\'expérience et inférence causale', subtitle: 'Randomisation, DAG et méthodes quasi expérimentales', progress: 0, lessons: 0, tone: 'mint', status: 'Planifié' },
+  { code: 'B15', title: 'Apprentissage statistique et machine learning', subtitle: 'Généralisation, modèles prédictifs et validation', progress: 0, lessons: 0, tone: 'violet', status: 'Planifié' },
+  { code: 'B16', title: 'Séries temporelles et prévision', subtitle: 'ARIMA, modèles d\\'état et volatilité', progress: 0, lessons: 0, tone: 'amber', status: 'Planifié' },
+  { code: 'B17', title: 'Ingénierie des données et recherche reproductible', subtitle: 'SQL, pipelines, tests et reproductibilité', progress: 0, lessons: 0, tone: 'blue', status: 'Planifié' },
+  { code: 'B18', title: 'Actuariat, assurance et modélisation du risque', subtitle: 'Tarification, survie, provisionnement et capital', progress: 0, lessons: 0, tone: 'mint', status: 'Spécialisation planifiée' },
+  { code: 'B19', title: 'Économétrie et statistiques financières', subtitle: 'Données de panel, endogénéité et risque financier', progress: 0, lessons: 0, tone: 'violet', status: 'Spécialisation planifiée' },
+  { code: 'B20', title: 'Théorie statistique avancée et méthodes de recherche', subtitle: 'Asymptotique, processus empiriques et recherche', progress: 0, lessons: 0, tone: 'amber', status: 'Approfondissement planifié' },
 ]
