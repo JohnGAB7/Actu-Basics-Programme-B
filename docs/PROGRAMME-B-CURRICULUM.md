@@ -1,105 +1,413 @@
-# Programme B — Architecture du cursus
+# Programme B — Architecture académique de référence
 
-**Version de cadrage : 1.0 · 21 novembre 2026**  
-**Statut : architecture proposée pour développement progressif, pas accréditation académique.**
+**Version : 2.0 · 21 novembre 2026**  
+**Statut : architecture-cible de travail · non accréditée · non validée par les institutions citées**
 
-## Mission
+## 1. Mission et principes
 
-Construire un cursus indépendant, exigeant et accessible en mathématiques, probabilités, statistique et sciences quantitatives. Le programme doit conduire d'une remise à niveau structurée à la capacité de formuler, analyser, calculer, vérifier et communiquer des modèles quantitatifs avancés.
+Programme B est un cursus indépendant en mathématiques, probabilités, statistique, calcul scientifique et sciences quantitatives. Il conduit d'une remise à niveau structurée à la capacité de formuler, démontrer, calculer, programmer, analyser et communiquer des modèles quantitatifs avancés.
 
-Programme B n'est ni une copie ni une continuation de l'ancien laboratoire ACTU-BASICS. Tous les cours, exemples, jeux de données, exercices, corrigés et évaluations sont rédigés pour ce projet. Les références externes servent à vérifier les notions et à orienter l'approfondissement ; elles ne sont pas reproduites comme contenu pédagogique.
+Il s'agit d'une bibliothèque de formation modulaire, pas d'un diplôme universitaire officiel. Le programme s'inspire de structures et exigences publiquement documentées dans des cursus universitaires, sans reproduire leurs supports ni prétendre à leur validation.
 
-## Architecture des compétences
+Tous les cours, explications, exemples, jeux de données, exercices, corrigés, évaluations et projets sont originaux. Les références externes servent à contrôler les notions, situer les niveaux et guider l'approfondissement.
 
-Chaque bloc contribue à plusieurs compétences transversales :
+Principes non négociables :
+- La rigueur mathématique ne doit être sacrifiée ni à l'intuition ni aux applications.
+- Chaque résultat précise ses hypothèses, son domaine de validité et, lorsque pertinent, un contre-exemple.
+- Distinguer preuve, argument heuristique, convention, résultat numérique et approximation.
+- Le code sert à expérimenter, vérifier et mettre en œuvre ; il ne remplace pas une démonstration.
+- Les prérequis et dépendances sont explicites ; les parcours restent modulaires.
+- Le niveau d'un cours dépend de ses acquis et évaluations, pas de son titre ou de son volume.
 
-1. **Formaliser** : traduire une situation en objets, hypothèses, variables et relations mathématiques.
-2. **Démontrer** : argumenter avec définitions, implications, contre-exemples et preuves adaptées.
-3. **Calculer** : choisir une méthode exacte, approchée, symbolique ou numérique.
-4. **Modéliser** : relier les abstractions aux phénomènes quantitatifs sans confondre modèle et réalité.
-5. **Programmer** : implémenter et tester les méthodes avec Python et R ; mobiliser Excel/VBA lorsqu'ils sont pertinents.
-6. **Diagnostiquer** : détecter erreurs, biais, instabilité, hypothèses violées et limites des données.
-7. **Communiquer** : présenter résultats, incertitudes, unités, hypothèses et limites de façon reproductible.
+## 2. Niveaux de profondeur
 
-## Parcours académique cible
-
-| Code | Bloc | Périmètre | Dépendances principales |
-|---|---|---|---|
-| B01 | Fondations mathématiques | Nombres, calcul, algèbre, fonctions, raisonnement, unités et précision | Aucune |
-| B02 | Algèbre linéaire et géométrie vectorielle | Espaces, applications linéaires, matrices, spectre, projections, factorisations et SVD | B01 |
-| B03 | Analyse à une variable | Suites, limites, continuité, dérivation, intégration et séries | B01 |
-| B04 | Analyse multivariée et optimisation | Dérivées partielles, gradient, Hessienne, contraintes, convexité et optimisation numérique | B02, B03 |
-| B05 | Probabilités | Axiomes, conditionnement, indépendance, variables aléatoires, lois, convergence et limites | B01, B03 |
-| B06 | Statistique descriptive et exploration | Échantillonnage, visualisation, résumés, robustesse, qualité des données et EDA | B01, B05 |
-| B07 | Inférence statistique | Estimation, vraisemblance, intervalles, tests, puissance, bootstrap et décision | B05, B06 |
-| B08 | Régression et modèles statistiques | Régression linéaire, GLM, diagnostics, régularisation et validation | B02, B04, B05, B07 |
-| B09 | Statistique multivariée | Covariance, ACP, réduction dimensionnelle, classification et modèles latents | B02, B07, B08 |
-| B10 | Apprentissage statistique | Généralisation, biais-variance, arbres, ensembles, SVM, validation et interprétabilité | B08, B09 |
-| B11 | Séries temporelles et prévision | Dépendance temporelle, stationnarité, ARIMA, volatilité, validation temporelle et prévision | B05, B07, B08 |
-| B12 | Calcul scientifique et ingénierie des données | Algorithmes numériques, stabilité, simulation, calcul reproductible et traitement de données | B02, B03, B05, B08 |
-| B13 | Modélisation quantitative et actuariat | Fréquence-sévérité, tarification, survie, crédibilité, risque, agrégation et capital | B05, B07, B08, B10, B11 |
-
-L'ordre est indicatif : certains blocs peuvent être suivis en parallèle après validation des prérequis. Les dépendances devront être représentées explicitement dans le graphe de compétences de la plateforme.
-
-## Décomposition du Bloc 1
-
-| Code | Unité | Résultat d'apprentissage principal |
+| Niveau | Désignation | Exigence attendue |
 |---|---|---|
-| F01 | Langage des nombres, ensembles et ordre | Classifier, comparer et représenter les nombres et les ensembles |
-| F02 | Calcul, fractions, rapports et proportions | Choisir et justifier des opérations et transformations proportionnelles |
-| F03 | Pourcentages, indices et taux d'évolution | Composer des variations et construire des comparaisons cohérentes |
-| F04 | Puissances, racines et logarithmes | Manipuler des transformations multiplicatives en respectant leurs domaines |
-| F05 | Expressions algébriques et identités | Transformer et factoriser des expressions avec contrôle des conditions |
-| F06 | Équations, inéquations et systèmes | Résoudre et vérifier des contraintes algébriques |
-| F07 | Fonctions et modélisation élémentaire | Décrire une dépendance, un domaine, une image et une variation |
-| F08 | Repères, unités et représentation quantitative | Lire des graphiques, convertir des unités et contrôler les ordres de grandeur |
+| L0 | Remise à niveau | Vocabulaire, calculs élémentaires, lecture de représentations et correction des lacunes |
+| L1 | Fondations universitaires | Concepts, méthodes standards, intuition, calculs et premières justifications |
+| L2 | Licence avancée | Formalisation, démonstrations, méthodes générales, modélisation et analyse critique |
+| L3 | Master / Graduate | Théorie approfondie, hypothèses techniques, méthodes avancées, implémentation et lecture critique |
+| L4 | Préparation recherche | Résultats spécialisés, preuves détaillées, articles, reproduction, limites ouvertes et projet de recherche |
 
-La logique, les ensembles, la rédaction de preuves, les conventions de notation et les bonnes pratiques de calcul sont également travaillés de manière transversale.
+Chaque unité indique son niveau principal. Une unité ne prétend pas couvrir L3 ou L4 si ses objectifs et évaluations restent introductifs.
 
-## Format obligatoire d'une unité
+## 3. Architecture générale — 20 blocs
 
-Une unité complète doit contenir :
-- fiche d'identité : niveau, charge estimée, prérequis, version et statut éditorial ;
-- objectifs observables et critères de maîtrise ;
+B01 à B17 constituent le socle mathématique, probabiliste, statistique et computationnel, avec des embranchements selon les parcours. B18 et B19 sont des spécialisations appliquées. B20 approfondit la théorie statistique et les méthodes de recherche.
+
+### 3.1 Socle mathématique et computationnel
+
+| Code | Bloc | Périmètre principal | Prérequis structurants |
+|---|---|---|---|
+| B01 | Fondations mathématiques et raisonnement quantitatif | Nombres, calcul, algèbre élémentaire, fonctions, unités, notation, précision | Aucun |
+| B02 | Logique, preuves et mathématiques discrètes | Logique, ensembles, relations, induction, combinatoire, graphes, récurrences, complexité élémentaire | B01 en parallèle |
+| B03 | Algèbre linéaire et géométrie vectorielle | Espaces, applications linéaires, matrices, rang, spectre, orthogonalité, projections, factorisations, SVD | B01 |
+| B04 | Analyse réelle et calcul à une variable | Suites, limites, continuité, dérivation, intégration, séries, théorèmes fondamentaux | B01, B02 |
+| B05 | Calcul multivarié et équations différentielles | Fonctions de plusieurs variables, dérivées, jacobienne, hessienne, intégrales multiples, champs, EDO | B03, B04 |
+| B06 | Optimisation et recherche opérationnelle | Convexité, optimisation avec/sans contraintes, dualité, programmation linéaire et entière, réseaux, décision | B03, B05 |
+| B07 | Analyse numérique et calcul scientifique | Erreurs, conditionnement, stabilité, résolution numérique, interpolation, quadrature, EDO numériques, simulation | B03, B04, programmation de base |
+
+### 3.2 Probabilités, données et statistique
+
+| Code | Bloc | Périmètre principal | Prérequis structurants |
+|---|---|---|---|
+| B08 | Probabilités | Axiomes, conditionnement, indépendance, variables aléatoires, lois, espérance, convergence, LLN et TCL introductifs | B02, B04 |
+| B09 | Processus stochastiques | Chaînes de Markov, Poisson, renouvellement, martingales, files d'attente, mouvement brownien, processus continus | B08, B04 |
+| B10 | Statistique descriptive, échantillonnage et exploration | Qualité des données, plans d'échantillonnage, visualisation, résumés, robustesse, EDA, données manquantes et biais | B01, B08 introductif |
+| B11 | Théorie de l'inférence statistique | Estimation, vraisemblance, propriétés des estimateurs, intervalles, tests, puissance, bootstrap, permutation, Bayes | B08, B10 |
+| B12 | Régression et modèles statistiques | Régression linéaire, ANOVA, modèles mixtes, GLM, modèles non linéaires et non paramétriques introductifs, diagnostics | B03, B05, B08, B11 |
+| B13 | Statistique multivariée et grande dimension | Covariance, ACP, analyse factorielle, classification, réduction dimensionnelle, sparsité et régularisation | B03, B11, B12 |
+| B14 | Plans d'expérience et inférence causale | Randomisation, plans factoriels, puissance, résultats potentiels, DAG, confusion, instruments, différences-en-différences, discontinuité | B11, B12 |
+| B15 | Apprentissage statistique et machine learning | Généralisation, biais-variance, validation, arbres, ensembles, SVM, noyaux, clustering, modèles probabilistes, réseaux neuronaux | B03, B06, B08, B11, B12 |
+| B16 | Séries temporelles et prévision | Dépendance temporelle, stationnarité, ARIMA, modèles d'état, filtrage, volatilité, prévision et validation temporelle | B08, B09, B11, B12 |
+| B17 | Ingénierie des données et recherche reproductible | Structures de données, SQL, pipelines, formats, tests, versionnement, calcul distribué introductif, reproductibilité et communication | B01, programmation de base |
+
+### 3.3 Spécialisations et approfondissements
+
+| Code | Bloc | Périmètre principal | Prérequis structurants |
+|---|---|---|---|
+| B18 | Actuariat, assurance et modélisation du risque | Fréquence-sévérité, tarification, crédibilité, survie, mortalité, réserving, réassurance, agrégation, ruine, capital et solvabilité | B08, B09, B11, B12, B16 |
+| B19 | Économétrie et statistiques financières | Régression économétrique, séries financières, volatilité, données de panel, endogénéité, risque, prévision et évaluation empirique | B11, B12, B14, B16 |
+| B20 | Théorie statistique avancée et méthodes de recherche | Probabilité mesurée, convergence avancée, asymptotique, processus empiriques, concentration, décision, semi-paramétrique, lecture et reproduction d'articles | B02, B04, B08, B11, B12 ; L3 recommandé |
+
+## 4. Décomposition indicative des blocs
+
+Cette décomposition fixe les domaines à couvrir. Elle ne constitue pas encore une liste définitive de leçons : le découpage final sera décidé après l'analyse des prérequis, des objectifs et des redondances.
+
+### B01 — Fondations mathématiques et raisonnement quantitatif
+1. Nombres, ensembles numériques et ordre.
+2. Calcul exact, fractions, rapports et proportions.
+3. Pourcentages, taux, indices et variations composées.
+4. Puissances, racines et logarithmes.
+5. Expressions algébriques et identités.
+6. Équations, inéquations et systèmes élémentaires.
+7. Fonctions, domaines, images et transformations.
+8. Repères, graphiques, unités, ordres de grandeur et notation scientifique.
+9. Calculatrice, arrondis, précision et erreurs élémentaires.
+
+### B02 — Logique, preuves et mathématiques discrètes
+1. Propositions, connecteurs et quantificateurs.
+2. Ensembles, applications, relations et équivalences.
+3. Preuves directe, contraposée, contradiction et récurrence.
+4. Sommes, produits, coefficients binomiaux et dénombrement.
+5. Probabilités discrètes et combinatoire.
+6. Relations de récurrence et suites récursives.
+7. Graphes, arbres, chemins et réseaux.
+8. Notation asymptotique et complexité algorithmique élémentaire.
+
+### B03 — Algèbre linéaire et géométrie vectorielle
+1. Vecteurs, géométrie et coordonnées.
+2. Matrices, opérations et systèmes linéaires.
+3. Élimination de Gauss, rang et espaces fondamentaux.
+4. Espaces vectoriels, bases, dimension et applications linéaires.
+5. Déterminants et inversibilité.
+6. Valeurs propres, vecteurs propres et diagonalisation.
+7. Produit scalaire, orthogonalité et projections.
+8. Moindres carrés et décomposition QR.
+9. Décompositions LU, Cholesky et SVD.
+
+### B04 — Analyse réelle et calcul à une variable
+1. Propriétés de l'ensemble des réels.
+2. Suites et convergence.
+3. Limites et continuité.
+4. Théorèmes fondamentaux des fonctions continues.
+5. Dérivation et approximation locale.
+6. Théorèmes de Rolle et des accroissements finis.
+7. Intégration de Riemann et théorème fondamental.
+8. Séries numériques et séries de fonctions introductives.
+9. Développements de Taylor et approximation.
+
+### B05 — Calcul multivarié et équations différentielles
+1. Topologie élémentaire de R^n et limites multivariées.
+2. Dérivées partielles, différentiabilité et gradient.
+3. Jacobienne, hessienne et règle de chaîne.
+4. Optimisation locale et conditions du premier et second ordre.
+5. Intégrales multiples et changements de variables.
+6. Intégrales curvilignes et champs vectoriels.
+7. Équations différentielles ordinaires du premier et second ordre.
+8. Systèmes différentiels et stabilité élémentaire.
+
+### B06 — Optimisation et recherche opérationnelle
+1. Formulation mathématique d'un problème de décision.
+2. Convexité des ensembles et fonctions.
+3. Optimisation non contrainte et méthodes de gradient.
+4. Contraintes, multiplicateurs de Lagrange et KKT.
+5. Programmation linéaire, géométrie et dualité.
+6. Simplexe et méthodes de points intérieurs.
+7. Programmation entière et branch-and-bound.
+8. Réseaux, flots et problèmes d'affectation.
+9. Optimisation stochastique et robuste.
+10. Programmation dynamique et processus de décision.
+
+### B07 — Analyse numérique et calcul scientifique
+1. Représentation flottante, erreurs et propagation.
+2. Conditionnement et stabilité algorithmique.
+3. Résolution numérique des systèmes linéaires.
+4. Valeurs propres et algorithmes itératifs.
+5. Recherche de racines et optimisation numérique.
+6. Interpolation, approximation et splines.
+7. Dérivation et intégration numériques.
+8. Résolution numérique des EDO.
+9. Simulation et reproductibilité des expériences numériques.
+
+### B08 — Probabilités
+1. Espaces probabilisés et axiomes.
+2. Conditionnement, indépendance et Bayes.
+3. Variables aléatoires discrètes et continues.
+4. Fonctions de répartition, densités et transformations.
+5. Lois usuelles et familles de distributions.
+6. Espérance conditionnelle, moments et inégalités.
+7. Vecteurs aléatoires, covariance et corrélation.
+8. Convergences en probabilité, presque sûre et en loi.
+9. Lois des grands nombres et théorème central limite.
+10. Fonctions caractéristiques et approximations asymptotiques introductives.
+
+### B09 — Processus stochastiques
+1. Définitions, filtrations et temps.
+2. Chaînes de Markov à temps discret.
+3. États récurrents, transitoires et distributions stationnaires.
+4. Processus de Poisson et processus de comptage.
+5. Processus de renouvellement.
+6. Files d'attente et lois de Little/Erlang.
+7. Martingales et temps d'arrêt.
+8. Mouvement brownien et processus continus.
+9. Introduction aux diffusions et équations stochastiques.
+10. Simulation et applications à la fiabilité et au risque.
+
+### B10 — Statistique descriptive, échantillonnage et exploration
+1. Population, échantillon, unité statistique et mesure.
+2. Qualité, provenance et gouvernance des données.
+3. Types de variables, tableaux et visualisations.
+4. Statistiques descriptives et mesures de position.
+5. Dispersion, quantiles et mesures robustes.
+6. Associations, dépendances et visualisation multivariée.
+7. Échantillonnage probabiliste et non probabiliste.
+8. Biais de sélection, non-réponse et erreurs de mesure.
+9. Données manquantes, valeurs aberrantes et contrôles.
+10. Analyse exploratoire reproductible.
+
+### B11 — Théorie de l'inférence statistique
+1. Modèles statistiques, statistiques suffisantes et vraisemblance.
+2. Estimation ponctuelle et propriétés des estimateurs.
+3. Méthodes des moments et maximum de vraisemblance.
+4. Intervalles et régions de confiance.
+5. Tests, erreurs de type I/II et puissance.
+6. Comparaison de modèles et critères d'information.
+7. Bootstrap et tests par permutation.
+8. Inférence bayésienne : prior, posterior et prédictive.
+9. Décision statistique et fonctions de perte.
+10. Multiplicité et contrôle des faux positifs.
+
+### B12 — Régression et modèles statistiques
+1. Régression linéaire simple et multiple.
+2. Géométrie des moindres carrés et inférence.
+3. Diagnostics, résidus, influence et colinéarité.
+4. ANOVA, ANCOVA et modèles factoriels.
+5. Variables catégorielles, interactions et transformations.
+6. Régression logistique et modèles binomiaux.
+7. Modèles de Poisson, binomiaux négatifs et GLM.
+8. Modèles mixtes et données groupées.
+9. Régression non linéaire et splines.
+10. Régularisation, sélection et validation.
+
+### B13 — Statistique multivariée et grande dimension
+1. Vecteurs aléatoires et matrices de covariance.
+2. Lois multivariées et distance de Mahalanobis.
+3. Analyse en composantes principales.
+4. Analyse factorielle et modèles latents.
+5. Analyse discriminante et classification.
+6. Analyse des correspondances et données catégorielles.
+7. Clustering et distances.
+8. Réduction dimensionnelle et visualisation.
+9. Covariance de grande dimension et régularisation.
+10. Introduction aux matrices aléatoires et à la sparsité.
+
+### B14 — Plans d'expérience et inférence causale
+1. Question causale, estimands et résultats potentiels.
+2. Randomisation et essais contrôlés.
+3. Plans factoriels, blocs et plans fractionnaires.
+4. Taille d'échantillon et puissance.
+5. Graphes causaux et critères d'identification.
+6. Confusion, médiation et sélection.
+7. Scores de propension, appariement et pondération.
+8. Variables instrumentales.
+9. Différences-en-différences et discontinuité de régression.
+10. Contrôles synthétiques, interférence et sensibilité.
+11. Hétérogénéité des effets et apprentissage causal.
+
+### B15 — Apprentissage statistique et machine learning
+1. Cadre prédictif, risque et généralisation.
+2. Biais-variance et compromis de complexité.
+3. Validation croisée et séparation temporelle.
+4. Régression pénalisée et méthodes à noyaux.
+5. Arbres, forêts aléatoires et boosting.
+6. Machines à vecteurs de support.
+7. Méthodes de voisinage et classification probabiliste.
+8. Clustering et apprentissage non supervisé.
+9. Modèles génératifs et réduction dimensionnelle.
+10. Réseaux neuronaux et optimisation.
+11. Interprétabilité, calibration, équité et dérive.
+12. Déploiement, surveillance et limites des modèles.
+
+### B16 — Séries temporelles et prévision
+1. Structure temporelle, tendance, saisonnalité et cycles.
+2. Stationnarité et autocorrélation.
+3. Modèles AR, MA, ARMA et ARIMA.
+4. Modèles saisonniers et régression dynamique.
+5. Lissage exponentiel et modèles structurels.
+6. Modèles d'état et filtrage de Kalman.
+7. Volatilité conditionnelle : ARCH/GARCH.
+8. Séries multivariées et cointégration.
+9. Prévision probabiliste et intervalles prédictifs.
+10. Validation temporelle, backtesting et surveillance.
+
+### B17 — Ingénierie des données et recherche reproductible
+1. Formats, encodages, schémas et métadonnées.
+2. SQL, modèle relationnel et requêtes analytiques.
+3. Import, nettoyage, jointures et transformations.
+4. Pipelines, orchestration et contrôles qualité.
+5. Structures de données et traitement de grands volumes.
+6. Calcul parallèle et distribué : notions fondamentales.
+7. Git, environnements et gestion des dépendances.
+8. Tests unitaires, tests de données et intégration continue.
+9. Notebooks, rapports et analyses reproductibles.
+10. Documentation, traçabilité, confidentialité et gouvernance.
+
+### B18 — Actuariat, assurance et modélisation du risque
+1. Exposition, fréquence, sévérité et mesure de sinistralité.
+2. Modèles de fréquence et de sévérité.
+3. Modèles collectifs et agrégation des pertes.
+4. Tarification, GLM, segmentation et crédibilité.
+5. Assurance vie, mortalité et tables de survie.
+6. Analyse de survie et risques concurrents.
+7. Provisionnement non-vie et triangles de développement.
+8. Réassurance et transfert de risque.
+9. Théorie de la ruine et risque extrême.
+10. Capital, solvabilité, dépendance et allocation du risque.
+11. Validation, gouvernance et suivi des modèles actuariels.
+
+### B19 — Économétrie et statistiques financières
+1. Modèle économétrique et identification.
+2. Régression avec données transversales.
+3. Données de panel et effets fixes/aléatoires.
+4. Endogénéité, instruments et variables omises.
+5. Séries macroéconomiques et modèles dynamiques.
+6. Volatilité et dépendance des rendements.
+7. Modèles de risque de marché et de crédit.
+8. Évaluation empirique, prévision et backtesting.
+9. Reproductibilité, robustesse et interprétation économique.
+
+### B20 — Théorie statistique avancée et méthodes de recherche
+1. Mesure, intégration et probabilités sur espaces mesurés.
+2. Espérance conditionnelle et convergence avancée.
+3. Théorie asymptotique et méthodes delta.
+4. Efficacité, information et bornes d'estimation.
+5. Processus empiriques et convergence uniforme.
+6. Inégalités de concentration et probabilités en grande dimension.
+7. Statistique non paramétrique et semi-paramétrique.
+8. Théorie bayésienne avancée et calcul MCMC.
+9. Théorie de la décision et robustesse.
+10. Lecture critique, reproduction et synthèse d'articles.
+11. Question de recherche, protocole et rapport scientifique.
+
+## 5. Parcours recommandés
+
+Les parcours sont des itinéraires dans une bibliothèque commune. Une unité peut appartenir à plusieurs parcours.
+
+- **Mathématiques et statistique fondamentales :** B01 → B02 → B03/B04 → B05 → B08 → B10 → B11, puis approfondissements B03/B04/B08 et B20.
+- **Data analyst / statisticien appliqué :** B01 → B03 → B04 → B08 → B10 → B11 → B12 → B17 ; B13, B14 et B16 selon le domaine.
+- **Data science / machine learning :** B01 → B02 → B03 → B04 → B05 → B06 → B08 → B11 → B12 → B13 → B15 → B17 ; B07 fortement recommandé.
+- **Statistique théorique / recherche :** B02 → B03 → B04 → B05 → B08 → B11 → B20, puis B09, B13, B14 ou B15 selon le sujet.
+- **Actuariat et risque :** B01 → B03 → B04 → B05 → B08 → B09 → B10 → B11 → B12 → B16 → B18 ; B06, B13, B14, B19 et B20 en approfondissement.
+- **Économétrie et statistique financière :** B01 → B03 → B04 → B05 → B08 → B11 → B12 → B14 → B16 → B19.
+
+## 6. Graphe de dépendances et progression
+
+Les dépendances sont des prérequis conceptuels, pas une obligation d'achever chaque bloc dans un ordre linéaire.
+
+- B02 introduit la preuve et le raisonnement discret ; ses acquis sont mobilisés dans les blocs théoriques.
+- B03 et B04 sont deux piliers parallèles après B01 ; B05 nécessite les deux.
+- B06 mobilise l'algèbre linéaire et le calcul multivarié.
+- B07 est transversal aux méthodes numériques, statistiques et computationnelles.
+- B08 dépend de la logique et de l'analyse ; B09 approfondit les modèles aléatoires indexés dans le temps.
+- B10 peut commencer avec des prérequis mathématiques légers ; B11 exige les bases probabilistes.
+- B12 articule modèles, probabilité et inférence.
+- B13 et B15 nécessitent une maîtrise suffisante de l'algèbre linéaire, de l'inférence et des modèles.
+- B14 exige de distinguer association, prédiction et causalité ; la régression seule ne suffit pas.
+- B16 nécessite les bases probabilistes et statistiques ; B09 est utile pour les modèles avancés.
+- B17 accompagne tous les parcours appliqués et ne doit pas être réduit à un cours d'outils.
+- B18 et B19 sont des spécialisations reposant sur les blocs de probabilité, inférence et modélisation.
+- B20 est un approfondissement théorique, pas un prérequis à toute pratique professionnelle.
+
+## 7. Compétences transversales
+
+1. Formaliser une question en objets, variables, hypothèses et relations.
+2. Démontrer ou justifier un résultat avec un niveau de rigueur adapté.
+3. Choisir entre méthode exacte, analytique, numérique, statistique ou algorithmique.
+4. Construire et interpréter un modèle en distinguant modèle et réalité.
+5. Programmer, tester et documenter une méthode.
+6. Diagnostiquer hypothèses violées, biais, erreurs, instabilité et dérive.
+7. Communiquer résultats, incertitudes, unités, hypothèses et limites.
+8. Reproduire une analyse et permettre sa vérification indépendante.
+
+## 8. Format obligatoire d'une unité
+
+Toute unité substantielle comprend :
+- fiche d'identité : code stable, version, langue, niveau, charge, prérequis et statut ;
+- objectifs observables et compétences associées ;
+- diagnostic des prérequis ;
 - motivation et représentation intuitive ;
-- définitions, notations et hypothèses ;
-- propriétés et démonstrations lorsque le niveau le requiert ;
-- exemples résolus, avec étapes explicites ;
-- contre-exemples, pièges et limites d'application ;
-- applications quantitatives originales ;
-- atelier logiciel testé, si pertinent ;
-- exercices gradués et corrigés complets ;
-- auto-évaluation reliée aux objectifs ;
-- références précises et notes de portée.
+- définitions, notations, domaines et hypothèses ;
+- propositions, théorèmes et démonstrations lorsque pertinents ;
+- exemples résolus avec étapes explicites ;
+- contre-exemples, erreurs fréquentes et limites ;
+- applications originales et données documentées ;
+- laboratoire Python/R/SQL/Excel lorsque cela apporte une valeur ;
+- exercices gradués, corrigés complets et barèmes ;
+- auto-évaluation et critères de maîtrise ;
+- références précises, versionnées et reliées aux sections utilisées ;
+- note de portée : inclusions, exclusions et suites nécessaires.
 
-## Échelle de maîtrise
+## 9. Échelle de maîtrise
 
-- **M0 — Découverte** : reconnaître le vocabulaire et les objets.
-- **M1 — Application guidée** : appliquer une méthode dans un cas standard.
-- **M2 — Autonomie** : choisir une méthode, résoudre et vérifier un problème nouveau.
-- **M3 — Raisonnement** : justifier, démontrer, comparer des méthodes et construire des contre-exemples.
-- **M4 — Transfert** : modéliser une situation réaliste, évaluer les hypothèses et communiquer les limites.
+| Niveau | Signification | Preuve attendue |
+|---|---|---|
+| M0 | Découverte | Reconnaître les objets et le vocabulaire |
+| M1 | Application guidée | Résoudre un cas standard avec méthode indiquée |
+| M2 | Autonomie | Choisir une méthode et vérifier un problème nouveau |
+| M3 | Raisonnement | Justifier, démontrer, comparer et produire un contre-exemple |
+| M4 | Transfert | Modéliser une situation réelle, tester les hypothèses et communiquer les limites |
 
-Un cours n'est pas « terminé » parce qu'un fichier existe. Il passe par les états `draft`, `reviewed`, `tested`, puis `published`. Chaque changement substantiel crée une version traçable.
+## 10. Gouvernance éditoriale et critères de publication
 
-## Politique d'évaluation
+États obligatoires :
+- planned : périmètre identifié, contenu non rédigé ;
+- draft : contenu rédigé, non validé ;
+- reviewed : revues scientifique, bibliographique et pédagogique documentées ;
+- tested : exercices, corrigés, code et rendu exécutés ou vérifiés ;
+- published : version prête pour les apprenants ;
+- retired : version remplacée ou retirée, avec historique conservé.
 
-- Diagnostic : repérer les prérequis, sans verdict certifiant.
-- Entraînement formatif : feedback immédiat et correction expliquée.
+Une unité ne passe à reviewed que si définitions, hypothèses, preuves, notations et références ont été contrôlées. Elle ne passe à tested que si exercices et corrigés ont été résolus indépendamment, scripts exécutés et rendu vérifié. Elle ne passe à published que si ces contrôles sont documentés et les critères de maîtrise alignés sur les objectifs.
+
+Une revue assistée par IA n'est pas une validation par un enseignant ou un évaluateur humain indépendant. Toute incertitude non résolue est signalée.
+
+## 11. Politique d'évaluation
+
+- Diagnostic : localiser les prérequis à renforcer, sans verdict certifiant.
+- Entraînement formatif : feedback et explications immédiats.
 - Examen blanc : simulation explicitement non officielle.
-- Évaluation sommative : seulement après revue indépendante du sujet, du corrigé, du barème, des modalités et de la sécurité technique.
+- Évaluation sommative : revue indépendante du sujet, du corrigé, du barème, des modalités et de la sécurité technique.
+- Projet : évaluer formulation, méthode, reproductibilité, résultats, limites et communication.
 
-Les clés de correction et les règles de notation d'une véritable évaluation ne doivent pas être exposées dans le bundle public. Tant qu'un backend sécurisé n'est pas opérationnel, les examens du site restent des démonstrations formatives.
+Tant qu'un backend sécurisé n'est pas opérationnel, les examens du site restent des démonstrations formatives. Les clés de correction et règles de notation d'une véritable évaluation ne doivent pas être exposées dans le bundle public.
 
-## Politique de sources et d'originalité
+## 12. Limites et décisions futures
 
-- Rédiger les explications, exemples et problèmes de manière indépendante.
-- Citer les sources utilisées pour contrôler une définition, un résultat ou une convention.
-- Ne pas présenter une référence générale comme validation exhaustive du cours.
-- Vérifier les liens, éditions, chapitres et documentation technique avant publication.
-- Conserver les incertitudes, les hypothèses et les limites.
-- Ne pas importer de contenu pédagogique depuis Actu-Basics-Lab.
+Cette architecture fixe le périmètre cible, mais ne signifie pas que les 20 blocs sont rédigés ou validés. Le découpage définitif des unités, les charges, les conventions, les versions logicielles, les projets intégrateurs, les langues et les domaines spécialisés seront précisés au fil des lots.
 
-## Premier jalon
+Aucun nombre arbitraire de leçons ne sera fixé pour donner une impression de volume. Le découpage suivra les objectifs d'apprentissage et la cohérence scientifique.
 
-Le premier jalon de cette architecture est la réécriture originale de F01. Les autres unités restent annoncées comme planifiées tant qu'elles n'ont pas passé les contrôles éditoriaux et techniques.
+## 13. Références structurantes
+
+Voir docs/SOURCE-REGISTER.md pour le registre des sources institutionnelles, leur rôle et les blocs auxquels elles se rapportent. Les sources sont des références de comparaison et de vérification, jamais une approbation institutionnelle du Programme B.
