@@ -128,3 +128,8 @@ Dix unités originales (CI01–CI10) sont intégrées au lecteur : résultats po
 ## Bloc B15 — Apprentissage statistique et machine learning
 
 Dix unités originales (ML01–ML10) sont intégrées au lecteur : formulation du risque, généralisation, validation, régularisation, méthodes à noyaux, arbres et forêts, boosting, réseaux neuronaux, modèles probabilistes, détection d’anomalies et évaluation responsable. La carte pédagogique, l’évaluation formative et la première revue interne sont disponibles dans `docs/B15-UNIT-MAP.md`, `docs/B15-EVALUATION.md` et `docs/reviews/B15-internal-review.md`. Les contenus restent des premières versions de travail ; démonstrations approfondies, notebooks R/Python, tests apprenants et revue humaine indépendante restent à conduire.
+
+
+## Bloc B16 — Séries temporelles et prévision
+
+Dix unités originales (TS01–TS10) sont intégrées au lecteur : stationnarité, autocorrélation, ARMA/ARIMA/SARIMA, lissage exponentiel, régression temporelle, analyse spectrale, VAR/cointégration, ARCH/GARCH, modèles espace-état et évaluation des prévisions. La carte pédagogique, l’évaluation formative et la première revue interne sont disponibles dans `docs/B16-UNIT-MAP.md`, `docs/B16-EVALUATION.md` et `docs/reviews/B16-internal-review.md`. Les contenus restent des premières versions de travail ; dérivations, notebooks R/Python, tests apprenants et revue humaine indépendante restent à conduire.
