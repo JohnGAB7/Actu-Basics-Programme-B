@@ -38,6 +38,10 @@ Une source ne prouve pas qu'un cours entier est correct. Pour chaque unité, pr�
 | S22 | Hammack — Book of Proof, 3e édition : https://www.people.vcu.edu/~rhammack/BookOfProof/ | Logique, ensembles, quantificateurs et méthodes de démonstration | Vérification pédagogique de D01–D03 |
 | S23 | MIT OpenCourseWare — Mathematics for Computer Science (6.1200J) : https://ocw.mit.edu/courses/6-1200j-mathematics-for-computer-science-spring-2024/ | Preuves, induction, combinatoire, graphes, récurrences, complexité et probabilité discrète | Référence de cadrage principale pour B02 |
 | S24 | Diestel — Graph Theory, 5e édition : https://diestel-graph-theory.com/ | Graphes, arbres et propriétés structurelles | Référence de fond pour D07 |
+| S25 | MIT OpenCourseWare — 18.06 Linear Algebra, Gilbert Strang : https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/ | Systèmes, élimination, espaces, projections, moindres carrés, déterminants, valeurs propres, SVD | Référence institutionnelle principale pour B03 |
+| S26 | Strang, Gilbert — Introduction to Linear Algebra, 5e éd. : https://math.mit.edu/~gs/linearalgebra/ | Présentation conceptuelle et calculatoire de l'algèbre linéaire | Référence de cours pour V01–V10 |
+| S27 | Axler, Sheldon — Linear Algebra Done Right, 4e éd. : https://linear.axler.net/ | Espaces vectoriels, applications linéaires, opérateurs et spectre | Contrôle des fondements abstraits de V05, V06 et V09 |
+| S28 | Trefethen, Lloyd N. & Bau, David — Numerical Linear Algebra, SIAM : https://people.maths.ox.ac.uk/trefethen/text.html | Stabilité, factorisations QR, SVD et calcul matriciel | Limites numériques de V03, V07, V08 et V10 ; approfondissement B07 |
 
 ## 3. Matrice de couverture par bloc
 
@@ -45,7 +49,7 @@ Une source ne prouve pas qu'un cours entier est correct. Pour chaque unité, pr�
 |---|---|
 | B01 Fondations | S01, S09, S18, S19, S20, S21 |
 | B02 Logique et discret | S01, S05 |
-| B03 Algèbre linéaire | S01, S07, S17 |
+| B03 Algèbre linéaire | S01, S07, S17, S25, S26, S27, S28 |
 | B04 Analyse réelle | S01, S06, S09 |
 | B05 Calcul multivarié et EDO | S01, S17 |
 | B06 Optimisation | S08, S10, S11, S13 |
