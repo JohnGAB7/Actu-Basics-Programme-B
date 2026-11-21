@@ -33,3 +33,34 @@
 
 ## Limites et statut
 Cette revue vérifie la cohérence et le périmètre, pas l'exhaustivité opérationnelle. Elle ne remplace pas une revue indépendante en ingénierie des données, sécurité et droit des données. Les unités sont des premières versions de travail, non accréditées.
+
+
+
+## Seconde revue interne — version 1.1
+
+**Périmètre :** approfondissements DE01–DE10, primitives de laboratoire Python/R, SQL pédagogique, carte et évaluation.
+
+### Contrôles ajoutés
+- DE01 : contrat de produit de données, lineage, fraîcheur et SLO.
+- DE02 : dépendances fonctionnelles, décomposition sans perte, logique SQL à trois valeurs, fan-out et isolation.
+- DE03 : row groups, predicate pushdown, partition pruning, évolution de schéma et benchmark contrôlé.
+- DE04 : CDC, watermark, événements tardifs, sémantiques at-least-once/at-most-once et manifeste de lot.
+- DE05 : dénominateurs, erreurs de classification des règles, segmentation et seuils justifiés.
+- DE06 : distinction retry/backfill, publication atomique, chemin critique et jitter.
+- DE07 : loi d'Amdahl, non-associativité flottante et protocole de benchmark.
+- DE08 : niveaux de reproductibilité, manifeste de provenance, non-déterminisme et CI.
+- DE09 : propagation de suppression, threat modelling et limites de l'anonymisation.
+- DE10 : portes d'acceptation documentées et réconciliation actuarielle.
+
+### Tests et limites du laboratoire
+Le laboratoire couvre des fonctions de contrôle de données déterministes et un upsert didactique. Il ne teste pas de connecteur réel, de transaction distribuée, de moteur CDC, d'orchestrateur, de contrôle d'accès ou de charge à grande échelle. Le SQL est orienté PostgreSQL et nécessite adaptation selon le moteur.
+
+### Points restant à vérifier
+1. Exécuter tous les tests Python/R et vérifier les commandes depuis la racine du dépôt.
+2. Tester les exemples SQL dans un moteur PostgreSQL réel ; le script fait référence à une table de staging à créer par l'apprenant.
+3. Ajouter des mesures reproductibles Parquet/CSV sur un environnement documenté.
+4. Faire relire les passages de sécurité et de protection des données par une personne compétente en droit/RGPD.
+5. Obtenir une revue indépendante en bases de données et ingénierie des données.
+6. Organiser des tests apprenants, puis un audit manuel d'accessibilité du site.
+
+**Conclusion :** la couverture conceptuelle est sensiblement renforcée, mais le bloc reste une seconde revue interne assistée par IA, non une validation académique indépendante ni une certification.
