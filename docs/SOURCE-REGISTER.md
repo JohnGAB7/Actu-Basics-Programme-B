@@ -390,3 +390,14 @@ Les références MIT complètent S03, S46 et S107. Elles servent de références
 
 
 | S163 | MIT OpenCourseWare — 18.175, *Theory of Probability*, Lecture 16: Berry–Esseen theorem : https://ocw.mit.edu/courses/18-175-theory-of-probability-spring-2014/59f08b62c812d8f6414c51455aebfd96_MIT18_175S14_Lecture16.pdf | Borne uniforme de Berry–Esseen, hypothèses de troisième moment et vitesse $n^{-1/2}$ | P10 ; quantification de l'erreur d'approximation normale |
+
+
+## B09 — références de fondations des processus stochastiques
+
+| ID | Ressource | Domaines utiles | Utilisation |
+|---|---|---|---|
+| S164 | MIT OpenCourseWare — 18.445, *Introduction to Stochastic Processes* (Spring 2015) : https://ocw.mit.edu/courses/18-445-introduction-to-stochastic-processes-spring-2015/ | Chaînes de Markov, marches aléatoires, martingales et processus de branchement | S01–S05 et S08 ; référence de niveau graduate |
+| S165 | MIT OpenCourseWare — 6.262, *Discrete Stochastic Processes* (Spring 2011) : https://ocw.mit.edu/courses/6-262-discrete-stochastic-processes-spring-2011/ | Chaînes discrètes, processus de Poisson, files et modèles stochastiques | S02–S07 et S09 ; notes et exercices |
+| S166 | MIT OpenCourseWare — 15.070J, *Advanced Stochastic Processes* (Fall 2013) : https://ocw.mit.edu/courses/15-070j-advanced-stochastic-processes-fall-2013/ | Mesure, filtrations, martingales, arrêt optionnel, brownien, calcul d'Itô, limites fonctionnelles et applications en assurance/queues | S08–S10 ; référence avancée et comparaison de périmètre |
+
+Les cours MIT sont des références de périmètre et de profondeur ; leurs syllabi ne constituent pas une validation indépendante des leçons Programme B.
