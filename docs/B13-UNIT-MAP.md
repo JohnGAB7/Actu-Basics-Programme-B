@@ -53,7 +53,7 @@ L'apprenant doit pouvoir choisir une méthode en fonction de la question, établ
 - MV01 : rang de la covariance centrée et limites des covariances pairwise en présence de données manquantes.
 - MV02 : distinction entre Mahalanobis avec paramètres connus et estimés ; sensibilité de la covariance classique et recours possible à des estimateurs robustes.
 - MV03 : justification de la transformation exacte de Hotelling T² via normalité, indépendance et Wishart ; distinction des régions simultanées et intervalles marginaux.
-- MV04 : définitions matricielles de H et E, degrés de liberté, valeurs propres, transformations F de Wilks/Rao, Pillai, Hotelling–Lawley et Roy ; distinction entre formule exacte, approximation et borne supérieure.
+- MV04 : définitions matricielles de H et E, degrés de liberté, racines, transformations F de Wilks/Rao, Pillai, Hotelling–Lawley et Roy ; Roy est exact si min(p,q)=1 et sa borne F donne une borne inférieure de p-value sinon.
 - MV05 : lien SVD/ACP, convention sur les charges et exemple spectral chiffré.
 - MV06 : modèle factoriel avec matrice Φ, rotation oblique et indétermination de rotation.
 - MV07 : équation propre généralisée des corrélations canoniques et limites en cas de matrices singulières.
@@ -70,3 +70,6 @@ L'évaluation formative comporte 18 questions réparties en cinq parties, pour 1
 ## Traçabilité complémentaire MANOVA
 
 Le complément MV04 formalise les matrices H et E, les racines caractéristiques et les transformations F usuelles. Il distingue explicitement les domaines d'exactitude, les approximations et la borne de Roy. Sources : S158–S160. Les formules supposent le modèle linéaire multivarié classique et ne se transposent pas automatiquement aux mesures répétées, modèles mixtes ou matrices résiduelles singulières.
+
+
+**Précision Roy (v1.2).** Avec d=max(p,q), la transformation est F=Θ(v−d+q)/d, ddl (d, v−d+q). Elle est exacte lorsque min(p,q)=1 ; sinon F est une borne supérieure et la p-value correspondante une borne inférieure. Le cas p=1 redonne F=Θv/q, comme l'ANOVA univariée.
