@@ -1,0 +1,71 @@
+.descriptive-lab{padding-bottom:44px}
+.eda-eyebrow{font-size:9px;font-weight:800;letter-spacing:1.1px;color:#6e9a89}
+.eda-version{font-size:9px;font-weight:800;letter-spacing:1px;color:#527f70;background:#eef7f1;border:1px solid #deeee5;border-radius:20px;padding:9px 12px;white-space:nowrap}
+.eda-intro{display:flex;align-items:center;gap:14px;padding:16px 18px;background:#edf6f1;border:1px solid #e0eee7;border-radius:11px;margin:-8px 0 18px}
+.eda-intro-icon{width:40px;height:40px;display:grid;place-items:center;flex-shrink:0;border-radius:10px;background:#dcefe5;color:#4a927d}
+.eda-intro strong{font-size:11px;color:#2e5549}
+.eda-intro p{font-size:10px;line-height:1.6;color:#748d83;margin:5px 0 0}
+.eda-tabs{display:flex;gap:6px;overflow-x:auto;border-bottom:1px solid #e5ecea;margin-bottom:17px}
+.eda-tabs button{display:inline-flex;align-items:center;gap:8px;white-space:nowrap;padding:12px 13px;border:0;border-bottom:2px solid transparent;background:transparent;color:#7d8c95;font-size:10px;font-weight:700;cursor:pointer}
+.eda-tabs button.active{color:#438b7d;border-bottom-color:#65b99b}
+.eda-tabs button:focus-visible,.eda-reset:focus-visible,.eda-control input:focus-visible{outline:3px solid #b78b45;outline-offset:3px;border-radius:5px}
+.eda-panel{background:#fff;border:1px solid #e7edef;border-radius:13px;padding:clamp(17px,2.7vw,27px);box-shadow:0 5px 18px rgba(22,43,61,.025)}
+.eda-panel[role=tabpanel]:focus{outline:2px solid #d5e8df;outline-offset:3px}
+.eda-panel-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;margin-bottom:22px}
+.eda-panel-heading h2{font:700 18px Manrope;color:#21384a;letter-spacing:-.4px;margin:7px 0 5px}
+.eda-panel-heading p{font-size:10px;color:#82919a;margin:0;line-height:1.5}
+.eda-reset{display:inline-flex;align-items:center;gap:6px;white-space:nowrap;background:#fff;border:1px solid #e3ebea;border-radius:7px;padding:8px 10px;color:#6e857e;font-size:9px;font-weight:700;cursor:pointer}
+.eda-reset:hover{background:#f5faf7}
+.eda-grid{display:grid;grid-template-columns:minmax(220px,.72fr) minmax(0,1.5fr);gap:27px;align-items:start}
+.eda-controls{display:grid;gap:18px}
+.eda-control{display:grid;gap:8px}
+.eda-control>span{display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:10px;color:#62737e}
+.eda-control output{font-weight:800;color:#3e8675;font-variant-numeric:tabular-nums}
+.eda-control input{width:100%;accent-color:#579d87;cursor:pointer}
+.eda-control small{display:flex;justify-content:space-between;color:#a0abb0;font-size:8px}
+.eda-formula{padding:12px 13px;border-radius:8px;background:#f4f8f6;border:1px solid #e8f0ec;color:#365d54;font-size:12px;overflow-x:auto}
+.eda-hint{font-size:9px;line-height:1.7;color:#84939a;margin:0}
+.eda-stat-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+.eda-stat-grid>div{display:grid;gap:5px;padding:12px;background:#f4f8f6;border-radius:8px;min-width:0}
+.eda-stat-grid small{font-size:8px;color:#89979b}
+.eda-stat-grid strong{font-size:20px;color:#365d54;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.eda-stat-grid span{font-size:8px;line-height:1.5;color:#82918c}
+.eda-sampling-results{display:grid;gap:15px}
+.eda-sample-bars{display:grid;gap:12px}
+.eda-sample-bars>div{display:grid;grid-template-columns:90px 1fr 90px;gap:10px;align-items:center;font-size:9px;color:#75858a}
+.eda-sample-bars i{height:12px;display:flex;overflow:hidden;border-radius:12px;background:#edf2ef}
+.eda-sample-bars i b:first-child{display:block;background:#70b89c}
+.eda-sample-bars i b:last-child{display:block;background:#c4a56b}
+.eda-sample-bars small{text-align:right;font-size:8px;color:#89979b}
+.eda-chart-wrap{background:#fcfdfc;border:1px solid #edf1f0;border-radius:10px;padding:14px}
+.eda-chart{width:100%;height:auto;display:block}
+.eda-gridline{stroke:#e9efed;stroke-width:1}
+.eda-tick{font:9px sans-serif;fill:#96a3a8}
+.eda-axis{stroke:#aab8b2;stroke-width:1}
+.eda-hist-bar{fill:#79bba3;stroke:#fff;stroke-width:1}
+.eda-bar-label{font:10px sans-serif;fill:#3e7868}
+.eda-hist-equations{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+.eda-hist-equations>div{display:grid;gap:5px;padding:10px;background:#f4f8f6;border-radius:7px}
+.eda-hist-equations b{font-size:9px;color:#365d54}
+.eda-hist-equations span,.eda-hist-equations small{font-size:8px;color:#82918c}
+.eda-missing-grid{display:grid;grid-template-columns:minmax(180px,.7fr) minmax(0,1.3fr);gap:18px;align-items:start}
+.eda-missing-values{padding:16px;background:#f8fbf9;border:1px solid #edf2ee;border-radius:9px}
+.eda-values{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 16px}
+.eda-values span{min-width:32px;padding:8px 9px;text-align:center;border-radius:6px;background:#e8f3ed;color:#426e5d;font-size:10px;font-weight:700}
+.eda-values span.missing{background:#f7eee2;color:#a27d4a}
+.eda-missing-rate{display:flex;align-items:baseline;gap:8px}
+.eda-missing-rate strong{font-size:22px;color:#a27d4a}
+.eda-missing-rate span{font-size:8px;color:#89979b}
+.eda-warning{font-size:9px;line-height:1.7;color:#7c6a4e;padding:12px 14px;border-left:3px solid #c8a36a;background:#fbf8f1;border-radius:0 7px 7px 0;margin:16px 0 0}
+.eda-table-wrap{overflow-x:auto}
+.eda-table{width:100%;border-collapse:collapse;font-size:10px;text-align:right}
+.eda-table th,.eda-table td{padding:12px 10px;border-bottom:1px solid #e9efed;white-space:nowrap}
+.eda-table thead th{font-size:8px;letter-spacing:.5px;text-transform:uppercase;color:#82918c}
+.eda-table tbody th{text-align:left;color:#365d54}
+.eda-table td{color:#64767a;font-variant-numeric:tabular-nums}
+.eda-table .eda-better{color:#3b8a70;font-weight:800}
+.eda-table .eda-worse{color:#a87946;font-weight:800}
+.eda-footnote{font-size:9px;line-height:1.7;color:#849197;padding:14px 16px;margin-top:16px;border:1px solid #e8edeb;border-radius:9px;background:#fafcfb}
+.eda-footnote strong{color:#527f70}
+@media(max-width:900px){.eda-grid{grid-template-columns:1fr}.eda-controls{grid-template-columns:repeat(2,minmax(0,1fr));align-items:start}.eda-controls .eda-formula,.eda-controls .eda-hint{grid-column:1/-1}}
+@media(max-width:650px){.eda-panel-heading{display:block}.eda-reset{margin-top:12px}.eda-controls{grid-template-columns:1fr}.eda-controls .eda-formula,.eda-controls .eda-hint{grid-column:auto}.eda-missing-grid{grid-template-columns:1fr}.eda-hist-equations{grid-template-columns:1fr}.eda-sample-bars>div{grid-template-columns:72px 1fr 66px}.eda-version{display:none}.eda-tabs button{padding:11px 9px}.eda-table{font-size:9px}.eda-table th,.eda-table td{padding:10px 7px}}
