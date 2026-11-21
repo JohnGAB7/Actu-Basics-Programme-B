@@ -159,3 +159,14 @@ Le registre sera enrichi au fil de la production. Une liste de liens généraux 
 | S66 | Gelman & Hill, *Data Analysis Using Regression and Multilevel/Hierarchical Models* | Régression multiniveau et modèles hiérarchiques | Introduction R10 |
 
 Les ressources S61–S66 sont des sources de cadrage et de vérification à consulter ; elles ne certifient pas le contenu de Programme B.
+
+## B13 — Statistique multivariée et grande dimension
+| ID | Ressource | Domaines utiles | Utilisation |
+|---|---|---|---|
+| S67 | Penn State STAT 505 — Applied Multivariate Statistical Analysis : https://online.stat.psu.edu/stat505/ | Covariance multivariée, loi normale, T², MANOVA, analyse discriminante, ACP, analyse factorielle, corrélation canonique et clustering | Référence institutionnelle principale de cadrage M01–M09 |
+| S68 | Penn State STAT 505 — course outline : https://online.stat.psu.edu/statprogram/stat505 | Objectifs, prérequis et couverture graduate des méthodes multivariées | Contrôle du périmètre et des prérequis de B13 |
+| S69 | scikit-learn — Decomposing signals in components : https://scikit-learn.org/stable/modules/decomposition.html | ACP, SVD, réduction dimensionnelle et implémentation | Référence technique pour ateliers M05 et prolongements |
+| S70 | scikit-learn — PCA API : https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html | Centrage, SVD exacte ou tronquée et paramètres de calcul | Vérification des conventions de l'implémentation Python |
+| S71 | UCLA OARC — Statistical analyses and factor analysis resources : https://stats.oarc.ucla.edu/ | Analyse factorielle, diagnostics et interprétation des sorties | Ressource pédagogique complémentaire à vérifier par méthode |
+
+Les ressources S67–S71 sont des sources de cadrage et de vérification ; leur présence ne certifie pas les contenus et ne remplace pas la consultation des chapitres ou notes détaillés.
