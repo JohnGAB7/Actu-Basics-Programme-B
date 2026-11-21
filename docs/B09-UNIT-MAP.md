@@ -1,8 +1,8 @@
 # B09 — Carte pédagogique : processus stochastiques
 
-**Statut :** revue interne effectuée — consolidation pédagogique en cours.
+**Statut :** seconde passe de revue interne effectuée — consolidation pédagogique en cours.
 
-**Version :** 1.0 · 21 novembre 2026  
+**Version :** 1.1 · 21 novembre 2026  
 **Charge indicative :** 48–58 heures  
 **Prérequis :** B08 (probabilités), B04 (analyse) et B03 (algèbre linéaire pour les matrices de transition et générateurs). Les bases de l'espérance conditionnelle sont indispensables.
 
@@ -31,8 +31,12 @@ S01 introduit les objets et les trajectoires. S02–S05 construisent la théorie
 - Les chaînes de Markov sont introduites ici ; leurs applications Monte Carlo et MCMC relèveront des blocs de simulation et de machine learning.
 - Le calcul d'Itô, les équations différentielles stochastiques, les diffusions avancées, les grandes déviations et la théorie des files lourdes sont des prolongements L3/L4.
 
+## Consolidation de la seconde passe interne
+
+Les dix unités ont été enrichies par des approfondissements sur les objets mesurables et les distributions finies, les calculs multi-étapes et équations de premier pas, la classification des états, les conditions de convergence, les chaînes absorbantes, la caractérisation locale du processus de Poisson, les hypothèses des théorèmes de renouvellement et d'arrêt optionnel, les équations de Kolmogorov, la stabilité M/M/1 et la variation quadratique brownienne.
+
 ## Modalités pédagogiques
-Chaque unité comprend définitions, hypothèses, exemples, exercices corrigés, erreurs fréquentes et critères de maîtrise. Des simulations Python/R doivent illustrer les trajectoires, transitions, arrivées et temps d'attente, sans remplacer les démonstrations.
+Chaque unité comprend définitions, hypothèses, exemples, exercices corrigés, erreurs fréquentes et critères de maîtrise. Des simulations Python/R doivent illustrer les trajectoires, transitions, arrivées et temps d'attente, sans remplacer les démonstrations. Le laboratoire reproductible est documenté dans [labs/b09/README.md](../labs/b09/README.md), avec tests Python et contrôles R.
 
 ## Évaluation
 Épreuve formative proposée : 120 minutes, 100 points. Elle évalue chaînes discrètes, classes d'états, stationnarité, absorption, Poisson, renouvellement, martingales, chaînes continues et mouvement brownien. Aucun résultat ne vaut certification.
@@ -44,3 +48,15 @@ Chaque unité comprend définitions, hypothèses, exemples, exercices corrigés,
 - MIT OCW 18.445 — Lecture Notes : https://ocw.mit.edu/courses/18-445-introduction-to-stochastic-processes-spring-2015/pages/lecture-notes/
 
 Ces ressources guident le cadrage et la vérification. Elles ne valident ni n'accréditent Programme B. Les chapitres et sections effectivement utilisés doivent être consignés lors de la revue approfondie.
+
+
+## Correspondance des ressources ouvertes vérifiées
+
+- **S01 — objets et familles de processus :** MIT 6.262, chapitre 1 (introduction) ; MIT 18.445, cours d'introduction.
+- **S02–S05 — chaînes de Markov discrètes :** MIT 18.445, notes sur chaînes finies, distributions stationnaires, temps d'atteinte, chaînes dénombrables, irréductibilité et récurrence.
+- **S06–S07 — Poisson et renouvellement :** MIT 6.262, chapitres 2 et 4 ; calendrier des séances 4–5 et 10–12.
+- **S08 — martingales et arrêt :** MIT 18.445, séances 15–18 ; MIT 15.070J pour les filtrations et théorèmes d'arrêt.
+- **S09 — temps continu et générateurs :** MIT 18.445, séances 21–24 ; MIT 6.262, chapitre 6 et sections sur les équations de Kolmogorov et les processus naissance-mort.
+- **S10 — brownien et calcul d'Itô :** MIT 15.070J, cours avancé couvrant mouvement brownien, intégration stochastique et calcul d'Itô. Ne pas attribuer ces contenus au cours MIT 18.445.
+
+Références institutionnelles vérifiées : [MIT 18.445 — cours et description](https://ocw.mit.edu/courses/18-445-introduction-to-stochastic-processes-spring-2015/), [notes 18.445](https://ocw.mit.edu/courses/18-445-introduction-to-stochastic-processes-spring-2015/pages/lecture-notes/), [MIT 6.262 — cours](https://ocw.mit.edu/courses/6-262-discrete-stochastic-processes-spring-2011/), [notes 6.262](https://www.ocw.mit.edu/courses/6-262-discrete-stochastic-processes-spring-2011/pages/course-notes/), [MIT 15.070J — cours](https://ocw.mit.edu/courses/15-070j-advanced-stochastic-processes-fall-2013/).
