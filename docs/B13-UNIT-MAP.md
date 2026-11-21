@@ -1,6 +1,6 @@
 # B13 — Carte pédagogique : Statistique multivariée et grande dimension
 
-**Version :** 0.1 · **Statut :** Revue interne effectuée — consolidation pédagogique en cours.
+**Version :** 1.1 · **Statut :** seconde passe interne approfondie · laboratoire Python/R en validation CI.
 **Charge indicative :** 52–62 heures (cours, calculs, ateliers et projet)  
 **Niveau :** L1–L3, avec ouverture L4 sur les méthodes de grande dimension  
 **Prérequis :** B03 algèbre linéaire, B08 probabilités, B10 exploration et échantillonnage, B11 inférence, B12 régression. Connaissances R ou Python recommandées.
@@ -46,3 +46,22 @@ L'analyse de survie multivariée spécialisée, modèles graphiques probabiliste
 
 ## Critères de sortie du bloc
 L'apprenant doit pouvoir choisir une méthode en fonction de la question, établir les objets mathématiques, identifier les hypothèses, exécuter une analyse reproductible, évaluer sa stabilité et présenter une conclusion assortie de limites. La réussite à un questionnaire isolé ne suffit pas à démontrer ces compétences.
+
+
+## Compléments de la seconde passe interne v1.1
+
+- M01 : rang de la covariance centrée et limites des covariances pairwise en présence de données manquantes.
+- M02 : distinction entre Mahalanobis avec paramètres connus et estimés ; sensibilité de la covariance classique et recours possible à des estimateurs robustes.
+- M03 : justification de la transformation exacte de Hotelling T² via normalité, indépendance et Wishart ; distinction des régions simultanées et intervalles marginaux.
+- M04 : définitions matricielles de H et E, degrés de liberté et expressions de Wilks, Pillai, Hotelling–Lawley et Roy ; précaution sur les transformations F.
+- M05 : lien SVD/ACP, convention sur les charges et exemple spectral chiffré.
+- M06 : modèle factoriel avec matrice Φ, rotation oblique et indétermination de rotation.
+- M07 : équation propre généralisée des corrélations canoniques et limites en cas de matrices singulières.
+- M08 : règle de décision à coûts asymétriques et calibration.
+- M09 : DBSCAN et limites de distance en grande dimension.
+- M10 : matrice de précision, corrélations partielles, shrinkage et validation après sélection.
+- Laboratoire Python/R : covariance, corrélation, Jacobi, ACP, Mahalanobis, T², shrinkage et k-means ; tests et contrôles CI ajoutés.
+
+## Périmètre de l'évaluation
+
+L'évaluation formative comporte 18 questions réparties en cinq parties, pour 100 points au total (20 + 20 + 25 + 15 + 20). Le seuil indicatif ne vaut pas certification.
