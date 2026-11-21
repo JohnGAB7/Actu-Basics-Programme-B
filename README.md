@@ -9,6 +9,9 @@ https://johngab7.github.io/Actu-Basics-Programme-B/
 - Architecture académique cible : docs/PROGRAMME-B-CURRICULUM.md
 - Carte pédagogique du Bloc B01 : docs/B01-UNIT-MAP.md
 - Carte pédagogique du Bloc B02 : docs/B02-UNIT-MAP.md
+- Carte pédagogique du Bloc B03 : docs/B03-UNIT-MAP.md
+- Évaluation transversale B03 : docs/B03-EVALUATION.md
+- Revue interne B03 : docs/reviews/B03-internal-review.md
 - Évaluation transversale B02 : docs/B02-EVALUATION.md
 - Revue interne B02 : docs/reviews/B02-internal-review.md
 - Revue interne F01 v1.1.0 : docs/reviews/F01-1.1.0-review.md
@@ -24,8 +27,9 @@ L'architecture cible comporte 20 blocs organisés en socle mathématique et comp
 - B01 : F01 à F08 sont désormais rédigées en version originale et intégrées à la bibliothèque (draft).
 - Les huit unités sont accessibles dans le lecteur de cours ; aucune n'est encore déclarée reviewed, tested ou published.
 - Le dossier complet comprend objectifs, leçons, exemples, applications, exercices corrigés et références ; les revues indépendantes et tests apprenants restent à conduire.
-- B02 : D01 à D08 sont rédigées et intégrées à la bibliothèque (draft) ; revue interne assistée par IA consignée, revue indépendante et tests apprenants encore requis.
-- B03–B20 : architecture cible définie ; contenus à développer, documenter et relire.
+- B02 : D01 à D08 rédigées et intégrées à la bibliothèque (draft) ; revue interne assistée par IA consignée, revue indépendante et tests apprenants encore requis.
+- B03 : V01 à V10 intégrées à la bibliothèque ; revue interne mathématique et pédagogique documentée. CI TypeScript/Vite et validation KaTeX réussies ; revue humaine indépendante et tests apprenants restent à conduire.
+- B04–B20 : architecture cible définie ; contenus à développer, documenter et relire.
 - Le diagnostic interactif est une démonstration formative locale, non certifiante.
 - Aucun compte, historique privé serveur ou examen sécurisé n'est fourni par cette version statique.
 
@@ -46,6 +50,10 @@ Le workflow GitHub Actions vérifie le build sur les branches et déploie GitHub
 ### Évaluation transversale B02
 
 Une épreuve formative de synthèse (90 min, 100 points), avec corrigé, est disponible dans [`docs/B02-EVALUATION.md`](./docs/B02-EVALUATION.md). Elle reste en draft et doit être relue indépendamment puis testée auprès d'apprenants. La revue interne est consignée dans [`docs/reviews/B02-internal-review.md`](./docs/reviews/B02-internal-review.md).
+
+### Évaluation transversale B03
+
+Une épreuve formative de synthèse (120 min, 100 points), avec corrigé, est disponible dans [`docs/B03-EVALUATION.md`](./docs/B03-EVALUATION.md). La revue interne mathématique et pédagogique est consignée dans [`docs/reviews/B03-internal-review.md`](./docs/reviews/B03-internal-review.md). La validation indépendante et les tests apprenants restent à conduire.
 
 ### Évaluation transversale B01
 
