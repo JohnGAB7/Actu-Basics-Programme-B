@@ -23,10 +23,14 @@ class RegressionLabTests(unittest.TestCase):
         self.assertEqual(len(d["cooks_distance"]),len(x))
         self.assertEqual(max(d["cooks_distance"]),d["cooks_distance"][-1])
 
-    def test_ridge_and_lasso_shrink(self):
-        result=ridge_lasso_simple([1,2,3,4,5],[2,4,6,8,10],100)
-        self.assertLess(abs(result["ridge_slope"]),abs(result["ols_slope"]))
-        self.assertEqual(result["lasso_slope"],0)
+    def test_ridge_and_lasso_objective_scaling(self):
+        result=ridge_lasso_simple([1,2,3,4,5],[2,4,6,8,10],2)
+        self.assertAlmostEqual(result["ols_slope"],2.0)
+        self.assertAlmostEqual(result["ridge_slope"],20/12)
+        self.assertAlmostEqual(result["lasso_slope"],18/10)
+        stronger=ridge_lasso_simple([1,2,3,4,5],[2,4,6,8,10],100)
+        self.assertLess(abs(stronger["ridge_slope"]),abs(stronger["ols_slope"]))
+        self.assertEqual(stronger["lasso_slope"],0)
 
     def test_logistic_fit(self):
         rng=random.Random(2026)
