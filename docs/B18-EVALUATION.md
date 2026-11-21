@@ -57,3 +57,26 @@
 
 ## Critères de réussite
 Seuil indicatif : 70/100. Les erreurs sur exposition, censure, actualisation, triangle ou agrégation imposent une reprise ciblée. Les règles prudentielles doivent être vérifiées sur les textes applicables à la date d'usage.
+
+
+
+## Barème analytique et critères de correction
+
+Le barème reste de 100 points. Les réponses doivent préciser unités, conventions et hypothèses. Pour les questions quantitatives, les points sont attribués à la formule, au calcul, à l'unité et à l'interprétation. Une valeur numérique correcte obtenue avec un dénominateur ou une convention inadaptée ne reçoit pas tous les points.
+
+Pour le projet, exiger :
+- définition de l'unité de risque et de l'exposition ;
+- justification de la base de coûts (brut/net, payé/encouru, inflation) ;
+- modèle de référence et challenger ;
+- diagnostics, calibration et validation temporelle ;
+- analyse de sensibilité et d'incertitude ;
+- réconciliation des résultats avec les données sources ;
+- documentation des limites, variables, décisions et responsabilités.
+
+## Cas limites obligatoires
+
+Les travaux pratiques doivent inclure : exposition nulle ou négative ; surdispersion ; fréquence-sévérité dépendantes ; sinistre plafonné/franchisé ; événement censuré ; événement et censure au même temps ; facteur Chain-Ladder non estimable ; année d'origine récente ; facteur tail ; récupération de réassurance plafonnée ; dépendance de queue ; changement de portefeuille et dérive tarifaire.
+
+## Critères bloquants
+
+Un résultat ne peut être accepté s'il confond prime pure et prime commerciale, probabilité annuelle et force de mortalité, montant payé et ultime, brut et net de réassurance, VaR et perte maximale, ou capital réglementaire et capital économique interne. Le seuil indicatif de 70/100 ne remplace pas ces exigences de cohérence.
