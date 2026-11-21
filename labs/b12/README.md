@@ -13,7 +13,7 @@ Rscript labs/b12/regression_lab.R
 ## Expériences
 1. OLS simple : coefficients, valeurs ajustées, résidus, SSE, R², variance résiduelle et erreurs-types.
 2. Diagnostics : levier, résidus studentisés internes et distance de Cook.
-3. Ridge et LASSO dans le cas centré à un prédicteur, intercept non pénalisé.
+3. Ridge et LASSO dans le cas centré à un prédicteur, intercept non pénalisé : Ridge minimise 0,5·SSE + 0,5·λβ² ; LASSO minimise 0,5·SSE + λ|β|.
 4. Régression logistique par Newton/IRLS : probabilités ajustées et log-vraisemblance.
 5. Régression de Poisson avec offset d'exposition : moyennes ajustées et déviance.
 6. ICC d'un modèle à intercept aléatoire.
