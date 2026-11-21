@@ -31,6 +31,10 @@ Charge indicative totale : 40 à 48 heures. Cette estimation sera révisée apr�
 - F07 réunit expressions, équations et représentations dans le concept de fonction.
 - F08 est une unité de synthèse quantitative et de représentation. Certains chapitres (coordonnées, unités, ordres de grandeur) peuvent être abordés plus tôt ; l'étude des erreurs numériques vient après les opérations exactes.
 
+## Évaluation transversale
+
+Une première épreuve de synthèse, avec barème et corrigé, est disponible dans [`docs/B01-EVALUATION.md`](./B01-EVALUATION.md). Elle vérifie les acquis de F01 à F08 et inclut une étude de cas quantitative. Elle constitue un outil formatif à faire relire et tester ; elle ne remplace pas une évaluation indépendante ni un test auprès d'apprenants.
+
 ## Acquis de sortie du bloc
 
 Au terme de B01, l'apprenant doit pouvoir :
