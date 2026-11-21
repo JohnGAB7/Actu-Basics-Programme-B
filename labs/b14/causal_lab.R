@@ -67,18 +67,19 @@ standardized_ate_binary_x <- function(y,a,x) {
   c(ate=mu1-mu0,mu1=mu1,mu0=mu0,crude=mean(y[a==1])-mean(y[a==0]))
 }
 ipw_ate <- function(y,a,e) {
-  if(length(y)!=length(a) || length(a)!=length(e) || any(e<=0 | e>=1)) stop("Invalid inputs")
+  if(length(y)!=length(a) || length(a)!=length(e) || any(e<=0 | e>=1) || !all(c(0,1) %in% a)) stop("Invalid inputs or missing treatment arm")
   wt <- 1/e[a==1]; wc <- 1/(1-e[a==0])
   mu1 <- sum(y[a==1]/e[a==1])/sum(wt)
   mu0 <- sum(y[a==0]/(1-e[a==0]))/sum(wc)
   c(ate=mu1-mu0,mu1=mu1,mu0=mu0,ess_treated=ess(wt),ess_control=ess(wc))
 }
 aipw_ate <- function(y,a,e,m0,m1,min_score=1e-6) {
-  if(!all(lengths(list(y,a,e,m0,m1))==length(y)) || any(!is.finite(c(y,e,m0,m1))) || any(e<min_score | e>1-min_score)) stop("Invalid inputs or overlap")
+  if(!all(lengths(list(y,a,e,m0,m1))==length(y)) || !all(c(0,1) %in% a) || any(!is.finite(c(y,e,m0,m1))) || any(e<min_score | e>1-min_score)) stop("Invalid inputs or overlap")
   mean(m1-m0+a*(y-m1)/e-(1-a)*(y-m0)/(1-e))
 }
 iv_wald <- function(y,a,z) {
   if(length(y)!=length(a) || length(a)!=length(z) || any(!a %in% c(0,1)) || any(!z %in% c(0,1))) stop("Invalid binary inputs")
+  if(!all(c(0,1) %in% z)) stop("Instrument must have both levels")
   dy <- mean(y[z==1])-mean(y[z==0]); da <- mean(a[z==1])-mean(a[z==0])
   if(abs(da)<=1e-12) stop("Zero first stage")
   c(wald=dy/da,reduced_form=dy,first_stage=da)
