@@ -1,7 +1,7 @@
 # Bloc B01 — Carte pédagogique des huit unités
 
-**Version 1.0 · 21 novembre 2026**  
-**Statut : planification détaillée · F01 et F02 sont en draft ; F03–F08 restent planned.**
+**Version 1.1 · 21 novembre 2026**  
+**Statut : huit unités rédigées et intégrées en draft ; aucune n'est encore reviewed, tested ou published.**
 
 ## Mission du bloc
 
@@ -20,7 +20,7 @@ Installer les bases du raisonnement quantitatif nécessaires aux mathématiques 
 | F07 | Fonctions et modélisation élémentaire | Définition, domaine, image, antécédent, représentations, transformations, composition, fonctions usuelles, variations et lecture d'un modèle | F04, F05, F06 | 6–7 h |
 | F08 | Repères, unités et représentation quantitative | Coordonnées, plans, graphes, échelles, unités, conversions, ordres de grandeur, notation scientifique, arrondis, précision, bases numériques et introduction aux flottants | F01–F07 selon section | 5–6 h |
 
-Charge indicative totale : 40 à 48 heures. Cette estimation sera révisée après le test des unités auprès d'apprenants ; elle ne constitue pas une durée universelle.
+Charge indicative totale : 40 à 48 heures. Cette estimation sera révisée après le test des unités auprès d'apprenants ; elle ne constitue pas une durée universelle.\n\n## État de rédaction — livraison groupée\n\nF01 à F08 disposent maintenant d'une première rédaction complète dans `src/content/bloc-01/` et sont toutes exposées dans la bibliothèque. Chaque unité comporte objectifs, développement conceptuel, exemples, applications, exercices corrigés, critères de maîtrise et références. Le statut reste `draft` jusqu'à la réalisation des revues scientifiques indépendantes, tests de calcul/code, tests apprenants et contrôles d'accessibilité/publication. La présence des huit unités ne vaut pas validation académique.
 
 ## Dépendances et règles de progression
 
