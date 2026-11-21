@@ -1,6 +1,6 @@
 # B17 — Carte pédagogique : Ingénierie des données et recherche reproductible
 
-**Version :** 0.1 · **Statut :** premier brouillon intégré, à approfondir et relire  
+**Version :** 0.1 · **Statut :** Revue interne effectuée — consolidation pédagogique en cours.
 **Charge indicative :** 50–62 heures · **Niveau :** L1–L3  
 **Prérequis :** B03 algèbre linéaire, B10 exploration, B12 régression, bases SQL, R ou Python.
 
