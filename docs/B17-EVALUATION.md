@@ -57,3 +57,24 @@
 
 ## Critères de réussite
 Seuil indicatif : 70/100. Une jointure non contrôlée, une absence de traçabilité ou une confusion entre pseudonymisation et anonymisation impose une reprise ciblée. Faire tester le sujet auprès d'apprenants avant stabilisation.
+
+
+
+## Barème analytique et critères de correction
+
+Le total reste de 100 points. Pour les questions de conception, attribuer les points à la définition du grain, aux hypothèses, au mécanisme proposé, aux contrôles et à l'interprétation des limites. Une réponse qui cite un outil sans expliquer le problème traité ne reçoit pas tous les points.
+
+Pour le projet intégré, utiliser les éléments de preuve suivants :
+- schéma et contrat de données versionnés ;
+- tests de clés, nullité, cardinalité et réconciliation ;
+- démonstration de rejeu idempotent et de reprise après échec ;
+- rapport de qualité avec numérateurs, dénominateurs et seuils ;
+- manifeste de provenance et environnement verrouillé ;
+- politique d'accès, conservation et suppression ;
+- mesures de performance comparées à un baseline.
+
+## Cas limites obligatoires lors du test apprenant
+
+Le sujet doit inclure au moins : doublon de clé, valeur manquante, clé étrangère orpheline, horodatages identiques, événement tardif, suppression source, jointure un-à-plusieurs, changement de schéma, échec après écriture partielle et réexécution du même lot.
+
+Un pipeline qui passe les tests de code mais échoue à la réconciliation métier doit être considéré comme non accepté. Le seuil indicatif de 70/100 ne remplace pas les critères bloquants de confidentialité, intégrité et traçabilité.
