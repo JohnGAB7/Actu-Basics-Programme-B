@@ -96,5 +96,5 @@ stopifnot(length(groups)==2)
 stopifnot(knn_predict(c(0,1,2),c(0,10,20),.1,1,"regression")==0)
 # Two separated synthetic Gaussian components.
 mix <- gaussian_mixture_1d_em(c(-2.2,-2,-1.8,-2.1,-1.9,1.8,2,2.2,1.9,2.1),2)
-stopifnot(abs(sum(mix$weights)-1)<1e-10,mix$means[1]<-1,mix$means[2]>1,all(mix$variances>0))
+stopifnot(abs(sum(mix$weights)-1)<1e-10,mix$means[1] < -1,mix$means[2] > 1,all(mix$variances>0))
 cat("B15 R machine learning laboratory checks: OK\n")
