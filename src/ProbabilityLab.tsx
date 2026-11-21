@@ -199,7 +199,7 @@ export function ProbabilityLab() {
   return <div className="content-wrap probability-lab">
     <div className="page-heading">
       <div><div className="eyebrow">BLOC 08 · LABORATOIRE INTERACTIF</div><h1>Expérimenter les probabilités.</h1><p>Modifiez les paramètres, observez les résultats et reliez l’expérience aux propriétés théoriques.</p></div>
-      <span className="lab-version">SIMULATIONS · V1.0</span>
+      <span className="lab-version">SIMULATIONS · V1.1</span>
     </div>
     <div className="lab-intro"><div className="lab-intro-icon"><Beaker size={22}/></div><div><strong>Un laboratoire pour raisonner, pas seulement calculer.</strong><p>Chaque expérience est reproductible avec une graine fixe. Les simulations illustrent les résultats théoriques ; elles ne constituent pas des démonstrations.</p></div></div>
     <div className="lab-tabs" role="tablist" aria-label="Expériences probabilistes">
