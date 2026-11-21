@@ -21,7 +21,7 @@ Cette roadmap distingue le cursus publié, les contrôles internes, les validati
 - [x] Cartes pédagogiques et évaluations formatives créées pour les 20 blocs.
 - [x] Laboratoires Python/R pour B08–B20 intégrés à la CI.
 - [x] Seconde passe publiée pour B10–B12 et B14–B20.
-- [ ] Finaliser l'addendum MANOVA de B13 après réussite de la CI de cette branche et fermer la PR #60 devenue obsolète.
+- [x] Finaliser l'addendum MANOVA de B13 (MV04) ; complément fusionné et ancienne PR #60 fermée.
 - [x] Harmoniser les prérequis des parcours recherche, actuariat et économétrie ainsi que les périmètres B18–B20.
 - [ ] Localiser les références par notion et section pour les résultats centraux.
 - [ ] Compléter les preuves, corrigés et tests des unités signalées dans le registre de revue.
