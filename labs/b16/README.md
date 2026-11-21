@@ -15,10 +15,10 @@ Depuis la racine du dépôt :
 1. Différences et fonction d'autocorrélation empirique.
 2. Estimation OLS d'un AR(1) et prévisions conditionnelles avec variance d'erreur.
 3. Lissage exponentiel simple et validation à origine glissante (naïf, SES, AR(1)).
-4. Métriques MAE/RMSE.
+4. Métriques MAE/RMSE et MASE avec échelle naïve d'entraînement.
 5. Récursion de variance GARCH(1,1), persistance et variance inconditionnelle lorsque celle-ci existe.
 6. Périodogramme discret aux fréquences de Fourier.
-7. Filtre de Kalman scalaire pour modèle de niveau local, avec observations manquantes.
+7. Filtre de Kalman scalaire général et cas de niveau local, avec observations manquantes ; splits d'origine roulante explicites.
 
 ## Hypothèses et limites
 
