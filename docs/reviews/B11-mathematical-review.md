@@ -38,3 +38,8 @@ Aucune erreur mathématique bloquante n'a été identifiée dans les dix unités
 5. Revue humaine indépendante et tests apprenants.
 
 **Conclusion :** I01–I10 présentent une base d'inférence cohérente dans cette première passe. Les hypothèses de régularité et les distinctions d'interprétation sont généralement explicites ; aucune certification académique n'est revendiquée.
+
+
+## Contrôle complémentaire du laboratoire
+
+La sortie du laboratoire Poisson distingue désormais explicitement la variance de l'observation (Var(X)=\lambda) et la variance de l'EMV (Var(\hat\lambda)=\lambda/n), avec estimateurs plug-in correspondants. Le champ historique `variance_estimate_under_model` est conservé comme alias de la variance de l'EMV pour compatibilité. Les tests Python/R contrôlent les deux valeurs.
