@@ -99,3 +99,11 @@ Les anciens statuts « draft » de cette première passe décrivaient l'absence 
 - I01–I10 relues : pivots, estimation, vraisemblance, Fisher, delta, Rao–Blackwell, CRLB, intervalles, tests, puissance, multiplicité, LR/Wald/score, bootstrap, permutation et Bayes.
 - Aucun défaut mathématique bloquant identifié dans cette première passe ; S169–S170 ajoutées pour bootstrap et Bayes et reliées aux unités.
 - Simulations de taille/couverture, recalcul exhaustif des corrigés, comparaison logicielle, tests apprenants et revue humaine indépendante restent à réaliser.
+
+
+## Revue mathématique B12 — 21 novembre 2026
+
+- Rapport : [B12-mathematical-review.md](B12-mathematical-review.md).
+- R01–R10 relues : OLS/Gauss–Markov, inférence t/F, contrastes/interactions, diagnostics/Cook/HC0, retransformation, AIC/BIC/régularisation, GLM/IRLS, logit/Poisson et modèles mixtes.
+- Aucun défaut mathématique bloquant identifié ; R09 précise la limite AIC/quasi-Poisson, R10 explicite l'exogénéité des effets aléatoires ; sources S61, S64–S66 et S79 reliées aux unités.
+- Tests numériques de cas limites, comparaison aux bibliothèques, recalcul exhaustif des corrigés, tests apprenants et revue humaine indépendante restent requis.
