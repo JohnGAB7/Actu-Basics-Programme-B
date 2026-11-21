@@ -38,3 +38,8 @@ Aucune erreur mathématique bloquante n'a été identifiée dans les dix unités
 - Recalculer tous les exercices/corrigés et effectuer une revue humaine indépendante, puis des tests apprenants.
 
 **Conclusion :** la structure mathématique R01–R10 est cohérente dans cette première passe. Les points délicats (normalité vs Gauss–Markov, quasi-vraisemblance, exogénéité RE, retransformation) sont explicités. Aucune certification académique n'est revendiquée.
+
+
+## Contrôle complémentaire du laboratoire
+
+La convention de pénalisation Ridge/LASSO est maintenant explicite et identique dans le cours et les laboratoires : Ridge minimise (0,5\,SSE+0,5\lambda\beta^2), LASSO minimise (0,5\,SSE+\lambda|\beta|). Les tests Python/R vérifient les solutions analytiques dans un exemple centré à un prédicteur. R09/R10 et R07 sont ainsi alignés sur les implémentations.
