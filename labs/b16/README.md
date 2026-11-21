@@ -26,7 +26,7 @@ Depuis la racine du dépôt :
 - ACF utilise une convention biaisée avec dénominateur commun ; d'autres conventions existent.
 - AR(1) est estimé par OLS et les prévisions stationnaires exigent |phi|<1 ; aucune correction de petit échantillon n'est appliquée.
 - SES est une version simple à niveau initial égal à la première observation ; pas d'optimisation de vraisemblance ni d'intervalle ETS.
-- La validation roulante est un exemple 1-pas ; elle ne traite pas les origines multi-horizons, la saisonnalité ni les covariables.
+- La validation roulante illustre le 1-pas ; rolling_origin_splits retourne des bornes de coupure à intervalles semi-ouverts (comptages, non indices directs R). Les évaluations multi-horizons, saisonnalité et covariables ne sont pas implémentées.
 - GARCH(1,1) est une récursion à paramètres fixés ; aucune estimation par maximum de vraisemblance, loi Student, effet de levier ni backtest VaR n'est implémenté.
 - Le périodogramme est brut, sans fenêtre ni lissage ; la normalisation est une convention et les pics sont descriptifs.
 - Le filtre de Kalman est scalaire, niveau local, bruits indépendants et variances connues ; il ne remplace pas un moteur espace-état général.
