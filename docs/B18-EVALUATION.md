@@ -1,6 +1,6 @@
 # B18 — Évaluation formative de synthèse
 
-**Statut :** Revue interne effectuée — consolidation pédagogique en cours.
+**Version :** 1.1 · **Statut :** seconde passe interne ; validation CI et test apprenant à réaliser.
 Évaluation formative, non certifiante.
 
 ## Partie A — Fréquence, sévérité et tarification (25 points)
