@@ -138,7 +138,7 @@ Dix unités ML01–ML10 couvrent formulation du risque, généralisation, valida
 
 ## Bloc B16 — Séries temporelles et prévision
 
-Dix unités originales (TS01–TS10) sont intégrées au lecteur : stationnarité, autocorrélation, ARMA/ARIMA/SARIMA, lissage exponentiel, régression temporelle, analyse spectrale, VAR/cointégration, ARCH/GARCH, modèles espace-état et évaluation des prévisions. La carte pédagogique, l’évaluation formative et la première revue interne sont disponibles dans `docs/B16-UNIT-MAP.md`, `docs/B16-EVALUATION.md` et `docs/reviews/B16-internal-review.md`. Les contenus restent des premières versions de travail ; dérivations, notebooks R/Python, tests apprenants et revue humaine indépendante restent à conduire.
+Dix unités TS01–TS10 couvrent stationnarité, ACF/PACF, ARMA/ARIMA/SARIMA, ETS, régression dynamique, analyse spectrale, VAR/VECM, ARCH/GARCH et espace-état/Kalman. La carte pédagogique v1.1, l'évaluation formative de 20 questions/100 points et la seconde revue interne sont disponibles dans `docs/B16-UNIT-MAP.md`, `docs/B16-EVALUATION.md` et `docs/reviews/B16-internal-review.md`. Le laboratoire Python/R est en validation CI : ACF, AR(1), SES, validation roulante, GARCH(1,1), périodogramme et filtre de Kalman scalaire. Revue humaine indépendante, tests apprenants et audit d'accessibilité restent à conduire.
 
 
 ## Bloc B17 — Ingénierie des données et recherche reproductible
