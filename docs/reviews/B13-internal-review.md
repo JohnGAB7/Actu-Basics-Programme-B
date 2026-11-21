@@ -74,3 +74,8 @@ Une erreur de formule a été détectée dans la première version du complémen
 La transformation de Wilks/Rao conserve t=1 par continuité dans les cas dégénérés (p,q)=(1,2) ou (2,1). Les formules de Pillai et Hotelling–Lawley ont été contrôlées par substitution dans le cas univarié et correspondent au F classique.
 
 Cette correction illustre pourquoi la CI Markdown/KaTeX ne suffit pas à valider les mathématiques. Une comparaison indépendante à R/MANOVA, SAS ou Stata reste requise.
+
+
+## Contrôle automatisé ciblé de Roy — v1.3
+
+Le laboratoire B13 inclut désormais `roy_f_bound` en Python et R. Les tests vérifient p=1,q=2 (F=6, ddl 2/30), q=1,p=3 (F=0,4×28/3, ddl 3/28), ainsi qu'un cas min(p,q)>1 où F est une borne supérieure et la p-value une borne inférieure. Cela ne remplace pas un moteur MANOVA complet ni une comparaison à R/SAS/Stata.
