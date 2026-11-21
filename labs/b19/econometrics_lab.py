@@ -202,7 +202,7 @@ def empirical_var_es(losses: Sequence[float], alpha: float) -> dict[str, float]:
 def kupiec_lr_uc(exceptions: Sequence[bool], expected_exception_rate: float) -> float:
     """Kupiec LR statistic; expected_exception_rate is 1 - VaR confidence (no p-value)."""
     if not exceptions or not 0 < expected_exception_rate < 1:
-        raise ValueError("exceptions must be non-empty and alpha in (0,1)")
+        raise ValueError("exceptions must be non-empty and expected_exception_rate in (0,1)")
     n = len(exceptions)
     x = sum(bool(v) for v in exceptions)
     phat = x / n
