@@ -401,3 +401,13 @@ Les références MIT complètent S03, S46 et S107. Elles servent de références
 | S166 | MIT OpenCourseWare — 15.070J, *Advanced Stochastic Processes* (Fall 2013) : https://ocw.mit.edu/courses/15-070j-advanced-stochastic-processes-fall-2013/ | Mesure, filtrations, martingales, arrêt optionnel, brownien, calcul d'Itô, limites fonctionnelles et applications en assurance/queues | S08–S10 ; référence avancée et comparaison de périmètre |
 
 Les cours MIT sont des références de périmètre et de profondeur ; leurs syllabi ne constituent pas une validation indépendante des leçons Programme B.
+
+
+## B10 — références de statistique descriptive et d'échantillonnage
+
+| ID | Ressource | Domaines utiles | Utilisation |
+|---|---|---|---|
+| S167 | NIST/SEMATECH — *e-Handbook of Statistical Methods*, chapitre 1, Exploratory Data Analysis : https://www.itl.nist.gov/div898/handbook/eda/eda.htm | Qualité des données, distributions, graphiques, valeurs atypiques, analyses exploratoires et études de cas | T01–T02, T05–T10 ; référence institutionnelle appliquée |
+| S168 | MIT OpenCourseWare — 15.075J, *Statistical Thinking and Data Analysis* (Fall 2011) : https://ocw.mit.edu/courses/15-075j-statistical-thinking-and-data-analysis-fall-2011/ | Collecte, sondage, échantillonnage, résumé descriptif, distribution, corrélation et statistique appliquée | T01–T10 ; référence de cours avec notes, devoirs et examens |
+
+Les ressources S167–S168 cadrent les méthodes descriptives et les plans de sondage ; elles ne remplacent pas la vérification des conventions exactes des estimateurs de sondage dans les leçons.
