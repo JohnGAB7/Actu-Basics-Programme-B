@@ -12,6 +12,10 @@ python labs/b10/descriptive_lab.py
 Rscript labs/b10/descriptive_lab.R
 ```
 
+## Laboratoire interactif du site
+
+La navigation du Learning Studio comprend aussi « Laboratoire B10 » avec cinq démonstrations interactives déterministes : influence d'une valeur extrême sur moyenne/médiane ; suréchantillonnage d'une strate et repondération ; histogramme à classes inégales ; effet de l'imputation par moyenne sur la variance ; inversion de Simpson entre strates et agrégation. Ces démonstrations ne remplacent pas l'exécution des scripts ni l'analyse d'un vrai plan de sondage.
+
 ## Expériences et fonctions
 
 1. Résumés descriptifs : moyenne, médiane, quantiles de type 7 (convention par défaut R), variance descriptive (n), variance corrigée (n−1), IQR, MAD brute et MAD × 1,4826.
