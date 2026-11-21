@@ -61,6 +61,10 @@ Une source ne prouve pas qu'un cours entier est correct. Pour chaque unité, pr�
 | S43 | MIT OpenCourseWare — 18.335J Introduction to Numerical Methods : https://ocw.mit.edu/courses/18-335j-introduction-to-numerical-methods-spring-2019/ | Virgule flottante, erreur arrière, conditionnement, stabilité, algèbre linéaire et EDO raides | Référence approfondie N01–N04 et N09 |
 | S44 | Higham, Nicholas J. — Accuracy and Stability of Numerical Algorithms, 2e éd., SIAM, 2002 : https://nhigham.com/accuracy-and-stability-of-numerical-algorithms/ | Arithmétique flottante, analyse d'erreur, stabilité et algorithmes | Référence théorique N01–N04 |
 | S45 | Trefethen, Lloyd N. & Bau, David — Numerical Linear Algebra : https://people.maths.ox.ac.uk/trefethen/text.html | Conditionnement, stabilité, factorisations, moindres carrés, SVD et méthodes itératives | Référence de fond N02–N04 et N07 |
+| S46 | Harvard Statistics 110 — Probability, Joe Blitzstein : https://stat110.hsites.harvard.edu/about | Axiomes, conditionnement, Bayes, lois, espérance, covariance et théorèmes limites | Référence de cadrage P01–P10 |
+| S47 | MIT OpenCourseWare — 6.041SC Probabilistic Systems Analysis and Applied Probability : https://ocw.mit.edu/courses/6-041sc-probabilistic-systems-analysis-and-applied-probability-fall-2013/ | Modèles, Bayes, variables discrètes et continues, espérance, processus et TCL | Référence détaillée P01–P10 |
+| S48 | MIT OpenCourseWare — 18.05 Introduction to Probability and Statistics : https://ocw.mit.edu/courses/18-05-introduction-to-probability-and-statistics-spring-2014/ | Dénombrement, distributions, covariance, TCL et simulation avec R | Cadrage des fondamentaux P01–P10 |
+| S49 | Daniel Valesin — Review of Measure-Theoretic Probability : https://www.math.rug.nl/~valesin/review_probability.pdf | Espaces mesurables, tribus et probabilité de mesure ; référence d'approfondissement | Extension rigoureuse P01, P09–P10 |
 
 ## 3. Matrice de couverture par bloc
 
@@ -73,6 +77,7 @@ Une source ne prouve pas qu'un cours entier est correct. Pour chaque unité, pr�
 | B05 Calcul multivarié et EDO | S01, S17, S33, S34, S35, S36 |
 | B06 Optimisation et recherche opérationnelle | S08, S10, S11, S13, S37, S38, S39, S40, S41 |
 | B07 Analyse numérique | S42, S43, S44, S45 |
+| B08 Probabilités | S46, S47, S48, S49 |
 | B08 Probabilités | S02, S03, S04, S10, S13, S15 |
 | B09 Processus stochastiques | S02, S10, S11, S13, S15, S16 |
 | B10 Descriptif et échantillonnage | S02, S04, S10, S14 |
