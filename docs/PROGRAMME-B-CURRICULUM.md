@@ -455,3 +455,18 @@ Cette décomposition est une première version de travail. Les preuves détaill�
 10. Sensibilité, validité externe et protocole causal intégré.
 
 Cette décomposition est une première version de travail. Les preuves détaillées, analyses numériques, notebooks, diagnostics avancés et validation indépendante restent à conduire.
+
+
+### B15 — Apprentissage statistique et machine learning
+1. Problèmes d’apprentissage, représentation et fonction de perte.
+2. Généralisation, complexité, surapprentissage et compromis biais-variance.
+3. Validation, rééchantillonnage et sélection de modèles.
+4. Modèles linéaires prédictifs et régularisation.
+5. Méthodes à noyaux, voisins et machines à vecteurs de support.
+6. Arbres de décision, bagging et forêts aléatoires.
+7. Boosting et modèles additifs d’ensemble.
+8. Réseaux de neurones, rétropropagation et apprentissage profond.
+9. Modèles probabilistes, estimation de densité et détection d’anomalies.
+10. Évaluation responsable, interprétabilité et cycle de vie d’un modèle.
+
+Cette décomposition est une première version de travail. Les preuves détaillées, benchmarks reproductibles, notebooks et validations indépendantes restent à conduire.
