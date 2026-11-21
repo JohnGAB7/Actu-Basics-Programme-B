@@ -82,3 +82,8 @@ Ces ressources servent de points de comparaison et d'approfondissement. Elles ne
 **F01–F08 : `draft`. Évaluation B01 : `draft`.**
 
 La revue interne a permis de préciser plusieurs hypothèses et d'ajouter une épreuve transversale. Les preuves nécessaires pour les états `reviewed`, `tested` et `published` restent à produire séparément.
+
+
+## Décision de consolidation — 21 novembre 2026
+
+La première revue ciblée de F01–F08 est complétée par une seconde passe de cohérence de bloc. B01 est désormais classé **revue interne effectuée — consolidation pédagogique en cours**. Les calculs ciblés consignés plus haut sont maintenus ; les limites sur la vérification exhaustive des corrigés, l'exécution des exemples logiciels, les tests apprenants et la relecture humaine indépendante restent explicites. L'ancien état `draft` est historique et supersédé par le registre global `docs/reviews/PROGRAMME-B-INTERNAL-REVIEW-REGISTER.md`.
