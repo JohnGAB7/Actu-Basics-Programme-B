@@ -1,6 +1,6 @@
 # B17 — Évaluation formative de synthèse
 
-**Statut :** Revue interne effectuée — consolidation pédagogique en cours.
+**Version :** 1.1 · **Statut :** seconde passe interne ; test apprenant et validation indépendante à réaliser.
 Évaluation formative, non certifiante.
 
 ## Partie A — Architecture et modèles (20 points)
