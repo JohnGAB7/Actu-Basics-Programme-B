@@ -11,7 +11,7 @@ def validate_transition_matrix(matrix: Sequence[Sequence[float]]) -> None:
     if n == 0 or any(len(row) != n for row in matrix):
         raise ValueError("transition matrix must be non-empty and square")
     for row in matrix:
-        if any(value < 0 for value in row) or not math.isclose(sum(row), 1.0, abs_tol=1e-10):
+        if any(not math.isfinite(value) or value < 0 for value in row) or not math.isclose(sum(row), 1.0, abs_tol=1e-10):
             raise ValueError("each transition row must be non-negative and sum to one")
 
 
@@ -20,8 +20,8 @@ def propagate_markov(initial: Sequence[float], matrix: Sequence[Sequence[float]]
     n = len(matrix)
     if len(initial) != n or any(value < 0 for value in initial) or not math.isclose(sum(initial), 1.0, abs_tol=1e-10):
         raise ValueError("initial distribution must match the state space and sum to one")
-    if steps < 0:
-        raise ValueError("steps must be non-negative")
+    if not isinstance(steps, int) or steps < 0:
+        raise ValueError("steps must be a non-negative integer")
     distribution = list(initial)
     for _ in range(steps):
         distribution = [sum(distribution[i] * matrix[i][j] for i in range(n)) for j in range(n)]
@@ -29,7 +29,7 @@ def propagate_markov(initial: Sequence[float], matrix: Sequence[Sequence[float]]
 
 
 def stationary_two_state(p01: float, p10: float) -> tuple[float, float]:
-    if not (0 < p01 <= 1 and 0 < p10 <= 1):
+    if not (math.isfinite(p01) and math.isfinite(p10) and 0 < p01 <= 1 and 0 < p10 <= 1):
         raise ValueError("transition probabilities must be in (0, 1]")
     total = p01 + p10
     return p10 / total, p01 / total
@@ -43,8 +43,8 @@ def absorption_one_transient(stay_probability: float) -> dict[str, float]:
 
 
 def simulate_poisson_arrivals(rate: float, horizon: float, rng: random.Random | None = None) -> list[float]:
-    if rate <= 0 or horizon < 0:
-        raise ValueError("rate must be positive and horizon non-negative")
+    if not math.isfinite(rate) or not math.isfinite(horizon) or rate <= 0 or horizon < 0:
+        raise ValueError("rate must be finite/positive and horizon finite/non-negative")
     rng = rng or random.Random()
     arrivals: list[float] = []
     time = 0.0
@@ -56,14 +56,14 @@ def simulate_poisson_arrivals(rate: float, horizon: float, rng: random.Random | 
 
 
 def poisson_pmf(k: int, mean: float) -> float:
-    if k < 0 or int(k) != k or mean < 0:
+    if k < 0 or int(k) != k or not math.isfinite(mean) or mean < 0:
         raise ValueError("k must be a non-negative integer and mean non-negative")
     return math.exp(-mean) * mean**k / math.factorial(k) if mean else float(k == 0)
 
 
 def simulate_renewal_count(mean_interarrival: float, horizon: float, rng: random.Random | None = None) -> int:
-    if mean_interarrival <= 0 or horizon < 0:
-        raise ValueError("mean interarrival must be positive and horizon non-negative")
+    if not math.isfinite(mean_interarrival) or not math.isfinite(horizon) or mean_interarrival <= 0 or horizon < 0:
+        raise ValueError("mean interarrival must be finite/positive and horizon finite/non-negative")
     rng = rng or random.Random()
     time = 0.0
     count = 0
@@ -85,8 +85,8 @@ def simulate_symmetric_random_walk(steps: int, rng: random.Random | None = None)
 
 
 def simulate_brownian_path(horizon: float, steps: int, rng: random.Random | None = None) -> list[float]:
-    if horizon <= 0 or steps <= 0:
-        raise ValueError("horizon and steps must be positive")
+    if not math.isfinite(horizon) or horizon <= 0 or not isinstance(steps, int) or steps <= 0:
+        raise ValueError("horizon must be finite/positive and steps a positive integer")
     rng = rng or random.Random()
     dt = horizon / steps
     path = [0.0]
@@ -96,8 +96,8 @@ def simulate_brownian_path(horizon: float, steps: int, rng: random.Random | None
 
 
 def quadratic_variation(path: Sequence[float]) -> float:
-    if len(path) < 2:
-        raise ValueError("path must contain at least two points")
+    if len(path) < 2 or any(not math.isfinite(value) for value in path):
+        raise ValueError("path must contain at least two finite points")
     return sum((path[i + 1] - path[i]) ** 2 for i in range(len(path) - 1))
 
 
