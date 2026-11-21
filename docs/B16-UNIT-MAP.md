@@ -1,6 +1,6 @@
 # B16 — Carte pédagogique : Séries temporelles et prévision
 
-**Version :** 1.1.0 · **Statut :** seconde passe interne approfondie · laboratoire Python/R en validation CI  
+**Version :** 1.1.0 · **Statut :** seconde passe interne publiée · laboratoire Python/R validé par CI · revue indépendante à venir  
 **Charge indicative :** 54–66 heures  
 **Niveau :** L2–L4 introductif  
 **Prérequis :** B08 probabilités, B11 inférence, B12 régression, B13 multivarié ; B03 algèbre linéaire et B07 calcul numérique recommandés.
