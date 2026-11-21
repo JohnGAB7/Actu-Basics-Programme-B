@@ -20,7 +20,7 @@
 
 ## Laboratoire reproductible
 
-Le laboratoire Python standard library et R base comprend différences, ACF, AR(1), prévisions et variance d'erreur, SES, validation roulante, MAE/RMSE, récursion GARCH(1,1), périodogramme et filtre de Kalman scalaire de niveau local avec observations manquantes.
+Le laboratoire Python standard library et R base comprend différences, ACF, AR(1), prévisions et variance d'erreur, SES, validation roulante, MAE/RMSE/MASE, splits roulants, récursion GARCH(1,1), périodogramme et filtre de Kalman scalaire général/niveau local avec observations manquantes.
 
 ## Points mathématiques et techniques à surveiller
 
