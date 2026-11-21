@@ -1,4 +1,4 @@
-import { readdirSync, readFileSync } from 'node:fs'
+import { readFileSync } from 'node:fs'
 import { dirname, join, relative } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { createElement } from 'react'
@@ -8,20 +8,13 @@ import remarkGfm from 'remark-gfm'
 import remarkMath from 'remark-math'
 import rehypeKatex from 'rehype-katex'
 
-const root = join(dirname(fileURLToPath(import.meta.url)), '../src/content')
+const projectRoot = join(dirname(fileURLToPath(import.meta.url)), '..')
+const lessonLibrary = readFileSync(join(projectRoot, 'src/Lessons.tsx'), 'utf8')
+const imports = [...lessonLibrary.matchAll(/import\s+\w+\s+from\s+['"]\.\/content\/([^'"]+\.md)\?raw['"]/g)]
+const files = imports.map((match) => join(projectRoot, 'src', 'content', match[1])).sort()
 
-function markdownFiles(directory) {
-  return readdirSync(directory, { withFileTypes: true }).flatMap((entry) => {
-    const path = join(directory, entry.name)
-    return entry.isDirectory()
-      ? markdownFiles(path)
-      : entry.isFile() && entry.name.endsWith('.md') ? [path] : []
-  })
-}
-
-const files = markdownFiles(root).sort()
 if (files.length === 0) {
-  throw new Error('No Markdown lesson files were found under src/content.')
+  throw new Error('No imported Markdown lesson files were found in src/Lessons.tsx.')
 }
 
 let totalMathNodes = 0
@@ -36,6 +29,9 @@ for (const file of files) {
   }
   if (displayDelimiters % 2 !== 0) {
     throw new Error(label + ' has an unmatched display math delimiter.')
+  }
+  if (/\\\\[A-Za-z]/.test(source)) {
+    throw new Error(label + ' contains a doubled backslash before a LaTeX command.')
   }
 
   const html = renderToStaticMarkup(
@@ -62,4 +58,4 @@ for (const file of files) {
   process.stdout.write('Validated ' + label + ': ' + mathNodes + ' rendered math expressions.\n')
 }
 
-process.stdout.write('Content validation passed: ' + files.length + ' Markdown file(s), ' + totalMathNodes + ' rendered math expression(s).\n')
+process.stdout.write('Content validation passed: ' + files.length + ' active lesson file(s), ' + totalMathNodes + ' rendered math expression(s).\n')
