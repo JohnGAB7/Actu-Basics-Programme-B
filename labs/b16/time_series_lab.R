@@ -12,7 +12,9 @@ acf_sample <- function(x,max_lag) {
 fit_ar1 <- function(x) {
   if(length(x)<4 || any(!is.finite(x))) stop("At least four finite observations required")
   prev <- x[-length(x)]; curr <- x[-1]
-  phi <- sum((prev-mean(prev))*(curr-mean(curr)))/sum((prev-mean(prev))^2)
+  denom <- sum((prev-mean(prev))^2)
+  if(denom<=1e-14) stop("Lagged series has zero variance")
+  phi <- sum((prev-mean(prev))*(curr-mean(curr)))/denom
   intercept <- mean(curr)-phi*mean(prev)
   residuals <- curr-intercept-phi*prev
   list(intercept=intercept,phi=phi,innovation_variance=mean(residuals^2),stationary=abs(phi)<1,residuals=residuals)
@@ -63,6 +65,7 @@ periodogram <- function(x) {
 kalman_local_level <- function(y,q,r,initial_mean=0,initial_variance=1) {
   if(length(y)==0 || any(!is.finite(c(q,r,initial_mean,initial_variance))) || q<0 || r<=0 || initial_variance<=0) stop("Invalid Kalman inputs")
   m <- initial_mean; p <- initial_variance; means <- vars <- numeric(length(y)); innovations <- rep(NA_real_,length(y))
+  if(any(is.nan(y))) stop("NaN observations are invalid; use NA for missing values")
   for(t in seq_along(y)) {
     mp <- m; pp <- p+q
     if(!is.na(y[t])) {
@@ -102,6 +105,7 @@ kalman_scalar_filter <- function(y,transition,loading,q,h,initial_state,initial_
   if(any(!is.finite(c(transition,loading,q,h,initial_state,initial_variance))) || q<0 || h<=0 || initial_variance<0) stop("Invalid Kalman parameters")
   a <- initial_state; p <- initial_variance
   out <- matrix(NA_real_,length(y),2,dimnames=list(NULL,c("state","variance")))
+  if(any(is.nan(y))) stop("NaN observations are invalid; use NA for missing values")
   for(i in seq_along(y)) {
     ap <- transition*a; pp <- transition^2*p+q
     if(is.na(y[i])) { a <- ap; p <- pp } else {
