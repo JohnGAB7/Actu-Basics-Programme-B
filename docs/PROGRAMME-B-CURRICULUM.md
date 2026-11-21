@@ -72,7 +72,7 @@ B01 à B17 constituent le socle mathématique, probabiliste, statistique et comp
 
 ## 4. Décomposition indicative des blocs
 
-Les cartes pédagogiques `docs/B01-UNIT-MAP.md` à `docs/B20-UNIT-MAP.md` définissent les codes et titres des unités actuellement implémentées. Les listes ci-dessous décrivent le périmètre de référence ; lorsqu'une rubrique n'apparaît pas dans la carte ou les unités du bloc, elle reste une extension à développer et ne doit pas être considérée comme déjà enseignée.
+Le registre synthétique `docs/PROGRAMME-B-IMPLEMENTED-UNIT-REGISTER.md` et les cartes pédagogiques `docs/B01-UNIT-MAP.md` à `docs/B20-UNIT-MAP.md` définissent les codes et titres des unités actuellement implémentées. Les listes ci-dessous décrivent le périmètre de référence ; lorsqu'une rubrique n'apparaît pas dans la carte ou les unités du bloc, elle reste une extension à développer et ne doit pas être considérée comme déjà enseignée.
 
 ### B01 — Fondations mathématiques et raisonnement quantitatif
 1. Nombres, ensembles numériques et ordre.
