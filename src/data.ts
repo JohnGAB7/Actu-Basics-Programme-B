@@ -67,7 +67,7 @@ export const blocks = [
   { code: 'B05', title: 'Calcul multivarié et équations différentielles', subtitle: 'Gradient, hessienne, intégrales multiples et EDO', progress: 0, lessons: 10, tone: 'blue', status: '10 unités en revue interne' },
   { code: 'B06', title: 'Optimisation et recherche opérationnelle', subtitle: 'Convexité, dualité, optimisation et décision', progress: 0, lessons: 10, tone: 'mint', status: '10 unités en revue interne' },
   { code: 'B07', title: 'Analyse numérique et calcul scientifique', subtitle: 'Stabilité, erreurs, algorithmes et simulation', progress: 0, lessons: 10, tone: 'violet', status: '10 unités en revue interne' },
-  { code: 'B08', title: 'Probabilités', subtitle: 'Variables aléatoires, lois et convergence', progress: 0, lessons: 0, tone: 'amber', status: 'Planifié' },
+  { code: 'B08', title: 'Probabilités', subtitle: 'Variables aléatoires, lois et convergence', progress: 0, lessons: 10, tone: 'amber', status: '10 unités en revue interne' },
   { code: 'B09', title: 'Processus stochastiques', subtitle: 'Markov, Poisson, renouvellement et martingales', progress: 0, lessons: 0, tone: 'blue', status: 'Planifié' },
   { code: 'B10', title: 'Statistique descriptive, échantillonnage et exploration', subtitle: 'Qualité des données, EDA et échantillonnage', progress: 0, lessons: 0, tone: 'mint', status: 'Planifié' },
   { code: 'B11', title: 'Théorie de l\'inférence statistique', subtitle: 'Estimation, tests, intervalles et Bayes', progress: 0, lessons: 0, tone: 'violet', status: 'Planifié' },
