@@ -36,7 +36,7 @@ S01 introduit les objets et les trajectoires. S02–S05 construisent la théorie
 Les dix unités ont été enrichies par des approfondissements sur les objets mesurables et les distributions finies, les calculs multi-étapes et équations de premier pas, la classification des états, les conditions de convergence, les chaînes absorbantes, la caractérisation locale du processus de Poisson, les hypothèses des théorèmes de renouvellement et d'arrêt optionnel, les équations de Kolmogorov, la stabilité M/M/1 et la variation quadratique brownienne.
 
 ## Modalités pédagogiques
-Chaque unité comprend définitions, hypothèses, exemples, exercices corrigés, erreurs fréquentes et critères de maîtrise. Des simulations Python/R doivent illustrer les trajectoires, transitions, arrivées et temps d'attente, sans remplacer les démonstrations.
+Chaque unité comprend définitions, hypothèses, exemples, exercices corrigés, erreurs fréquentes et critères de maîtrise. Des simulations Python/R doivent illustrer les trajectoires, transitions, arrivées et temps d'attente, sans remplacer les démonstrations. Le laboratoire reproductible est documenté dans [labs/b09/README.md](../labs/b09/README.md), avec tests Python et contrôles R.
 
 ## Évaluation
 Épreuve formative proposée : 120 minutes, 100 points. Elle évalue chaînes discrètes, classes d'états, stationnarité, absorption, Poisson, renouvellement, martingales, chaînes continues et mouvement brownien. Aucun résultat ne vaut certification.
