@@ -42,6 +42,10 @@ Une source ne prouve pas qu'un cours entier est correct. Pour chaque unité, pr�
 | S26 | Strang, Gilbert — Introduction to Linear Algebra, 5e éd. : https://math.mit.edu/~gs/linearalgebra/ | Présentation conceptuelle et calculatoire de l'algèbre linéaire | Référence de cours pour V01–V10 |
 | S27 | Axler, Sheldon — Linear Algebra Done Right, 4e éd. : https://linear.axler.net/ | Espaces vectoriels, applications linéaires, opérateurs et spectre | Contrôle des fondements abstraits de V05, V06 et V09 |
 | S28 | Trefethen, Lloyd N. & Bau, David — Numerical Linear Algebra, SIAM : https://people.maths.ox.ac.uk/trefethen/text.html | Stabilité, factorisations QR, SVD et calcul matriciel | Limites numériques de V03, V07, V08 et V10 ; approfondissement B07 |
+| S29 | MIT OpenCourseWare — 18.01SC Single Variable Calculus : https://ocw.mit.edu/courses/18-01sc-single-variable-calculus-fall-2010/ | Limites, continuité, dérivation, intégration, applications, intégrales impropres et séries | Référence principale de calcul à une variable pour B04 |
+| S30 | MIT OpenCourseWare — 18.100B Real Analysis (Spring 2025) : https://ocw.mit.edu/courses/18-100b-real-analysis-spring-2025/ | Réels, suites, convergence, séries, continuité, dérivation, Taylor et intégrale de Riemann | Référence de rigueur et de preuves pour A01–A10 |
+| S31 | OpenStax — Calculus, Volume 1 : https://openstax.org/details/books/calculus-volume-1 | Fonctions, limites, dérivées, applications et intégration | Contrôle pédagogique des fondations du calcul différentiel et intégral |
+| S32 | OpenStax — Calculus, Volume 2 : https://openstax.org/details/books/calculus-volume-2 | Techniques d'intégration, intégrales impropres, suites et séries, séries entières | Référence de cadrage pour A08–A10 |
 
 ## 3. Matrice de couverture par bloc
 
@@ -50,7 +54,7 @@ Une source ne prouve pas qu'un cours entier est correct. Pour chaque unité, pr�
 | B01 Fondations | S01, S09, S18, S19, S20, S21 |
 | B02 Logique et discret | S01, S05 |
 | B03 Algèbre linéaire | S01, S07, S17, S25, S26, S27, S28 |
-| B04 Analyse réelle | S01, S06, S09 |
+| B04 Analyse réelle | S01, S06, S09, S29, S30, S31, S32 |
 | B05 Calcul multivarié et EDO | S01, S17 |
 | B06 Optimisation | S08, S10, S11, S13 |
 | B07 Analyse numérique | S07, S11, S14, S17 |
