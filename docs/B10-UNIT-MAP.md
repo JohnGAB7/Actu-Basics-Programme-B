@@ -1,8 +1,8 @@
 # B10 — Carte pédagogique : statistique descriptive, échantillonnage et exploration
 
-**Statut :** revue interne effectuée — consolidation pédagogique en cours.
+**Statut :** seconde passe interne effectuée · laboratoire reproductible intégré · revue indépendante à venir.
 
-**Version :** 1.0 · 21 novembre 2026  
+**Version :** 1.1 · 21 novembre 2026  
 **Charge indicative :** 47–57 heures  
 **Prérequis :** B01–B02 et probabilités introductives de B08. Les unités T03–T04 mobilisent probabilité conditionnelle et espérance ; les autres restent accessibles avec les bases de calcul et de représentation.
 
@@ -33,7 +33,7 @@ T01 définit les objets et les unités. T02 garantit que les données sont compr
 - B10 présente les mécanismes MCAR/MAR/MNAR et des diagnostics descriptifs ; les méthodes avancées d'imputation et l'inférence avec données manquantes seront approfondies ultérieurement.
 
 ## Modalités pédagogiques
-Chaque unité comprend objectifs, définitions, hypothèses, formules, exemples calculés, exercices corrigés, erreurs fréquentes et critères de maîtrise. Des notebooks R/Python seront à ajouter pour illustrer les contrôles, graphiques et analyses de sensibilité. Les graphiques doivent être interprétés et non simplement générés.
+Chaque unité comprend objectifs, définitions, hypothèses, formules, exemples calculés, exercices corrigés, erreurs fréquentes et critères de maîtrise. Le laboratoire Python/R est disponible dans `labs/b10/README.md` ; il illustre les contrôles, résumés, pondérations, histogrammes à classes inégales et analyses descriptives. Il ne constitue pas un outil complet de sondage complexe ni un moteur d'imputation. Les graphiques doivent être interprétés et non simplement générés.
 
 ## Évaluation
 Épreuve formative proposée : 120 minutes, 100 points. Elle couvre types de variables, qualité et granularité, sondage, poids, distributions empiriques, mesures de position et dispersion, visualisations, associations, données manquantes et communication. Aucun résultat ne vaut certification.
@@ -45,3 +45,22 @@ Chaque unité comprend objectifs, définitions, hypothèses, formules, exemples 
 - Sharon L. Lohr — *Sampling: Design and Analysis*, 3e édition, Chapman & Hall/CRC.
 
 Ces ressources guident le cadrage. Elles ne valident ni n'accréditent Programme B. Les sections et conventions effectivement utilisées doivent être consignées lors de la revue approfondie.
+
+
+## Révision mathématique — compléments de la seconde passe
+
+- T03 : allocation proportionnelle et allocation de Neyman, effet de plan, dépendance intra-grappe, distinction inclusion/réponse et ajustement des poids.
+- T04 : conditions de non-biais du total HT, variance de plan avec probabilités conjointes π_ij, conditions de variance estimable et exemple numérique de correction de population finie.
+- T05–T07 : conventions de quantiles alignées sur type 7 dans le laboratoire ; densité d'histogramme vérifiée par l'aire.
+- T08 : association, corrélation et paradoxe de Simpson illustrés sans inférence causale.
+- T09 : rappel que les mécanismes MCAR/MAR/MNAR ne sont pas identifiables par le seul taux de données manquantes.
+- T10 : atelier Python/R documenté, avec tests unitaires et limites d'usage.
+
+## Sources complémentaires ciblées
+
+- Penn State STAT 506, *The Horvitz–Thompson Estimator* : https://online.stat.psu.edu/stat506/Lesson03
+- Statistics Canada, *Variance estimation for the Horvitz–Thompson estimator* : https://www150.statcan.gc.ca/n1/pub/12-001-x/2013001/article/11831/section2-eng.htm
+- Statistics Canada, *12-539-X — Data Quality Guidelines*, pondération, calage et non-réponse : https://www150.statcan.gc.ca/n1/pub/12-539-x/steps-etapes/4147790-eng.htm
+- NIST/SEMATECH e-Handbook, *Exploratory Data Analysis* : https://www.itl.nist.gov/div898/handbook/eda/eda.htm
+
+Ces sources ont été consultées pour vérifier les formules et les limites ; elles ne constituent pas une approbation du cursus.
