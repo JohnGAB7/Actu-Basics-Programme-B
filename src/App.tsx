@@ -5,7 +5,7 @@ import {
   BarChart3, BookOpen, BrainCircuit, Check, CheckCircle2, ChevronDown,
   ChevronLeft, ChevronRight, CircleHelp, Clock3, Compass,
   FileCheck2, GraduationCap, Home, LibraryBig, LockKeyhole, Menu,
-  MoreHorizontal, Search, ShieldCheck, Sparkles, Target, Timer,
+  MoreHorizontal, ShieldCheck, Sparkles, Target, Timer,
   X
 } from 'lucide-react'
 import { blocks, questions } from './data'
