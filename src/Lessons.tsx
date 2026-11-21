@@ -417,7 +417,7 @@ const courses: Course[] = [
  {code:'AT02',title:'Théorie asymptotique des estimateurs et méthodes delta',version:'0.1.0',description:'Établir consistance et normalité asymptotique.',duration:'6–7 h',content:at02},
  {code:'AT03',title:'Processus empiriques, convergence faible et bootstrap avancé',version:'0.1.0',description:'Comprendre limites fonctionnelles et rééchantillonnage.',duration:'6–8 h',content:at03},
  {code:'AT04',title:'Vraisemblance avancée, modèles semi-paramétriques et information',version:'0.1.0',description:'Étudier nuisance, efficacité et MLE.',duration:'6–8 h',content:at04},
- {code:'AT05',title:'Inférence bayésienne avancée et calcul Monte-Carlo',version:'0.1.0',description:'Construire posterior, MCMC et diagnostics.',duration:'6–8 h',content:at05},
+ {code:'AT05',title:'Inférence bayésienne avancée, décision et calcul Monte-Carlo',version:'0.1.0',description:'Construire posterior, MCMC et diagnostics.',duration:'6–8 h',content:at05},
  {code:'AT06',title:'Processus stochastiques, martingales et temps d’arrêt',version:'0.1.0',description:'Formaliser information et dynamique aléatoire.',duration:'6–8 h',content:at06},
  {code:'AT07',title:'Statistique en grande dimension et inférence après sélection',version:'0.1.0',description:'Distinguer prédiction et inférence haute dimension.',duration:'6–8 h',content:at07},
  {code:'AT08',title:'Optimisation numérique et algorithmes statistiques',version:'0.1.0',description:'Diagnostiquer convergence et stabilité numérique.',duration:'5–7 h',content:at08},
