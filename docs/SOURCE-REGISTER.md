@@ -424,3 +424,14 @@ Les ressources S167–S168 cadrent les méthodes descriptives et les plans de so
 | S171 | SAS Institute — SAS/STAT 14.1 User’s Guide, Multivariate Tests : https://support.sas.com/documentation/cdl/en/statug/68162/HTML/default/statug_introreg_sect038.htm | Transformations F des critères MANOVA et borne supérieure de Roy ; option de calcul exact | MV04 ; comparaison de la transformation de Roy et de ses degrés de liberté |
 
 **Note de cohérence S159/S171 :** la formule exacte imprimée dans le manuel Stata pour le cas « p ou νh = 1 » doit être maniée avec prudence lorsque p=1 et νh>1 : telle qu'elle est écrite, elle ne se réduit pas à l'ANOVA univariée (F=Θv/νh). La formule de borne SAS, F=Θ(v−d+νh)/d avec d=max(p,νh), donne bien cette réduction pour p=1. La dérivation scalaire est retenue pour le cas p=1 ; la comparaison directe à Stata reste explicitement à effectuer avant toute affirmation de compatibilité logicielle.
+
+
+## B19 — références complémentaires pour l'inférence robuste et le risque
+
+| ID | Ressource | Domaines utiles | Utilisation |
+|---|---|---|---|
+| S178 | Newey, W. K. & West, K. D. (1987), *A Simple, Positive Semi-Definite, Heteroskedasticity and Autocorrelation Consistent Covariance Matrix*, Econometrica 55(3), 703–708 : https://www.nber.org/papers/t0055 | Covariance HAC, noyau de Bartlett, cohérence et semi-définie positive | EF02 ; formule Newey–West du laboratoire |
+| S179 | Kupiec, P. H. (1995), *Techniques for Verifying the Accuracy of Risk Measurement Models*, FEDS 95-24 : https://www.fedinprint.org/item/fedgfe/34596/original | Test LR de couverture inconditionnelle et exceptions VaR | EF08 ; convention du taux d'exception \(p=1-q\) |
+| S180 | Fama, E. F. & MacBeth, J. D. (1973), *Risk, Return, and Equilibrium: Empirical Tests*, Journal of Political Economy 81(3), 607–636 : https://doi.org/10.1086/260061 | Procédure de régressions transversales répétées et tests du CAPM | EF07 ; référence primaire pour la procédure Fama–MacBeth |
+
+Les références S178–S180 complètent S136–S147. S139–S140 restent des guidances américaines à portée institutionnelle précise ; elles ne doivent pas être présentées comme règles applicables à tous les pays ou à toutes les organisations.
