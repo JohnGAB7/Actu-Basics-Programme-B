@@ -6,7 +6,7 @@ they are not a production orchestration or database framework.
 from __future__ import annotations
 
 from collections import Counter
-from datetime import date, datetime
+from datetime import date, datetime, timezone
 import hashlib
 import json
 from typing import Any, Iterable, Mapping, Sequence
@@ -45,26 +45,51 @@ def foreign_key_violations(
     ]
 
 
+def _timestamp_sort_key(value: Any) -> datetime:
+    """Parse an ISO date or timezone-aware ISO 8601 timestamp and normalize to UTC.
+
+    Date-only values are interpreted as midnight UTC. Datetimes must carry an
+    explicit UTC offset; naive local times are rejected as ambiguous.
+    """
+    if isinstance(value, datetime):
+        parsed = value
+    elif isinstance(value, date):
+        parsed = datetime.combine(value, datetime.min.time(), tzinfo=timezone.utc)
+    elif isinstance(value, str):
+        parsed = datetime.fromisoformat(value.replace("Z", "+00:00"))
+        if parsed.tzinfo is None:
+            if len(value) == 10:
+                parsed = parsed.replace(tzinfo=timezone.utc)
+            else:
+                raise ValueError("datetime timestamps must include an explicit UTC offset")
+    else:
+        raise TypeError("updated_at must be an ISO date, ISO 8601 string, date, or datetime")
+    if parsed.tzinfo is None:
+        raise ValueError("datetime timestamps must include an explicit UTC offset")
+    return parsed.astimezone(timezone.utc)
+
+
 def idempotent_upsert(
     existing: Sequence[Mapping[str, Any]],
     incoming: Sequence[Mapping[str, Any]],
     key: str,
     updated_at: str,
 ) -> list[dict[str, Any]]:
-    """Merge records by key, keeping the latest timestamp; ties favour incoming.
+    """Merge by key using chronological timestamps; ties favour later input rows.
 
-    Records are returned in deterministic key order. A missing key or timestamp
-    is rejected rather than silently creating an ambiguous record.
+    ISO date-only values mean midnight UTC. Datetimes require an explicit offset
+    and are compared as instants in UTC. Missing keys/timestamps are rejected.
     """
-    merged: dict[Any, dict[str, Any]] = {}
+    merged: dict[Any, tuple[datetime, dict[str, Any]]] = {}
     for source, rows in (("existing", existing), ("incoming", incoming)):
         for row in rows:
             if row.get(key) is None or row.get(updated_at) is None:
                 raise ValueError(f"{source} record requires non-null {key!r} and {updated_at!r}")
+            timestamp = _timestamp_sort_key(row[updated_at])
             current = merged.get(row[key])
-            if current is None or str(row[updated_at]) >= str(current[updated_at]):
-                merged[row[key]] = dict(row)
-    return [merged[k] for k in sorted(merged, key=lambda value: str(value))]
+            if current is None or timestamp >= current[0]:
+                merged[row[key]] = (timestamp, dict(row))
+    return [merged[k][1] for k in sorted(merged, key=lambda value: str(value))]
 
 
 def reconcile_totals(
@@ -74,15 +99,29 @@ def reconcile_totals(
 ) -> dict[str, Any]:
     """Compare row counts and exact Python numeric totals (no implicit rounding)."""
     left, right = list(source), list(target)
-    left_total = sum((row.get(amount_field) or 0 for row in left), 0)
-    right_total = sum((row.get(amount_field) or 0 for row in right), 0)
+    def is_missing(value: Any) -> bool:
+        if value is None:
+            return True
+        try:
+            return bool(value != value)  # catches NaN without a pandas dependency
+        except (TypeError, ValueError):
+            return False
+
+    source_values = [row.get(amount_field) for row in left]
+    target_values = [row.get(amount_field) for row in right]
+    source_missing = sum(amount_field not in row or is_missing(row.get(amount_field)) for row in left)
+    target_missing = sum(amount_field not in row or is_missing(row.get(amount_field)) for row in right)
+    left_total = sum((value for value in source_values if not is_missing(value)), 0)
+    right_total = sum((value for value in target_values if not is_missing(value)), 0)
     return {
         "source_count": len(left),
         "target_count": len(right),
         "source_total": left_total,
         "target_total": right_total,
+        "source_missing_amount_count": source_missing,
+        "target_missing_amount_count": target_missing,
         "count_match": len(left) == len(right),
-        "total_match": left_total == right_total,
+        "total_match": source_missing == 0 and target_missing == 0 and left_total == right_total,
     }
 
 
