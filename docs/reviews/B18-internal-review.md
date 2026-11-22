@@ -76,3 +76,39 @@ Le laboratoire Python/R couvre les primitives définies dans `labs/b18/README.md
 - S135 : SOA Research Institute, étude 2026 sur biais et modèles prédictifs de tarification d'assurance.
 
 Les références cadrent les objectifs ; elles ne remplacent pas la vérification des éditions, des textes consolidés ni une revue indépendante.
+
+
+## Revue mathématique et technique approfondie — 22 novembre 2026
+
+**Périmètre :** AR01–AR10, carte v1.1, évaluation, fonctions Python/R et tests du laboratoire.
+
+### Vérifications mathématiques
+
+- **AR01–AR02 — coût composé :** sous indépendance de N et des sévérités iid, \(E[S]=E[N]E[X]\) et \(Var(S)=E[N]Var(X)+Var(N)E[X]^2\). Pour N Poisson, \(Var(S)=\lambda E\,E[X^2]\). Les unités d'exposition et les bases brut/net doivent être harmonisées.
+- **AR03 — GLM Poisson :** le log-offset d'exposition a bien un coefficient fixé à 1. La log-vraisemblance donnée est correcte à constante près. Un coefficient sous lien log s'interprète par \(e^\beta\), et les interactions changent la relativité conditionnelle.
+- **AR04 — Bühlmann :** \(K=EPV/VHM\), \(Z=n/(n+K)\) est la formule classique pour observations homogènes et moyenne individuelle. Le cas VHM nul est une limite dégénérée et ne doit pas être traité par division directe.
+- **AR05 — survie :** \(h(t)=f(t)/S(t)\), \(H(t)=-\log S(t)\), \(q_x=1-p_x\) et \(p_x=e^{-\mu_x}\) sous force constante sont cohérents. Kaplan–Meier traite les ex æquo événement/censure selon une convention qui doit être annoncée. Greenwood n'est pas défini lorsque \(d_j=n_j\), ce que le cours signale.
+- **AR06 — assurance temporaire :** la formule du cours est \(A_{x:\overline n|}=\sum_{k=0}^{n-1}v^{k+1}{}_kp_xq_{x+k}\). Le laboratoire recevait des probabilités annuelles sans préciser si elles étaient conditionnelles ou inconditionnelles ; il omettait la survie jusqu'à l'année k. Le laboratoire est maintenant aligné sur le cours : il reçoit les \(q_{x+k}\) conditionnels et calcule récursivement la survie.
+- **AR07 — Chain-Ladder :** les facteurs volume-pondérés \(\sum C_{i,j+1}/\sum C_{i,j}\) et la projection des ultimes sont corrects pour un triangle cumulatif en escalier. Cette méthode est une projection déterministe ; elle ne fournit pas l'incertitude de Mack ou du bootstrap.
+- **AR08 — réassurance XS :** \(R=\min((X-d)_+,L)\) est correct pour une couche par sinistre avant clauses d'agrégation, réintégrations et recouvrements.
+- **AR09 — capital :** la définition intégrale de l'ES traite les atomes mieux que la simple moyenne conditionnelle au-delà de VaR. Le SCR Solvabilité II est une VaR 99,5 % à un an sur les fonds propres de base, selon l'article 101 ; il faut conserver le périmètre juridique et la version du texte.
+- **AR10 — gouvernance :** le cours distingue validation indépendante, suivi, usage et responsabilité de la fonction actuarielle. Les passages réglementaires sont correctement présentés comme dépendants du cadre applicable.
+
+### Défauts corrigés dans cette branche
+
+1. **Assurance temporaire :** \`term_insurance_epv()\` Python/R multipliait chaque \(q_{x+k}\) par le facteur d'actualisation, sans le facteur de survie \({}_kp_x\). Pour \(q_0=10\\%\), \(q_1=20\\%\), capital 100 et taux 0, la valeur correcte est \(100(0,10+0,90\\times0,20)=28\), et non 30. Le code et les tests sont corrigés ; la fonction documente désormais que les entrées sont des probabilités conditionnelles annuelles.
+2. **Chain-Ladder :** les fonctions acceptaient des lignes dont le nombre de développements observés augmentait avec les années d'origine, ce qui n'est pas un triangle supérieur gauche ordonné des années anciennes vers les plus récentes. Elles acceptent aussi désormais uniquement des cellules observées finies. Les deux langages rejettent les triangles mal formés ; tests ajoutés.
+3. **GLM Poisson Python/R :** le laboratoire Python tronquait silencieusement le prédicteur linéaire à \([-30,30]\) avant exponentiation, ce qui modifiait le calcul numérique sans avertissement ; le laboratoire R acceptait des comptages fractionnaires. Le Python ne tronque plus et rejette les prédicteurs hors plage exponentielle sûre ; les deux langages rejettent les entrées non finies et les comptages non entiers.
+4. **Contrôles de cohérence :** les probabilités de survie d'une rente doivent être non croissantes ; les deux implémentations l'imposent. Les temps de survie, pertes VaR/ES, moments, expositions et paramètres de crédibilité sont contrôlés pour finitude.
+
+### Limites résiduelles
+
+- Le GLM Python est un IRLS minimal : pas de matrice de covariance, erreurs-types robustes, pénalisation, sélection, séparation ni diagnostic complet. Les protections numériques ne remplacent pas un solveur éprouvé.
+- Les tests sont synthétiques et n'établissent pas la validité sur portefeuilles réels.
+- Kaplan–Meier suppose une censure non informative selon l'information retenue ; le laboratoire ne traite pas censure à gauche, troncature, risques concurrents ni intervalles de confiance complets.
+- Chain-Ladder est un Chain-Ladder volume-pondéré simple : pas de sélection de facteurs, tail, Mack, bootstrap, BF ni inflation explicite.
+- Le calcul d'ES est empirique et ne donne pas d'incertitude d'estimation ou de modèle.
+- Les exemples ne sont pas des calculs prudentiels réglementaires ni des avis actuariels.
+- Une revue indépendante par actuaire, la validation apprenant, la comparaison avec un logiciel de référence, l'actualisation juridique et l'accessibilité restent nécessaires.
+
+**Conclusion provisoire :** deux incohérences mathématiques du laboratoire ont été corrigées, dont une erreur de facteur de survie dans l'assurance temporaire. Le statut demeure « revue interne assistée par IA » jusqu'à réussite de la CI complète et revue indépendante.
