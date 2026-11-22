@@ -5,13 +5,15 @@ reserving, mortality, capital or regulatory calculation engines.
 """
 from __future__ import annotations
 
-from math import exp, log, sqrt
+from math import exp, isfinite, log, sqrt
 from typing import Sequence
 
 
 def exposure_frequency(claim_counts: Sequence[float], exposures: Sequence[float]) -> float:
     if len(claim_counts) != len(exposures) or not claim_counts:
         raise ValueError("claim_counts and exposures must have the same non-zero length")
+    if any(not isfinite(float(x)) for x in [*claim_counts, *exposures]):
+        raise ValueError("counts and exposures must be finite")
     if any(n < 0 for n in claim_counts) or any(e <= 0 for e in exposures):
         raise ValueError("counts must be non-negative and exposures strictly positive")
     return sum(claim_counts) / sum(exposures)
@@ -19,6 +21,8 @@ def exposure_frequency(claim_counts: Sequence[float], exposures: Sequence[float]
 
 def aggregate_moments(mean_n: float, var_n: float, mean_x: float, var_x: float) -> tuple[float, float]:
     """Compound sum moments when N is independent of iid severities X_j."""
+    if any(not isfinite(float(x)) for x in (mean_n, var_n, mean_x, var_x)):
+        raise ValueError("moments must be finite")
     if min(mean_n, var_n, mean_x, var_x) < 0:
         raise ValueError("moments must be non-negative")
     mean_s = mean_n * mean_x
@@ -63,6 +67,11 @@ def poisson_irls(
     p = len(design[0])
     if p == 0 or any(len(row) != p for row in design):
         raise ValueError("design must be rectangular and have at least one column")
+    if max_iter < 1 or not isfinite(float(tolerance)) or tolerance <= 0:
+        raise ValueError("max_iter must be positive and tolerance finite and positive")
+    numeric_inputs = [x for row in design for x in row] + list(counts) + list(exposures)
+    if any(not isfinite(float(x)) for x in numeric_inputs):
+        raise ValueError("design, counts and exposures must be finite")
     if any(y < 0 for y in counts) or any(e <= 0 for e in exposures):
         raise ValueError("counts must be non-negative and exposures strictly positive")
     if any(not float(y).is_integer() for y in counts):
@@ -73,7 +82,9 @@ def poisson_irls(
     iterations = 0
     for iteration in range(1, max_iter + 1):
         eta = [offset[i] + sum(design[i][k] * beta[k] for k in range(p)) for i in range(n)]
-        mu = [exp(max(-30.0, min(30.0, value))) for value in eta]
+        if any(value < -700 or value > 700 for value in eta):
+            raise ValueError("linear predictor outside the safe exponential range; rescale inputs")
+        mu = [exp(value) for value in eta]
         working = [eta[i] + (counts[i] - mu[i]) / mu[i] - offset[i] for i in range(n)]
         xtwx = [[0.0] * p for _ in range(p)]
         xtwz = [0.0] * p
@@ -91,11 +102,15 @@ def poisson_irls(
             converged = True
             break
     eta = [offset[i] + sum(design[i][k] * beta[k] for k in range(p)) for i in range(n)]
-    fitted = [exp(max(-30.0, min(30.0, value))) for value in eta]
+    if any(value < -700 or value > 700 for value in eta):
+        raise ValueError("linear predictor outside the safe exponential range; rescale inputs")
+    fitted = [exp(value) for value in eta]
     return {"coefficients": beta, "fitted_means": fitted, "iterations": iterations, "converged": converged}
 
 
 def buhlmann_credibility(epv: float, vhm: float, observations: float) -> dict[str, float]:
+    if any(not isfinite(float(x)) for x in (epv, vhm, observations)):
+        raise ValueError("credibility inputs must be finite")
     if epv < 0 or vhm <= 0 or observations < 0:
         raise ValueError("EPV must be non-negative, VHM positive and n non-negative")
     k = epv / vhm
@@ -107,8 +122,10 @@ def kaplan_meier(times: Sequence[float], events: Sequence[bool]) -> list[dict[st
     """Product-limit survival table; event is True for an observed event."""
     if len(times) != len(events) or not times:
         raise ValueError("times and events must have the same non-zero length")
-    if any(t < 0 for t in times):
-        raise ValueError("follow-up times must be non-negative")
+    if any(not isfinite(float(t)) for t in times) or any(t < 0 for t in times):
+        raise ValueError("follow-up times must be finite and non-negative")
+    if any(not isinstance(event, bool) for event in events):
+        raise ValueError("events must contain Boolean indicators")
     grouped: dict[float, list[int]] = {}
     for t, event in zip(times, events):
         grouped.setdefault(float(t), [0, 0])
@@ -135,18 +152,29 @@ def kaplan_meier(times: Sequence[float], events: Sequence[bool]) -> list[dict[st
 
 def annuity_immediate(survival_probabilities: Sequence[float], interest_rate: float) -> float:
     """EPV of unit annual payments at times 1..n, conditional survival probabilities."""
+    if not isfinite(float(interest_rate)) or any(not isfinite(float(p)) for p in survival_probabilities):
+        raise ValueError("interest rate and survival probabilities must be finite")
     if interest_rate <= -1 or any(p < 0 or p > 1 for p in survival_probabilities):
         raise ValueError("interest rate must exceed -1 and survival probabilities lie in [0,1]")
+    if any(survival_probabilities[i] < survival_probabilities[i + 1] for i in range(len(survival_probabilities) - 1)):
+        raise ValueError("survival probabilities must be non-increasing over time")
     v = 1.0 / (1.0 + interest_rate)
     return sum((v ** t) * p for t, p in enumerate(survival_probabilities, start=1))
 
 
 def term_insurance_epv(death_probabilities: Sequence[float], interest_rate: float, benefit: float = 1.0) -> float:
-    """EPV for benefit paid at the end of the year of death."""
+    """EPV with benefit paid at year-end; inputs are conditional annual q_x values."""
+    if any(not isfinite(float(x)) for x in [*death_probabilities, interest_rate, benefit]):
+        raise ValueError("interest, benefit and death probabilities must be finite")
     if interest_rate <= -1 or benefit < 0 or any(q < 0 or q > 1 for q in death_probabilities):
-        raise ValueError("invalid interest, benefit or death probability")
+        raise ValueError("invalid interest, benefit or annual death probability")
     v = 1.0 / (1.0 + interest_rate)
-    return benefit * sum((v ** t) * q for t, q in enumerate(death_probabilities, start=1))
+    survival = 1.0
+    value = 0.0
+    for t, q in enumerate(death_probabilities, start=1):
+        value += benefit * (v ** t) * survival * q
+        survival *= 1.0 - q
+    return value
 
 
 def chain_ladder(cumulative_triangle: Sequence[Sequence[float | None]]) -> dict[str, list[float]]:
@@ -166,13 +194,15 @@ def chain_ladder(cumulative_triangle: Sequence[Sequence[float | None]]) -> dict[
             if value is None:
                 seen_none = True
             else:
-                if seen_none or value < 0 or value < previous:
-                    raise ValueError("triangle must be non-negative, cumulative and upper-left aligned")
+                if seen_none or not isfinite(float(value)) or value < 0 or value < previous:
+                    raise ValueError("triangle must be finite, non-negative, cumulative and upper-left aligned")
                 previous = value
                 observed += 1
         if observed == 0:
             raise ValueError("each origin period needs at least one observed development")
         observed_lengths.append(observed)
+    if any(observed_lengths[i] < observed_lengths[i + 1] for i in range(len(observed_lengths) - 1)):
+        raise ValueError("triangle rows must be ordered from oldest to newest origin period")
     factors = []
     for j in range(width - 1):
         pairs = [(row[j], row[j + 1]) for row in triangle if row[j] is not None and row[j + 1] is not None]
@@ -192,6 +222,8 @@ def chain_ladder(cumulative_triangle: Sequence[Sequence[float | None]]) -> dict[
 
 
 def xs_recovery(loss: float, priority: float, limit: float) -> float:
+    if any(not isfinite(float(x)) for x in (loss, priority, limit)):
+        raise ValueError("loss, priority and limit must be finite")
     if min(loss, priority, limit) < 0:
         raise ValueError("loss, priority and limit must be non-negative")
     return min(max(loss - priority, 0.0), limit)
@@ -199,8 +231,10 @@ def xs_recovery(loss: float, priority: float, limit: float) -> float:
 
 def empirical_var_tvar(losses: Sequence[float], alpha: float) -> dict[str, float]:
     """Empirical VaR and integrated upper-tail mean (fractional tail weighting)."""
-    if not losses or not 0 < alpha < 1:
+    if not losses or not isfinite(float(alpha)) or not 0 < alpha < 1:
         raise ValueError("losses must be non-empty and alpha in (0,1)")
+    if any(not isfinite(float(x)) for x in losses):
+        raise ValueError("losses must be finite")
     ordered = sorted(float(x) for x in losses)
     n = len(ordered)
     index = max(0, min(n - 1, int((alpha * n + 0.999999999999) // 1) - 1))

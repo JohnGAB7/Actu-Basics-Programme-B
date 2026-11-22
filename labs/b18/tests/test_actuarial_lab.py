@@ -40,6 +40,12 @@ class ActuarialLabTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             poisson_irls(design, [1, 2, 3], [1, 1, 1])
 
+    def test_poisson_irls_rejects_noninteger_and_nonfinite_inputs(self):
+        with self.assertRaises(ValueError):
+            poisson_irls([[1.0], [1.0]], [1.5, 2], [1, 1])
+        with self.assertRaises(ValueError):
+            poisson_irls([[1.0], [float("nan")]], [1, 2], [1, 1])
+
     def test_buhlmann_credibility(self):
         result = buhlmann_credibility(epv=20, vhm=5, observations=10)
         self.assertEqual(result["K"], 4)
@@ -57,8 +63,13 @@ class ActuarialLabTests(unittest.TestCase):
     def test_annuity_immediate(self):
         self.assertAlmostEqual(annuity_immediate([0.9, 0.8], 0.0), 1.7)
 
-    def test_term_insurance_epv_end_year_payment(self):
-        self.assertAlmostEqual(term_insurance_epv([0.1, 0.2], 0.0, 100), 30)
+    def test_annuity_rejects_increasing_survival_probabilities(self):
+        with self.assertRaises(ValueError):
+            annuity_immediate([0.8, 0.9], 0.0)
+
+    def test_term_insurance_epv_uses_conditional_annual_mortality(self):
+        # Death in year 2 requires survival through year 1: 0.9 * 0.2.
+        self.assertAlmostEqual(term_insurance_epv([0.1, 0.2], 0.0, 100), 28)
 
     def test_chain_ladder_volume_weighted_projection(self):
         triangle = [
@@ -77,6 +88,12 @@ class ActuarialLabTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             chain_ladder([[100, 90, None]])
 
+    def test_chain_ladder_rejects_malformed_triangle_and_nonfinite_values(self):
+        with self.assertRaises(ValueError):
+            chain_ladder([[100, None, None], [120, 180, None]])
+        with self.assertRaises(ValueError):
+            chain_ladder([[100, float("nan"), None]])
+
     def test_xs_recovery(self):
         self.assertEqual(xs_recovery(120000, 50000, 100000), 70000)
         self.assertEqual(xs_recovery(20000, 50000, 100000), 0)
@@ -91,6 +108,8 @@ class ActuarialLabTests(unittest.TestCase):
     def test_invalid_quantile_rejected(self):
         with self.assertRaises(ValueError):
             empirical_var_tvar([1, 2], 1.0)
+        with self.assertRaises(ValueError):
+            empirical_var_tvar([1, float("nan")], 0.95)
 
 
 if __name__ == "__main__":
