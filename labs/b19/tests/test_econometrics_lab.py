@@ -30,6 +30,10 @@ class EconometricsLabTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             ols_fit([[1, 1], [1, 1], [1, 1]], [1, 2, 3])
 
+    def test_ols_rejects_nonfinite_inputs(self):
+        with self.assertRaises(ValueError):
+            ols_fit([[1.0], [float("nan")]], [1.0, 2.0])
+
     def test_hc0_covariance_is_symmetric(self):
         x = [[1.0, 0.0], [1.0, 1.0], [1.0, 2.0], [1.0, 3.0], [1.0, 4.0]]
         residuals = [0.2, -0.1, 0.3, -0.2, 0.1]
@@ -46,12 +50,25 @@ class EconometricsLabTests(unittest.TestCase):
             for j in range(2):
                 self.assertAlmostEqual(a[i][j], b[i][j])
 
+    def test_newey_west_positive_lag_is_symmetric_and_finite(self):
+        x = [[1.0, float(i)] for i in range(5)]
+        e = [0.2, -0.1, 0.3, -0.2, 0.1]
+        cov = newey_west_covariance(x, e, 1)
+        self.assertTrue(all(math.isfinite(v) for row in cov for v in row))
+        self.assertAlmostEqual(cov[0][1], cov[1][0])
+        with self.assertRaises(ValueError):
+            newey_west_covariance(x, e, 1.5)
+
     def test_within_demean_removes_group_means(self):
         out = within_demean([2, 4, 10, 14], [[1], [3], [2], [6]], ["A", "A", "B", "B"])
         self.assertEqual(out["groups"], 2)
         self.assertAlmostEqual(sum(out["outcome"][:2]), 0)
         self.assertAlmostEqual(sum(out["outcome"][2:]), 0)
         self.assertAlmostEqual(sum(row[0] for row in out["design"][:2]), 0)
+
+    def test_within_demean_rejects_missing_group_id(self):
+        with self.assertRaises(ValueError):
+            within_demean([1, 2], [[1], [2]], ["A", None])
 
     def test_wald_iv_ratio(self):
         z = [0, 0, 1, 1]
@@ -72,6 +89,8 @@ class EconometricsLabTests(unittest.TestCase):
         prices = [100, 110, 121]
         self.assertAlmostEqual(simple_returns(prices)[0], 0.1)
         self.assertAlmostEqual(log_returns(prices)[1], math.log(1.1))
+        with self.assertRaises(ValueError):
+            simple_returns([100, float("inf")])
 
     def test_capm_beta_and_alpha(self):
         market = [-0.02, -0.01, 0.0, 0.01, 0.02]
@@ -84,6 +103,8 @@ class EconometricsLabTests(unittest.TestCase):
         result = empirical_var_es([1, 2, 3, 4, 100], 0.8)
         self.assertEqual(result["VaR"], 4)
         self.assertEqual(result["ES"], 100)
+        with self.assertRaises(ValueError):
+            empirical_var_es([1, float("nan")], 0.95)
 
     def test_kupiec_statistic_is_zero_at_nominal_rate(self):
         exceptions = [True] + [False] * 99
@@ -92,9 +113,13 @@ class EconometricsLabTests(unittest.TestCase):
     def test_kupiec_statistic_flags_excess_exceptions(self):
         exceptions = [True] * 10 + [False] * 90
         self.assertGreater(kupiec_lr_uc(exceptions, 0.01), 0.0)
+        with self.assertRaises(ValueError):
+            kupiec_lr_uc([True, None], 0.01)
 
     def test_realized_variance(self):
         self.assertAlmostEqual(realized_variance([0.1, -0.2, 0.1]), 0.06)
+        with self.assertRaises(ValueError):
+            realized_variance([0.1, float("nan")])
 
 
 if __name__ == "__main__":
