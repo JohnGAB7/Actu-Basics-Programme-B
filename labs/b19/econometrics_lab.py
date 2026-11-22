@@ -5,7 +5,7 @@ production estimators or substitutes for econometric software.
 """
 from __future__ import annotations
 
-from math import ceil, exp, log
+from math import ceil, exp, isfinite, log
 from typing import Sequence
 
 
@@ -54,6 +54,8 @@ def ols_fit(design: Sequence[Sequence[float]], outcome: Sequence[float]) -> dict
     p = len(design[0])
     if p == 0 or any(len(row) != p for row in design):
         raise ValueError("design must be rectangular and non-empty")
+    if any(not isfinite(float(v)) for row in design for v in row) or any(not isfinite(float(v)) for v in outcome):
+        raise ValueError("design and outcome must be finite")
     xtx = _crossprod(design)
     xty = [sum(design[i][j] * outcome[i] for i in range(n)) for j in range(p)]
     beta = _solve(xtx, xty)
@@ -67,9 +69,16 @@ def ols_fit(design: Sequence[Sequence[float]], outcome: Sequence[float]) -> dict
 
 
 def _sandwich_covariance(design, residuals, lag: int) -> list[list[float]]:
-    n, p = len(design), len(design[0])
-    if lag < 0 or lag >= n:
-        raise ValueError("lag must be between 0 and n-1")
+    n = len(design)
+    if n == 0 or not design or not design[0]:
+        raise ValueError("design must be non-empty")
+    p = len(design[0])
+    if any(len(row) != p for row in design) or len(residuals) != n:
+        raise ValueError("design must be rectangular and match residuals")
+    if not isinstance(lag, int) or lag < 0 or lag >= n:
+        raise ValueError("lag must be an integer between 0 and n-1")
+    if any(not isfinite(float(v)) for row in design for v in row) or any(not isfinite(float(v)) for v in residuals):
+        raise ValueError("design and residuals must be finite")
     scores = [[design[i][j] * residuals[i] for j in range(p)] for i in range(n)]
     meat = [[0.0] * p for _ in range(p)]
     for i in range(n):
@@ -113,6 +122,10 @@ def within_demean(
     p = len(design[0])
     if p == 0 or any(len(row) != p for row in design):
         raise ValueError("design must be rectangular and non-empty")
+    if any(not isfinite(float(v)) for row in design for v in row) or any(not isfinite(float(v)) for v in outcome):
+        raise ValueError("design and outcome must be finite")
+    if any(group is None or (isinstance(group, float) and not isfinite(group)) for group in groups):
+        raise ValueError("group identifiers must be non-missing")
     members = {}
     for i, group in enumerate(groups):
         members.setdefault(group, []).append(i)
@@ -131,6 +144,8 @@ def wald_iv(instrument: Sequence[float], endogenous: Sequence[float], outcome: S
     """Single-instrument, no-covariate Wald ratio; not a general 2SLS estimator."""
     if not instrument or len(instrument) != len(endogenous) or len(instrument) != len(outcome):
         raise ValueError("instrument, endogenous variable and outcome lengths must agree")
+    if any(not isfinite(float(v)) for v in [*instrument, *endogenous, *outcome]):
+        raise ValueError("instrument, endogenous variable and outcome must be finite")
     zbar = sum(instrument) / len(instrument)
     xbar = sum(endogenous) / len(endogenous)
     ybar = sum(outcome) / len(outcome)
@@ -142,6 +157,8 @@ def wald_iv(instrument: Sequence[float], endogenous: Sequence[float], outcome: S
 
 
 def logit_probability(linear_predictor: float) -> float:
+    if not isfinite(float(linear_predictor)):
+        raise ValueError("linear predictor must be finite")
     if linear_predictor >= 0:
         return 1.0 / (1.0 + exp(-linear_predictor))
     e = exp(linear_predictor)
@@ -149,14 +166,16 @@ def logit_probability(linear_predictor: float) -> float:
 
 
 def logit_marginal_effect(beta: float, probability: float) -> float:
+    if not isfinite(float(beta)) or not isfinite(float(probability)):
+        raise ValueError("beta and probability must be finite")
     if not 0 <= probability <= 1:
         raise ValueError("probability must lie in [0,1]")
     return beta * probability * (1.0 - probability)
 
 
 def simple_returns(prices: Sequence[float]) -> list[float]:
-    if len(prices) < 2 or any(p <= 0 for p in prices):
-        raise ValueError("at least two strictly positive prices are required")
+    if len(prices) < 2 or any(not isfinite(float(p)) or p <= 0 for p in prices):
+        raise ValueError("at least two finite, strictly positive prices are required")
     return [prices[i] / prices[i - 1] - 1.0 for i in range(1, len(prices))]
 
 
@@ -170,6 +189,8 @@ def capm_fit(asset_excess: Sequence[float], market_excess: Sequence[float]) -> d
     """OLS intercept and market beta for aligned excess returns."""
     if len(asset_excess) != len(market_excess) or len(asset_excess) < 2:
         raise ValueError("aligned return series with at least two observations required")
+    if any(not isfinite(float(v)) for v in [*asset_excess, *market_excess]):
+        raise ValueError("excess returns must be finite")
     mx = sum(market_excess) / len(market_excess)
     my = sum(asset_excess) / len(asset_excess)
     variance = sum((x - mx) ** 2 for x in market_excess)
@@ -182,8 +203,10 @@ def capm_fit(asset_excess: Sequence[float], market_excess: Sequence[float]) -> d
 
 def empirical_var_es(losses: Sequence[float], alpha: float) -> dict[str, float]:
     """Empirical VaR and integrated upper-tail ES with fractional tail weighting."""
-    if not losses or not 0 < alpha < 1:
+    if not losses or not isfinite(float(alpha)) or not 0 < alpha < 1:
         raise ValueError("losses must be non-empty and alpha in (0,1)")
+    if any(not isfinite(float(x)) for x in losses):
+        raise ValueError("losses must be finite")
     ordered = sorted(float(x) for x in losses)
     n = len(ordered)
     var = ordered[max(0, min(n - 1, ceil(alpha * n) - 1))]
@@ -201,8 +224,10 @@ def empirical_var_es(losses: Sequence[float], alpha: float) -> dict[str, float]:
 
 def kupiec_lr_uc(exceptions: Sequence[bool], expected_exception_rate: float) -> float:
     """Kupiec LR statistic; expected_exception_rate is 1 - VaR confidence (no p-value)."""
-    if not exceptions or not 0 < expected_exception_rate < 1:
+    if not exceptions or not isfinite(float(expected_exception_rate)) or not 0 < expected_exception_rate < 1:
         raise ValueError("exceptions must be non-empty and expected_exception_rate in (0,1)")
+    if any(not isinstance(value, bool) for value in exceptions):
+        raise ValueError("exceptions must be Boolean indicators")
     n = len(exceptions)
     x = sum(bool(v) for v in exceptions)
     phat = x / n
@@ -218,4 +243,6 @@ def kupiec_lr_uc(exceptions: Sequence[bool], expected_exception_rate: float) -> 
 def realized_variance(intraday_returns: Sequence[float]) -> float:
     if not intraday_returns:
         raise ValueError("at least one intraday return is required")
+    if any(not isfinite(float(r)) for r in intraday_returns):
+        raise ValueError("intraday returns must be finite")
     return sum(r * r for r in intraday_returns)
