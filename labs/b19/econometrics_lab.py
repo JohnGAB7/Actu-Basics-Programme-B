@@ -161,8 +161,8 @@ def simple_returns(prices: Sequence[float]) -> list[float]:
 
 
 def log_returns(prices: Sequence[float]) -> list[float]:
-    if len(prices) < 2 or any(p <= 0 for p in prices):
-        raise ValueError("at least two strictly positive prices are required")
+    if len(prices) < 2 or any(not isfinite(float(p)) or p <= 0 for p in prices):
+        raise ValueError("at least two finite, strictly positive prices are required")
     return [log(prices[i] / prices[i - 1]) for i in range(1, len(prices))]
 
 
