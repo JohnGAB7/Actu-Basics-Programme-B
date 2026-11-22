@@ -181,6 +181,16 @@ monte_carlo_standard_error <- function(values) {
 }
 
 # Executable checks
+bad_boot <- try(bootstrap_mean_ci(c(1, NA_real_), 100), silent = TRUE)
+stopifnot(inherits(bad_boot, "try-error"))
+bad_delta <- try(delta_method(c(1, 2), matrix(c(1, .2, .3, 4), 2, 2)), silent = TRUE)
+stopifnot(inherits(bad_delta, "try-error"))
+bad_mh <- try(metropolis_hastings(function(x) -Inf, 0, 10), silent = TRUE)
+stopifnot(inherits(bad_mh, "try-error"))
+bad_ess <- try(effective_sample_size(1:4, -1), silent = TRUE)
+stopifnot(inherits(bad_ess, "try-error"))
+bad_bh <- try(benjamini_hochberg(c(.01, NaN), .05), silent = TRUE)
+stopifnot(inherits(bad_bh, "try-error"))
 boot <- bootstrap_mean_ci(1:5, 500, .05, 7)
 stopifnot(boot[["lower"]] <= boot[["estimate"]], boot[["upper"]] >= boot[["estimate"]])
 perm <- permutation_test_mean_difference(1:3, 4:6, 1000)
