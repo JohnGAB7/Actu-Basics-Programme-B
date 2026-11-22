@@ -77,3 +77,41 @@ S148–S152 (Berkeley, Stanford, MIT, Princeton) ; S153–S154 (Stan diagnostics
 - AT03 explicite Hoeffding, Bernstein et McDiarmid, avec hypothèses d'indépendance, bornitude et limites pour données dépendantes.
 - AT05 explicite le risque fréquentiste, le risque de Bayes, les actions optimales sous perte, les règles minimax et l'admissibilité.
 - Ces compléments enrichissent le périmètre annoncé ; les preuves détaillées et les exercices doivent faire l'objet d'une relecture indépendante.
+
+
+## Revue mathématique et technique approfondie — 22 novembre 2026
+
+**Périmètre :** AT01–AT10, carte v1.2, évaluation, laboratoire Python/R et tests.
+
+### Contrôles théoriques
+
+- **AT01 — mesure et convergence :** la séquence mesurabilité, intégration, Fatou, convergence monotone/dominée et modes de convergence est cohérente. Les passages à la limite doivent toujours être associés aux hypothèses d'intégrabilité et de domination.
+- **AT02 — asymptotique :** consistance, TCL, méthode delta, estimateurs M, contiguïté et LAN sont bien ordonnés. La normalité MLE suppose identification, intérieur et régularité ; les frontières et modèles singuliers exigent des limites non standards.
+- **AT03 — processus empiriques :** distinction GC uniforme / Donsker fonctionnel correcte. Les formes Hoeffding, Bernstein et McDiarmid sont cohérentes sous indépendance et bornitude. Le bootstrap i.i.d. ne s'étend pas automatiquement aux données dépendantes ou aux paramètres non réguliers.
+- **AT04 — semi-paramétrique :** le score efficace est la projection du score d'intérêt sur l'orthogonal de l'espace tangent nuisance ; l'information efficace définit la borne pertinente. L'orthogonalité et la double robustesse ne dispensent pas d'identification et positivité.
+- **AT05 — Bayes et décision :** le ratio MH inclut bien le rapport des propositions ; l'invariance par balance détaillée ne suffit pas à garantir ergodicité. L'ESS et MCSE sont des diagnostics liés à l'autocorrélation. La moyenne postérieure sous perte quadratique, médiane sous perte absolue et règle minimax par risque maximal sont correctes sous existence/intégrabilité appropriées.
+- **AT06 — martingales :** filtration, adaptation, arrêt optionnel et conditions d'intégrabilité sont distingués. La décomposition de Doob et la martingale \(M_t^2-\langle M\rangle_t\) requièrent les conditions de sous-martingale/martingale carrée intégrable et la convention initiale adéquate.
+- **AT07 — grande dimension :** les conditions de compatibilité/restricted eigenvalue sont correctement présentées comme nécessaires à certaines garanties lasso ; sparsité seule ne suffit pas. BH contrôle FDR sous indépendance et certaines dépendances positives, pas sous toute dépendance arbitraire.
+- **AT08 — optimisation :** convexité, KKT sous qualification, Armijo, Wolfe, BFGS et conditionnement sont correctement distingués. Un point stationnaire n'est pas nécessairement un minimum global en non-convexe.
+- **AT09–AT10 — recherche :** la séparation erreur statistique / erreur Monte-Carlo / erreur numérique est juste. La réplication indépendante est distinguée de la reproduction computationnelle. Les portes d'acceptation ne prétendent pas remplacer un jury.
+  
+### Défauts concrets corrigés
+
+1. **ESS et retard invalide :** Python et R acceptaient un max_lag négatif ; la boucle ne parcourait alors aucun lag et retournait artificiellement ESS=N. Le paramètre est maintenant validé comme entier de 0 à n−1.
+2. **Covariance du delta :** une matrice non symétrique pouvait être traitée comme covariance. Les deux laboratoires rejettent désormais les matrices non finies ou non symétriques ; la variance delta négative reste contrôlée.
+3. **Entrées non finies :** bootstrap, permutation, BH, ridge, différences finies, optimisation, MCMC, MCSE et ESS vérifient les entrées numériques. La chaîne MH exige un état initial de log-cible fini ; une proposition à log-cible \(-\infty\) reste rejetable, tandis que NaN ou \(+\infty\) sont rejetés.
+4. **Optimisation :** les paramètres, gradients et valeurs d'objectif non finis sont rejetés ; le gradient doit correspondre à la dimension du point. Les tests couvrent les cas invalides ajoutés.
+
+### Limites résiduelles à ne pas masquer
+
+- L'ESS reste une approximation rudimentaire par autocorrélation tronquée au premier lag négatif. Il ne remplace pas les ESS bulk/tail multi-chaînes, R-hat rank-normalisé, MCSE par fonctionnelle, ni diagnostics HMC complets.
+- MH est un random walk gaussien unidimensionnel ; pas de chaînes multiples, HMC, adaptation, reparamétrisation ou exploration fiable des multimodalités.
+- Le bootstrap est percentile i.i.d. ; pas de BCa, bootstrap dépendant, bootstrap sauvage ou cas non réguliers.
+- Le test de permutation est exact sous échangeabilité et tailles de groupes fixées ; l'égalité des seules moyennes ne suffit pas en général à justifier l'exactitude finie.
+- Le delta method ne vérifie pas à lui seul la semi-définie positivité de la covariance ; l'utilisateur doit fournir une vraie matrice de covariance. La symétrie et la variance projetée sont contrôlées.
+- BH ne garantit pas une probabilité faible que chaque rejet individuel soit faux ; sa garantie dépend de la structure de dépendance des p-values.
+- Ridge et solveur linéaire utilisent un seuil pivot absolu ; les matrices mal conditionnées peuvent donner des résultats instables. QR/SVD et diagnostics de conditionnement restent préférables.
+- La descente Armijo ne certifie qu'un point stationnaire/local sous conditions, pas un optimum global non convexe.
+- Les tests sont synthétiques ; les fonctions ne remplacent ni Stan, ni un solveur numérique éprouvé, ni une revue statistique indépendante.
+
+**Conclusion provisoire :** les fondements et les limites annoncés sont cohérents pour un bloc de théorie statistique avancée. Les corrections portent sur des cas limites susceptibles de produire des diagnostics trompeurs. Le statut reste revue interne assistée par IA, non indépendante et non certifiante.

@@ -2,7 +2,9 @@
 # Educational implementations, not production inference/MCMC/optimization.
 
 bootstrap_mean_ci <- function(sample, n_resamples = 2000L, alpha = .05, seed = 123) {
-  if (length(sample) == 0L || n_resamples < 1L || alpha <= 0 || alpha >= 1) stop("invalid bootstrap inputs")
+  if (length(sample) == 0L || !is.finite(n_resamples) || n_resamples != floor(n_resamples) ||
+      n_resamples < 1L || !is.finite(alpha) || alpha <= 0 || alpha >= 1 ||
+      any(!is.finite(sample))) stop("finite sample, integer resamples and alpha in (0,1) required")
   set.seed(seed)
   n <- length(sample)
   means <- replicate(n_resamples, mean(sample[sample.int(n, n, replace = TRUE)]))
@@ -11,7 +13,9 @@ bootstrap_mean_ci <- function(sample, n_resamples = 2000L, alpha = .05, seed = 1
 }
 
 permutation_test_mean_difference <- function(first, second, n_resamples = 10000L, seed = 123) {
-  if (length(first) == 0L || length(second) == 0L || n_resamples < 1L) stop("invalid permutation inputs")
+  if (length(first) == 0L || length(second) == 0L || !is.finite(n_resamples) ||
+      n_resamples != floor(n_resamples) || n_resamples < 1L ||
+      any(!is.finite(first)) || any(!is.finite(second))) stop("finite samples and integer positive resamples required")
   pooled <- c(first, second)
   n1 <- length(first)
   observed <- mean(first) - mean(second)
@@ -42,22 +46,29 @@ permutation_test_mean_difference <- function(first, second, n_resamples = 10000L
 
 delta_method <- function(gradient, covariance) {
   if (length(gradient) == 0L || nrow(covariance) != length(gradient) ||
-      ncol(covariance) != length(gradient)) stop("invalid delta-method dimensions")
+      ncol(covariance) != length(gradient) || any(!is.finite(gradient)) ||
+      any(!is.finite(covariance)) ||
+      max(abs(covariance - t(covariance))) > 1e-10) {
+    stop("finite gradient and symmetric covariance of matching dimensions required")
+  }
   variance <- as.numeric(t(gradient) %*% covariance %*% gradient)
   if (variance < -1e-10) stop("negative delta variance")
   c(variance = max(0, variance), standard_error = sqrt(max(0, variance)))
 }
 
 metropolis_hastings <- function(log_target, initial, n_iter, proposal_sd = 1, seed = 123) {
-  if (n_iter < 2L || proposal_sd <= 0) stop("invalid MCMC settings")
+  if (!is.finite(n_iter) || n_iter != floor(n_iter) || n_iter < 2L ||
+      !is.finite(proposal_sd) || proposal_sd <= 0 || !is.finite(initial)) stop("invalid MCMC settings")
   set.seed(seed)
   current <- initial
   current_log <- log_target(current)
+  if (!is.finite(current_log)) stop("initial state must have a finite log target")
   draws <- numeric(n_iter)
   accepted <- 0L
   for (i in seq_len(n_iter)) {
     proposal <- rnorm(1, current, proposal_sd)
     proposal_log <- log_target(proposal)
+    if (is.na(proposal_log) || proposal_log == Inf) stop("log_target must not return NA or positive infinity")
     if (log(runif(1)) < min(0, proposal_log - current_log)) {
       current <- proposal
       current_log <- proposal_log
@@ -70,7 +81,10 @@ metropolis_hastings <- function(log_target, initial, n_iter, proposal_sd = 1, se
 
 effective_sample_size <- function(samples, max_lag = floor(length(samples) / 2)) {
   n <- length(samples)
-  if (n < 3L) stop("at least three samples required")
+  if (n < 3L || any(!is.finite(samples)) || !is.finite(max_lag) ||
+      max_lag != floor(max_lag) || max_lag < 0L || max_lag >= n) {
+    stop("finite samples and integer max_lag in [0,n-1] required")
+  }
   variance <- mean((samples - mean(samples))^2)
   if (variance <= 0) return(0)
   max_lag <- min(max_lag, n - 1L)
@@ -87,8 +101,9 @@ effective_sample_size <- function(samples, max_lag = floor(length(samples) / 2))
 }
 
 benjamini_hochberg <- function(p_values, q = .05) {
-  if (length(p_values) == 0L || any(p_values < 0 | p_values > 1) || q <= 0 || q >= 1) {
-    stop("invalid BH inputs")
+  if (length(p_values) == 0L || any(!is.finite(p_values)) ||
+      any(p_values < 0 | p_values > 1) || !is.finite(q) || q <= 0 || q >= 1) {
+    stop("finite p-values in [0,1] and q in (0,1) required")
   }
   adjusted <- stats::p.adjust(p_values, method = "BH")
   list(adjusted_p_values = adjusted, rejected = adjusted <= q)
@@ -96,14 +111,18 @@ benjamini_hochberg <- function(p_values, q = .05) {
 
 ridge_regression <- function(design, outcome, penalty, penalize_intercept = FALSE) {
   x <- as.matrix(design)
-  if (nrow(x) != length(outcome) || nrow(x) == 0L || penalty < 0) stop("invalid ridge inputs")
+  if (nrow(x) != length(outcome) || nrow(x) == 0L || ncol(x) == 0L ||
+      any(!is.finite(x)) || any(!is.finite(outcome)) ||
+      !is.finite(penalty) || penalty < 0) stop("finite ridge inputs and non-negative penalty required")
   penalty_matrix <- diag(ncol(x)) * penalty
   if (!penalize_intercept) penalty_matrix[1,1] <- 0
   as.numeric(solve(crossprod(x) + penalty_matrix, crossprod(x, outcome)))
 }
 
 finite_difference_gradient <- function(function_value, point, step = 1e-6) {
-  if (length(point) == 0L || step <= 0) stop("invalid finite-difference inputs")
+  if (length(point) == 0L || any(!is.finite(point)) || !is.finite(step) || step <= 0) {
+    stop("finite point and positive finite step required")
+  }
   out <- numeric(length(point))
   for (j in seq_along(point)) {
     plus <- minus <- point
@@ -116,15 +135,19 @@ finite_difference_gradient <- function(function_value, point, step = 1e-6) {
 
 gradient_descent <- function(objective, gradient, initial, max_iter = 5000L,
                               tolerance = 1e-8, initial_step = 1) {
-  if (length(initial) == 0L || max_iter < 1L || tolerance <= 0 || initial_step <= 0) {
+  if (length(initial) == 0L || any(!is.finite(initial)) || !is.finite(max_iter) ||
+      max_iter != floor(max_iter) || max_iter < 1L || !is.finite(tolerance) ||
+      tolerance <= 0 || !is.finite(initial_step) || initial_step <= 0) {
     stop("invalid optimization settings")
   }
   x <- as.numeric(initial)
   value <- objective(x)
+  if (!is.finite(value)) stop("objective must be finite at initial point")
   converged <- FALSE
   iterations <- 0L
   for (iteration in seq_len(max_iter)) {
     g <- gradient(x)
+    if (length(g) != length(x) || any(!is.finite(g))) stop("gradient must be finite and match point dimension")
     norm_sq <- sum(g^2)
     if (sqrt(norm_sq) < tolerance) {
       converged <- TRUE
@@ -136,6 +159,7 @@ gradient_descent <- function(objective, gradient, initial, max_iter = 5000L,
     while (step > 1e-12) {
       candidate <- x - step * g
       candidate_value <- objective(candidate)
+      if (!is.finite(candidate_value)) stop("objective returned a non-finite value")
       if (candidate_value <= value - 1e-4 * step * norm_sq) {
         x <- candidate
         value <- candidate_value
@@ -152,11 +176,21 @@ gradient_descent <- function(objective, gradient, initial, max_iter = 5000L,
 }
 
 monte_carlo_standard_error <- function(values) {
-  if (length(values) < 2L) stop("at least two replications required")
+  if (length(values) < 2L || any(!is.finite(values))) stop("at least two finite replications required")
   stats::sd(values) / sqrt(length(values))
 }
 
 # Executable checks
+bad_boot <- try(bootstrap_mean_ci(c(1, NA_real_), 100), silent = TRUE)
+stopifnot(inherits(bad_boot, "try-error"))
+bad_delta <- try(delta_method(c(1, 2), matrix(c(1, .2, .3, 4), 2, 2)), silent = TRUE)
+stopifnot(inherits(bad_delta, "try-error"))
+bad_mh <- try(metropolis_hastings(function(x) -Inf, 0, 10), silent = TRUE)
+stopifnot(inherits(bad_mh, "try-error"))
+bad_ess <- try(effective_sample_size(1:4, -1), silent = TRUE)
+stopifnot(inherits(bad_ess, "try-error"))
+bad_bh <- try(benjamini_hochberg(c(.01, NaN), .05), silent = TRUE)
+stopifnot(inherits(bad_bh, "try-error"))
 boot <- bootstrap_mean_ci(1:5, 500, .05, 7)
 stopifnot(boot[["lower"]] <= boot[["estimate"]], boot[["upper"]] >= boot[["estimate"]])
 perm <- permutation_test_mean_difference(1:3, 4:6, 1000)
