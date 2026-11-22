@@ -22,6 +22,8 @@ class AdvancedStatisticsLabTests(unittest.TestCase):
         self.assertEqual(a, b)
         self.assertLessEqual(a["lower"], a["estimate"])
         self.assertGreaterEqual(a["upper"], a["estimate"])
+        with self.assertRaises(ValueError):
+            bootstrap_mean_ci([1, float("nan"), 3], n_resamples=100)
 
     def test_exact_permutation_test(self):
         result = permutation_test_mean_difference([1, 2, 3], [4, 5, 6], n_resamples=1000)
@@ -32,6 +34,8 @@ class AdvancedStatisticsLabTests(unittest.TestCase):
         result = delta_method([1, 2], [[1, 0.2], [0.2, 4]])
         self.assertAlmostEqual(result["variance"], 17.8)
         self.assertAlmostEqual(result["standard_error"], math.sqrt(17.8))
+        with self.assertRaises(ValueError):
+            delta_method([1, 2], [[1, 0.2], [0.3, 4]])
 
     def test_metropolis_hastings_normal_target(self):
         result = metropolis_hastings(lambda x: -0.5 * x * x, 0.0, 8000, 1.0, 42)
@@ -42,15 +46,21 @@ class AdvancedStatisticsLabTests(unittest.TestCase):
         self.assertLess(result["acceptance_rate"], 0.9)
         self.assertAlmostEqual(mean, 0.0, delta=0.15)
         self.assertAlmostEqual(variance, 1.0, delta=0.2)
+        with self.assertRaises(ValueError):
+            metropolis_hastings(lambda x: float("-inf"), 0.0, 10)
 
     def test_effective_sample_size_independent_sequence(self):
         result = effective_sample_size([0.1, -0.5, 0.7, -0.2, 0.9, -0.8, 0.3, 0.4])
         self.assertGreater(result, 0)
         self.assertLessEqual(result, 8)
+        with self.assertRaises(ValueError):
+            effective_sample_size([1, 2, 3, 4], max_lag=-1)
 
     def test_benjamini_hochberg(self):
         result = benjamini_hochberg([0.01, 0.04, 0.03, 0.2], q=0.05)
         self.assertEqual(result["rejected"], [True, False, False, False])
+        with self.assertRaises(ValueError):
+            benjamini_hochberg([0.01, float("nan")], q=0.05)
         self.assertAlmostEqual(result["adjusted_p_values"][0], 0.04)
 
     def test_ridge_regression_unpenalized_intercept(self):
