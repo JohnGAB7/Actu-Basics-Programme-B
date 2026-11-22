@@ -424,3 +424,14 @@ Les ressources S167–S168 cadrent les méthodes descriptives et les plans de so
 | S171 | SAS Institute — SAS/STAT 14.1 User’s Guide, Multivariate Tests : https://support.sas.com/documentation/cdl/en/statug/68162/HTML/default/statug_introreg_sect038.htm | Transformations F des critères MANOVA et borne supérieure de Roy ; option de calcul exact | MV04 ; comparaison de la transformation de Roy et de ses degrés de liberté |
 
 **Note de cohérence S159/S171 :** la formule exacte imprimée dans le manuel Stata pour le cas « p ou νh = 1 » doit être maniée avec prudence lorsque p=1 et νh>1 : telle qu'elle est écrite, elle ne se réduit pas à l'ANOVA univariée (F=Θv/νh). La formule de borne SAS, F=Θ(v−d+νh)/d avec d=max(p,νh), donne bien cette réduction pour p=1. La dérivation scalaire est retenue pour le cas p=1 ; la comparaison directe à Stata reste explicitement à effectuer avant toute affirmation de compatibilité logicielle.
+
+
+## B18 — références techniques complémentaires pour les calculs actuariels
+
+| ID | Ressource | Domaines utiles | Utilisation |
+|---|---|---|---|
+| S175 | Binghamton University — *Life Contingency Models I*, chapitre 3, Term Life Insurance : https://www2.math.binghamton.edu/lib/exe/fetch.php/people/kargin/publications/actuarial_1_ln_master.pdf | Assurance temporaire, paiement en fin d'année de décès, probabilités \( {}_kp_xq_{x+k} \) et valeurs actuelles actuarielles | AR06 ; référence universitaire pour vérifier la survie jusqu'à l'année de décès |
+| S176 | Institute and Faculty of Actuaries — *A Practitioner's Introduction to Stochastic Reserving* : https://actuaries.org.uk/media/r5ek5uhe/practitioners-introduction-stochastic-reserving.pdf | Chain-Ladder, facteurs de développement volume-pondérés, modèle de Mack et limites du provisionnement déterministe | AR07 ; référence professionnelle de provisionnement |
+| S177 | ChainLadder R package — documentation \`chainladder\` : https://mages.github.io/ChainLadder/reference/chainladder.html | Triangle cumulatif, ordre des cellules observées, facteurs volume-pondérés et variantes de pondération | AR07 ; documentation logicielle, à distinguer d'une norme actuarielle |
+
+Ces ressources servent à vérifier les formules et les conventions. Elles ne valident pas à elles seules le laboratoire, le portefeuille ou les provisions d'un assureur.
