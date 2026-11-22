@@ -8,7 +8,7 @@ Laboratoire pédagogique sans dépendances externes Python/R. Les implémentatio
 - GLM Poisson log-link avec offset d'exposition (IRLS didactique Python, `glm` de base R) ;
 - crédibilité de Bühlmann (EPV/VHM) ;
 - Kaplan–Meier et erreur-type de Greenwood ;
-- EPV d'une rente immédiate et d'une assurance temporaire à prestation fin d'année ;
+- EPV d'une rente immédiate et d'une assurance temporaire à prestation fin d'année (les entrées de mortalité de l'assurance sont les probabilités conditionnelles annuelles q_x ; la survie jusqu'à chaque année est calculée dans la fonction) ;
 - Chain-Ladder pondéré en volume ;
 - récupération d'une couche XS ;
 - VaR empirique et TVaR avec pondération fractionnaire de la queue.
