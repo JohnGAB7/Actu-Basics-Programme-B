@@ -424,3 +424,14 @@ Les ressources S167–S168 cadrent les méthodes descriptives et les plans de so
 | S171 | SAS Institute — SAS/STAT 14.1 User’s Guide, Multivariate Tests : https://support.sas.com/documentation/cdl/en/statug/68162/HTML/default/statug_introreg_sect038.htm | Transformations F des critères MANOVA et borne supérieure de Roy ; option de calcul exact | MV04 ; comparaison de la transformation de Roy et de ses degrés de liberté |
 
 **Note de cohérence S159/S171 :** la formule exacte imprimée dans le manuel Stata pour le cas « p ou νh = 1 » doit être maniée avec prudence lorsque p=1 et νh>1 : telle qu'elle est écrite, elle ne se réduit pas à l'ANOVA univariée (F=Θv/νh). La formule de borne SAS, F=Θ(v−d+νh)/d avec d=max(p,νh), donne bien cette réduction pour p=1. La dérivation scalaire est retenue pour le cas p=1 ; la comparaison directe à Stata reste explicitement à effectuer avant toute affirmation de compatibilité logicielle.
+
+
+## B17 — références juridiques et techniques complémentaires
+
+| ID | Ressource | Domaines utiles | Utilisation |
+|---|---|---|---|
+| S172 | Union européenne — Règlement (UE) 2016/679 (RGPD), notamment articles 5, 25, 32 et 89 : https://eur-lex.europa.eu/eli/reg/2016/679/oj/eng/ | Finalité, minimisation, exactitude, limitation de conservation, protection dès la conception, sécurité et garanties pour la recherche/statistique | DE01 et DE09 ; texte juridique primaire, à lire dans sa version consolidée applicable |
+| S173 | Comité européen de la protection des données — Guidelines 01/2025 on Pseudonymisation : https://www.edpb.europa.eu/documents/guideline/guidelines-012025-on-pseudonymisation_en | Techniques et limites de la pseudonymisation, mesures complémentaires et risques de réidentification | DE09 ; orientation du comité, vérifier la version et son statut après consultation |
+| S174 | Comité européen de la protection des données — Guidelines 02/2026 on Anonymisation : https://www.edpb.europa.eu/topics/ai-and-technology/anonymisation-pseudonymisation_en | Évaluation de l'anonymisation et distinction avec la pseudonymisation | DE09 ; ressource publiée en 2026, vérifier le statut de consultation et la version finale avant usage |
+ 
+Ces sources renforcent l'enseignement des principes et des limites juridiques. Elles ne remplacent ni l'analyse du contexte de traitement, ni l'avis du DPO/juriste, ni une analyse d'impact lorsque requise.
