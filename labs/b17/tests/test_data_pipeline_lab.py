@@ -44,6 +44,15 @@ class DataPipelineLabTests(unittest.TestCase):
         self.assertEqual(once, twice)
         self.assertEqual(once[0]["amount"], 12)
 
+    def test_upsert_orders_timezone_aware_timestamps_chronologically(self):
+        existing = [{"id": "A", "updated": "2026-01-01T00:30:00+01:00", "amount": 1}]
+        incoming = [{"id": "A", "updated": "2025-12-31T23:45:00Z", "amount": 2}]
+        self.assertEqual(idempotent_upsert(existing, incoming, "id", "updated")[0]["amount"], 2)
+
+    def test_upsert_rejects_naive_datetime_timestamps(self):
+        with self.assertRaises(ValueError):
+            idempotent_upsert([], [{"id": "A", "updated": "2026-01-01T10:00:00"}], "id", "updated")
+
     def test_upsert_rejects_ambiguous_records(self):
         with self.assertRaises(ValueError):
             idempotent_upsert([], [{"id": None, "updated": "2026-01-01"}], "id", "updated")
@@ -55,6 +64,16 @@ class DataPipelineLabTests(unittest.TestCase):
             "amount",
         )
         self.assertTrue(result["count_match"])
+        self.assertFalse(result["total_match"])
+
+    def test_reconciliation_does_not_treat_missing_amount_as_zero(self):
+        result = reconcile_totals(
+            [{"amount": 10}, {"amount": None}],
+            [{"amount": 10}, {"amount": 0}],
+            "amount",
+        )
+        self.assertTrue(result["count_match"])
+        self.assertEqual(result["source_missing_amount_count"], 1)
         self.assertFalse(result["total_match"])
 
     def test_fingerprint_is_stable_for_same_order(self):
