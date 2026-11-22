@@ -31,7 +31,7 @@ idempotent_upsert <- function(existing, incoming, key, updated_at) {
     stop("key and updated_at must be non-missing")
   }
   parse_timestamp <- function(value) {
-    if (grepl("^\\d{4}-\\d{2}-\\d{2}$", value)) {
+    if (grepl("^[0-9]{4}-[0-9]{2}-[0-9]{2}$", value)) {
       return(as.numeric(as.POSIXct(as.Date(value), tz = "UTC")))
     }
     normalized <- sub("Z$", "+0000", value)
@@ -88,4 +88,11 @@ stopifnot(tz_merged$amount == 2)
 stopifnot(month_partition("2026-11-21T12:30:00") == "2026-11")
 totals <- reconcile_totals(source, source, "amount")
 stopifnot(totals$count_match, totals$total_match)
+missing_totals <- reconcile_totals(
+  data.frame(amount = c(10, NA_real_)),
+  data.frame(amount = c(10, 0)),
+  "amount"
+)
+stopifnot(missing_totals$count_match, !missing_totals$total_match,
+          missing_totals$source_missing_amount_count == 1L)
 cat("B17 R data-pipeline checks: OK\n")
